@@ -1,6 +1,6 @@
-<h3 align="center">OP_IT</h3>
+<h2 align="center">OP_IT</h2>
 <p align="center">
-  :oncoming_automobile:Korea IT Academy Project Developers in 2020:oncoming_automobile:
+  :Objects:Korea IT Academy Project Developers in 2020:Objects:
 </p>
 
 * * *
