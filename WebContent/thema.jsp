@@ -13,7 +13,7 @@
 
 
 <!-- css파일 불러오기-->
-<link rel="stylesheet" href="themacss.css">
+<link rel="stylesheet" href="CSS/themacss.css">
 
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
