@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<jsp:include page="thema.jsp"/>
 </head>
 <body>
-<jsp:include page="thema.jsp"></jsp:include>
 <p> 위 라인의 내용은 thema.jsp 페이지의 내용입니다</p>
 </body>
 </html>
