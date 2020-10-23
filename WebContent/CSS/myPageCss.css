@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.profile{
+	margin-top: 5%;
+}
+
+#profilePhotoChange{
+	float: right;
+}
+
+#profileRoute{
+	height: 150px;
+}
