@@ -21,7 +21,7 @@
 
 
 <!-- css파일 불러오기-->
-<link rel="stylesheet" href="CSS/opit.css">
+
 <link rel="stylesheet" href="CSS/signupcss.css">
 
 <!--아이콘-->
@@ -29,14 +29,12 @@
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-<script src="assets/js/script.js"></script>
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -60,16 +58,20 @@
 	</header>
 
 	<!-- 메뉴바 -->
-	<section class="menubar">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+
+	<section>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
 			<a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#collapsibleNavbar">
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<!-- 상단메뉴 -->
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
 					<div class="menu">
 						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
 					</div>
@@ -77,16 +79,22 @@
 						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link"
-							href="https://na.leagueoflegends.com/ko-kr/">League of legend
-								홈페이지</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">League
+								of legend 홈페이지</a></li>
 					</div>
 				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="소환사를 검색해보세요." aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+				</form>
 			</div>
 		</nav>
 	</section>
+
 	<!-- 회원가입 폼 -->
 	<section class="signup">
+	<!-- 휴대폰번호 입력제한 -->
 		<script>
 			$(document).ready(function() {
 				$('#phone-number').mask('000-0000-0000');
@@ -97,8 +105,8 @@
 		<div class="registration-form">
 
 			<form>
-				<div class="form-icon">
-					<span><i class="icon icon-user"></i></span>
+				<div class="form-icon" style="background-color: #C8C7ED">
+					<span><i class="icon icon-user" ></i></span>
 					
 				</div>
 				<div class="form-group">

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,16 +61,20 @@
 	</header>
 
 	<!-- 메뉴바 -->
-	<section class="menubar">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+		
+	<section>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
 			<a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#collapsibleNavbar">
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<!-- 상단메뉴 -->
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
 					<div class="menu">
 						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
 					</div>
@@ -78,13 +82,19 @@
 						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link"
-							href="https://na.leagueoflegends.com/ko-kr/">League of legend
-								홈페이지</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">League
+								of legend 홈페이지</a></li>
 					</div>
 				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search"
+						placeholder="소환사를 검색해보세요." aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+				</form>
 			</div>
 		</nav>
+	</section>
+
 	</section>
 
 
@@ -100,7 +110,7 @@
 				<!-- 로그인 폼 -->
 				<form class="login100-form validate-form">
 					<span class="login100-form-title"> <!-- 제목 -->
-						<p class="loginfont">OP.IT 로그인</p>
+						<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
 					</span>
 
 					<div class="wrap-input100 validate-input"
