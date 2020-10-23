@@ -34,21 +34,27 @@
 
 /*메뉴바*/
 .navbar {
-   clear: both;
+	clear: both;
+
 }
-
-
 
 /*메뉴바 --> op.it 부분*/
 .navbar-brand {
-   width: 100px;
+	width: 100px;
 }
 /*메뉴바 --> 상단메뉴 부분*/
 .nav-link {
-   font-size: 18px;
+	font-size: 18px;
 }
 
-/*메뉴바 --> 상단메뉴 div*/
+/*메뉴바 --> 상단메뉴 각각 div*/
 .menu {
-   margin-left: 50px;
+	margin-left: 60px;
+	
 }
+/*메뉴바 상단메뉴 전체 div*/
+#collapsibleNavbar{
+	margin-left: 30px;
+}
+
+

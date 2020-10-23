@@ -42,6 +42,7 @@ body, html {
 /*메뉴바*/
 .navbar {
 	clear: both;
+
 }
 
 /*메뉴바 --> op.it 부분*/
@@ -53,13 +54,15 @@ body, html {
 	font-size: 18px;
 }
 
-/*메뉴바 --> 상단메뉴 div*/
+/*메뉴바 --> 상단메뉴 각각 div*/
 .menu {
-	margin-left: 50px;
+	margin-left: 90px;
+	
 }
-
-
-
+/*메뉴바 상단메뉴 전체 div*/
+#collapsibleNavbar{
+	margin-left: 120px;
+}
 
 
 /*로그인 전체 div*/
@@ -282,12 +285,24 @@ iframe {
 /*로그인 폼*/
 .login100-form {
 	width: 290px;
+	margin-top: -80px;
+}
+
+#idSearchDiv{
+	width: 100%;
+}
+
+#idSearch {
+	width: 50%;
+}
+
+#searchForm{
+	width: 100%;
 }
 
 /*로그인 제목 부분( 'OP.IT 로그인')*/
 .login100-form-title {
-	
-	font-size: 30px;
+
 	color: #333333;
 	line-height: 1.2;
 	text-align: center;
@@ -296,10 +311,6 @@ iframe {
 	padding-bottom: 54px;
 }
 
-.loginfont{
-
-	font-size: 30px;
-}
 
 /*아이디를 입력해주세요  div*/
 .wrap-input100 {
@@ -314,7 +325,6 @@ iframe {
   font-size: 15px;
   line-height: 1.5;
   color: #666666;
-
   display: block;
   width: 100%;
   background: #e6e6e6;
@@ -340,6 +350,11 @@ iframe {
 .input100:focus + .focus-input100 {
   -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
   animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+.input100:focus + .focus-input100 + .symbol-input100 {
+  color: #57b846;
+  padding-left: 28px;
 }
 
 @-webkit-keyframes anim-shadow {
@@ -381,10 +396,6 @@ iframe {
   transition: all 0.4s;
 }
 
-.input100:focus + .focus-input100 + .symbol-input100 {
-  color: #57b846;
-  padding-left: 28px;
-}
 
 /*로그인 버튼 div*/
 .container-login100-form-btn {
