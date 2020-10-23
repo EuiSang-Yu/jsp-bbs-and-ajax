@@ -1,14 +1,32 @@
 @charset "UTF-8";
 
 #summoner{
-	
+	margin-top: 30px;
+	border: 1px solid #333;
+	height: 15vh;
 }
-#league{
-	
+.league{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+}
+#leagueSolo{	
+	width: 48%;
+	border: 1px solid #333;
+	height: 25vh;
+}
+#leagueFree{
+	width: 48%;
+	border: 1px solid #333;
+	height: 25vh;
 }
 #leagueMost{
-	
+	margin-top: 20px;
+	border: 1px solid #333;
+	height: 25vh;
 }
 #recentPlay{
-	
+	margin-top: 20px;
+	border: 1px solid #333;
+	height: 100vh;
 }
