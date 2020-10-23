@@ -6,9 +6,11 @@
 <html lang="ko">
 <head>
 
+<!-- 테스트입니다. -->
+
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--구글폰트ㅇ-->
+<!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
