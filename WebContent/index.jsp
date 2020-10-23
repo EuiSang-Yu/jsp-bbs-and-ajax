@@ -30,6 +30,8 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<script src="index.js"></script>
+
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -39,54 +41,7 @@
 </head>
 <body>
 
-	<!-- 로고 , 로그인, 회원가입 버튼 -->
-	<header>
-		<div class="container">
-			<div id="headerMain">
-				<p class="logo">OP.IT</p>
-
-				<button type="button" class="btn btn-outline-dark">회원가입</button>
-				<button type="button" class="btn btn-outline-dark">로그인</button>
-
-			</div>
-		</div>
-	</header>
-
-	<!-- 메뉴바 -->
-
-	<section>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-			<a class="navbar-brand"><img src="img/menuicon.png"
-				class="menuicon"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="https://kr.leagueoflegends.com/ko-kr/">League
-								of legend 홈페이지</a></li>
-					</div>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="소환사를 검색해보세요." aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
-				</form>
-			</div>
-		</nav>
-	</section>
+	<jsp:include page="thema.jsp" />
 
 
 
@@ -101,14 +56,15 @@
 		</video>
 
 		<!-- 전적검색창 -->
-
 		<div class="container h-100">
-			<div class="d-flex justify-content-center h-100">
-				<div class="search">
-					<input class="search_input" type="text" name=""
-						placeholder="소환사명을 입력해주세요 .."> <a href="#"
-						class="search_icon"><i class="fa fa-search"></i></a>
-				</div>
+			<div class="d-flex justify-content-center h-100 align-items-center">
+				<form action="historyMain.jsp" method="GET">
+					<div class="search">
+						<input class="search_input" type="text" name=""
+							placeholder="소환사명을 입력해주세요 .."> <a href="#"
+							class="search_icon" onclick=""><i class="fa fa-search"></i></a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>
@@ -130,9 +86,11 @@
 							이익! 릴리아의 목소리로 패치를 들어보세요!<br> 잠들 시간~｜10.21 TFT 패치노트 하이라이트 -
 							전략적 팀 전투
 						</p>
-						<a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img src="img/youtube.png" class="youtubelogo"></a>League
-						of Legends - Korea
-						<button type="button" class="btn btn-dark" style="font-size: 14px;">자세히 보기</button>
+						<a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img
+							src="img/youtube.png" class="youtubelogo"></a>League of Legends
+						- Korea
+						<button type="button" class="btn btn-dark"
+							style="font-size: 14px;">자세히 보기</button>
 					</div>
 					<br>
 				</div>
@@ -141,35 +99,20 @@
 						src="https://www.youtube.com/embed/OS7imLFzn0Y" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
-						<div class="youtubenote">
-						<p class="note">신규 챔피언 </p>
+					<div class="youtubenote">
+						<p class="note">신규 챔피언</p>
 						<p class="note1">사미라: 사막의 장미</p>
-						<p class="youtubetag">
-							챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드
-						</p>
-						
+						<p class="youtubetag">챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드</p>
+
 					</div>
 
 				</div>
-
-				<p class="mb-0"></p>
 			</div>
 		</div>
 
 	</section>
-	<!-- 푸터 -->
-	<footer>
-		<div class="container">
-			<hr>
-			<p class="footer1">Copyright © OP.IT 2012-2020 OP.GG. OP.GG isn’t endorsed by
-				Riot Games and doesn’t reflect the views or opinions of Riot Games
-				or anyone officially involved in producing or managing League of
-				Legends. League of Legends and Riot Games are trademarks or
-				registered trademarks of Riot Games, Inc. League of Legends © Riot
-				Games, Inc.</p>
-		</div>
-	</footer>
 
+<jsp:include page="footer.jsp" />
 
 
 </body>

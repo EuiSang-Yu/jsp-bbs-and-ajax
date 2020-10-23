@@ -49,7 +49,7 @@
 			<div id="headerMain">
 				<p class="logo">OP.IT</p>
 
-			
+
 				<button type="button" class="btn btn-outline-dark">회원가입</button>
 				<button type="button" class="btn btn-outline-dark">로그인</button>
 
@@ -95,7 +95,7 @@
 
 	<!-- 회원가입 폼 -->
 	<section class="signup">
-	<!-- 휴대폰번호 입력제한 -->
+		<!-- 휴대폰번호 입력제한 -->
 		<script>
 			$(document).ready(function() {
 				$('#phone-number').mask('000-0000-0000');
@@ -107,8 +107,8 @@
 
 			<form>
 				<div class="form-icon" style="background-color: #C8C7ED">
-					<span><i class="icon icon-user" ></i></span>
-					
+					<span><i class="icon icon-user"></i></span>
+
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="userID"
@@ -132,8 +132,8 @@
 				</div>
 
 				<div class="form-group">
-					<button type="button" class="btn btn-block create-account">계정 생성
-						</button>
+					<button type="button" class="btn btn-block create-account">계정
+						생성</button>
 				</div>
 
 			</form>
@@ -148,16 +148,6 @@
 		</div>
 
 	</section>
-		<footer>
-		<div class="container">
-			<hr>
-			<p class="footer1">Copyright © OP.IT 2012-2020 OP.GG. OP.GG isn’t endorsed by
-				Riot Games and doesn’t reflect the views or opinions of Riot Games
-				or anyone officially involved in producing or managing League of
-				Legends. League of Legends and Riot Games are trademarks or
-				registered trademarks of Riot Games, Inc. League of Legends © Riot
-				Games, Inc.</p>
-		</div>
-	</footer>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
