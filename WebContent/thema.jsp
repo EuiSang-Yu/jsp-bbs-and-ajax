@@ -67,7 +67,7 @@
          <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                <div class="menu">
-                  <li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
+                  <li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언 공략</a></li>
                </div>
                <div class="menu">
                   <li class="nav-item"><a class="nav-link" href="#">My page</a></li>

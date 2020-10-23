@@ -18,10 +18,15 @@ thead tr th {
 	color: #686868;
 }
 
+#writeBtn {
+	float: right;
+}
+
 </style>
 
 </head>
 <body>
+<jsp:include page="thema.jsp"/>
 <div class="container">
 <h1>가렌 잘하는 법</h1>
 <br><br><br><br>
@@ -42,18 +47,11 @@ thead tr th {
 			<td colspan="6">내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다</td>
 		</tr>
 	</tbody>
-	
-		<tr class="row">
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>			
-			<td><a href="noticeListCP.jsp" class="btn btn-default" id="writeBtn">목록</a></td>
-		</tr>
-	
 </table>
-
+<hr style="height: 1px; background-color: gray;">
+<jsp:include page="comment.jsp"/>
+<hr style="height: 1px; background-color: gray;">
+<a href="noticeListCP.jsp" class="btn btn-default" id="writeBtn">목록</a>
 </div>
 </body>
 </html>
