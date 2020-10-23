@@ -45,7 +45,7 @@
 	<header>
 		<div class="container">
 			<div id="headerMain">
-				<p class="logo">OP.IT</p>
+				<a href="index.jsp"><p class="logo">OP.IT</p></a>
 				<img src="img/logoimg.png" class="logoimg">
 
 				<button type="button" class="btn btn-outline-dark">회원가입</button>
@@ -71,13 +71,13 @@
 				<ul class="navbar-nav mr-auto">
 
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
+						<li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언 공략</a></li>
 					</div>
 					<div class="menu">
 						<li class="nav-item"><a class="nav-link" href="myPage.jsp">My page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">League
+						<li class="nav-item"><a class="nav-link" href="https://na.leagueoflegends.com/ko-kr/">League
 								of legend 홈페이지</a></li>
 					</div>
 				</ul>
