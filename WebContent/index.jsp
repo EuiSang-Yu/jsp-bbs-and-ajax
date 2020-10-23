@@ -29,13 +29,9 @@
 
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
 
-<script src="index.js"></script>
-=======
 	
 <script src="JS/index.js"></script>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -65,16 +61,10 @@
 			<div class="d-flex justify-content-center h-100 align-items-center">
 				<form id="searchFrm" action="historyMain.jsp" method="GET">
 					<div class="search">
-<<<<<<< HEAD
-						<input class="search_input" type="text" name=""
-							placeholder="소환사명을 입력해주세요 .."> <a href="#"
-							class="search_icon" onclick=""><i class="fa fa-search"></i></a>
-					</div>
-=======
+
 						<input class="search_input" type="text" name="searchId"	
 							placeholder="소환사명을 입력해주세요 .."> <button type="submit" class="search_icon"><i class="fa fa-search"></i></button>
-					</div>				
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+					</div>
 				</form>
 			</div>
 		</div>

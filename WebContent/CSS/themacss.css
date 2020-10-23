@@ -8,18 +8,11 @@
 
 /*로고 글씨*/
 .logo {
-<<<<<<< HEAD
-	font-family: 'Black Han Sans', sans-serif;
-	float: left;
-	font-size: 250%;
-	margin: 25px;
-=======
    font-family: 'Black Han Sans', sans-serif;
    float: left;
    font-size: 250%;
    margin: 25px;
    color: black;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 }
 
 

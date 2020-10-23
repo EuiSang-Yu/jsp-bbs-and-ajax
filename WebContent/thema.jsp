@@ -45,13 +45,9 @@
 	<header>
 		<div class="container">
 			<div id="headerMain">
-<<<<<<< HEAD
 
-				<p class="logo">OP.IT</p>
-=======
 				<a href="index.jsp"><p class="logo">OP.IT</p></a>
 				<img src="img/logoimg.png" class="logoimg">
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 				<button type="button" class="btn btn-outline-dark">회원가입</button>
 				<button type="button" class="btn btn-outline-dark" onclick="location.href='login.jsp'">로그인</button>
