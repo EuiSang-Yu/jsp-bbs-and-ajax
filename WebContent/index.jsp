@@ -103,7 +103,7 @@
 
 		<!-- 전적검색창 -->
 		<div class="container h-100">
-			<div class="d-flex justify-content-center h-100">
+			<div class="d-flex justify-content-center h-100 align-items-center">
 				<form action="historyMain.jsp" method="GET">
 					<div class="search">
 						<input class="search_input" type="text" name=""	
