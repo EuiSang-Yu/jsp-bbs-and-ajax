@@ -60,8 +60,6 @@ body, html {
 
 
 
-
-
 /*로그인 전체 div*/
 .limiter {
 	width: 100%;
@@ -282,6 +280,18 @@ iframe {
 /*로그인 폼*/
 .login100-form {
 	width: 290px;
+}
+
+#idSearchDiv{
+	width: 100%;
+}
+
+#idSearch {
+	width: 50%;
+}
+
+#searchForm{
+	width: 100%;
 }
 
 /*로그인 제목 부분( 'OP.IT 로그인')*/
