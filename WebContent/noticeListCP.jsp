@@ -38,6 +38,10 @@
 	float: left;
 }
 
+.container{
+	margin-bottom: 100px;
+}
+
 </style>
 
 </head>
@@ -49,9 +53,9 @@
 	<div id="champInfo">챔피언 정보</div>
 	<div id="champVideo">챔피언 유튜브</div>
 
-	
-
 </div>
+
+<jsp:include page="noticeListNT.jsp"/>
 
 </body>
 </html>
