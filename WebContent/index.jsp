@@ -6,7 +6,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>커밋에러테스트1</title>
 </head>
 <body>
 ㅎㅇㅇㅇ
