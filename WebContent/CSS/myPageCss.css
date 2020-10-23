@@ -1,7 +1,17 @@
 @charset "UTF-8";
 
+
 .profile{
+
 	margin-top: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.card {
+	float: left;
 }
 
 #profilePhotoChange{
@@ -10,4 +20,19 @@
 
 #profileRoute{
 	height: 150px;
+}
+
+#emptyspace {
+	float: left;
+}
+
+#joinform {
+	float: left;
+}
+
+#profile2{
+	/*addingp-left: 100px;*/
+	justify-content: center;
+	align-items: center;
+	float: right;
 }
