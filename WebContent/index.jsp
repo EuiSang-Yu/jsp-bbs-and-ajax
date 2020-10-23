@@ -8,11 +8,7 @@
 
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-<!--구글폰트-->
-=======
 <!--구글폰트ㅇ-->
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <link
    href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
    rel="stylesheet">
@@ -40,13 +36,8 @@
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
-<<<<<<< HEAD
 <title>OP.IT</title>
-=======
 
-<title>OP.IT111111</title>
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </head>
 <body>
 
@@ -77,11 +68,7 @@
          <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                <div class="menu">
-<<<<<<< HEAD
-                  <li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
-=======
                   <li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언 공략</a></li>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
                </div>
                <div class="menu">
                   <li class="nav-item"><a class="nav-link" href="#">My page</a></li>
