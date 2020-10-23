@@ -30,7 +30,7 @@
 <section class="container profile">
 	<!-- 프로필사진설정 박스 -->
 	<div class="card" style="width:500px">
-   		<img class="card-img-top" src="img/defaultProfile2.png" alt="Card image" style="width:100%">
+   		<img class="card-img-top" src="img/profilePhoto/defaultProfile2.png" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
      		<p id="profileRoute" class="card-text">파일 경로가 떠야함(첨부한 파일경로)</p>
