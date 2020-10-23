@@ -80,14 +80,9 @@
 								page</a></li>
 					</div>
 					<div class="menu">
-<<<<<<< HEAD
-						<li class="nav-item"><a class="nav-link"
-							href="https://kr.leagueoflegends.com/ko-kr/">League of legend
-								홈페이지</a></li>
-=======
+
 						<li class="nav-item"><a class="nav-link" href="https://na.leagueoflegends.com/ko-kr/">League
 								of legend 홈페이지</a></li>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 					</div>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
