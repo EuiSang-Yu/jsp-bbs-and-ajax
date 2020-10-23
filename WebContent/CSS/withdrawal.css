@@ -27,7 +27,7 @@
 	margin-top: 20px;
 }
 
-#withdrawalYesOrNoBtn{
+#withdrawalYesBtn, #withdrawalNoBtn{
 	width: 200px;
 	height: 50px;
 }

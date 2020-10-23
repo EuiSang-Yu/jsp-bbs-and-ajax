@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 * {
-   margin: 0;
-   padding: 0;
-   font-family: 'Noto Sans KR', sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
 /*로고 글씨*/
@@ -12,43 +12,47 @@
    float: left;
    font-size: 250%;
    margin: 25px;
+   color: black;
 }
+
 
 /*로고 이미지*/
 .logoimg {
-   margin: 0 auto;
-   width: 170px;
-   text-align: center;
-   margin: 0 auto;
-   margin-left: 28%;
-   margin-top: 2%;
+	margin: 0 auto;
+	width: 170px;
+	text-align: center;
+	margin: 0 auto;
+	margin-left: 28%;
+	margin-top: 2%;
 }
 
 /*로그인 회원가입 버튼*/
 #headerMain .btn {
-   float: right;
-   margin-top: 4%;
-   margin-left: 2%;
-   margin-bottom: 2%;
+	float: right;
+	margin-top: 4%;
+	margin-left: 2%;
+	margin-bottom: 2%;
 }
 
 /*메뉴바*/
 .navbar {
-   clear: both;
+	clear: both;
 }
 
-
-
-/*메뉴바 --> op.it 부분*/
-.navbar-brand {
-   width: 100px;
+/*메뉴바 --> 아이콘*/
+.menuicon {
+	width: 50%;
 }
 /*메뉴바 --> 상단메뉴 부분*/
-.nav-link {
-   font-size: 18px;
+.nav-item {
+	font-size: 18px;
 }
 
-/*메뉴바 --> 상단메뉴 div*/
+/*메뉴바 --> 상단메뉴 각각 div*/
 .menu {
-   margin-left: 50px;
+	margin-left: 90px;
+}
+/*메뉴바 상단메뉴 전체 div*/
+#collapsibleNavbar {
+	margin-left: 120px;
 }

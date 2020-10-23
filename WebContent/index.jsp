@@ -8,14 +8,14 @@
 
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--구글폰트ㅇ-->
+<!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 
 
 <!-- css파일 불러오기-->
-<link rel="stylesheet" href="CSS/opit.css">
+<link rel="stylesheet" href="CSS/index.css">
 
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
@@ -30,6 +30,9 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+	
+<script src="JS/index.js"></script>
+
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -39,48 +42,7 @@
 </head>
 <body>
 
-	<!-- 로고 , 로그인, 회원가입 버튼 -->
-	<header>
-		<div class="container">
-			<div id="headerMain">
-				<p class="logo">OP.IT</p>
-
-				<img src="img/logoimg.png" class="logoimg">
-
-				<button type="button" class="btn btn-outline-dark">회원가입</button>
-				<button type="button" class="btn btn-outline-dark">로그인</button>
-
-			</div>
-		</div>
-	</header>
-
-	<!-- 메뉴바 -->
-	<section class="menubar">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-			<a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- 상단메뉴 -->
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언
-								공략</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link"
-							href="https://na.leagueoflegends.com/ko-kr/">League of legend
-								홈페이지</a></li>
-					</div>
-				</ul>
-			</div>
-		</nav>
-	</section>
+	<jsp:include page="thema.jsp" />
 
 
 
@@ -95,14 +57,15 @@
 		</video>
 
 		<!-- 전적검색창 -->
-
 		<div class="container h-100">
-			<div class="d-flex justify-content-center h-100">
-				<div class="search">
-					<input class="search_input" type="text" name=""
-						placeholder="소환사명을 입력해주세요 .."> <a href="#"
-						class="search_icon"><i class="fa fa-search"></i></a>
-				</div>
+			<div class="d-flex justify-content-center h-100 align-items-center">
+				<form id="searchFrm" action="historyMain.jsp" method="GET">
+					<div class="search">
+
+						<input class="search_input" type="text" name="searchId"	
+							placeholder="소환사명을 입력해주세요 .."> <button type="submit" class="search_icon"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</section>
@@ -117,35 +80,40 @@
 						src="https://www.youtube.com/embed/MIl-H3NShvc" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
-					<p>이익! 릴리아의 목소리로 패치를 들어보세요!</p>
-					<p>잠들 시간~｜10.21 TFT 패치노트 하이라이트 - 전략적 팀 전투</p>
+					<div class="youtubenote">
+						<p class="note">게임 업데이트</p>
+						<p class="note1">10.21 패치 노트 소식</p>
+						<p class="youtubetag">
+							이익! 릴리아의 목소리로 패치를 들어보세요!<br> 잠들 시간~｜10.21 TFT 패치노트 하이라이트 -
+							전략적 팀 전투
+						</p>
+						<a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img
+							src="img/youtube.png" class="youtubelogo"></a>League of Legends
+						- Korea
+						<button type="button" class="btn btn-dark"
+							style="font-size: 14px;">자세히 보기</button>
+					</div>
+					<br>
 				</div>
 				<div class="youtube">
 					<iframe width="500" height="325"
 						src="https://www.youtube.com/embed/OS7imLFzn0Y" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
-					<p>사미라 챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드</p>
-				</div>
+					<div class="youtubenote">
+						<p class="note">신규 챔피언</p>
+						<p class="note1">사미라: 사막의 장미</p>
+						<p class="youtubetag">챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드</p>
 
-				<p class="mb-0"></p>
+					</div>
+
+				</div>
 			</div>
 		</div>
 
 	</section>
-	<!-- 푸터 -->
-	<footer>
-		<div class="container">
 
-			<p>© 2012-2020 OP.GG. OP.GG isn’t endorsed by Riot Games and
-				doesn’t reflect the views or opinions of Riot Games or anyone
-				officially involved in producing or managing League of Legends.
-				League of Legends and Riot Games are trademarks or registered
-				trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
-			</p>
-		</div>
-	</footer>
-
+<jsp:include page="footer.jsp" />
 
 
 </body>

@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+
 <head>
 
 <!-- 초기화면 배율 설정-->
@@ -44,50 +45,7 @@
 <title>OP.IT</title>
 </head>
 <body>
-
-	<!-- 로고 , 로그인, 회원가입 버튼 -->
-	<header>
-		<div class="container">
-			<div id="headerMain">
-				<p class="logo">OP.IT</p>
-
-				<img src="img/logoimg.png" class="logoimg">
-
-				<button type="button" class="btn btn-outline-dark">회원가입</button>
-				<button type="button" class="btn btn-outline-dark">로그인</button>
-
-			</div>
-		</div>
-	</header>
-
-	<!-- 메뉴바 -->
-	<section class="menubar">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-			<a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<!-- 상단메뉴 -->
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link"
-							href="https://na.leagueoflegends.com/ko-kr/">League of legend
-								홈페이지</a></li>
-					</div>
-				</ul>
-			</div>
-		</nav>
-	</section>
-
-
+	<jsp:include page="thema.jsp"/>
 
 	<!-- 로그인 부분 -->
 	<div class="limiter">
@@ -100,7 +58,7 @@
 				<!-- 로그인 폼 -->
 				<form class="login100-form validate-form">
 					<span class="login100-form-title"> <!-- 제목 -->
-						<p class="loginfont">OP.IT 로그인</p>
+						<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
 					</span>
 
 					<div class="wrap-input100 validate-input"
@@ -141,6 +99,7 @@
 	</div>
 
 
+<jsp:include page="footer.jsp" />
 
 
 

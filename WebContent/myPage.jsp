@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="CSS/myPage.css">
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -23,7 +25,7 @@
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-<title>Insert title here</title>
+<title>OP.IT</title>
 </head>
 <body>
 <!-- 공통 header+nav -->
@@ -77,7 +79,7 @@
 		                     <tr>
 		                        <td colspan="2">
 		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
-		                        <input type="button" class="btn btn-secondary" value="탈퇴하기"></td>
+		                        <input type="button" id="memberDelete" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>
@@ -86,7 +88,7 @@
    		 </div>
 	</div>
 </section>
-
+<script type="text/javascript" src="JS/myPage.js"></script>
    
 </body>
 </html>
