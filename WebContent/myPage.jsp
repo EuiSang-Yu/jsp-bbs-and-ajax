@@ -7,8 +7,12 @@
 <meta charset="UTF-8">
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 <link rel="stylesheet" href="CSS/myPageCss.css">
 
+=======
+<link rel="stylesheet" href="CSS/myPage.css">
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -17,6 +21,9 @@
 
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- 제이쿼리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -31,7 +38,7 @@
 <section class="container profile">
 	<!-- 프로필사진설정 박스 -->
 	<div class="card" style="width:500px">
-   		<img class="card-img-top" src="img/defaultProfile2.png" alt="Card image" style="width:100%">
+   		<img class="card-img-top" src="img/profilePhoto/defaultProfile2.png" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
      		<p id="profileRoute" class="card-text">파일 경로가 떠야함(첨부한 파일경로)</p>
@@ -75,7 +82,7 @@
 		                     <tr>
 		                        <td colspan="2">
 		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
-		                        <input type="submit" class="btn btn-secondary" value="탈퇴하기"></td>
+		                        <input type="button" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>
