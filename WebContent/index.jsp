@@ -37,7 +37,7 @@
 
 <meta charset="UTF-8">
 <<<<<<< HEAD
-<title>커밋에러테스트1</title>
+<title>커밋에러테스트2</title>
 =======
 <title>OP.IT</title>
 >>>>>>> refs/remotes/origin/master
