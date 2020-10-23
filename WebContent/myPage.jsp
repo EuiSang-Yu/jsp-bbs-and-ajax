@@ -77,7 +77,7 @@
 		                     <tr>
 		                        <td colspan="2">
 		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
-		                        <input type="button" class="btn btn-secondary" value="탈퇴하기"></td>
+		                        <input type="button" id="memberDelete" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>
@@ -86,7 +86,7 @@
    		 </div>
 	</div>
 </section>
-
+<script type="text/javascript" src="JS/myPage.js"></script>
    
 </body>
 </html>
