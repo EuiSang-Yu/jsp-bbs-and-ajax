@@ -7,7 +7,12 @@
 <meta charset="UTF-8">
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+<link rel="stylesheet" href="CSS/myPageCss.css">
+
+=======
 <link rel="stylesheet" href="CSS/myPage.css">
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -23,7 +28,7 @@
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-<title>Insert title here</title>
+<title>OP.IT</title>
 </head>
 <body>
 <!-- 공통 header+nav -->
