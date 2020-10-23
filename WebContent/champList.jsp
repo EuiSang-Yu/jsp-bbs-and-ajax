@@ -36,7 +36,7 @@
 </style>
 </head>
 <body>
-
+<jsp:include page="thema.jsp"/>
 <div class="container">
 <h1 id="champTitle">챔피언 공략 게시판</h1>
 <h3 id="champSubTitle">챔피언을 선택해 주세요</h3>
