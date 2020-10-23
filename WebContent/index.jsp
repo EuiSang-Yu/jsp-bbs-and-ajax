@@ -73,7 +73,7 @@
 						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
+						<li class="nav-item"><a class="nav-link" href="myPage.jsp">My page</a></li>
 					</div>
 					<div class="menu">
 						<li class="nav-item"><a class="nav-link" href="#">League

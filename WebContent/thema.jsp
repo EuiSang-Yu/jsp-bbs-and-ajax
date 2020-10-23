@@ -47,6 +47,34 @@
 			<div id="headerMain">
 				<p class="logo">OP.IT</p>
 
+<<<<<<< HEAD
+   <!-- 메뉴바 -->
+   <section class="menubar">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+         <a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <!-- 상단메뉴 -->
+         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+               <div class="menu">
+                  <li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
+               </div>
+               <div class="menu">
+                  <li class="nav-item"><a class="nav-link" href="myPage.jsp">My page</a></li>
+               </div>
+               <div class="menu">
+                  <li class="nav-item"><a class="nav-link"
+                     href="https://na.leagueoflegends.com/ko-kr/">League of legend
+                        홈페이지</a></li>
+               </div>
+            </ul>
+         </div>
+      </nav>
+   </section>
+=======
 				<img src="img/logoimg.png" class="logoimg">
 
 				<button type="button" class="btn btn-outline-dark">회원가입</button>
@@ -91,6 +119,7 @@
 		</nav>
 	</section>
 
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 
 </body>
