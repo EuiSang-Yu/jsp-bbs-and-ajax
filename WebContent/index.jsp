@@ -56,7 +56,8 @@
 
 	<section>
 		<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-			<a class="navbar-brand" ><img src = "img/menuicon.png" class = "menuicon"></a>
+			<a class="navbar-brand"><img src="img/menuicon.png"
+				class="menuicon"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -74,7 +75,7 @@
 						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">League
+						<li class="nav-item"><a class="nav-link" href="https://kr.leagueoflegends.com/ko-kr/">League
 								of legend 홈페이지</a></li>
 					</div>
 				</ul>
@@ -122,19 +123,33 @@
 						src="https://www.youtube.com/embed/MIl-H3NShvc" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
-						<p class = "note">게임 업데이트</p>
-						<p class = "note1">10.21 패치 노트 소식<p>
-					<p class = "youtubetag">이익! 릴리아의 목소리로 패치를 들어보세요!<br>
-					잠들 시간~｜10.21 TFT 패치노트 하이라이트 - 전략적 팀 전투</p>
-					<a href="#"><img src="img/youtube.png" class="youtubelogo"></a>League of Legends - Korea  
-                    <button type="button" class="btn btn-dark">자세히 보기</button>
+					<div class="youtubenote">
+						<p class="note">게임 업데이트</p>
+						<p class="note1">10.21 패치 노트 소식</p>
+						<p class="youtubetag">
+							이익! 릴리아의 목소리로 패치를 들어보세요!<br> 잠들 시간~｜10.21 TFT 패치노트 하이라이트 -
+							전략적 팀 전투
+						</p>
+						<a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img src="img/youtube.png" class="youtubelogo"></a>League
+						of Legends - Korea
+						<button type="button" class="btn btn-dark" style="font-size: 14px;">자세히 보기</button>
+					</div>
+					<br>
 				</div>
 				<div class="youtube">
 					<iframe width="500" height="325"
 						src="https://www.youtube.com/embed/OS7imLFzn0Y" frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen></iframe>
-					<p>사미라 챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드</p>
+						<div class="youtubenote">
+						<p class="note">신규 챔피언 </p>
+						<p class="note1">사미라: 사막의 장미</p>
+						<p class="youtubetag">
+							챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드
+						</p>
+						
+					</div>
+
 				</div>
 
 				<p class="mb-0"></p>
@@ -145,13 +160,13 @@
 	<!-- 푸터 -->
 	<footer>
 		<div class="container">
-
-			<p class = "footer1">© 2012-2020 OP.GG. OP.GG isn’t endorsed by Riot Games and
-				doesn’t reflect the views or opinions of Riot Games or anyone
-				officially involved in producing or managing League of Legends.
-				League of Legends and Riot Games are trademarks or registered
-				trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
-			</p>
+			<hr>
+			<p class="footer1">Copyright © OP.IT 2012-2020 OP.GG. OP.GG isn’t endorsed by
+				Riot Games and doesn’t reflect the views or opinions of Riot Games
+				or anyone officially involved in producing or managing League of
+				Legends. League of Legends and Riot Games are trademarks or
+				registered trademarks of Riot Games, Inc. League of Legends © Riot
+				Games, Inc.</p>
 		</div>
 	</footer>
 

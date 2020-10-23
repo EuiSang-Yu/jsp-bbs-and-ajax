@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 /*반응형 미완성-----------------------------------*/
-
 * {
 	margin: 0;
 	padding: 0;
@@ -39,12 +38,12 @@
 	clear: both;
 }
 
-/*메뉴바 --> op.it 부분*/
-.navbar-brand {
-	width: 100px;
+/*메뉴바 --> 아이콘*/
+.menuicon {
+	width: 50%;
 }
 /*메뉴바 --> 상단메뉴 부분*/
-.nav-link {
+.nav-item {
 	font-size: 18px;
 }
 
@@ -163,4 +162,10 @@
 		font-size: 30px;
 		line-height: 70px;
 	}
+}
+
+/*푸터*/
+.footer1 {
+	font-size: 11px;
+	font-family: 'Noto Sans KR', sans-serif;
 }

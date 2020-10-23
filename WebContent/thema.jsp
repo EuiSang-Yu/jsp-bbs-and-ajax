@@ -47,7 +47,7 @@
 			<div id="headerMain">
 				<p class="logo">OP.IT</p>
 
-				<img src="img/logoimg.png" class="logoimg">
+				
 
 				<button type="button" class="btn btn-outline-dark">회원가입</button>
 				<button type="button" class="btn btn-outline-dark">로그인</button>
@@ -58,9 +58,10 @@
 
 	<!-- 메뉴바 -->
 
-	<section>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-			<a class="navbar-brand" style="font-size: 30px;">OP.IT</a>
+<section>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+			<a class="navbar-brand"><img src="img/menuicon.png"
+				class="menuicon"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -78,7 +79,7 @@
 						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">League
+						<li class="nav-item"><a class="nav-link" href="https://kr.leagueoflegends.com/ko-kr/">League
 								of legend 홈페이지</a></li>
 					</div>
 				</ul>
@@ -91,7 +92,16 @@
 		</nav>
 	</section>
 
-
-
+	<footer>
+		<div class="container">
+			<hr>
+			<p class="footer1">Copyright © OP.IT 2012-2020 OP.GG. OP.GG isn’t endorsed by
+				Riot Games and doesn’t reflect the views or opinions of Riot Games
+				or anyone officially involved in producing or managing League of
+				Legends. League of Legends and Riot Games are trademarks or
+				registered trademarks of Riot Games, Inc. League of Legends © Riot
+				Games, Inc.</p>
+		</div>
+	</footer>
 </body>
 </html>

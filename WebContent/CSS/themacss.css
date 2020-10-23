@@ -35,26 +35,28 @@
 /*메뉴바*/
 .navbar {
 	clear: both;
-
 }
 
-/*메뉴바 --> op.it 부분*/
-.navbar-brand {
-	width: 100px;
+/*메뉴바 --> 아이콘*/
+.menuicon {
+	width: 50%;
 }
 /*메뉴바 --> 상단메뉴 부분*/
-.nav-link {
+.nav-item {
 	font-size: 18px;
 }
 
 /*메뉴바 --> 상단메뉴 각각 div*/
 .menu {
-	margin-left: 60px;
-	
+	margin-left: 90px;
 }
 /*메뉴바 상단메뉴 전체 div*/
-#collapsibleNavbar{
-	margin-left: 30px;
+#collapsibleNavbar {
+	margin-left: 120px;
 }
 
-
+/*푸터*/
+.footer1 {
+	font-size: 11px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
