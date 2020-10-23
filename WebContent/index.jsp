@@ -36,7 +36,11 @@
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 <meta charset="UTF-8">
+<<<<<<< HEAD
+<title>커밋에러테스트2</title>
+=======
 <title>OP.IT</title>
+>>>>>>> refs/remotes/origin/master
 </head>
 <body>
 
