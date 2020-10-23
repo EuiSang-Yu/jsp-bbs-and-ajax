@@ -17,6 +17,9 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<!-- 제이쿼리 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -74,7 +77,7 @@
 		                     <tr>
 		                        <td colspan="2">
 		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
-		                        <input type="submit" class="btn btn-secondary" value="탈퇴하기"></td>
+		                        <input type="button" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>
