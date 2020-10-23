@@ -9,8 +9,9 @@
 <link rel="stylesheet" href="CSS/historyMain.css"/>
 </head>
 <body>
-<div class="container">
 	<jsp:include page="thema.jsp"/>
+	
+	<div class="container">
 	
 	<!-- 소환사 기본정보 -->
 	<div id="summoner">
