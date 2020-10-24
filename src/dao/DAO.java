@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import common.GoldSpoonQuery;
 import dto.UserDTO;
+import vo.ConnectVO;
 
 
 public class DAO {
@@ -20,8 +20,8 @@ public class DAO {
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public DAO() {
 		try {
-			Class.forName(GoldSpoonQuery.DRIVER);
-			conn = DriverManager.getConnection(GoldSpoonQuery.URL, GoldSpoonQuery.USERID, GoldSpoonQuery.USERPW);
+			Class.forName(ConnectVO.DRIVER);
+			conn = DriverManager.getConnection(ConnectVO.URL, ConnectVO.USERID, ConnectVO.USERPW);
 			System.out.println("DAO생성, 데이터베이스 연결!!");
 		} catch(Exception e) {
 			e.printStackTrace();
