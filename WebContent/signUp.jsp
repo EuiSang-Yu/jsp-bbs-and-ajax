@@ -14,7 +14,7 @@
 	rel="stylesheet">
 
 
-<!--구글폰트ㅇ-->
+<!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
@@ -22,10 +22,11 @@
 
 <!-- css파일 불러오기-->
 
-<link rel="stylesheet" href="CSS/signupcss.css">
+<link rel="stylesheet" href="CSS/signup.css">
 
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -43,55 +44,8 @@
 <title>OP.IT</title>
 </head>
 <body>
-	<!-- 로고 , 로그인, 회원가입 버튼 -->
-	<header>
-		<div class="container">
-			<div id="headerMain">
-				<p class="logo">OP.IT</p>
 
-
-				<button type="button" class="btn btn-outline-dark">회원가입</button>
-				<button type="button" class="btn btn-outline-dark">로그인</button>
-
-			</div>
-		</div>
-	</header>
-
-	<!-- 메뉴바 -->
-
-	<section>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
-			<a class="navbar-brand"><img src="img/menuicon.png"
-				class="menuicon"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">챔피언 공략</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">My page</a></li>
-					</div>
-					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="#">League
-								of legend 홈페이지</a></li>
-					</div>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2" type="search"
-						placeholder="소환사를 검색해보세요." aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
-				</form>
-			</div>
-		</nav>
-	</section>
+<jsp:include page="thema.jsp"/>
 
 	<!-- 회원가입 폼 -->
 	<section class="signup">

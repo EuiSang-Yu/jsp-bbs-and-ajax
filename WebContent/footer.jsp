@@ -9,13 +9,13 @@
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<hr>
-
 	<div class="container">
+	<hr>
 		<p class="footer1">Copyright © OP.IT 2012-2020 OP.GG. OP.GG isn’t
 			endorsed by Riot Games and doesn’t reflect the views or opinions of
 			Riot Games or anyone officially involved in producing or managing
