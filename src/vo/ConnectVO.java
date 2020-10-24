@@ -6,4 +6,3 @@ public class ConnectVO {
 	public static final String USERID = "goldspoon";
 	public static final String USERPW = "1234";
 }
-s
