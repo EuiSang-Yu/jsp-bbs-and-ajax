@@ -46,7 +46,7 @@
 
 </head>
 <body>
-
+<jsp:include page="thema.jsp"/>
 <div class="container">
 
 	<div id="champImg">챔피언 배너 사진</div>

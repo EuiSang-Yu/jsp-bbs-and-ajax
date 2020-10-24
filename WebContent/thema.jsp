@@ -36,15 +36,16 @@
 </head>
 <body>
 
-<!-- 로고 , 로그인, 회원가입 버튼 -->
+
+	<!-- 로고 , 로그인, 회원가입 버튼 -->
 	<header>
 		<div class="container">
 			<div id="headerMain">
-				<a href = "index.jsp"><p class="logo">OP.IT</p></a>
-
-
-				<button id = "signupBT" type="button" class="btn btn-outline-dark" onclick="location.href='signUp.jsp'">회원가입</button>
-				<button id = "loginBT"type="button" class="btn btn-outline-dark" onclick="location.href='login.jsp'">로그인</button>
+				<a href="index.jsp"><p class="logo">OP.IT</p></a>
+				<button id="signupBT" type="button" class="btn btn-outline-dark"
+					onclick="location.href='signUp.jsp'">회원가입</button>
+				<button id="loginBT" type="button" class="btn btn-outline-dark"
+					onclick="location.href='login.jsp'">로그인</button>
 
 			</div>
 		</div>
@@ -67,14 +68,17 @@
 				<ul class="navbar-nav mr-auto">
 
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언 공략</a></li>
+						<li class="nav-item"><a class="nav-link" href="champList.jsp">챔피언
+								공략</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="myPage.jsp">My page</a></li>
+						<li class="nav-item"><a class="nav-link" href="myPage.jsp">My
+								page</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="https://na.leagueoflegends.com/ko-kr/">League
-								of legend 홈페이지</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="https://na.leagueoflegends.com/ko-kr/">League of legend
+								홈페이지</a></li>
 					</div>
 				</ul>
 				<form class="form-inline my-2 my-lg-0">
