@@ -9,14 +9,14 @@ import java.sql.Statement;
 
 import vo.ConnectVO;
 
-public class UserDAO {
+public class DAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	Statement stmt;
 	ResultSet rs;
 
 	// DAO 객체가 생성될때 Connection도 생성된다.
-	public UserDAO() {
+	public DAO() {
 		try {
 			Class.forName(ConnectVO.DRIVER);
 			conn = DriverManager.getConnection(ConnectVO.URL, ConnectVO.USERID, ConnectVO.USERPW);
