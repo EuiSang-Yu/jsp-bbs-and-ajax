@@ -55,7 +55,7 @@
 	<!-- 메뉴바 -->
 
 	<section>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 			<a class="navbar-brand"><img src="img/menuicon.png"
 				class="menuicon"></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
