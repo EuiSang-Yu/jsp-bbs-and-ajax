@@ -21,9 +21,9 @@ public class DAO {
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
-			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) "
+			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate, chmapion_no) "
 			+ "VALUES"
-			+ "(SEQ_TB_BOARD_board_no.nextval, ?, ?, ?, SYSDATE)";
+			+ "(SEQ_TB_BOARD_board_no.nextval, ?, ?, ?, SYSDATE,1)";
 
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public DAO() {

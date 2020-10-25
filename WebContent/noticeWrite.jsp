@@ -31,40 +31,14 @@
 </head>
 <body>
 
-<script>
-// form validation 
-// '작성자(name)' 와 '제목(subject)' 는 필수
-function chkSubmit(){
-	frm = document.forms['frm'];
-	
-	var title = frm["title"].value.trim();
-	var content = frm["content"].value.trim();
-	
-	if(title == ""){
-		alert("작성자 란은 반드시 입력해야 합니다.");
-		frm["title"].focus();
-		return false;
-	}
-	
-	if(content == ""){
-		alert("제목은 반드시 작성해야 합니다");
-		frm["content"].focus();
-		return false;
-	}
-	
-	return true;	
-		
-}
 
-
-</script>
 
 <jsp:include page="thema.jsp"/>
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-        <form action="noticeListCP.jsp" method="post" onsubmit="return chkSubmit()">
+        <form action="noticeListCP.jsp" method="post" name="frm">
           <table class="table table-striped">
             <tr>
                 <td>제목</td>
@@ -79,7 +53,7 @@ function chkSubmit(){
                  
                 <td colspan="2"  class="text-center">
                     <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='noticeListCP.jsp'">전체 게시글보기</button>
-                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
+                    <button type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
                 </td>
             </tr>
              
