@@ -17,6 +17,7 @@
 <!-- css파일 불러오기-->
 <link rel="stylesheet" href="CSS/index.css">
 
+
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
@@ -30,7 +31,12 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-	
+<!--아이콘-->
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
 <script src="JS/index.js"></script>
 
 <!-- 파비콘 설정-->
@@ -43,9 +49,6 @@
 <body>
 
 	<jsp:include page="thema.jsp" />
-
-
-
 
 
 	<!-- 백그라운드 영상  -->
@@ -62,8 +65,11 @@
 				<form id="searchFrm" action="historyMain.jsp" method="GET">
 					<div class="search">
 
-						<input class="search_input" type="text" name="searchId"	
-							placeholder="소환사명을 입력해주세요 .."> <button type="submit" class="search_icon"><i class="fa fa-search"></i></button>
+						<input class="search_input" type="text" name="searchId"
+							placeholder="소환사명을 입력해주세요 ..">
+						<button type="submit" class="search_icon">
+							<i class="fa fa-search"></i>
+						</button>
 					</div>
 				</form>
 			</div>
@@ -87,11 +93,12 @@
 							이익! 릴리아의 목소리로 패치를 들어보세요!<br> 잠들 시간~｜10.21 TFT 패치노트 하이라이트 -
 							전략적 팀 전투
 						</p>
-						<a href="https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w"><img
-							src="img/youtube.png" class="youtubelogo"></a>League of Legends
-						- Korea
+						<img src="img/youtube.png" class="youtubelogo">League of
+						Legends - Korea
 						<button type="button" class="btn btn-dark"
-							style="font-size: 14px;">자세히 보기</button>
+							style="font-size: 14px;"
+							onclick="location.href='https://www.youtube.com/channel/UCooLkG0FfrkPBQsSuC95L6w'">자세히
+							보기</button>
 					</div>
 					<br>
 				</div>
@@ -113,7 +120,7 @@
 
 	</section>
 
-<jsp:include page="footer.jsp" />
+	<jsp:include page="footer.jsp" />
 
 
 </body>

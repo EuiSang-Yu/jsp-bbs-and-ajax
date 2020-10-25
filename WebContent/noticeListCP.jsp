@@ -38,7 +38,7 @@
 	float: left;
 }
 
-.container{
+#champInfoDiv{
 	margin-bottom: 100px;
 }
 
@@ -47,7 +47,7 @@
 </head>
 <body>
 <jsp:include page="thema.jsp"/>
-<div class="container">
+<div class="container" id="champInfoDiv">
 
 	<div id="champImg">챔피언 배너 사진</div>
 	<div id="champInfo">챔피언 정보</div>

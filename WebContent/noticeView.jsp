@@ -35,7 +35,7 @@ thead tr th {
 		<tr class="row">
 			<th class="col-sm-1">챔피언공략</th>
 			<th class="col-sm-1">2020-10-24</th>
-			<th class="col-sm-7">아칼리로개패기</th>
+			<th class="col-sm-7">팽이가렌</th>
 			<th class="col-sm-1">조회 2</th>
 			<th class="col-sm-1">댓글 1</th>
 			<th class="col-sm-1">조회 1</th>
