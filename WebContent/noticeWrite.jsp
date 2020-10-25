@@ -30,16 +30,45 @@
 
 </head>
 <body>
+
+<script>
+// form validation 
+// '작성자(name)' 와 '제목(subject)' 는 필수
+function chkSubmit(){
+	frm = document.forms['frm'];
+	
+	var title = frm["title"].value.trim();
+	var content = frm["content"].value.trim();
+	
+	if(title == ""){
+		alert("작성자 란은 반드시 입력해야 합니다.");
+		frm["title"].focus();
+		return false;
+	}
+	
+	if(content == ""){
+		alert("제목은 반드시 작성해야 합니다");
+		frm["content"].focus();
+		return false;
+	}
+	
+	return true;	
+		
+}
+
+
+</script>
+
 <jsp:include page="thema.jsp"/>
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-        <form action="noticeListCP.jsp" method="post" />
+        <form action="noticeListCP.jsp" method="post" onsubmit="return chkSubmit()">
           <table class="table table-striped">
             <tr>
                 <td>제목</td>
-                <td><input type="text"  class="form-control" name="subject"></td>
+                <td><input type="text"  class="form-control" name="title"></td>
             </tr>
              
             <tr>
