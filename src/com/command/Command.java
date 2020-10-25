@@ -1,4 +1,4 @@
-package com.command.write;
+package com.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
