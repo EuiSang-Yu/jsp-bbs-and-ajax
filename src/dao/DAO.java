@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import vo.ConnectVO;
 
 public class DAO {
 	Connection conn;
@@ -14,10 +15,6 @@ public class DAO {
 	Statement stmt;
 	ResultSet rs;
 	
-	public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-	public static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-	public static final String USERID = "goldspoon";
-	public static final String USERPW = "1234";
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
@@ -28,8 +25,8 @@ public class DAO {
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public DAO() {
 		try {
-			Class.forName(DRIVER);
-			conn = DriverManager.getConnection(URL, USERID, USERPW);
+			Class.forName(ConnectVO.DRIVER);
+			conn = DriverManager.getConnection(ConnectVO.URL, ConnectVO.USERID, ConnectVO.USERPW);
 			System.out.println("DAO생성, 데이터베이스 연결!!");
 		} catch (Exception e) {
 			e.printStackTrace();
