@@ -14,19 +14,17 @@ public class NoticeWriteCommand implements Command {
 		DAO dao = new DAO();
 		
 		//입력한 값 (parameter) 받아오기
-		String title = request.getParameter("title");
-		String content = request.getParameter("content");
-		int viewCnt = 123;
+		String board_title = request.getParameter("board_title");
+		String board_content = request.getParameter("board_content");
+		int board_viewCnt = 123;
 		
-		//유효성 체크
-		if(title != null && content != null &&
-				title.trim().length() > 0 && content.trim().length() > 0) {
+
 			try {
-				cnt = dao.insert(title, content, viewCnt);
+				cnt = dao.insert(board_title, board_content, board_viewCnt);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}//end if
+		
 		
 		
 		request.setAttribute("result", cnt);

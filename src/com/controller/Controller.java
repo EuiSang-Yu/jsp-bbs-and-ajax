@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.command.Command;
 import com.command.NoticeWriteCommand;
 
-
 @WebServlet("*.do")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -51,13 +50,17 @@ public class Controller extends HttpServlet {
 		
 		// 컨트롤러는 커맨드에 따라 로직 수행
 		// 결과를 보낼 view 를 결정
-		
 		switch(com) {
+		
 		case "/noticeWrite.do":
-			command = new NoticeWriteCommand();
-			command.execute(request, response);
 			viewPage = "noticeWrite.jsp";
 			break;
+		
+		case "/noticeWriteOk.do":
+			command = new NoticeWriteCommand();
+			command.execute(request, response);
+			viewPage = "noticeWriteOk.jsp";
+			break;	
 		}
 		
 		if(viewPage != null) {

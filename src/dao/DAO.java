@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
+import dto.BoardDTO;
 import vo.ConnectVO;
 
 public class DAO {
@@ -18,9 +20,9 @@ public class DAO {
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
-			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate, chmapion_no) "
+			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) "
 			+ "VALUES"
-			+ "(SEQ_TB_BOARD_board_no.nextval, ?, ?, ?, SYSDATE,1)";
+			+ "(test_write_seq.nextval, ?, ?, ?, SYSDATE)";
 
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public DAO() {
@@ -93,16 +95,28 @@ public class DAO {
 		int cnt = 0;
 
 		try {
+			System.out.println("insert() 호출");
 			pstmt = conn.prepareStatement(SQL_WRITE_INSERT);
 			pstmt.setString(1, board_title);
 			pstmt.setString(2, board_content);
 			pstmt.setInt(3, board_viewCnt);
 			cnt = pstmt.executeUpdate();
+			System.out.println(board_title+" "+board_content+" "+board_viewCnt);
 		} finally {
 			close();
 		}
 		return cnt;
 	} // end insert();
 	
+	
+	// 새글작성 <-- DTO
+	public int insert(BoardDTO boardDto) throws SQLException{
+		String board_title = boardDto.getBoard_title();
+		String board_content = boardDto.getBoard_content();
+		int board_viewCnt = boardDto.getBoard_viewCnt();
+		
+		int cnt = this.insert(board_title, board_content, board_viewCnt);
+		return cnt;	
+	}
 	
 }
