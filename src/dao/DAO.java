@@ -7,19 +7,29 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import vo.ConnectVO;
 
 public class DAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	Statement stmt;
 	ResultSet rs;
+	
+	public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+	public static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+	public static final String USERID = "goldspoon";
+	public static final String USERPW = "1234";
+	
+	public static final String SQL_WRITE_INSERT = 
+			"INSERT INTO TB_BOARD"
+			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) "
+			+ "VALUES"
+			+ "(SEQ_TB_BOARD_board_no.nextval, ?, ?, ?, SYSDATE)";
 
 	// DAO 객체가 생성될때 Connection도 생성된다.
 	public DAO() {
 		try {
-			Class.forName(ConnectVO.DRIVER);
-			conn = DriverManager.getConnection(ConnectVO.URL, ConnectVO.USERID, ConnectVO.USERPW);
+			Class.forName(DRIVER);
+			conn = DriverManager.getConnection(URL, USERID, USERPW);
 			System.out.println("DAO생성, 데이터베이스 연결!!");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -81,7 +91,21 @@ public class DAO {
 	*/
 
 	
-	
+	// 새글 작성  <-- 제목, 내용, 작성자
+	public int insert(String board_title, String board_content, int board_viewCnt) throws SQLException {
+		int cnt = 0;
+
+		try {
+			pstmt = conn.prepareStatement(SQL_WRITE_INSERT);
+			pstmt.setString(1, board_title);
+			pstmt.setString(2, board_content);
+			pstmt.setInt(3, board_viewCnt);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		return cnt;
+	} // end insert();
 	
 	
 }
