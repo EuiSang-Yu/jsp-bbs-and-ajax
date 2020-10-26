@@ -13,7 +13,8 @@ public class NoticeSelectCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// 지연
+		
+		// 의상
 
 	}
 
