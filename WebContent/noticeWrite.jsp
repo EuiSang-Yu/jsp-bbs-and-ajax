@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="dao.*" %>
+<%@ page import="dto.*" %> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -64,7 +66,7 @@ function chkSubmit(){
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-        <form action="noticeListCP.jsp" method="post" onsubmit="return chkSubmit()">
+        <form action="noticeListCP.jsp" method="GET" onsubmit="return chkSubmit()">
           <table class="table table-striped">
             <tr>
                 <td>제목</td>

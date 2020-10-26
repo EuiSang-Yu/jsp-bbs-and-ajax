@@ -1,6 +1,6 @@
 package dto;
 
-public class UserDTO {
+public class MemberDTO {
 	
 	int member_no;	//회원 고유 번호
 	String member_id;	//회원 아이디
@@ -10,12 +10,12 @@ public class UserDTO {
 	String member_phone; 	//회원 전화번호
 	String member_photo;	//회원 프로필이미지
 	
-	public UserDTO() {
+	public MemberDTO() {
 		super();
 	}
 	
 	// 매개변수 받는 생성자
-	public UserDTO(int uid, String id, String pw, String name, String email, String phone, String photo) {
+	public MemberDTO(int uid, String id, String pw, String name, String email, String phone, String photo) {
 		super();
 		this.member_no = uid;
 		this.member_id = id;
