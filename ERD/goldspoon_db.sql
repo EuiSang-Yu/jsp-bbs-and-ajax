@@ -20,6 +20,7 @@ DROP TABLE TB_MEMBER CASCADE CONSTRAINTS;
 DROP TABLE TB_BOARD CASCADE CONSTRAINTS;
 DROP TABLE TB_CHAMPION CASCADE CONSTRAINTS;
 DROP TABLE TB_RECORD CASCADE CONSTRAINTS;
+DROP TABLE USER_TEST CASCADE CONSTRAINTS;
 
 
 
@@ -149,6 +150,15 @@ CREATE TABLE TB_RECORD
 );
 
 
+CREATE TABLE USER_TEST
+(
+	test_uid number NOT NULL,
+	test_title varchar2(20),
+	test_content varchar2(100),
+	PRIMARY KEY (test_uid)
+);
+
+
 
 /* Create Foreign Keys */
 
@@ -181,6 +191,10 @@ ALTER TABLE TB_COMMENT
 	REFERENCES TB_MEMBER (member_no)
 ;
 
+INSERT INTO USER_TEST
+(test_uid, test_title, test_content) 
+VALUES
+(1,'asd','asdsad');
 
 
 /* Create Triggers */
@@ -303,5 +317,4 @@ COMMENT ON COLUMN TB_MEMBER.board_no IS '게시판 고유 번호';
 COMMENT ON COLUMN TB_RECORD.record_profileImg IS '이미지 경로';
 
 
-SELECT * FROM TB_BOARD ;
-
+SELECT * FROM USER_TEST ;

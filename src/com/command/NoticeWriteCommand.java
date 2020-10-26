@@ -12,15 +12,15 @@ public class NoticeWriteCommand implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
 		DAO dao = new DAO();
+
 		
 		//입력한 값 (parameter) 받아오기
-		String board_title = request.getParameter("board_title");
-		String board_content = request.getParameter("board_content");
-		int board_viewCnt = 123;
+		String test_title = request.getParameter("test_title");
+		String test_content = request.getParameter("test_content");
 		
-
+			
 			try {
-				cnt = dao.insert(board_title, board_content, board_viewCnt);
+				cnt = dao.insert(test_title, test_content);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

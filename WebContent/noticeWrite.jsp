@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="dao.*" %>
+<%@ page import="dto.*" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <!-- 위 3개의 메타 태그는 *반드시* head 태그의 처음에 와야합니다; 어떤 다른 콘텐츠들은 반드시 이 태그들 *다음에* 와야 합니다 -->
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OP.IT</title>
 
@@ -38,12 +38,11 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-        <form action="noticeListCP.jsp" method="GET" name="frm">
+        <form action="noticeWriteOk.do" method="post" name="frm">
         
-        제목<input type="text" name="board_title">
-     글내용<input type="text" name="board_content">
-     <input type="submit" value="글쓰기" onclick="location.href='noticeWriteOk.do'">
-        
+        제목<input type="text" name="test_title">
+     글내용<input type="text" name="test_content">
+     <input type="submit" value="글쓰기">
 
         </form>
     </div>
@@ -52,12 +51,7 @@
  
 <script>
 //CKEDITOR 적용 
-CKEDITOR.replace('content', {
-         
-    width:'100%',
-    height:'600'
-         
-});
+
  
 </script>
 </body>

@@ -2,100 +2,58 @@ package dto;
 
 public class BoardDTO {
 
-	private int board_no;    // wr_uid
-	private String board_title;  // wr_subject
-	private String board_content;  // wr_content
-	private int board_viewCnt;   // wr_viewcnt
-	private String board_regDate;   // wr_regdate
-	private String champion_no;   // champion_no
-	
+	private int test_uid;    // wr_uid
+	private String test_title;  // wr_subject
+	private String test_content;  // wr_content
+
 	
 	public BoardDTO() {
 		super();
 	}
 	
 	
-	public BoardDTO(int board_no, String board_title, String board_content, int board_viewCnt, String board_regDate,
-			String champion_no) {
+	public BoardDTO(int test_uid, String test_title, String test_content) {
 		super();
-		this.board_no = board_no;
-		this.board_title = board_title;
-		this.board_content = board_content;
-		this.board_viewCnt = board_viewCnt;
-		this.board_regDate = board_regDate;
-		this.champion_no = champion_no;
+		this.test_uid = test_uid;
+		this.test_title = test_title;
+		this.test_content = test_content;
+	}
+
+
+	public int getTest_uid() {
+		return test_uid;
+	}
+
+
+	public void setTest_uid(int test_uid) {
+		this.test_uid = test_uid;
+	}
+
+
+	public String getTest_title() {
+		return test_title;
+	}
+
+
+	public void setTest_title(String test_title) {
+		this.test_title = test_title;
+	}
+
+
+	public String getTest_content() {
+		return test_content;
+	}
+
+
+	public void setTest_content(String test_content) {
+		this.test_content = test_content;
 	}
 
 
 	
 	
 	
-	public int getBoard_no() {
-		return board_no;
-	}
 
-
-	public void setBoard_no(int board_no) {
-		this.board_no = board_no;
-	}
-
-
-	public String getBoard_title() {
-		return board_title;
-	}
-
-
-	public void setBoard_title(String board_title) {
-		this.board_title = board_title;
-	}
-
-
-	public String getBoard_content() {
-		return board_content;
-	}
-
-
-	public void setBoard_content(String board_content) {
-		this.board_content = board_content;
-	}
-
-
-	public int getBoard_viewCnt() {
-		return board_viewCnt;
-	}
-
-
-	public void setBoard_viewCnt(int board_viewCnt) {
-		this.board_viewCnt = board_viewCnt;
-	}
-
-
-	public String getBoard_regDate() {
-		return board_regDate;
-	}
-
-
-	public void setBoard_regDate(String board_regDate) {
-		this.board_regDate = board_regDate;
-	}
-
-
-	public String getChampion_no() {
-		return champion_no;
-	}
-
-
-	public void setChampion_no(String champion_no) {
-		this.champion_no = champion_no;
-	}
-
-
-	@Override
-	public String toString() {
-		return "BoardDTO [board_no=" + board_no + ", board_title=" + board_title + ", board_content=" + board_content
-				+ ", board_viewCnt=" + board_viewCnt + ", board_regDate=" + board_regDate + ", champion_no="
-				+ champion_no + "]";
-	}
 	
 	
 	
