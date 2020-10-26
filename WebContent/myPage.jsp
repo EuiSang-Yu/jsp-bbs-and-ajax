@@ -88,6 +88,8 @@
    		 </div>
 	</div>
 </section>
+
+<jsp:include page="footer.jsp"></jsp:include>
 <script type="text/javascript" src="JS/myPage.js"></script>
    
 </body>

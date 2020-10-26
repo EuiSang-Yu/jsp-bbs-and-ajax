@@ -10,7 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
+import com.command.NoticeDeleteCommand;
+import com.command.NoticeListCommand;
+import com.command.NoticeSelectCommand;
+import com.command.NoticeUpdateCommand;
+import com.command.NoticeViewCommand;
 import com.command.NoticeWriteCommand;
+
+
 
 @WebServlet("*.do")
 public class Controller extends HttpServlet {
@@ -48,22 +55,51 @@ public class Controller extends HttpServlet {
 		Command command = null;  // 어떠한 로직을 수행할지 결정
 		String viewPage =  null;  //  어떠한 페이지(뷰)를 보여줄지 결정
 		
+		
 		// 컨트롤러는 커맨드에 따라 로직 수행
 		// 결과를 보낼 view 를 결정
 		switch(com) {
+		
+		case "/noticeListCP.do":
+			command = new NoticeListCommand();
+			command.execute(request, response);
+			viewPage = "noticeListCP.jsp";
+			break;
 		
 		case "/noticeWrite.do":
 			viewPage = "noticeWrite.jsp";
 			break;
 		
 		case "/noticeWriteOk.do":
-			System.out.println("notcieWriteOk 진입 !");
 			command = new NoticeWriteCommand();
-			System.out.println("NoticeWriteCommand() 실행 !");
 			command.execute(request, response);
 			viewPage = "noticeWriteOk.jsp";
 			break;	
+			
+		case "/noticeView.do":
+			command = new NoticeViewCommand();
+			command.execute(request, response);
+			viewPage = "noticeView.jsp";
+			break;
+		case "/noticeUpdate.do":
+			command = new NoticeSelectCommand();
+			command.execute(request, response);
+			viewPage = "noticeUpdate.jsp";
+			break;
+		case "/noticeUpdateOk.do":
+			command = new NoticeUpdateCommand();
+			command.execute(request, response);
+			viewPage = "noticeUpdateOk.jsp";
+			break;
+			
+		case "/deleteOk.do":
+			command = new NoticeDeleteCommand();
+			command.execute(request, response);
+			viewPage = "noticeDeleteOk.jsp";
+			break;	
+			
 		}
+		
 		
 		if(viewPage != null) {
 			RequestDispatcher dispatcher = 
