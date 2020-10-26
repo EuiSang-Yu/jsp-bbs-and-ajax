@@ -18,24 +18,16 @@ public class NoticeWriteCommand implements Command {
 		String content = request.getParameter("board_content");
 		int viewCnt = 123;
 		
-//		//유효성 체크
-//		if(title != null && content != null &&
-//				title.trim().length() > 0 && content.trim().length() > 0) {
-//			try {
-//				cnt = dao.insert(title, content, viewCnt);
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
-//		}//end if
 		
-		try {
-			System.out.println("들어오나?");
-			cnt = dao.insert(title, content, viewCnt);
-			System.out.println("insert완료");
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		
+		//유효성 체크
+		if(title != null && content != null &&
+				title.trim().length() > 0 && content.trim().length() > 0) {
+			try {
+				cnt = dao.insert(title, content, viewCnt);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}//end if
 		
 		
 		request.setAttribute("result", cnt);

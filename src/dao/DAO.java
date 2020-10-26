@@ -45,15 +45,26 @@ public class DAO {
 	}
 	
 	// Connection Pool 용 리소스 가져오기
-	public static Connection getConnection() throws NamingException, SQLException {
+	public static Connection getConnection() throws Exception {
 		
+		DataSource ds = null;
+		
+		try {
 		Context context = new InitialContext();
 
 		// ("java:comp/env"): JNDI 서비스에 접근하기 위한 기본 이름(이 자원을 찾겠다.--> web.xml의 <res-ref-name>
-	    DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
+	    ds = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
 
-	    System.out.println("커넥션 생성 ok");
+	    System.out.println(ds);
+	    return ds.getConnection();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();			
+		}
+
 		return ds.getConnection();
+		
 	} 
 	
 
@@ -80,6 +91,7 @@ public class DAO {
 		int cnt = 0;
 
 		try {
+			System.out.println("connection ready");
 			conn = getConnection();
 			System.out.println("insert(a,b,c) 호출ok");
 			
@@ -89,11 +101,15 @@ public class DAO {
 			pstmt.setInt(3, board_viewCnt);
 			cnt = pstmt.executeUpdate();
 		} 
-		catch(Exception e) {}
+		catch(Exception e) {
+			System.out.println("insert(a,b,c) error");
+			e.printStackTrace();
+			
+		}
 		finally { close(); }
 		
-		
 		return cnt;
+		
 	} // end insert();
 
 	// 새글작성 <-- DTO

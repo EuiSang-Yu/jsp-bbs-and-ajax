@@ -10,9 +10,11 @@ public class VO {
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
-			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate, champion_no) " 
+			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) " 
 			+ "VALUES"
-			+ "(TB_BOARD_seq.nextval, ?, ?, ?, SYSDATE, ?)";
+			+ "(SEQ_tb_board_board_no.nextval, ?, ?, ?, SYSDATE)";
+	
+	
 	
 
 }

@@ -54,17 +54,20 @@ public class Controller extends HttpServlet {
 		
 		switch(com) {
 		case "/noticeWrite.do":
-			command = new NoticeWriteCommand();
-			command.execute(request, response);
 			viewPage = "noticeWrite.jsp";
 			break;
+		
+		case "/noticeWriteOk.do":
+			command = new NoticeWriteCommand();
+			command.execute(request, response);
+			viewPage = "noticeWriteOk.jsp";
+			break;	
 		}
 		
 		if(viewPage != null) {
 			RequestDispatcher dispatcher = 
 					request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
-			//System.out.println("--------\n dispatcher.forward ok");
 		}
 	}
 }
