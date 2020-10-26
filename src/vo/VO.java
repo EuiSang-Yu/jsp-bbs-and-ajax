@@ -8,11 +8,10 @@ public class VO {
 	public static final String USERPW = "1234";
 
 	
-	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
 			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) " 
 			+ "VALUES"
-			+ "(SEQ_TB_BOARD_board_no.nextval, ?, ?, ?, SYSDATE)";
-
+			+ "(1, ?, ?, ?, SYSDATE)";
+	
 }

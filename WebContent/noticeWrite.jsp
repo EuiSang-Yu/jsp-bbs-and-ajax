@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="dao.*" %>
-<%@ page import="dto.*" %>
+<%@ page import="dto.*" %> 
+<%@ page import="com.command.*" %> 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -38,12 +40,27 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-        <form action="noticeWriteOk.do" method="post" name="frm">
-        
-        제목<input type="text" name="test_title">
-     글내용<input type="text" name="test_content">
-     <input type="submit" value="글쓰기">
 
+        <form action="noticeWriteOk.do" method="GET">
+          <table class="table table-striped">
+            <tr>
+                <td>제목</td>
+                <td><input type="text"  class="form-control" name="title"></td>
+            </tr>
+             
+            <tr>
+                <td>글내용</td>
+                <td><textarea rows="10" cols="50" name="content" class="form-control"></textarea></td>
+            </tr>
+            <tr>
+                 
+                <td colspan="2"  class="text-center">
+                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='noticeListCP.jsp'">전체 게시글보기</button>
+                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
+                </td>
+            </tr>
+             
+          </table>
         </form>
     </div>
 </div>

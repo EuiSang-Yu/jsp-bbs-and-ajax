@@ -57,7 +57,9 @@ public class Controller extends HttpServlet {
 			break;
 		
 		case "/noticeWriteOk.do":
+			System.out.println("notcieWriteOk 진입 !");
 			command = new NoticeWriteCommand();
+			System.out.println("NoticeWriteCommand() 실행 !");
 			command.execute(request, response);
 			viewPage = "noticeWriteOk.jsp";
 			break;	
@@ -67,7 +69,6 @@ public class Controller extends HttpServlet {
 			RequestDispatcher dispatcher = 
 					request.getRequestDispatcher(viewPage);
 			dispatcher.forward(request, response);
-			
 		}
 	}
 }
