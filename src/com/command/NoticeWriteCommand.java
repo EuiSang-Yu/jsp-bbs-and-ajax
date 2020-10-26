@@ -16,7 +16,7 @@ public class NoticeWriteCommand implements Command {
 		//입력한 값 (parameter) 받아오기
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		int viewCnt = 123;
+		int viewCnt = 0;
 		
 		System.out.println("board_title : "+title +" , board_content : " + content);
 		

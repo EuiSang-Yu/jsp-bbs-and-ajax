@@ -39,6 +39,12 @@ CREATE SEQUENCE SEQ_tb_comment_comment_no INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_tb_file_file_no INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_tb_member_member_no INCREMENT BY 1 START WITH 1;
 
+/* Sequences nocache */
+ALTER SEQUENCE SEQ_tb_board_board_no nocache;
+ALTER SEQUENCE SEQ_tb_champion_champion_no nocache;
+ALTER SEQUENCE SEQ_tb_comment_comment_no nocache;
+ALTER SEQUENCE SEQ_tb_file_file_no nocache;
+ALTER SEQUENCE SEQ_tb_member_member_no nocache;
 
 
 /* Create Tables */
@@ -103,57 +109,10 @@ CREATE TABLE tb_record
 
 
 
-/* Create Triggers */
-
-CREATE OR REPLACE TRIGGER TRI_tb_board_board_no BEFORE INSERT ON tb_board
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_tb_board_board_no.nextval
-	INTO :new.board_no
-	FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_champion_champion_no BEFORE INSERT ON tb_champion
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_tb_champion_champion_no.nextval
-	INTO :new.champion_no
-	FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_comment_comment_no BEFORE INSERT ON tb_comment
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_tb_comment_comment_no.nextval
-	INTO :new.comment_no
-	FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_file_file_no BEFORE INSERT ON tb_file
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_tb_file_file_no.nextval
-	INTO :new.file_no
-	FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_member_member_no BEFORE INSERT ON tb_member
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_tb_member_member_no.nextval
-	INTO :new.member_no
-	FROM dual;
-END;
-
-/
-
 
 SELECT * FROM TB_BOARD ;
+
+DELETE FROM tb_board WHERE board_no = 41;
+
+SELECT * FROM user_sequences;
+
