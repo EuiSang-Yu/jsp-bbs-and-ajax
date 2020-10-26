@@ -28,6 +28,7 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="footer.jsp"></jsp:include>
 <script type="text/javascript" src="JS/withdrawal.js"></script>
 </body>
 </html>
