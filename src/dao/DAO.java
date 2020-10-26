@@ -2,7 +2,6 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +17,6 @@ import javax.sql.DataSource;
 
 import dto.WriteDTO;
 
-import dto.MemberDTO;
 import vo.VO;
 
 public class DAO {
@@ -78,7 +76,7 @@ public class DAO {
 			pstmt.setString(1, board_title);
 			pstmt.setString(2, board_content);
 			pstmt.setInt(3, board_viewCnt);
-			
+
 			cnt = pstmt.executeUpdate();// 여기서에러
 		} catch (Exception e) {
 			System.out.println("pstmt.set~~ error");
@@ -93,7 +91,7 @@ public class DAO {
 
 	// 새글작성 <-- DTO
 	public int insert(WriteDTO dto) throws SQLException, NamingException {
-		
+
 		int cnt = 0;
 		try {
 			String board_title = dto.getBoard_title();
@@ -106,11 +104,11 @@ public class DAO {
 			System.out.println("새글작성 DTO 에러");
 			e.printStackTrace();
 		}
-		
+
 		return cnt;
 	}
 
-	// ResultSet --> DTO 배열로 리턴
+	// Write --> ResultSet --> DTO 배열로 리턴
 	public WriteDTO[] createArray(ResultSet rs) throws SQLException {
 		WriteDTO[] arr = null; // DTO 배열로 리턴
 
@@ -143,5 +141,79 @@ public class DAO {
 
 		return arr;
 	} // end createArray()
+
+	
+	
+	// 전체 SELECT
+	public WriteDTO[] select() throws SQLException {
+		WriteDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} catch (Exception e) {
+			System.out.println("SELECT 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+	} // end select();
+	
+	
+	// 특정 uid 의 글만 SELECT
+	public WriteDTO[] selectByUid(int uid) throws SQLException {
+		WriteDTO[] arr = null;
+
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_UID);
+			pstmt.setInt(1, uid);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByUid()
+
+	
+	// 특정 uid 글 내용 읽기, 조회수 증가
+	// viewcnt 도 +1 증가해야 하고, 읽어와야 한다 --> 트랜잭션 처리
+	public WriteDTO[] readByUid(int uid) throws SQLException {
+		int cnt = 0;
+		WriteDTO[] arr = null;
+
+		try {
+			// 트랜잭션 처리
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
+			pstmt.setInt(1, uid);
+			cnt = pstmt.executeUpdate();
+
+			pstmt.close();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_UID);
+			pstmt.setInt(1, uid);
+			rs = pstmt.executeQuery();
+
+			arr = createArray(rs);
+			conn.commit();
+		} catch (SQLException e) {
+			conn.rollback(); // 예외 발생하면 rollback
+			throw e; // 예외를 다시 throw
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end readByUid()
+	
+	
+	
+	
+	
+	
 
 }
