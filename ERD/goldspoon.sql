@@ -112,7 +112,10 @@ CREATE TABLE tb_record
 
 SELECT * FROM tb_board ORDER BY board_no DESC;
 
-DELETE FROM tb_board WHERE board_no = 41;
+-- 외래키 받을 칼럼 게시판 테이블에 추가
+ALTER TABLE TB_BOARD ADD champion_no number;
 
-SELECT * FROM user_sequences;
+-- 외래키 설정
+ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
+
 

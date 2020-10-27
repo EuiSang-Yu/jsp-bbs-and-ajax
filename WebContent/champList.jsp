@@ -14,23 +14,23 @@
 <style>
 
 .championList {
-	float: left;
-	margin: 10px;
+   float: left;
+   margin: 10px;
 }
 
 .championList:hover img{
-	opacity: 0.7;
+   opacity: 0.7;
 }
 
 #champTitle{
-	text-align: center;
-	margin-top: 50px;
-	margin-bottom: 50px;
+   text-align: center;
+   margin-top: 50px;
+   margin-bottom: 50px;
 }
 
 #champSubTitle {
-	margin: 20px;
-	text-align: center;
+   margin: 20px;
+   text-align: center;
 }
 
 </style>
@@ -40,19 +40,19 @@
 <div class="container">
 <h1 id="champTitle">챔피언 공략 게시판</h1>
 <h3 id="champSubTitle">챔피언을 선택해 주세요</h3>
-<%
-	for(int i = 0; i < 145; i++){
-%>
+
+<c:forEach var="i" begin="1" end="145">
+
 <div class="championList">
-	<a href="http://localhost:8080/OP_IT/noticeListNT.jsp">
-		<img class="championListImg" src="img/championImg/RiotX_ChampionList_<%= (i+1) %>.jpg" alt="">
-	</a>
-</div>
-<%
-	}
-%>
+	<form action="noticeListNT.do?champ=${i }" method="POST">
+	   <button type="submit">
+	      <img class="championListImg" src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
+	   </button>
+   </form>
 </div>
 
+</c:forEach>
+</div>
 
 
 </body>
