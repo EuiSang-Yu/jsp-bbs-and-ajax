@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.DAO;
 import dto.BoardDTO;
 
-public class NoticeListCommand implements Command {
+public class BoardListCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {

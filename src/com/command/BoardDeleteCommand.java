@@ -7,12 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 
-
-public class NoticeUpdateCommand implements Command {
+public class BoardDeleteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		// 지연	
+		
+		// 슬아야 강사님 파일 참고해서 공부한다고 생각하고 짜봐! 복붙만 하면 머리에 안남으니까
+		
 		
 	}
 
