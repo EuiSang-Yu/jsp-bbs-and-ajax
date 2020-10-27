@@ -2,6 +2,30 @@
     pageEncoding="UTF-8"%>
 <%@ page import="dao.*" %>
 <%@ page import="dto.*" %> 
+<<<<<<< HEAD
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>게시글 수정하기</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<style>
+#writeSubmit {
+	float: right;
+}
+
+</style>
+
+</head>
+<body>
+
+=======
 <%
 	BoardDTO [] arr = (BoardDTO [])request.getAttribute("list"); 
 %>
@@ -90,5 +114,10 @@
 			</form>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </body>
 </html>

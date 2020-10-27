@@ -1,4 +1,7 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;

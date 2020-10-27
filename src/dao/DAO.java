@@ -121,6 +121,8 @@ public class DAO {
 				board_content = "";
 			// String name = rs.getString("wr_name");
 			int board_viewCnt = rs.getInt("board_viewCnt");
+			int champion_no = rs.getInt("champion_no");
+			String board_memberId = rs.getString("board_memberId");
 
 			Date d = rs.getDate("board_regDate");
 			Time t = rs.getTime("board_regDate");
@@ -130,8 +132,8 @@ public class DAO {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 
-			BoardDTO dto = new BoardDTO(board_no, board_title, board_content, board_viewCnt);
-			dto.setboard_regDate(board_regDate);
+			BoardDTO dto = new BoardDTO(board_no, board_title, board_content, board_viewCnt, champion_no, board_memberId);
+			dto.setBoard_regDate(board_regDate);
 			list.add(dto);
 		} // end while
 
