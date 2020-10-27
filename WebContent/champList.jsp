@@ -44,11 +44,20 @@
 <c:forEach var="i" begin="1" end="145">
 
 <div class="championList">
+<<<<<<< HEAD
 	<form action="noticeListNT.do?champ=${i }" method="POST">
 	   <button type="submit">
 	      <img class="championListImg" src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
 	   </button>
    </form>
+=======
+	<a href="noticeListNT.do?champ=${i }">
+		<img class="championListImg" src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
+	</a>
+</div>
+
+</c:forEach>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </div>
 
 </c:forEach>

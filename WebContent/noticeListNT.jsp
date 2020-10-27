@@ -53,11 +53,13 @@
 			<c:otherwise>
 				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 					<tr>
-						<td>${dto.board_no }</td>
-						<td>${dto.board_title }</td>
-						<td>${dto.board_content }</td>
-						<td>${dto.board_viewCnt }</td>
-						<td>${dto.board_regDate }</td>
+					
+						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
+						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
+						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
+						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
+						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
+					
 					</tr>
 				</c:forEach>
 			</c:otherwise>
@@ -69,13 +71,6 @@
 
 </body>
 
-<script>
-$(document).ready(function(){
-	$("#noticeListTable tr:nth-of-type(2)").click(function(){
-		location.href="noticeView.do";
-	});
-});
-</script>
 
 
 
