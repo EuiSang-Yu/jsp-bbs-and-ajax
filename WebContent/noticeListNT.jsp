@@ -5,7 +5,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<% String champion_no = request.getParameter("champion_no"); %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -39,6 +38,7 @@
 <body>
 <jsp:include page="noticeListCP.jsp"/>
     <div class="container">
+    	
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
                     <th>번호</th>

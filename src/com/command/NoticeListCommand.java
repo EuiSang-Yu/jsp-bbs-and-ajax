@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
-import dto.WriteDTO;
+import dto.BoardDTO;
 
 public class NoticeListCommand implements Command {
 
@@ -16,7 +16,7 @@ public class NoticeListCommand implements Command {
 		// 의상
 		
 		DAO dao = new DAO();  // DAO 객체 생성
-		WriteDTO [] arr = null;
+		BoardDTO [] arr = null;
 		
 		try {
 			arr = dao.select();  // 트랜잭션 수행

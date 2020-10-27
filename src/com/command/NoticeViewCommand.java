@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
-import dto.WriteDTO;
+import dto.BoardDTO;
 
 
 public class NoticeViewCommand implements Command {
@@ -16,9 +16,9 @@ public class NoticeViewCommand implements Command {
 		
 		
 		DAO dao = new DAO();
-		WriteDTO [] arr = null;
+		BoardDTO [] arr = null;
 		
-		int uid = Integer.parseInt(request.getParameter("champion_no"));
+		int uid = Integer.parseInt(request.getParameter("board_no"));
 		
 		try {
 			arr = dao.readByUid(uid);   // 읽기 + 조회수 증가	
