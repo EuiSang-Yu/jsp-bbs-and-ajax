@@ -6,27 +6,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
-import dto.WriteDTO;
+import dto.BoardDTO;
 
-public class NoticeListCommand implements Command {
+
+public class BoardSelectCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 의상
 		
-		DAO dao = new DAO();  // DAO 객체 생성
-		WriteDTO [] arr = null;
+		DAO dao = new DAO();
+		BoardDTO [] arr = null;
+		
+		int uid = Integer.parseInt(request.getParameter("champion_no"));
 		
 		try {
-			arr = dao.select();  // 트랜잭션 수행
-			
-			// "list" 란  name 으로 request 에 arr 을 저장
-			// request 가 컨트롤러에 전달될것이다.
+			arr = dao.selectByUid(uid);  // 읽어오기
 			request.setAttribute("list", arr);
-			
-		} catch (SQLException e) {
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
+
 }

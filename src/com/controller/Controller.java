@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
-import com.command.NoticeDeleteCommand;
-import com.command.NoticeListCommand;
-import com.command.NoticeSelectCommand;
-import com.command.NoticeUpdateCommand;
-import com.command.NoticeViewCommand;
-import com.command.NoticeWriteCommand;
+import com.command.BoardDeleteCommand;
+import com.command.BoardListCommand;
+import com.command.BoardSelectCommand;
+import com.command.BoardUpdateCommand;
+import com.command.BoardViewCommand;
+import com.command.BoardWriteCommand;
 
 
 
@@ -60,10 +60,10 @@ public class Controller extends HttpServlet {
 		// 결과를 보낼 view 를 결정
 		switch(com) {
 		
-		case "/noticeListCP.do":
-			command = new NoticeListCommand();
+		case "/noticeListNT.do":
+			command = new BoardListCommand();
 			command.execute(request, response);
-			viewPage = "noticeListCP.jsp";
+			viewPage = "noticeListNT.jsp";
 			break;
 		
 		case "/noticeWrite.do":
@@ -71,29 +71,29 @@ public class Controller extends HttpServlet {
 			break;
 		
 		case "/noticeWriteOk.do":
-			command = new NoticeWriteCommand();
+			command = new BoardWriteCommand();
 			command.execute(request, response);
 			viewPage = "noticeWriteOk.jsp";
 			break;	
 			
 		case "/noticeView.do":
-			command = new NoticeViewCommand();
+			command = new BoardViewCommand();
 			command.execute(request, response);
 			viewPage = "noticeView.jsp";
 			break;
 		case "/noticeUpdate.do":
-			command = new NoticeSelectCommand();
+			command = new BoardSelectCommand();
 			command.execute(request, response);
 			viewPage = "noticeUpdate.jsp";
 			break;
 		case "/noticeUpdateOk.do":
-			command = new NoticeUpdateCommand();
+			command = new BoardUpdateCommand();
 			command.execute(request, response);
 			viewPage = "noticeUpdateOk.jsp";
 			break;
 			
 		case "/deleteOk.do":
-			command = new NoticeDeleteCommand();
+			command = new BoardDeleteCommand();
 			command.execute(request, response);
 			viewPage = "noticeDeleteOk.jsp";
 			break;	

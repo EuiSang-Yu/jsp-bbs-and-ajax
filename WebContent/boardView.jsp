@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -62,7 +64,7 @@ thead tr th {
 
 <jsp:include page="comment.jsp"/>
 
-<a href="noticeListCP.jsp" class="btn btn-outline-dark" id="listBtn">목록</a>
+<a href="boardListTable.do" class="btn btn-outline-dark" id="listBtn">목록</a>
 </div>
 </body>
 </html>

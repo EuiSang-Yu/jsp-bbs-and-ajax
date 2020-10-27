@@ -6,18 +6,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
-import dto.WriteDTO;
+import dto.BoardDTO;
 
 
-public class NoticeViewCommand implements Command {
+public class BoardViewCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 의상
 		
 		DAO dao = new DAO();
-		WriteDTO [] arr = null;
+		BoardDTO [] arr = null;
 		
 		int uid = Integer.parseInt(request.getParameter("board_no"));
 		

@@ -6,16 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
-import dto.WriteDTO;
 
 
-public class NoticeSelectCommand implements Command {
+public class BoardUpdateCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// 지연	
 		
-		// 의상
-
 	}
 
 }

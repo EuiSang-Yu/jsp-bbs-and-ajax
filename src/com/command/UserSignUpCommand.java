@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 
-public class NoticeWriteCommand implements Command {
-	
+public class UserSignUpCommand implements Command{
+
+	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
 		DAO dao = new DAO();
@@ -32,5 +33,9 @@ public class NoticeWriteCommand implements Command {
 		
 		
 		request.setAttribute("result", cnt);
+		
 	}
+	
+	
+
 }

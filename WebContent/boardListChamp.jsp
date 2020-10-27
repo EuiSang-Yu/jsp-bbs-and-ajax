@@ -65,7 +65,7 @@
 
 </div>
 
-<jsp:include page="noticeListNT.jsp"/>
+
 
 </body>
 </html>

@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dao.*" %>
+<%@ page import="dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -31,39 +36,42 @@
 </head>
 
 <body>
+<jsp:include page="boardListChamp.jsp"/>
     <div class="container">
+    	
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
-                    <th>추천수</th>
+                    <th>번호</th>
                     <th>제목</th>
                     <th>내용</th>
-                    <th>작성자</th>
-                    <th>작성날짜</th>
                     <th>조회수</th>
+                    <th>작성날짜</th>
                 </tr>
                 
-                <tr>
-                    <td>1</td>
-                    <td>가렌 공략법</td>
-                    <td>D점멸을 쓰세요</td>
-                    <td>팽이가렌</td>
-                    <td>2020-10-23</td>
-                    <td>2</td>
-                </tr>
+		<c:choose>
+			<c:when test="${empty list || fn:length(list) == 0 }">
+			</c:when>
+
+			<c:otherwise>
+				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
+					<tr>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
+					
+					</tr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 		</table>
-            <a href="noticeWrite.jsp" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+            <a href="boardWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
 	</div>
             
 
 </body>
 
-<script>
-$(document).ready(function(){
-	$("#noticeListTable tr:nth-of-type(2)").click(function(){
-		location.href="noticeView.jsp";
-	});
-});
-</script>
 
 
 
