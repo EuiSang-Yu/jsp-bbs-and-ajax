@@ -15,7 +15,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import dto.WriteDTO;
+import dto.BoardDTO;
 
 import vo.VO;
 
@@ -90,7 +90,7 @@ public class DAO {
 	} // end insert();
 
 	// 새글작성 <-- DTO
-	public int insert(WriteDTO dto) throws SQLException, NamingException {
+	public int insert(BoardDTO dto) throws SQLException, NamingException {
 
 		int cnt = 0;
 		try {
@@ -109,10 +109,10 @@ public class DAO {
 	}
 
 	// Write --> ResultSet --> DTO 배열로 리턴
-	public WriteDTO[] createArray(ResultSet rs) throws SQLException {
-		WriteDTO[] arr = null; // DTO 배열로 리턴
+	public BoardDTO[] createArray(ResultSet rs) throws SQLException {
+		BoardDTO[] arr = null; // DTO 배열로 리턴
 
-		ArrayList<WriteDTO> list = new ArrayList<WriteDTO>();
+		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		while (rs.next()) {
 			int board_no = rs.getInt("board_no");
 			String board_title = rs.getString("board_title");
@@ -130,12 +130,12 @@ public class DAO {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 
-			WriteDTO dto = new WriteDTO(board_no, board_title, board_content, board_viewCnt);
+			BoardDTO dto = new BoardDTO(board_no, board_title, board_content, board_viewCnt);
 			dto.setboard_regDate(board_regDate);
 			list.add(dto);
 		} // end while
 
-		arr = new WriteDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
+		arr = new BoardDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
 		list.toArray(arr); // 리스트 -> 배열
 
 		return arr;
@@ -143,9 +143,9 @@ public class DAO {
 
 	
 	
-	// 전체 SELECT
-	public WriteDTO[] select() throws SQLException {
-		WriteDTO[] arr = null;
+	// 전체 SELECT ListComm
+	public BoardDTO[] select() throws SQLException {
+		BoardDTO[] arr = null;
 
 		try {
 			conn = getConnection();
@@ -164,8 +164,8 @@ public class DAO {
 	
 	
 	// 특정 uid 의 글만 SELECT
-	public WriteDTO[] selectByUid(int uid) throws SQLException {
-		WriteDTO[] arr = null;
+	public BoardDTO[] selectByUid(int uid) throws SQLException {
+		BoardDTO[] arr = null;
 
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_UID);
@@ -182,9 +182,9 @@ public class DAO {
 	
 	// 특정 uid 글 내용 읽기, 조회수 증가
 	// viewcnt 도 +1 증가해야 하고, 읽어와야 한다 --> 트랜잭션 처리
-	public WriteDTO[] readByUid(int uid) throws SQLException {
+	public BoardDTO[] readByUid(int uid) throws SQLException {
 		int cnt = 0;
-		WriteDTO[] arr = null;
+		BoardDTO[] arr = null;
 
 		try {
 			// 트랜잭션 처리
