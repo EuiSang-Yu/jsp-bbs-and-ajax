@@ -55,7 +55,7 @@
             <tr>
                  
                 <td colspan="2"  class="text-center">
-                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='noticeListCP.jsp'">전체 게시글보기</button>
+                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='noticeListNT.jsp'">전체 게시글보기</button>
                     <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
                 </td>
             </tr>

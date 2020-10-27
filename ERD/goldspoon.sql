@@ -109,10 +109,12 @@ CREATE TABLE tb_record
 
 
 
-
 SELECT * FROM tb_board ORDER BY board_no DESC;
 
 DELETE FROM tb_board WHERE board_no = 41;
 
 SELECT * FROM user_sequences;
 
+ALTER TABLE TB_BOARD ADD champion_no number;
+
+ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
