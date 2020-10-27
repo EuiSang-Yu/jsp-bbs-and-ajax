@@ -17,10 +17,7 @@
 <% } else { %>
 	<script>
 		alert("등록 성공, 리스트를 출력합니다");
-<<<<<<< HEAD
-		location.href = "noticeListNT.jsp";
-=======
 		location.href = "noticeListNT.do";
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 	</script>
 <% } %>
