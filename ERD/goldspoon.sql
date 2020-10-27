@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -40,60 +44,60 @@ ALTER SEQUENCE SEQ_tb_member_member_no nocache;
 
 CREATE TABLE tb_board
 (
-	board_no number DEFAULT 0 NOT NULL,
-	board_title varchar2(100) NOT NULL,
-	board_content varchar2(200),
-	board_viewCnt number,
-	board_regDate date DEFAULT SYSDATE,
-	PRIMARY KEY (board_no)
+   board_no number DEFAULT 0 NOT NULL,
+   board_title varchar2(100) NOT NULL,
+   board_content varchar2(200),
+   board_viewCnt number,
+   board_regDate date DEFAULT SYSDATE,
+   PRIMARY KEY (board_no)
 );
 
 
 CREATE TABLE tb_champion
 (
-	champion_no number DEFAULT 0 NOT NULL,
-	champion_name varchar2(30) UNIQUE,
-	champion_info varchar2(200),
-	PRIMARY KEY (champion_no)
+   champion_no number DEFAULT 0 NOT NULL,
+   champion_name varchar2(30) UNIQUE,
+   champion_info varchar2(200),
+   PRIMARY KEY (champion_no)
 );
 
 
 CREATE TABLE tb_comment
 (
-	comment_no number DEFAULT 0 NOT NULL,
-	comment_content varchar2(200),
-	comment_regDate date DEFAULT SYSDATE,
-	PRIMARY KEY (comment_no)
+   comment_no number DEFAULT 0 NOT NULL,
+   comment_content varchar2(200),
+   comment_regDate date DEFAULT SYSDATE,
+   PRIMARY KEY (comment_no)
 );
 
 
 CREATE TABLE tb_file
 (
-	file_no number DEFAULT 0 NOT NULL,
-	file_image varchar2(200),
-	file_video varchar2(200),
-	file_normal varchar2(200),
-	file_link varchar2(200),
-	PRIMARY KEY (file_no)
+   file_no number DEFAULT 0 NOT NULL,
+   file_image varchar2(200),
+   file_video varchar2(200),
+   file_normal varchar2(200),
+   file_link varchar2(200),
+   PRIMARY KEY (file_no)
 );
 
 
 CREATE TABLE tb_member
 (
-	member_no number DEFAULT 0 NOT NULL,
-	member_id varchar2(20) UNIQUE,
-	member_pw varchar2(20),
-	member_name varchar2(20),
-	member_email varchar2(100),
-	member_phone varchar2(100),
-	member_photo varchar2(100),
-	PRIMARY KEY (member_no)
+   member_no number DEFAULT 0 NOT NULL,
+   member_id varchar2(20) UNIQUE,
+   member_pw varchar2(20),
+   member_name varchar2(20),
+   member_email varchar2(100),
+   member_phone varchar2(100),
+   member_photo varchar2(100),
+   PRIMARY KEY (member_no)
 );
 
 
 CREATE TABLE tb_record
 (
-	record_profileImg varchar2(200)
+   record_profileImg varchar2(200)
 );
 
 
@@ -113,5 +117,10 @@ ALTER TABLE TB_BOARD ADD champion_no number;
 -- 외래키 설정
 ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
 
-SELECT * FROM TB_CHAMPION ;
+<<<<<<< HEAD
+
+
+=======
+SELECT * FROM TB_MEMBER;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 

@@ -59,34 +59,34 @@
 
 		<div class="registration-form">
 
-			<form>
+			<form action="signupOk.do" method="get">
 				<div class="form-icon" style="background-color: #C8C7ED">
 					<span><i class="icon icon-user"></i></span>
 
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="userID"
-						placeholder="UserID">
+						placeholder="UserID" name="signUpID">
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control item" id="password"
-						placeholder="Password">
+						placeholder="Password" name="signUpPW">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="username"
-						placeholder="UserName">
+						placeholder="UserName" name="signUpName">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="email"
-						placeholder="Email">
+						placeholder="Email" name="signUpEmail">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="phone-number"
-						placeholder="Phone Number">
+						placeholder="Phone Number" name="signUpNum">
 				</div>
 
 				<div class="form-group">
-					<button type="button" class="btn btn-block create-account">계정
+					<button type="submit" class="btn btn-block create-account" >계정
 						생성</button>
 				</div>
 

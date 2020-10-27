@@ -213,7 +213,32 @@ public class DAO {
 	} // end readByUid()
 	
 	
-	
+	//회원가입 DAO 
+	public int signUp(String signUpID, String signUpPW, String signUpName, String signUpEmail, String signUpNum) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_USER_SIGNUP);
+			pstmt.setString(1, signUpID);
+			pstmt.setString(2, signUpPW);
+			pstmt.setString(3, signUpName);
+			pstmt.setString(4, signUpEmail);
+			pstmt.setString(5, signUpNum);
+
+
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("회원가입 실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} 
 	
 	
 	
