@@ -64,7 +64,7 @@ thead tr th {
 
 <jsp:include page="comment.jsp"/>
 
-<a href="noticeListNT.do" class="btn btn-outline-dark" id="listBtn">목록</a>
+<a href="boardListTable.do" class="btn btn-outline-dark" id="listBtn">목록</a>
 </div>
 </body>
 </html>

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 
-public class NoticeWriteCommand implements Command {
+public class BoardWriteCommand implements Command {
 	
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;

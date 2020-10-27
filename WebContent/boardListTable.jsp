@@ -36,7 +36,7 @@
 </head>
 
 <body>
-<jsp:include page="noticeListCP.jsp"/>
+<jsp:include page="boardListChamp.jsp"/>
     <div class="container">
     	
 		<table class="table table-bordered table-hover" id="noticeListTable">
@@ -55,18 +55,18 @@
 			<c:otherwise>
 				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 					<tr>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
+						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
 					
 					</tr>
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
 		</table>
-            <a href="noticeWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+            <a href="boardWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
 	</div>
             
 

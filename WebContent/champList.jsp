@@ -45,7 +45,7 @@
 		<c:forEach var="i" begin="1" end="145">
 
 			<div class="championList">
-				<form action="noticeListNT.do?champ=${i }" method="POST">
+				<form action="boardListTable.do?champ=${i }" method="POST">
 					<button type="submit" name="champion_no">
 						<img class="championListImg"
 							src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
