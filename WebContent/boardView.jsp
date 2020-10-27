@@ -45,18 +45,16 @@ thead tr th {
 <table class="table">
 	<thead>
 		<tr class="row">
-			<th class="col-sm-2">챔피언공략</th>
-			<th class="col-sm-2">2020-10-24</th>
-			<th class="col-sm-5">팽이가렌</th>
-			<th class="col-sm-1">조회 2</th>
-			<th class="col-sm-1">댓글 1</th>
-			<th class="col-sm-1">조회 1</th>
+			<th class="col-sm-2">${dto.board_no }</th>
+			<th class="col-sm-2">${dto.board_title }</th>
+			<th class="col-sm-1">${dto.board_viewCnt }</th>
+			<th class="col-sm-1">${dto.board_regDate }</th>
 		</tr>
 	</thead>
 	
 	<tbody>
 		<tr class="row">
-			<td colspan="6">내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다</td>
+			<td colspan="6">${dto.board_content }</td>
 		</tr>
 	</tbody>
 </table>

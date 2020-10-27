@@ -22,7 +22,7 @@ public class BoardSelectCommand implements Command {
 		int uid = Integer.parseInt(request.getParameter("champion_no"));
 		
 		try {
-			arr = dao.selectByUid(uid);  // 읽어오기
+			arr = dao.selectByBoard_no(uid);  // 읽어오기
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();

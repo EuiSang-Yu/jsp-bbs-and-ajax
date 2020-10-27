@@ -16,16 +16,16 @@ public class BoardDTO {
 	}
 
 	// 매개변수 받는 생성자
-	public BoardDTO(int no, String title, String content, int viewCnt, int champion_no, String board_memberId) {
+	public BoardDTO(int board_no, String board_title, String board_content, int viewCnt, int champion_no, String board_memberId) {
 		super();
-		this.board_no = no;
-		this.board_title = title;
-		this.board_content = content;
+		this.board_no = board_no;
+		this.board_title = board_title;
+		this.board_content = board_content;
 		this.board_viewCnt = viewCnt;
 		this.champion_no = champion_no; // 게시판 해당챔피언
 		this.board_memberId = board_memberId; // 게시글 작성자
 
-		System.out.printf("WriteDTO(%d, %s, %s, %d, %d, %s) 객체 생성", no, title, content, viewCnt, champion_no, board_memberId);
+		System.out.printf("WriteDTO(%d, %s, %s, %d, %d, %s) 객체 생성", board_no, board_title, board_content, viewCnt, champion_no, board_memberId);
 	}
 
 	// 웹개발시..
