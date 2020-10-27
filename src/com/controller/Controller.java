@@ -60,42 +60,42 @@ public class Controller extends HttpServlet {
 		// 결과를 보낼 view 를 결정
 		switch(com) {
 		
-		case "/noticeListNT.do":
+		case "/boardListTable.do":
 			command = new BoardListCommand();
 			command.execute(request, response);
-			viewPage = "noticeListNT.jsp";
+			viewPage = "boardListTable.jsp";
 			break;
 		
-		case "/noticeWrite.do":
-			viewPage = "noticeWrite.jsp";
+		case "/boardWrite.do":
+			viewPage = "boardWrite.jsp";
 			break;
 		
-		case "/noticeWriteOk.do":
+		case "/boardWriteOk.do":
 			command = new BoardWriteCommand();
 			command.execute(request, response);
-			viewPage = "noticeWriteOk.jsp";
+			viewPage = "boardWriteOk.jsp";
 			break;	
 			
-		case "/noticeView.do":
+		case "/boardView.do":
 			command = new BoardViewCommand();
 			command.execute(request, response);
-			viewPage = "noticeView.jsp";
+			viewPage = "boardView.jsp";
 			break;
-		case "/noticeUpdate.do":
+		case "/boardUpdate.do":
 			command = new BoardSelectCommand();
 			command.execute(request, response);
-			viewPage = "noticeUpdate.jsp";
+			viewPage = "boardUpdate.jsp";
 			break;
-		case "/noticeUpdateOk.do":
+		case "/boardUpdateOk.do":
 			command = new BoardUpdateCommand();
 			command.execute(request, response);
-			viewPage = "noticeUpdateOk.jsp";
+			viewPage = "boardUpdateOk.jsp";
 			break;
 			
-		case "/deleteOk.do":
+		case "/boardDeleteOk.do":
 			command = new BoardDeleteCommand();
 			command.execute(request, response);
-			viewPage = "noticeDeleteOk.jsp";
+			viewPage = "boardDeleteOk.jsp";
 			break;	
 			
 		}
