@@ -10,12 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
-import com.command.NoticeDeleteCommand;
-import com.command.NoticeListCommand;
-import com.command.NoticeSelectCommand;
-import com.command.NoticeUpdateCommand;
-import com.command.NoticeViewCommand;
-import com.command.NoticeWriteCommand;
+import com.command.UserSignUpCommand;
+import com.command.BoardDeleteCommand;
+import com.command.BoardListCommand;
+import com.command.BoardSelectCommand;
+import com.command.BoardUpdateCommand;
+import com.command.BoardViewCommand;
+import com.command.BoardWriteCommand;
 
 
 
@@ -60,44 +61,54 @@ public class Controller extends HttpServlet {
 		// 결과를 보낼 view 를 결정
 		switch(com) {
 		
-		case "/noticeListNT.do":
-			command = new NoticeListCommand();
+		case "/boardListTable.do":
+			command = new BoardListCommand();
 			command.execute(request, response);
-			viewPage = "noticeListNT.jsp";
+			viewPage = "boardListTable.jsp";
 			break;
 		
-		case "/noticeWrite.do":
-			viewPage = "noticeWrite.jsp";
+		case "/boardWrite.do":
+			viewPage = "boardWrite.jsp";
 			break;
 		
-		case "/noticeWriteOk.do":
-			command = new NoticeWriteCommand();
+		case "/boardWriteOk.do":
+			command = new BoardWriteCommand();
 			command.execute(request, response);
-			viewPage = "noticeWriteOk.jsp";
+			viewPage = "boardWriteOk.jsp";
 			break;	
 			
-		case "/noticeView.do":
-			command = new NoticeViewCommand();
+		case "/boardView.do":
+			command = new BoardViewCommand();
 			command.execute(request, response);
-			viewPage = "noticeView.jsp";
+			viewPage = "boardView.jsp";
 			break;
-		case "/noticeUpdate.do":
-			command = new NoticeSelectCommand();
+		case "/boardUpdate.do":
+			command = new BoardSelectCommand();
 			command.execute(request, response);
-			viewPage = "noticeUpdate.jsp";
+			viewPage = "boardUpdate.jsp";
 			break;
-		case "/noticeUpdateOk.do":
-			command = new NoticeUpdateCommand();
+		case "/boardUpdateOk.do":
+			command = new BoardUpdateCommand();
 			command.execute(request, response);
-			viewPage = "noticeUpdateOk.jsp";
+			viewPage = "boardUpdateOk.jsp";
 			break;
 			
-		case "/deleteOk.do":
-			command = new NoticeDeleteCommand();
+		case "/boardDeleteOk.do":
+			command = new BoardDeleteCommand();
 			command.execute(request, response);
-			viewPage = "noticeDeleteOk.jsp";
+			viewPage = "boardDeleteOk.jsp";
 			break;	
 			
+		case "/signUp.do":
+
+			viewPage = "signUp.jsp";
+			break;	
+			
+		case "/signupOk.do":
+			command = new UserSignUpCommand();
+			command.execute(request, response);
+			viewPage = "signupOk.jsp";
+			break;
 		}
 		
 		

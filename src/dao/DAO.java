@@ -121,6 +121,8 @@ public class DAO {
 				board_content = "";
 			// String name = rs.getString("wr_name");
 			int board_viewCnt = rs.getInt("board_viewCnt");
+			int champion_no = rs.getInt("champion_no");
+			String board_memberId = rs.getString("board_memberId");
 
 			Date d = rs.getDate("board_regDate");
 			Time t = rs.getTime("board_regDate");
@@ -130,8 +132,8 @@ public class DAO {
 						+ new SimpleDateFormat("hh:mm:ss").format(t);
 			}
 
-			WriteDTO dto = new WriteDTO(board_no, board_title, board_content, board_viewCnt);
-			dto.setboard_regDate(board_regDate);
+			WriteDTO dto = new WriteDTO(board_no, board_title, board_content, board_viewCnt, champion_no, board_memberId);
+			dto.setBoard_regDate(board_regDate);
 			list.add(dto);
 		} // end while
 
@@ -143,7 +145,7 @@ public class DAO {
 
 	
 	
-	// 전체 SELECT
+	// 전체 SELECT ListComm
 	public WriteDTO[] select() throws SQLException {
 		WriteDTO[] arr = null;
 
@@ -211,9 +213,35 @@ public class DAO {
 	} // end readByUid()
 	
 	
+	//회원가입 DAO 
+	public int signUp(String signUpID, String signUpPW, String signUpName, String signUpEmail, String signUpNum) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_USER_SIGNUP);
+			pstmt.setString(1, signUpID);
+			pstmt.setString(2, signUpPW);
+			pstmt.setString(3, signUpName);
+			pstmt.setString(4, signUpEmail);
+			pstmt.setString(5, signUpNum);
+
+
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.out.println("회원가입 실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} 
 	
 	
-	
+	// 특정 board_no 의 글 수정(제목, 내용)
 	
 
 }

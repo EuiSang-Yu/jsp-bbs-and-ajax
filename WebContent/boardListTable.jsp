@@ -5,6 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -35,8 +36,9 @@
 </head>
 
 <body>
-<jsp:include page="noticeListCP.jsp"/>
+<jsp:include page="boardListChamp.jsp"/>
     <div class="container">
+    	
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
                     <th>번호</th>
@@ -51,21 +53,21 @@
 			</c:when>
 
 			<c:otherwise>
-				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
-					<tr>
-					
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
-						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
-					
-					</tr>
-				</c:forEach>
+				<form action="boardView.do?uid=${dto.getBoard_no()}" method="get">
+					<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
+							<tr>
+								<td><button type="submit">${dto.board_no }</button></td>
+								<td><button type="submit">${dto.board_title }</button></td>
+								<td><button type="submit">${dto.board_content }</button></td>
+								<td><button type="submit">${dto.board_viewCnt }</button></td>
+								<td><button type="submit">${dto.board_regDate }</button></td>
+							</tr>
+					</c:forEach>
+				</form>
 			</c:otherwise>
 		</c:choose>
 		</table>
-            <a href="noticeWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+            <a href="boardWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
 	</div>
             
 

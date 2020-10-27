@@ -26,6 +26,11 @@ public class VO {
 	public static final String SQL_WRITE_INC_VIEWCNT = 
 			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_no = ?";
 	
-	
+	public static final String SQL_USER_SIGNUP = 
+			"INSERT INTO TB_MEMBER"
+			+ "(member_no, member_id, member_pw, member_name, member_email, member_phone) " 
+			+ "VALUES"
+			+ "(SEQ_tb_member_member_no.NEXTVAL, ?, ?, ?, ?, ?)";
+
 	
 }

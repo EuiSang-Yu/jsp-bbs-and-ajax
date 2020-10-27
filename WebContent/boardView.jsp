@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -33,28 +35,42 @@ thead tr th {
 </style>
 
 </head>
+
+<script>
+
+function chkDelete(uid){
+	// 삭제 여부, 다시 확인 하고 진행하기
+	var r = confirm("삭제하시겠습니까?");
+	
+	if(r){
+		location.href = 'deleteOk.do?uid=' + uid;
+	}
+} // chkDelete
+
+</script>
+
 <body>
 <jsp:include page="thema.jsp"/>
 
 <div class="container">
-<h1>가렌 잘하는 법</h1>
+<h1>${list[0].board_title }</h1>
 <br><br><br><br>
 
 <table class="table">
 	<thead>
 		<tr class="row">
-			<th class="col-sm-2">챔피언공략</th>
-			<th class="col-sm-2">2020-10-24</th>
-			<th class="col-sm-5">팽이가렌</th>
-			<th class="col-sm-1">조회 2</th>
-			<th class="col-sm-1">댓글 1</th>
-			<th class="col-sm-1">조회 1</th>
+			<th class="col-sm-2">챔피언 공략</th>
+			<th class="col-sm-2">${list[0].board_no }</th>
+			<th class="col-sm-5">${list[0].board_title }</th>
+			<th class="col-sm-1">${list[0].board_regDate }</th>
+			<th class="col-sm-1">댓글</th>
+			<th class="col-sm-1">${list[0].board_viewCnt }</th>
 		</tr>
 	</thead>
 	
 	<tbody>
 		<tr class="row">
-			<td colspan="6">내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다</td>
+			<td colspan="6">${list[0].content }</td>
 		</tr>
 	</tbody>
 </table>
@@ -62,7 +78,7 @@ thead tr th {
 
 <jsp:include page="comment.jsp"/>
 
-<a href="noticeListNT.do" class="btn btn-outline-dark" id="listBtn">목록</a>
+<a href="boardListTable.do" class="btn btn-outline-dark" id="listBtn">목록</a>
 </div>
 </body>
 </html>
