@@ -1,14 +1,4 @@
 
-/* Drop Triggers */
-
-DROP TRIGGER TRI_tb_board_board_no;
-DROP TRIGGER TRI_tb_champion_champion_no;
-DROP TRIGGER TRI_tb_comment_comment_no;
-DROP TRIGGER TRI_tb_file_file_no;
-DROP TRIGGER TRI_tb_member_member_no;
-
-
-
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -51,60 +41,60 @@ ALTER SEQUENCE SEQ_tb_member_member_no nocache;
 
 CREATE TABLE tb_board
 (
-	board_no number DEFAULT 0 NOT NULL,
-	board_title varchar2(100) NOT NULL,
-	board_content varchar2(200),
-	board_viewCnt number,
-	board_regDate date DEFAULT SYSDATE,
-	PRIMARY KEY (board_no)
+   board_no number DEFAULT 0 NOT NULL,
+   board_title varchar2(100) NOT NULL,
+   board_content varchar2(200),
+   board_viewCnt number,
+   board_regDate date DEFAULT SYSDATE,
+   PRIMARY KEY (board_no)
 );
 
 
 CREATE TABLE tb_champion
 (
-	champion_no number DEFAULT 0 NOT NULL,
-	champion_name varchar2(30) UNIQUE,
-	champion_info varchar2(200),
-	PRIMARY KEY (champion_no)
+   champion_no number DEFAULT 0 NOT NULL,
+   champion_name varchar2(30) UNIQUE,
+   champion_info varchar2(200),
+   PRIMARY KEY (champion_no)
 );
 
 
 CREATE TABLE tb_comment
 (
-	comment_no number DEFAULT 0 NOT NULL,
-	comment_content varchar2(200),
-	comment_regDate date DEFAULT SYSDATE,
-	PRIMARY KEY (comment_no)
+   comment_no number DEFAULT 0 NOT NULL,
+   comment_content varchar2(200),
+   comment_regDate date DEFAULT SYSDATE,
+   PRIMARY KEY (comment_no)
 );
 
 
 CREATE TABLE tb_file
 (
-	file_no number DEFAULT 0 NOT NULL,
-	file_image varchar2(200),
-	file_video varchar2(200),
-	file_normal varchar2(200),
-	file_link varchar2(200),
-	PRIMARY KEY (file_no)
+   file_no number DEFAULT 0 NOT NULL,
+   file_image varchar2(200),
+   file_video varchar2(200),
+   file_normal varchar2(200),
+   file_link varchar2(200),
+   PRIMARY KEY (file_no)
 );
 
 
 CREATE TABLE tb_member
 (
-	member_no number DEFAULT 0 NOT NULL,
-	member_id varchar2(20) UNIQUE,
-	member_pw varchar2(20),
-	member_name varchar2(20),
-	member_email varchar2(100),
-	member_phone varchar2(100),
-	member_photo varchar2(100),
-	PRIMARY KEY (member_no)
+   member_no number DEFAULT 0 NOT NULL,
+   member_id varchar2(20) UNIQUE,
+   member_pw varchar2(20),
+   member_name varchar2(20),
+   member_email varchar2(100),
+   member_phone varchar2(100),
+   member_photo varchar2(100),
+   PRIMARY KEY (member_no)
 );
 
 
 CREATE TABLE tb_record
 (
-	record_profileImg varchar2(200)
+   record_profileImg varchar2(200)
 );
 
 
@@ -112,11 +102,18 @@ CREATE TABLE tb_record
 
 SELECT * FROM tb_board ORDER BY board_no DESC;
 
+-- 작성자 칼럼추가
+ALTER TABLE TB_BOARD ADD board_memberId varchar2(20);
+
+-- 작성자 칼럼 ( 멤버테이블에 member_id서 외래키 참조)
+ALTER TABLE TB_BOARD ADD CONSTRAINT fk_board_id FOREIGN KEY (board_memberId) REFERENCES tb_member (member_id);
+
 -- 외래키 받을 칼럼 게시판 테이블에 추가
 ALTER TABLE TB_BOARD ADD champion_no number;
 
 -- 외래키 설정
 ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
 
-SELECT * FROM TB_CHAMPION ;
+
+
 
