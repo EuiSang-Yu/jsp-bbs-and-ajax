@@ -62,21 +62,33 @@
 </script>
 <body>
 
-<jsp:include page="thema.jsp"/>
-<div class="row">
-	<div class="col-md-2"></div>
-	<div class="col-md-8">
-		<h2 class="text-center">게시글 수정하기</h2>
-		<form action="boardUpdateOk.do" method="GET" onsubmit="return chkSubmit()">
-			<input type="hidden" name="no" value="<%= no %>">
-			<table class="table table-striped">
-				<tr>
-					<td>제목</td>
-					<td><input type="text" class="form-control" name="title"></td>
-				</tr>
-			</table>
-		</form>
+	<jsp:include page="thema.jsp"/>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h2 class="text-center">게시글 수정하기</h2>
+			<form action="boardUpdateOk.do" method="GET" onsubmit="return chkSubmit()">
+				<input type="hidden" name="no" value="<%= no %>">
+				<table class="table table-striped">
+					<tr>
+						<td>제목</td>
+						<td><input type="text" class="form-control" name="title" value="<%= title %>"/></td>
+					</tr>
+					
+					<tr>
+	                	<td>글내용</td>
+	                	<td><textarea rows="10" cols="50" name="content" class="form-control"><%=content %></textarea></td>
+	            	</tr>
+	            	
+	            	<tr>
+		                <td colspan="2"  class="text-center">
+		                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
+		                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
+		                </td>
+	            	</tr>
+				</table>
+			</form>
+		</div>
 	</div>
-</div>
 </body>
 </html>

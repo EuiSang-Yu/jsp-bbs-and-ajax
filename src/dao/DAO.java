@@ -239,6 +239,7 @@ public class DAO {
 	} 
 	
 	
+	// 특정 board_no 의 글 수정(제목, 내용)
 	
 
 }
