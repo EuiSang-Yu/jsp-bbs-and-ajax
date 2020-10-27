@@ -1,14 +1,3 @@
-
-/* Drop Triggers */
-
-DROP TRIGGER TRI_tb_board_board_no;
-DROP TRIGGER TRI_tb_champion_champion_no;
-DROP TRIGGER TRI_tb_comment_comment_no;
-DROP TRIGGER TRI_tb_file_file_no;
-DROP TRIGGER TRI_tb_member_member_no;
-
-
-
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -111,6 +100,12 @@ CREATE TABLE tb_record
 
 
 SELECT * FROM tb_board ORDER BY board_no DESC;
+
+-- 작성자 칼럼추가
+ALTER TABLE TB_BOARD ADD board_memberId varchar2(20);
+
+-- 작성자 칼럼 ( 멤버테이블에 member_id서 외래키 참조)
+ALTER TABLE TB_BOARD ADD CONSTRAINT fk_board_id FOREIGN KEY (board_memberId) REFERENCES tb_member (member_id);
 
 -- 외래키 받을 칼럼 게시판 테이블에 추가
 ALTER TABLE TB_BOARD ADD champion_no number;

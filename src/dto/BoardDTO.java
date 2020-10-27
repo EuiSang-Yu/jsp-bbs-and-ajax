@@ -1,11 +1,13 @@
 package dto;
 
 public class BoardDTO {
-	private int board_no; 
-	private String board_title; 
-	private String board_content; 
-	private int board_viewCnt; 
-	private String board_regDate;
+	private int board_no; // 게시글 고유번호
+	private String board_title; //제목
+	private String board_content; //내용
+	private int board_viewCnt; // 조회수
+	private String board_regDate; //게시글 등록일
+	private int champion_no; // 게시판 해당챔피언
+	private String board_memberId; // 게시글 작성자
 
 	// 기본생성자
 	public BoardDTO() {
@@ -14,14 +16,16 @@ public class BoardDTO {
 	}
 
 	// 매개변수 받는 생성자
-	public BoardDTO(int no, String title, String content, int viewCnt) {
+	public BoardDTO(int no, String title, String content, int viewCnt, int champion_no, String board_memberId) {
 		super();
 		this.board_no = no;
 		this.board_title = title;
 		this.board_content = content;
 		this.board_viewCnt = viewCnt;
+		this.champion_no = champion_no; // 게시판 해당챔피언
+		this.board_memberId = board_memberId; // 게시글 작성자
 
-		System.out.printf("WriteDTO(%d, %s, %s, %d) 객체 생성", no, title, content, viewCnt);
+		System.out.printf("WriteDTO(%d, %s, %s, %d, %d, %s) 객체 생성", no, title, content, viewCnt, champion_no, board_memberId);
 	}
 
 	// 웹개발시..
@@ -60,13 +64,30 @@ public class BoardDTO {
 		this.board_viewCnt = board_viewCnt;
 	}
 
-	public String getboard_regDate() {
+	public String getBoard_regDate() {
 		return board_regDate;
 	}
 
-	public void setboard_regDate(String board_regDate) {
+	public void setBoard_regDate(String board_regDate) {
 		this.board_regDate = board_regDate;
 	}
+
+	public int getChampion_no() {
+		return champion_no;
+	}
+
+	public void setChampion_no(int champion_no) {
+		this.champion_no = champion_no;
+	}
+
+	public String getBoard_memberId() {
+		return board_memberId;
+	}
+
+	public void setBoard_memberId(String board_memberId) {
+		this.board_memberId = board_memberId;
+	}
+
 	
 	
 
