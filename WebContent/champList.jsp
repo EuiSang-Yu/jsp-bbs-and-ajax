@@ -40,17 +40,16 @@
 <div class="container">
 <h1 id="champTitle">챔피언 공략 게시판</h1>
 <h3 id="champSubTitle">챔피언을 선택해 주세요</h3>
-<%
-	for(int i = 0; i < 145; i++){
-%>
+
+<c:forEach var="i" begin="1" end="145">
+
 <div class="championList">
-	<a href="http://localhost:8080/OP_IT/noticeListCP.jsp">
-		<img class="championListImg" src="img/championImg/RiotX_ChampionList_<%= (i+1) %>.jpg" alt="">
+	<a href="noticeListNT.do?champ=${i }">
+		<img class="championListImg" src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
 	</a>
 </div>
-<%
-	}
-%>
+
+</c:forEach>
 </div>
 
 

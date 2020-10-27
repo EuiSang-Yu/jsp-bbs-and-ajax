@@ -17,6 +17,6 @@
 <% } else { %>
 	<script>
 		alert("등록 성공, 리스트를 출력합니다");
-		location.href = "noticeListCP.jsp";
+		location.href = "noticeListNT.do";
 	</script>
 <% } %>
