@@ -44,7 +44,7 @@
 	for(int i = 0; i < 145; i++){
 %>
 <div class="championList">
-	<a href="http://localhost:8080/OP_IT/noticeListCP.jsp">
+	<a href="http://localhost:8080/OP_IT/noticeListNT.jsp">
 		<img class="championListImg" src="img/championImg/RiotX_ChampionList_<%= (i+1) %>.jpg" alt="">
 	</a>
 </div>
