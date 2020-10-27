@@ -11,14 +11,15 @@
 <body>
 	<jsp:include page="thema.jsp"/>
 	
-	<div class="container">
+<div class="container">
 
-		<div class="message">
-			<h2>회원탈퇴가 완료되었습니다.</h2>	
-		</div>
-		<div id="withdrawalOkView">	
-			<img src="" alt="여기에 이미지 추가" />	
+	<div class="message">
+		<h2>회원탈퇴가 완료되었습니다.</h2>	
+	</div>
+	<div id="withdrawalOkView">	
+		<img src="" alt="여기에 이미지 추가" />	
 	</div>
 </div>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
