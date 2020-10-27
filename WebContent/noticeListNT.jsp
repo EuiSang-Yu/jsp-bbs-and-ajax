@@ -5,6 +5,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+<% String champion_no = request.getParameter("champion_no"); %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -53,7 +55,6 @@
 			<c:otherwise>
 				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 					<tr>
-					
 						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
 						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
 						<td><a href="noticeView.do?uid=${dto.board_no }">${dto.board_content }</a></td>

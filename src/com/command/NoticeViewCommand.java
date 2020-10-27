@@ -18,7 +18,7 @@ public class NoticeViewCommand implements Command {
 		DAO dao = new DAO();
 		WriteDTO [] arr = null;
 		
-		int uid = Integer.parseInt(request.getParameter("board_no"));
+		int uid = Integer.parseInt(request.getParameter("champion_no"));
 		
 		try {
 			arr = dao.readByUid(uid);   // 읽기 + 조회수 증가	
