@@ -43,6 +43,19 @@
 <body>
 
 	<jsp:include page="thema.jsp" />
+
+<%  // Controller 로부터 결과 데이터 받음.
+	int cnt = (Integer)request.getAttribute("result");
+%>
+
+
+<% if(cnt == 0){ %>
+	<script>
+		alert("회원정보를 입력해주세요.");
+		history.back();
+	</script>
+<% } else { %>
+	
 	<section>
 		<div id="signOk">
 			<div class="container">
@@ -75,6 +88,9 @@
 		</div>
 
 	</section>
+<% } %>
+
+
 	<jsp:include page="footer.jsp" />
 
 </body>

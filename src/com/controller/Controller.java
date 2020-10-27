@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
+import com.command.UserSignUpCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
 import com.command.BoardSelectCommand;
@@ -98,6 +99,16 @@ public class Controller extends HttpServlet {
 			viewPage = "boardDeleteOk.jsp";
 			break;	
 			
+		case "/signUp.do":
+
+			viewPage = "signUp.jsp";
+			break;	
+			
+		case "/signupOk.do":
+			command = new UserSignUpCommand();
+			command.execute(request, response);
+			viewPage = "signupOk.jsp";
+			break;
 		}
 		
 		
