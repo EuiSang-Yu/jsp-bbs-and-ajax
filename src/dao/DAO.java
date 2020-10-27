@@ -239,6 +239,36 @@ public class DAO {
 	} 
 	
 	
+	//로그인 -->id
+	
+	public String login(String loginID) throws SQLException {
+		
+		//쿼리문 결과 password 받을 변수
+		String  loginPW = "";
+		
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_USER_LOGIN);  //id에대한pw값을 알고있음
+			pstmt.setString(1, loginID);
+
+			
+			rs = pstmt.executeQuery(); //쿼리문 결과
+			while(rs.next()) {
+				loginPW = rs.getString("MEMBER_PW"); // MEMBER_PW 컬럼의 값을 loginPW 변수에 담음
+			}
+			System.out.println("loginPW : "+loginPW);
+			
+		} catch (Exception e) {
+			System.out.println("로그인 실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return loginPW;
+
+	} 
 	
 
 }
