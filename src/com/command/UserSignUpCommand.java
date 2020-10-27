@@ -29,13 +29,15 @@ public class UserSignUpCommand implements Command {
 
 	
 	
-
+		if(signUpID != null && signUpPW != null && signUpName != null && signUpEmail != null && signUpNum != null &&
+				signUpID.trim().length() > 0 && signUpPW.trim().length() > 0 && signUpName.trim().length() > 0
+				 && signUpEmail.trim().length() > 0 && signUpNum.trim().length() > 0) {
 			try {
 				cnt = dao.signUp(signUpID, signUpPW, signUpName, signUpEmail, signUpNum);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				cnt = 0;
 			}
-		
+		}
 
 		request.setAttribute("result", cnt); //signupOK 결과값 request
 
