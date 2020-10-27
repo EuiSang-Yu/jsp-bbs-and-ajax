@@ -60,10 +60,10 @@ public class Controller extends HttpServlet {
 		// 결과를 보낼 view 를 결정
 		switch(com) {
 		
-		case "/noticeListCP.do":
+		case "/noticeListNT.do":
 			command = new NoticeListCommand();
 			command.execute(request, response);
-			viewPage = "noticeListCP.jsp";
+			viewPage = "noticeListNT.jsp";
 			break;
 		
 		case "/noticeWrite.do":

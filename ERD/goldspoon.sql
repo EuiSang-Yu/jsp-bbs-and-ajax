@@ -110,7 +110,7 @@ CREATE TABLE tb_record
 
 
 
-SELECT * FROM TB_BOARD ;
+SELECT * FROM tb_board ORDER BY board_no DESC;
 
 DELETE FROM tb_board WHERE board_no = 41;
 

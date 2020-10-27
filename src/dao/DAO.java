@@ -113,7 +113,6 @@ public class DAO {
 		WriteDTO[] arr = null; // DTO 배열로 리턴
 
 		ArrayList<WriteDTO> list = new ArrayList<WriteDTO>();
-
 		while (rs.next()) {
 			int board_no = rs.getInt("board_no");
 			String board_title = rs.getString("board_title");
@@ -149,6 +148,7 @@ public class DAO {
 		WriteDTO[] arr = null;
 
 		try {
+			conn = getConnection();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);

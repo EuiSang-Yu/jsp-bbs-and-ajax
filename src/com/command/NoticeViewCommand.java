@@ -14,7 +14,6 @@ public class NoticeViewCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 의상
 		
 		DAO dao = new DAO();
 		WriteDTO [] arr = null;

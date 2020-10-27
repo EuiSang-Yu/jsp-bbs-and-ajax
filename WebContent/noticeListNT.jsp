@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="dao.*" %>
+<%@ page import="dto.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -31,27 +35,35 @@
 </head>
 
 <body>
+<jsp:include page="noticeListCP.jsp"/>
     <div class="container">
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
-                    <th>추천수</th>
+                    <th>번호</th>
                     <th>제목</th>
                     <th>내용</th>
-                    <th>작성자</th>
-                    <th>작성날짜</th>
                     <th>조회수</th>
+                    <th>작성날짜</th>
                 </tr>
                 
-                <tr>
-                    <td>1</td>
-                    <td>가렌 공략법</td>
-                    <td>D점멸을 쓰세요</td>
-                    <td>팽이가렌</td>
-                    <td>2020-10-23</td>
-                    <td>2</td>
-                </tr>
+		<c:choose>
+			<c:when test="${empty list || fn:length(list) == 0 }">
+			</c:when>
+
+			<c:otherwise>
+				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
+					<tr>
+						<td>${dto.board_no }</td>
+						<td>${dto.board_title }</td>
+						<td>${dto.board_content }</td>
+						<td>${dto.board_viewCnt }</td>
+						<td>${dto.board_regDate }</td>
+					</tr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
 		</table>
-            <a href="noticeWrite.jsp" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+            <a href="noticeWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
 	</div>
             
 
@@ -60,7 +72,7 @@
 <script>
 $(document).ready(function(){
 	$("#noticeListTable tr:nth-of-type(2)").click(function(){
-		location.href="noticeView.jsp";
+		location.href="noticeView.do";
 	});
 });
 </script>
