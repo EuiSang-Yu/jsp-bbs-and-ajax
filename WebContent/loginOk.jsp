@@ -4,9 +4,11 @@
 <%@ page import="dto.*" %>
 
 
+
 <%  // Controller 로부터 결과 데이터 받음.
 	int cnt = (Integer)request.getAttribute("result");
 %>
+
 
 
 <% if(cnt == 0){ %>

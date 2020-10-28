@@ -30,7 +30,9 @@
 #writeBtn{
 	float: right;
 }
-
+.board_menu{
+	border: none;
+}
 
 </style>
 </head>
@@ -53,16 +55,17 @@
 			</c:when>
 
 			<c:otherwise>
-				<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
-					<tr>
-						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_no }</a></td>
-						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_title }</a></td>
-						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_content }</a></td>
-						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_viewCnt }</a></td>
-						<td><a href="boardView.do?uid=${dto.board_no }">${dto.board_regDate }</a></td>
-					
-					</tr>
-				</c:forEach>
+				<form id="frm_list" action="boardView.do?uid=${dto.board_no}" method="get">
+					<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
+							<tr>
+								<td><button class="board_menu" type="submit">${dto.board_no }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_title }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_content }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_viewCnt }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_regDate }</button></td>
+							</tr>
+					</c:forEach>
+				</form>
 			</c:otherwise>
 		</c:choose>
 		</table>

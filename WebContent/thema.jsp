@@ -43,10 +43,27 @@
 		<div class="container">
 			<div id="headerMain">
 				<a href="index.jsp"><p class="logo">OP.IT</p></a>
+				
+				<%
+	// 현재 로그인 상태인지 확인
+	if(session.getAttribute("userid") != null){	
+%>
+
+				<button id="signupBT" type="button" class="btn btn-outline-dark"
+					onclick="location.href='signUp.jsp'">로그아웃</button>
+				<button id="loginBT" type="button" class="btn btn-outline-dark"
+					onclick="location.href='login.jsp'">로그인</button>
+
+<%
+	} else {
+		
+%>
 				<button id="signupBT" type="button" class="btn btn-outline-dark"
 					onclick="location.href='signUp.jsp'">회원가입</button>
 				<button id="loginBT" type="button" class="btn btn-outline-dark"
 					onclick="location.href='login.jsp'">로그인</button>
+<%				} %>
+
 
 			</div>
 		</div>

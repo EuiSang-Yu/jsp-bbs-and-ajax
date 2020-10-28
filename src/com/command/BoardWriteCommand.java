@@ -17,6 +17,8 @@ public class BoardWriteCommand implements Command {
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		int viewCnt = 0;
+		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		String board_memberId = request.getParameter("board_memberId");
 		
 		System.out.println("board_title : "+title +" , board_content : " + content);
 		
@@ -24,7 +26,7 @@ public class BoardWriteCommand implements Command {
 		if(title != null && content != null &&
 				title.trim().length() > 0 && content.trim().length() > 0) {
 			try {
-				cnt = dao.insert(title, content, viewCnt);
+				cnt = dao.insert(title, content, viewCnt, champion_no, board_memberId);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
