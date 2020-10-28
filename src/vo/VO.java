@@ -12,19 +12,19 @@ public class VO {
 			"INSERT INTO TB_BOARD"
 			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) " 
 			+ "VALUES"
-			+ "(SEQ_tb_board_board_no.NEXTVAL, ?, ?, ?, SYSDATE)";
+			+ "(SEQ_tb_board_board_no.NEXTVAL, ?, ?, ?, SYSDATE)";	//챔피언 넘버 추가
 	
 	
 	public static final String SQL_WRITE_SELECT = 
-			"SELECT * FROM tb_board ORDER BY board_no DESC";
+			"SELECT * FROM tb_board ORDER BY board_no DESC";	//챔피언 넘버 추가
 	
 	
 	public static final String SQL_WRITE_SELECT_BY_NO = 
-			"SELECT * FROM tb_board WHERE board_no=? ";
+			"SELECT * FROM tb_board WHERE board_no=? ";	//챔피언 넘버 추가
 
 	
 	public static final String SQL_WRITE_INC_VIEWCNT = 
-			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_no = ?";
+			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_no = ?";	//챔피언 넘버 추가
 	
 	public static final String SQL_USER_SIGNUP = 
 			"INSERT INTO TB_MEMBER"
@@ -35,7 +35,7 @@ public class VO {
 
 
 	public static final String SQL_WRITE_UPDATE = 
-			"UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_no = ?";
+			"UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_no = ?";	//챔피언 넘버 추가
 
 
 	public static final String SQL_USER_LOGIN = 
@@ -44,7 +44,7 @@ public class VO {
 
 
 	public static final String SQL_WRITE_DELETE =
-			"DELECT FROM TB_BOARD WHERE board_no=?";
+			"DELECT FROM TB_BOARD WHERE board_no=?";	//챔피언 넘버 추가
 
 
 

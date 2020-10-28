@@ -16,7 +16,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import dto.BoardDTO;
-import dto.WriteDTO;
+
 
 import vo.VO;
 
@@ -93,7 +93,7 @@ public class DAO {
 	} // end insert();
 
 	// 새글작성 <-- DTO
-	public int insert(WriteDTO dto) throws SQLException, NamingException {
+	public int insert(BoardDTO dto) throws SQLException, NamingException {
 
 		int cnt = 0;
 		try {
@@ -298,8 +298,6 @@ public class DAO {
 	}	//end update()
 
 
-<<<<<<< HEAD
-=======
 	//게시글 삭제
 	public int delete(int board_no) throws SQLException{
 		int cnt = 0;
@@ -319,6 +317,5 @@ public class DAO {
 		
 	}
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 }

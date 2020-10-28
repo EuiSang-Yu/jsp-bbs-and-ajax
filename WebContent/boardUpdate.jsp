@@ -4,11 +4,7 @@
 <%@ page import="dto.*"%>
 
 <%
-<<<<<<< HEAD
-	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
-=======
 	BoardDTO[] arr = (BoardDTO[]) request.getAttribute("list");
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 %>
 
 <%

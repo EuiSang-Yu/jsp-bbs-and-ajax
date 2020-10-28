@@ -17,10 +17,7 @@ public class BoardViewCommand implements Command {
 		
 		
 		DAO dao = new DAO();
-<<<<<<< HEAD
-		BoardDTO[] arr = null;
 		
-=======
 		BoardDTO [] arr = null;
 		
 
@@ -28,13 +25,9 @@ public class BoardViewCommand implements Command {
 		int uid = Integer.parseInt(request.getParameter("no")); //여기가에런데 넘버포맷엥러..
 
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
-<<<<<<< HEAD
 		System.out.println("board_no : " + board_no);
-=======
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		
 		try {
 			arr = dao.readByBoard_no(board_no);   // 읽기 + 조회수 증가	
