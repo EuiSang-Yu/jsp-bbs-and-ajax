@@ -55,17 +55,15 @@
 			</c:when>
 
 			<c:otherwise>
-				<form id="frm_list" action="boardView.do?board_no=${dto.board_no}" method="get">
 					<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 							<tr>
-								<td><button class="board_menu" type="submit">${dto.board_no }</button></td>
-								<td><button class="board_menu" type="submit">${dto.board_title }</button></td>
-								<td><button class="board_menu" type="submit">${dto.board_content }</button></td>
-								<td><button class="board_menu" type="submit">${dto.board_viewCnt }</button></td>
-								<td><button class="board_menu" type="submit">${dto.board_regDate }</button></td>
+								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_no }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_title }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_content }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_viewCnt }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_regDate }</a></td>
 							</tr>
 					</c:forEach>
-				</form>
 			</c:otherwise>
 		</c:choose>
 		</table>

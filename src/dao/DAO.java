@@ -206,8 +206,10 @@ public class DAO {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
 			pstmt.setInt(1, board_no);
 			rs = pstmt.executeQuery();
-
 			arr = createArray(rs);
+			
+			System.out.println("arr : " + arr.toString());
+			
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
@@ -279,7 +281,7 @@ public class DAO {
 	} 
 
 	// 특정 board_no 의 글 수정(제목, 내용)
-<<<<<<< HEAD
+
 	public int update(String board_title, String board_content, int board_no) throws SQLException{
 		int cnt = 0;
 		
@@ -294,9 +296,7 @@ public class DAO {
 		}	//end try
 		return cnt;
 	}	//end update()
-=======
 
-	
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 
 }
