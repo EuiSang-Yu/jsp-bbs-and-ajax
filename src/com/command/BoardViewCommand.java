@@ -18,7 +18,7 @@ public class BoardViewCommand implements Command {
 		DAO dao = new DAO();
 		BoardDTO [] arr = null;
 		
-		int uid = Integer.parseInt(request.getParameter("board_no")); //여기가에런데 넘버포맷엥러..
+		int uid = Integer.parseInt(request.getParameter("no")); //여기가에런데 넘버포맷엥러..
 		
 		try {
 			arr = dao.readByUid(uid);   // 읽기 + 조회수 증가	

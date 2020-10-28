@@ -33,4 +33,6 @@ public class VO {
 			+ "VALUES"
 			+ "(SEQ_tb_member_member_no.NEXTVAL, ?, ?, ?, ?, ?)";
 	
+	public static final String SQL_WRITE_UPDATE = 
+			"UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_no = ?";
 }

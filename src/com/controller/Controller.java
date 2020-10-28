@@ -14,7 +14,7 @@ import com.command.UserSignUpCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
 import com.command.BoardSelectCommand;
-import com.command.BoardUpdateCommand;
+import com.command.BoardUpdateOkCommand;
 import com.command.BoardViewCommand;
 import com.command.BoardWriteCommand;
 
@@ -88,7 +88,7 @@ public class Controller extends HttpServlet {
 			viewPage = "boardUpdate.jsp";
 			break;
 		case "/boardUpdateOk.do":
-			command = new BoardUpdateCommand();
+			command = new BoardUpdateOkCommand();
 			command.execute(request, response);
 			viewPage = "boardUpdateOk.jsp";
 			break;

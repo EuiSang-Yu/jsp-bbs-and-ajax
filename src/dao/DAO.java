@@ -139,7 +139,7 @@ public class DAO {
 
 		arr = new BoardDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
 		list.toArray(arr); // 리스트 -> 배열
-
+		System.out.println(arr);
 		return arr;
 	} // end createArray()
 
@@ -242,6 +242,19 @@ public class DAO {
 	
 	
 	// 특정 board_no 의 글 수정(제목, 내용)
-	
+	public int update(String board_title, String board_content, int board_no) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_UPDATE);
+			pstmt.setString(1, board_title);
+			pstmt.setString(2, board_content);
+			pstmt.setInt(3, board_no);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}	//end try
+		return cnt;
+	}	//end update()
 
 }
