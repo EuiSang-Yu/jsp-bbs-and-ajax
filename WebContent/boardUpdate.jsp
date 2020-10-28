@@ -12,6 +12,7 @@
 %>
 
 <script>
+	alert(<%= arr %>);
 	alert("해당 정보가 삭제되거나 없습니다.");
 	history.back();
 </script>
@@ -85,22 +86,22 @@
 		<div class="col-md-8">
 			<h2 class="text-center">게시글 수정하기</h2>
 			<form action="boardUpdateOk.do" method="GET" onsubmit="return chkSubmit()">
-				<input type="hidden" name="no" value="<%= no %>">
+				<input type="hidden" name="board_no" value="<%= no %>">
 				<table class="table table-striped">
 					<tr>
 						<td>제목</td>
-						<td><input type="text" class="form-control" name="title" value="<%= title %>"/></td>
+						<td><input type="text" class="form-control" name="board_title" value="<%= title %>"/></td>
 					</tr>
 					
 					<tr>
 	                	<td>글내용</td>
-	                	<td><textarea rows="10" cols="50" name="content" class="form-control"><%=content %></textarea></td>
+	                	<td><textarea rows="10" cols="50" name="board_content" class="form-control"><%=content %></textarea></td>
 	            	</tr>
 	            	
 	            	<tr>
 		                <td colspan="2"  class="text-center">
 		                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
-		                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
+		                    <input type="submit" value="수정하기" class="btn btn-success" id="updateSubmit" onclick="alert('작성완료')">
 		                </td>
 	            	</tr>
 				</table>
@@ -112,9 +113,27 @@
 
 
 	</div>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </div>
+<<<<<<< HEAD
 
 
+=======
+=======
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </body>
 </html>

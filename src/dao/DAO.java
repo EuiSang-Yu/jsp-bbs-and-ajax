@@ -142,7 +142,7 @@ public class DAO {
 
 		arr = new BoardDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
 		list.toArray(arr); // 리스트 -> 배열
-
+		System.out.println(arr);
 		return arr;
 	} // end createArray()
 
@@ -246,9 +246,57 @@ public class DAO {
 		return cnt;
 
 	} 
+
+	//로그인 -->id
 	
-	
+	public String login(String loginID) throws SQLException {
+		
+		//쿼리문 결과 password 받을 변수
+		String  loginPW = "";
+		
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_USER_LOGIN);  //id에대한pw값을 알고있음
+			pstmt.setString(1, loginID);
+
+			
+			rs = pstmt.executeQuery(); //쿼리문 결과
+			while(rs.next()) {
+				loginPW = rs.getString("MEMBER_PW"); // MEMBER_PW 컬럼의 값을 loginPW 변수에 담음
+			}
+			System.out.println("loginPW : "+loginPW);
+			
+		} catch (Exception e) {
+			System.out.println("로그인 실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return loginPW;
+
+	} 
+
 	// 특정 board_no 의 글 수정(제목, 내용)
+<<<<<<< HEAD
+	public int update(String board_title, String board_content, int board_no) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_UPDATE);
+			pstmt.setString(1, board_title);
+			pstmt.setString(2, board_content);
+			pstmt.setInt(3, board_no);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}	//end try
+		return cnt;
+	}	//end update()
+=======
+
 	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 }

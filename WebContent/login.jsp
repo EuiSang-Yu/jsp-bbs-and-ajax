@@ -51,14 +51,13 @@
 				</div>
 				<!-- 로그인 폼 -->
 				<div class="login">
-					<form class="login100-form validate-form">
+					<form class="login100-form validate-form" action="loginOk.do">
 						<span class="login100-form-title"> <!-- 제목 -->
 							<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
 						</span>
 
-						<div class="wrap-input100 validate-input"
-							data-validate="Valid email is required: ex@abc.xyz">
-							<input class="input100" type="text" name="email"
+						<div class="wrap-input100 validate-input">
+							<input class="input100" type="text" name="loginID"
 								placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
 							<span class="symbol-input100"> <!-- 아이디 아이콘 --> <i
 								class="fa fa-envelope" aria-hidden="true"></i>
@@ -67,7 +66,7 @@
 
 						<div class="wrap-input100 validate-input"
 							data-validate="Password is required">
-							<input class="input100" type="password" name="pass"
+							<input class="input100" type="password" name="loginPW"
 								placeholder="비밀번호를 입력해주세요."> <span
 								class="focus-input100"></span> <span class="symbol-input100">
 								<i class="fa fa-lock" aria-hidden="true"></i> <!-- 비밀번호 아이콘 -->
@@ -75,7 +74,7 @@
 						</div>
 
 						<div class="container-login100-form-btn">
-							<button class="login100-form-btn">로그인</button>
+							<button type="submit" class = "login100-form-btn" >로그인</button>
 						</div>
 						<br>
 						<div class="text-center p-t-12">
