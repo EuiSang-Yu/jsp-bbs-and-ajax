@@ -30,7 +30,9 @@
 #writeBtn{
 	float: right;
 }
-
+.board_menu{
+	border: none;
+}
 
 </style>
 </head>
@@ -53,14 +55,14 @@
 			</c:when>
 
 			<c:otherwise>
-				<form action="boardView.do?uid=${dto.getBoard_no()}" method="get">
+				<form id="frm_list" action="boardView.do?board_no=${dto.board_no}" method="get">
 					<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 							<tr>
-								<td><button type="submit">${dto.board_no }</button></td>
-								<td><button type="submit">${dto.board_title }</button></td>
-								<td><button type="submit">${dto.board_content }</button></td>
-								<td><button type="submit">${dto.board_viewCnt }</button></td>
-								<td><button type="submit">${dto.board_regDate }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_no }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_title }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_content }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_viewCnt }</button></td>
+								<td><button class="board_menu" type="submit">${dto.board_regDate }</button></td>
 							</tr>
 					</c:forEach>
 				</form>

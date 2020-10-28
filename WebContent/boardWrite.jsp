@@ -45,12 +45,12 @@
           <table class="table table-striped">
             <tr>
                 <td>제목</td>
-                <td><input type="text"  class="form-control" name="title"></td>
+                <td><input type="text"  class="form-control" name="board_title"></td>
             </tr>
              
             <tr>
                 <td>글내용</td>
-                <td><textarea rows="10" cols="50" name="content" class="form-control"></textarea></td>
+                <td><textarea rows="10" cols="50" name="board_content" class="form-control"></textarea></td>
             </tr>
             <tr>
                  

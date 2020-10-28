@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -116,12 +113,10 @@ ALTER TABLE TB_BOARD ADD champion_no number;
 -- 외래키 설정
 ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
 
-<<<<<<< HEAD
 
-
-=======
 SELECT * FROM TB_MEMBER;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
+SELECT * FROM TB_COMMENT ;
 
 ALTER TABLE TB_BOARD ADD champion_no number;
 

@@ -36,18 +36,6 @@ thead tr th {
 
 </head>
 
-<script>
-
-function chkDelete(uid){
-	// 삭제 여부, 다시 확인 하고 진행하기
-	var r = confirm("삭제하시겠습니까?");
-	
-	if(r){
-		location.href = 'deleteOk.do?uid=' + uid;
-	}
-} // chkDelete
-
-</script>
 
 <body>
 <jsp:include page="thema.jsp"/>
@@ -59,18 +47,21 @@ function chkDelete(uid){
 <table class="table">
 	<thead>
 		<tr class="row">
+
 			<th class="col-sm-2">챔피언 공략</th>
 			<th class="col-sm-2">${list[0].board_no }</th>
 			<th class="col-sm-5">${list[0].board_title }</th>
 			<th class="col-sm-1">${list[0].board_regDate }</th>
 			<th class="col-sm-1">댓글</th>
 			<th class="col-sm-1">${list[0].board_viewCnt }</th>
+
 		</tr>
 	</thead>
 	
 	<tbody>
 		<tr class="row">
-			<td colspan="6">${list[0].content }</td>
+			<td colspan="6">${dto.board_content }</td>
+
 		</tr>
 	</tbody>
 </table>
