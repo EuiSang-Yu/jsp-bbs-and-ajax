@@ -32,7 +32,10 @@ public class VO {
 			+ "VALUES"
 			+ "(SEQ_tb_member_member_no.NEXTVAL, ?, ?, ?, ?, ?)";
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 	public static final String SQL_WRITE_UPDATE = 
 			"UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_no = ?";
@@ -42,4 +45,12 @@ public class VO {
 			"SELECT MEMBER_PW FROM TB_MEMBER WHERE MEMBER_ID=?";  //로그인 id를 입력했을때 pw select
 
 
+<<<<<<< HEAD
+=======
+	public static final String SQL_WRITE_DELETE =
+			"DELECT FROM TB_BOARD WHERE board_no=?";
+
+
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 }

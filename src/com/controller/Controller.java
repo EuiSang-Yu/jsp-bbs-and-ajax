@@ -119,6 +119,9 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "loginOk.jsp";
 			break;
+			
+			
+
 		}
 		
 		

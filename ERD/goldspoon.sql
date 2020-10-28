@@ -115,9 +115,14 @@ ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REF
 
 
 SELECT * FROM TB_MEMBER;
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 SELECT * FROM TB_COMMENT ;
 
+<<<<<<< HEAD
 SELECT * FROM TB_BOARD;
 
 SELECT * FROM TB_CHAMPION ;
@@ -142,4 +147,13 @@ VALUES
 ALTER TABLE TB_BOARD ADD champion_no number;
 
 ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REFERENCES tb_champion (champion_no);
+=======
+
+SELECT * FROM TB_CHAMPION;
+
+INSERT INTO TB_CHAMPION (CHAMPION_NO, CHAMPION_NAME, CHAMPION_INFO ) VALUES (1 , '가렌' , '데마시아');
+
+INSERT INTO TB_MEMBER (MEMBER_NO , MEMBER_ID , MEMBER_PW , MEMBER_NAME , MEMBER_EMAIL , MEMBER_PHONE , MEMBER_PHOTO ) 
+VALUES (10, 'AAA', 'AAA' , '이지연' , 'ESFSDFSDASDF' , '0105555555' , '5555SDAFSDF');
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 

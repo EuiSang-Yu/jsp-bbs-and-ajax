@@ -12,9 +12,19 @@ public class BoardDeleteCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 슬아야 강사님 파일 참고해서 공부한다고 생각하고 짜봐! 복붙만 하면 머리에 안남으니까
-		
-		
-	}
+			int cnt = 0;
+			DAO dao = new DAO();
+			
+			int board_no = Integer.parseInt(request.getParameter("board_no"));
+			
+			try {
+				cnt = dao.delete(board_no);
+			} catch(SQLException e) {
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("result", cnt);
+		}
+
 
 }

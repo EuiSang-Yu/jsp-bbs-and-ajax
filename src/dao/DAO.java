@@ -251,23 +251,23 @@ public class DAO {
 
 	//로그인 -->id
 	
-	public String login(String loginID) throws SQLException {
+	public String login(String member_id) throws SQLException {
 		
 		//쿼리문 결과 password 받을 변수
-		String  loginPW = "";
+		String  member_pw = "";
 		
 		try {
 			conn = getConnection();
 
 			pstmt = conn.prepareStatement(VO.SQL_USER_LOGIN);  //id에대한pw값을 알고있음
-			pstmt.setString(1, loginID);
+			pstmt.setString(1, member_id);
 
 			
 			rs = pstmt.executeQuery(); //쿼리문 결과
 			while(rs.next()) {
-				loginPW = rs.getString("MEMBER_PW"); // MEMBER_PW 컬럼의 값을 loginPW 변수에 담음
+				member_pw = rs.getString("member_pw"); // MEMBER_PW 컬럼의 값을 loginPW 변수에 담음
 			}
-			System.out.println("loginPW : "+loginPW);
+			System.out.println("member_pw : "+member_pw);
 			
 		} catch (Exception e) {
 			System.out.println("로그인 실패");
@@ -276,7 +276,7 @@ public class DAO {
 			close();
 		}
 
-		return loginPW;
+		return member_pw;
 
 	} 
 
@@ -298,5 +298,27 @@ public class DAO {
 	}	//end update()
 
 
+<<<<<<< HEAD
+=======
+	//게시글 삭제
+	public int delete(int board_no) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_DELETE);
+			pstmt.setInt(1, board_no);
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("게시글 삭제 실패");
+			e.printStackTrace();
+		}
+		
+		return cnt;  
+		
+	}
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 }
