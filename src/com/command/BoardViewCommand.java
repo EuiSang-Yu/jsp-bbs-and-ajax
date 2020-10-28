@@ -19,7 +19,9 @@ public class BoardViewCommand implements Command {
 		BoardDTO [] arr = null;
 		
 
+
 		int uid = Integer.parseInt(request.getParameter("no")); //여기가에런데 넘버포맷엥러..
+
 
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
 
