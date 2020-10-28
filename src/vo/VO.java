@@ -19,7 +19,7 @@ public class VO {
 			"SELECT * FROM tb_board ORDER BY board_no DESC";
 	
 	
-	public static final String SQL_WRITE_SELECT_BY_UID = 
+	public static final String SQL_WRITE_SELECT_BY_NO = 
 			"SELECT * FROM tb_board WHERE board_no=?";
 
 	
@@ -33,6 +33,14 @@ public class VO {
 			+ "VALUES"
 			+ "(SEQ_tb_member_member_no.NEXTVAL, ?, ?, ?, ?, ?)";
 	
+<<<<<<< HEAD
 	public static final String SQL_WRITE_UPDATE = 
 			"UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_no = ?";
+=======
+
+	public static final String SQL_USER_LOGIN = 
+			"SELECT MEMBER_PW FROM TB_MEMBER WHERE MEMBER_ID=?";  //로그인 id를 입력했을때 pw select
+
+	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 }

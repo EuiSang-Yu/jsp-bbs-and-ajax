@@ -52,11 +52,11 @@
 <script>
 	function chkSubmit(){
 		frm = document.forms['frm'];
-		var subject = frm["subject"].value.trim();
+		var subject = frm["board_title"].value.trim();
 		
 		if(subject == ""){
 			alert("제목은 반드시 작성해야 합니다");
-			frm["subject"].focus();
+			frm["board_title"].focus();
 			return false;
 		}
 		return true;	
@@ -64,6 +64,22 @@
 </script>
 <body>
 
+<<<<<<< HEAD
+<jsp:include page="thema.jsp"/>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<h2 class="text-center">게시글 수정하기</h2>
+		<form action="boardUpdateOk.do" method="GET" onsubmit="return chkSubmit()">
+			<input type="hidden" name="no" value="<%= no %>">
+			<table class="table table-striped">
+				<tr>
+					<td>제목</td>
+					<td><input type="text" class="form-control" name="board_title"></td>
+				</tr>
+			</table>
+		</form>
+=======
 	<jsp:include page="thema.jsp"/>
 	<div class="row">
 		<div class="col-md-2"></div>
@@ -91,7 +107,20 @@
 				</table>
 			</form>
 		</div>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 	</div>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+</div>
+=======
+<<<<<<< HEAD
+=======
+</div>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </body>
 </html>
