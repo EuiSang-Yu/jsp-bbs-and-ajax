@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* Drop Tables */
 
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -119,10 +116,9 @@ ALTER TABLE TB_BOARD ADD CONSTRAINT fk_champion_no FOREIGN KEY (champion_no) REF
 
 
 SELECT * FROM TB_MEMBER;
-<<<<<<< HEAD
+
 
 SELECT * FROM TB_BOARD;
 
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 

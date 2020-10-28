@@ -64,7 +64,7 @@
 </script>
 <body>
 
-<<<<<<< HEAD
+
 <jsp:include page="thema.jsp"/>
 <div class="row">
 	<div class="col-md-2"></div>
@@ -79,7 +79,7 @@
 				</tr>
 			</table>
 		</form>
-=======
+
 	<jsp:include page="thema.jsp"/>
 	<div class="row">
 		<div class="col-md-2"></div>
@@ -107,20 +107,12 @@
 				</table>
 			</form>
 		</div>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
-	</div>
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
+	</div>
+
 </div>
-=======
-<<<<<<< HEAD
-=======
+
+
 </div>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 </body>
 </html>
