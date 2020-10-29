@@ -9,7 +9,7 @@ import dao.DAO;
 import dto.BoardDTO;
 
 
-public class BoardSelectCommand implements Command {
+public class BoardUpdateCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
