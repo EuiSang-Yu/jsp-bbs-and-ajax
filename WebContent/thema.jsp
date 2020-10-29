@@ -49,6 +49,7 @@
 	if(session.getAttribute("userid") != null){	
 %>
 
+
 				<button id="signupBT" type="button" class="btn btn-outline-dark"
 					onclick="location.href='signUp.jsp'">로그아웃</button>
 				<button id="loginBT" type="button" class="btn btn-outline-dark"
