@@ -33,7 +33,21 @@
 
 
 
+<!-- 
 
+1) login.jsp : 로그인을 할때 보여지는 폼 화면
+
+2) loginCommand : 실질적으로 값을 전달받아 처리하는 페이지
+
+3) loginOK.jsp : 로그인 버튼 눌렀을때 결과를 알려주는 페이지 (로그인 완료)
+
+4) thema.jsp : 저장된 값과 비교하여 로그인 기능을 처리하는 페이지
+
+5) themaLoginCommand.java :
+
+6) logout.jsp : 로그아웃 페이지
+
+ -->
 
 
 <title>OP.IT</title>
@@ -51,7 +65,9 @@
 				</div>
 				<!-- 로그인 폼 -->
 				<div class="login">
-					<form class="login100-form validate-form" action="loginOk.do">
+					<!-- method="post"는 POST 방식을 이용하여 URL 경로를 숨기는 기능 -->
+					<form class="login100-form validate-form" action="loginOk.do"
+						method="post">
 						<span class="login100-form-title"> <!-- 제목 -->
 							<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
 						</span>
@@ -74,12 +90,12 @@
 						</div>
 
 						<div class="container-login100-form-btn">
-							<button type="submit" class = "login100-form-btn" >로그인</button>
+							<button type="submit" class="login100-form-btn">로그인</button>
 						</div>
 						<br>
 						<div class="text-center p-t-12">
-							<a class="txt1" href="idSearch.jsp"> 아이디찾기 </a> <a class="txt2" href="pwSearch.jsp">
-								비밀번호 찾기 </a>
+							<a class="txt1" href="idSearch.jsp"> 아이디찾기 </a> <a class="txt2"
+								href="pwSearch.jsp"> 비밀번호 찾기 </a>
 						</div>
 
 						<div class="text-center p-t-136">
