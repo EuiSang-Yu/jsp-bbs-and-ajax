@@ -5,6 +5,6 @@
 %>
 
 <script>
-alert("로그아웃 되었습니다");
+alret("로그아웃 되었습니다. 감사합니다.");
 location.href = "index.jsp";
 </script>

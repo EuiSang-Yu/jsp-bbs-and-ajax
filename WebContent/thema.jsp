@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,32 +38,31 @@
 </head>
 <body>
 
-
-	<!-- 로고 , 로그인, 회원가입 버튼 -->
+	<!-- 세션---------------------------------------------------------
+	로고 , 로그인, 회원가입 버튼 -->
 	<header>
 		<div class="container">
 			<div id="headerMain">
 				<a href="index.jsp"><p class="logo">OP.IT</p></a>
 				
-				<%
+<%
 	// 현재 로그인 상태인지 확인
 	if(session.getAttribute("user_id") != null){
 	String userid = (String)session.getAttribute("user_id");
 %>
-
+				<!-- 로그인 성공일 경우 -->
 				<button id="signupBT" type="button" class="btn btn-outline-dark"
 					onclick="location.href='logout.jsp'">로그아웃</button>
-				<button id="loginBT" type="button" class="btn btn-outline-dark"
-					onclick="location.href='login.jsp'"> 님 </button>
+				<p class="btn" >${user_id } 님 </p>
 
 <%
 	} else {
 		
-%>
+%>		<!-- 로그인 실패했을 경우 -->
 				<button id="signupBT" type="button" class="btn btn-outline-dark"
-					onclick="location.href='signUp.jsp'">회원가입</button>
+					onclick="location.href='signUp.do'">회원가입</button>
 				<button id="loginBT" type="button" class="btn btn-outline-dark"
-					onclick="location.href='login.jsp'">로그인</button>
+					onclick="location.href='login.do'">로그인</button>
 <%				} %>
 
 

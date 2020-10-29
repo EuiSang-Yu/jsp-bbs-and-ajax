@@ -67,7 +67,7 @@
 				<div class="login">
 					<!-- method="post"는 POST 방식을 이용하여 URL 경로를 숨기는 기능 -->
 					<form class="login100-form validate-form" action="loginOk.do"
-						method="post">
+						method="get">
 						<span class="login100-form-title"> <!-- 제목 -->
 							<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
 						</span>
