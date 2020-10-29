@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-	int cnt = (Integer) request.getAttribute("result");
+	int cnt = (Integer)request.getAttribute("result");
 %>
 
 <% if(cnt == 0){ %>
@@ -13,7 +14,7 @@
 <% } else { %>
 	<script>
 		alert("삭제 성공");
-		location.href = "list.do";
+		location.href = "boardListChamp.do?board_champion=${board_champion }";
 	</script>
 <% } %>
 

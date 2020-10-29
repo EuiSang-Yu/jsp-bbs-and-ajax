@@ -22,7 +22,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>게시글 수정하기-${list[0].subject }</title>
+<title>게시글 수정하기-${list[0].board_title }</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -80,7 +80,7 @@ function chkSubmit(){
 				<tr>
 					<td colspan="2" class="text-center">
 						<button type="button" class="btn btn-primary" id="listBtn"
-							onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
+							onclick="location.href='boardListTable.do?board_champion=${board_champion}'">전체 게시글보기</button>
 						<input type="submit" value="수정하기" class="btn btn-success"
 							id="updateSubmit" onclick="alert('작성완료')">
 					</td>
