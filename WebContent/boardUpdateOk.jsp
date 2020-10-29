@@ -12,7 +12,7 @@
 	<c:otherwise>
 		<script>
 			alert("수정에 성공하였습니다.");
-			location.href = "boardView.do?board_id=${param.board_id}";
+			location.href = "boardView.do?board_id=${param.board_id}&board_champion=${param.board_champion }";
 		</script>
 	</c:otherwise>
 </c:choose>
