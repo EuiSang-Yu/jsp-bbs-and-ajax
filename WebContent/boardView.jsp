@@ -68,8 +68,9 @@ thead tr th {
 <hr>
 
 <jsp:include page="comment.jsp"/>
-
-<a href="boardListTable.do" class="btn btn-outline-dark" id="listBtn">목록</a>
+<button onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
+<button onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
+<a href="boardListTable.do?board_champion=${list[0].board_champion }" class="btn btn-outline-dark" id="listBtn">목록</a>
 </div>
 </body>
 </html>
