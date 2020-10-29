@@ -66,23 +66,23 @@
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="userID"
-						placeholder="UserID" name="member_id">
+						placeholder="UserID" name="user_id">
 				</div>
 				<div class="form-group">
 					<input type="password" class="form-control item" id="password"
-						placeholder="Password" name="member_pw">
+						placeholder="Password" name="user_pw">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="username"
-						placeholder="UserName" name="member_name">
+						placeholder="UserName" name="user_name">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="email"
-						placeholder="Email" name="member_email">
+						placeholder="Email" name="user_email">
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control item" id="phone-number"
-						placeholder="Phone Number" name="member_phone">
+						placeholder="Phone Number" name="user_phone">
 				</div>
 
 				<div class="form-group">

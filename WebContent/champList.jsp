@@ -45,7 +45,7 @@
 		<c:forEach var="i" begin="1" end="145">
 
 			<div class="championList">
-				<a href="boardListTable.do?champion_no=${i }">
+				<a href="boardListTable.do?board_champion=${i }">
 					<img class="championListImg"
 						src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
 				</a>

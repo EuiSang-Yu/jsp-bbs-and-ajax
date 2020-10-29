@@ -64,7 +64,7 @@
 				<form id="searchFrm" action="historyMain.jsp" method="GET">
 					<div class="search">
 
-						<input class="search_input" type="text" name="searchId"
+						<input class="search_input" type="text" name="user_id"
 							placeholder="소환사명을 입력해주세요 ..">
 						<button type="submit" class="search_icon">
 							<i class="fa fa-search"></i>
