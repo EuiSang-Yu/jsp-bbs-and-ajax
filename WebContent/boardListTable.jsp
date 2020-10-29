@@ -59,18 +59,18 @@
 			<c:otherwise>
 					<c:forEach var="dto" items="${list }">  <%-- request.getAttribute("list") --%>
 							<tr>
-								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_no }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_title }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_content }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_viewCnt }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_no=${dto.board_no}">${dto.board_regDate }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_id }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_title }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_content }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_regDate }</a></td>
 							</tr>
 					</c:forEach>
 			</c:otherwise>
 		</c:choose>
 		</table>
 		
-	             <a href="boardWrite.do?champion_no=${champion_no }" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+	             <a href="boardWrite.do?board_champion=${board_champion }" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
             
 	</div>
             

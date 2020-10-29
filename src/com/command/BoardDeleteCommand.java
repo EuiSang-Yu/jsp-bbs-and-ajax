@@ -15,11 +15,11 @@ public class BoardDeleteCommand implements Command {
 			int cnt = 0;
 			DAO dao = new DAO();
 			
-			int board_no = Integer.parseInt(request.getParameter("board_no"));
-			int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+			int board_id = Integer.parseInt(request.getParameter("board_id"));
+			int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 			
 			try {
-				cnt = dao.delete(board_no, champion_no);
+				cnt = dao.delete(board_id, board_champion);
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}

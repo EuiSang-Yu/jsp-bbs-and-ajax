@@ -55,26 +55,26 @@
                   		<table class="table table-boardered">
                      		<tr>
                         		<th>User ID</th>
-                        		<td><input type="text" class="form-control" name="id"
+                        		<td><input type="text" class="form-control" name="user_id"
                            		placeholder="id를 넣으세요"></td>
                      		</tr>
                      		<tr>
                         		<th>User PassWord</th>
                         		<td><input type="password" class="form-control"
-                           		name="pass1" placeholder="비밀번호는 영문만 넣어주세요"></td>
+                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요"></td>
                      		</tr>
 		                     <tr>
 		                        <th>User Name</th>
 	                        	<td><input type="password" class="form-control"
-	                           	name="pass2"></td>
+	                           	name="user_name"></td>
 		                     </tr>
 		                     <tr>
 		                        <th>User Email</th>
-		                        <td><input type="email" class="form-control" name="email"></td>
+		                        <td><input type="email" class="form-control" name="user_email"></td>
 		                     </tr>
 		                     <tr>
 		                        <th>User PhoneNumber</th>
-		                        <td><input type="tel" class="form-control" name="tel"></td>
+		                        <td><input type="tel" class="form-control" name="user_phone"></td>
 		                     </tr>
 		                     <tr>
 		                        <td colspan="2">

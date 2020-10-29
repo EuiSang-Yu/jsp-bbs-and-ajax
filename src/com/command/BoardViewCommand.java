@@ -22,15 +22,15 @@ public class BoardViewCommand implements Command {
 		
 
 
-		int board_no = Integer.parseInt(request.getParameter("board_no"));
-		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		int board_id = Integer.parseInt(request.getParameter("board_id"));
+		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 
 
-		System.out.println("board_no : " + board_no);
+		System.out.println("board_id : " + board_id);
 
 		
 		try {
-			arr = dao.readByBoard_no(board_no, champion_no);
+			arr = dao.readByboard_id(board_id, board_champion);
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();

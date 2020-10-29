@@ -24,7 +24,7 @@
 } // end if
 %>
 <%
-int no = arr[0].getBoard_no();
+int id = arr[0].getBoard_id();
 String title = arr[0].getBoard_title();
 String content = arr[0].getBoard_content();
 int viewCnt = arr[0].getBoard_viewCnt();
@@ -61,7 +61,7 @@ String regdate = arr[0].getBoard_regDate();
 		<h2 class="text-center">게시글 수정하기</h2>
 		<form action="boardUpdateOk.do" method="GET"
 			onsubmit="return chkSubmit()">
-			<input type="hidden" name="board_no" value="<%=no%>">
+			<input type="hidden" name="board_id" value="<%=id%>">
 			<table class="table table-striped">
 				<tr>
 					<td>제목</td>

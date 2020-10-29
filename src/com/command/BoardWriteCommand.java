@@ -10,11 +10,11 @@ public class BoardWriteCommand implements Command{
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 		
-		System.out.println("라이트champion_no : " + champion_no);
+		System.out.println("라이트board_champion : " + board_champion);
 		
-		request.setAttribute("champion_no", champion_no);
+		request.setAttribute("board_champion", board_champion);
 		
 	}
 

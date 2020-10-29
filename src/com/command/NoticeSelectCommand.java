@@ -20,11 +20,11 @@ public class NoticeSelectCommand implements Command {
 		DAO dao = new DAO();
 		BoardDTO[] arr = null;
 		
-		int board_no = Integer.parseInt(request.getParameter("board_no"));
-		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		int board_id = Integer.parseInt(request.getParameter("board_id"));
+		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 		
 		try {
-			arr = dao.selectByBoard_no(board_no,champion_no);  // 읽어오기
+			arr = dao.selectByboard_id(board_id,board_champion);  // 읽어오기
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();
