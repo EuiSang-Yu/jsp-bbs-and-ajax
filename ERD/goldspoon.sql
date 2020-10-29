@@ -196,3 +196,7 @@ select * from tab;
 /* 해당 계정 시퀀스 목록 확인*/
 SELECT * FROM USER_SEQUENCES;
 
+
+/* 해당 tb_attach 칼럼 확인 */
+SELECT * FROM TB_ATTACH;
+

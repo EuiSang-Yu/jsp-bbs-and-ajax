@@ -46,8 +46,7 @@
 				
 				<%
 	// 현재 로그인 상태인지 확인
-	if(session.getAttribute("user_id") != null){	
-		
+	if(session.getAttribute("user_id") != null){
 	String userid = (String)session.getAttribute("user_id");
 %>
 
