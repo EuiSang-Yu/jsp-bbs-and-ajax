@@ -46,14 +46,14 @@
 				
 				<%
 	// 현재 로그인 상태인지 확인
-	if(session.getAttribute("userid") != null){	
+	if(session.getAttribute("user_id") != null){
+	String userid = (String)session.getAttribute("user_id");
 %>
 
-
 				<button id="signupBT" type="button" class="btn btn-outline-dark"
-					onclick="location.href='signUp.jsp'">로그아웃</button>
+					onclick="location.href='logout.jsp'">로그아웃</button>
 				<button id="loginBT" type="button" class="btn btn-outline-dark"
-					onclick="location.href='login.jsp'">로그인</button>
+					onclick="location.href='login.jsp'"> 님 </button>
 
 <%
 	} else {

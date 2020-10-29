@@ -25,7 +25,11 @@ public class VO {
 
 	
 	public static final String SQL_WRITE_INC_VIEWCNT = 
+<<<<<<< HEAD
+			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_id = ? and board_champion=?";	//챔피언 넘버 추가
+=======
 			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_id = ? AND board_champion=?";	//챔피언 넘버 추가
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 	
 	public static final String SQL_USER_SIGNUP = 

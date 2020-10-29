@@ -56,24 +56,22 @@
 				<!-- 로그인 폼 -->
 				<form class="login100-form validate-form" id="idSearchForm">
 					<span class="login100-form-title"> <!-- 제목 -->
-						<p class="loginfont">아이디 찾기</p>
+						<p class="loginfont"  style="font-size: 40px;">아이디 찾기</p>
 					</span>
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email"
-							placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
-						<span class="symbol-input100"> <!-- 아이디 아이콘 --> <i
-							class="fa fa-envelope" aria-hidden="true"></i>
+							placeholder="이름을 입력해주세요."> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <!-- 아이디 아이콘 --> <i class="fas fa-portrait"></i>
 						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="email"
-							placeholder="E-Mail을 입력해주세요."> <span class="focus-input100"></span>
-						<span class="symbol-input100"> <i class="fa fa-envelope"
-							aria-hidden="true"></i> <!-- 이메일 아이콘 -->
+							placeholder="전화번호를 입력해주세요."> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fas fa-phone"></i>
 						</span>
 					</div>
 					
