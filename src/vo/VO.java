@@ -2,10 +2,10 @@ package vo;
 
 public class VO {
 
-	public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-	public static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-	public static final String USERID = "goldspoon";
-	public static final String USERPW = "1234";
+   public static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
+   public static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
+   public static final String USERID = "goldspoon";
+   public static final String USERPW = "1234";
 
 	
 	public static final String SQL_WRITE_INSERT = 
@@ -47,8 +47,5 @@ public class VO {
 	public static final String SQL_WRITE_DELETE =
 
 			"DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";	//챔피언 넘버 추가
-
-
-
 
 }
