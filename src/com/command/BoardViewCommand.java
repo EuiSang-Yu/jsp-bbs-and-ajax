@@ -32,7 +32,7 @@ public class BoardViewCommand implements Command {
 		try {
 			arr = dao.readByboard_id(board_id, board_champion);
 			request.setAttribute("list", arr);
-		} catch(SQLException e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}		
 

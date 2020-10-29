@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import javax.xml.ws.Response;
 
 import dto.BoardDTO;
 
@@ -173,7 +175,12 @@ public class DAO {
 
 	public BoardDTO[] selectByboard_id(int board_id, int board_champion) throws SQLException {
 		BoardDTO[] arr = null;
-
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
@@ -196,10 +203,21 @@ public class DAO {
 
 		int cnt = 0;
 		BoardDTO[] arr = null;
-
+		
 		try {
+			conn = getConnection();
+		} catch (Exception e1) {
+			
+			e1.printStackTrace();
+		}
+		
+		
+		try {
+			System.out.println("들어왔니 리드보드");
 			// 트랜잭션 처리
+			conn = getConnection();
 			conn.setAutoCommit(false);
+			System.out.println("쿼리들어오기 직전");
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
 			pstmt.setInt(1, board_id);
 			pstmt.setInt(2, board_champion);
@@ -211,13 +229,16 @@ public class DAO {
 			pstmt.setInt(2, board_champion);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-			
-			System.out.println("arr : " + arr.toString());
-			
+
+			System.out.println("arr : " + arr.toString()+"확인할거야2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
 			throw e; // 예외를 다시 throw
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
 			close();
 		} // end try
@@ -289,6 +310,12 @@ public class DAO {
 	public int update(String board_title, String board_content, int board_id, int board_champion) throws SQLException{
 		int cnt = 0;
 		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_UPDATE);
 			pstmt.setString(1, board_title);

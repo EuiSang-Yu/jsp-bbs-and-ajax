@@ -18,7 +18,9 @@ public class BoardUpdateOkCommand implements Command {
 		
 		//parameter
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
+		System.out.println(board_id+"111111111111111111");
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
+		System.out.println(board_champion+"챔프11111111111111111");
 		String board_title = request.getParameter("board_title");
 		String board_content = request.getParameter("board_content");
 		

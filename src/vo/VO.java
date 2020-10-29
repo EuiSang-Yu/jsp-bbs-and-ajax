@@ -20,13 +20,13 @@ public class VO {
 	
 	
 	public static final String SQL_WRITE_SELECT_BY_NO = 
+
 			"SELECT * FROM tb_board WHERE board_id=? AND board_champion=?";	//챔피언 넘버 추가
 
 
-	
 	public static final String SQL_WRITE_INC_VIEWCNT = 
+			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_id = ? and board_champion=?";	//챔피언 넘버 추가
 
-			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_id = ? AND board_champion=?";	//챔피언 넘버 추가
 
 	
 	public static final String SQL_USER_SIGNUP = 
@@ -48,7 +48,7 @@ public class VO {
 
 	public static final String SQL_WRITE_DELETE =
 
-			"DELECT FROM TB_BOARD WHERE board_id=?";	//챔피언 넘버 추가
+			"DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";	//챔피언 넘버 추가
 
 
 
