@@ -73,7 +73,7 @@
 						</span>
 
 						<div class="wrap-input100 validate-input">
-							<input class="input100" type="text" name="member_id"
+							<input class="input100" type="text" name="user_id"
 								placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
 							<span class="symbol-input100"> <!-- 아이디 아이콘 --> <i
 								class="fa fa-envelope" aria-hidden="true"></i>
@@ -82,7 +82,7 @@
 
 						<div class="wrap-input100 validate-input"
 							data-validate="Password is required">
-							<input class="input100" type="password" name="member_pw"
+							<input class="input100" type="password" name="user_pw"
 								placeholder="비밀번호를 입력해주세요."> <span
 								class="focus-input100"></span> <span class="symbol-input100">
 								<i class="fa fa-lock" aria-hidden="true"></i> <!-- 비밀번호 아이콘 -->

@@ -43,7 +43,7 @@
 		
 		
         <form action="boardWriteOk.do" method="GET">
-		<input type="hidden" name="champion_no" value="${champion_no }">
+		<input type="hidden" name="board_champion" value="${board_champion }">
           <table class="table table-striped">
             <tr>
                 <td>제목</td>

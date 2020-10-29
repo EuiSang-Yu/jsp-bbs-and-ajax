@@ -14,16 +14,16 @@ public class LoginCommand implements Command{
 		int cnt = 0;
 		DAO dao = new DAO();
 	
-		String member_id = request.getParameter("member_id");
-		String member_pw = request.getParameter("member_pw");
+		String user_id = request.getParameter("user_id");
+		String user_pw = request.getParameter("user_pw");
 		
 
 		
 		//빈칸일때 cnt =0임
-		if(member_id != null && member_pw != null &&
-				member_id.trim().length() > 0 && member_pw.trim().length() > 0) {
+		if(user_id != null && user_pw != null &&
+				user_id.trim().length() > 0 && user_pw.trim().length() > 0) {
 			try {
-				if(member_pw.equals(dao.login(member_id))) {  
+				if(user_pw.equals(dao.login(user_id))) {  
 					cnt = 1;
 					
 				}else {

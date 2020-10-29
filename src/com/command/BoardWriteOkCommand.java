@@ -16,8 +16,7 @@ public class BoardWriteOkCommand implements Command {
 		//입력한 값 (parameter) 받아오기
 		String board_title = request.getParameter("board_title");
 		String board_content = request.getParameter("board_content");
-		int board_viewCnt = 0;
-		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 		
 		System.out.println("board_title : "+board_title +" , board_content : " + board_content);
 		
@@ -25,7 +24,7 @@ public class BoardWriteOkCommand implements Command {
 		if(board_title != null && board_content != null &&
 				board_title.trim().length() > 0 && board_content.trim().length() > 0) {
 			try {
-				cnt = dao.insert(board_title, board_content, board_viewCnt, champion_no);
+				cnt = dao.insert(board_title, board_content, board_champion);
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -33,6 +32,6 @@ public class BoardWriteOkCommand implements Command {
 		}//end if
 		
 		request.setAttribute("result", cnt);
-		request.setAttribute("champion_no", champion_no);
+		request.setAttribute("board_champion", board_champion);
 	}
 }
