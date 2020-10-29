@@ -18,6 +18,7 @@ import com.command.BoardSelectCommand;
 import com.command.BoardUpdateOkCommand;
 import com.command.BoardViewCommand;
 import com.command.BoardWriteCommand;
+import com.command.BoardWriteOkCommand;
 
 
 
@@ -69,11 +70,13 @@ public class Controller extends HttpServlet {
 			break;
 		
 		case "/boardWrite.do":
+			command = new BoardWriteCommand();
+			command.execute(request, response);
 			viewPage = "boardWrite.jsp";
 			break;
 		
 		case "/boardWriteOk.do":
-			command = new BoardWriteCommand();
+			command = new BoardWriteOkCommand();
 			command.execute(request, response);
 			viewPage = "boardWriteOk.jsp";
 			break;	

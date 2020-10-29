@@ -38,6 +38,8 @@
 </head>
 
 <body>
+
+
 <jsp:include page="boardListChamp.jsp"/>
     <div class="container">
     	
@@ -67,7 +69,9 @@
 			</c:otherwise>
 		</c:choose>
 		</table>
-            <a href="boardWrite.do" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+		
+	             <a href="boardWrite.do?champion_no=${champion_no }" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
+            
 	</div>
             
 

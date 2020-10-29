@@ -45,12 +45,10 @@
 		<c:forEach var="i" begin="1" end="145">
 
 			<div class="championList">
-				<form action="boardListTable.do?champ=${i }" method="POST">
-					<button type="submit" name="champion_no">
-						<img class="championListImg"
-							src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
-					</button>
-				</form>
+				<a href="boardListTable.do?champion_no=${i }">
+					<img class="championListImg"
+						src="img/championImg/RiotX_ChampionList_${i }.jpg" alt="">
+				</a>
 			</div>
 
 		</c:forEach>

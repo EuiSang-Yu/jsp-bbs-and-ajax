@@ -10,13 +10,13 @@ public class VO {
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO TB_BOARD"
-			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate) " 
+			+ "(board_no, board_title, board_content, board_viewCnt, board_regdate, champion_no) " 
 			+ "VALUES"
-			+ "(SEQ_tb_board_board_no.NEXTVAL, ?, ?, ?, SYSDATE)";	//챔피언 넘버 추가
+			+ "(SEQ_tb_board_board_no.NEXTVAL, ?, ?, ?, SYSDATE,?)";	//챔피언 넘버 추가
 	
 	
 	public static final String SQL_WRITE_SELECT = 
-			"SELECT * FROM tb_board ORDER BY board_no DESC";	//챔피언 넘버 추가
+			"SELECT * FROM tb_board WHERE champion_no = ? ORDER BY board_no DESC";	//챔피언 넘버 추가
 	
 	
 	public static final String SQL_WRITE_SELECT_BY_NO = 

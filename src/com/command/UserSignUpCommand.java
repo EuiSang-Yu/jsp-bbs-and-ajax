@@ -15,25 +15,25 @@ public class UserSignUpCommand implements Command {
 		DAO dao = new DAO();
 
 		//회원정보 값 받아오기
-		String signUpID = request.getParameter("signUpID");
-		String signUpPW = request.getParameter("signUpPW");
-		String signUpName = request.getParameter("signUpName");
-		String signUpEmail = request.getParameter("signUpEmail");
-		String signUpNum = request.getParameter("signUpNum");
+		String member_id = request.getParameter("member_id");
+		String member_pw = request.getParameter("member_pw");
+		String member_name = request.getParameter("member_name");
+		String member_email = request.getParameter("member_email");
+		String member_phone = request.getParameter("member_phone");
 
-		System.out.println("signUpID : " + signUpID + " , " +
-		"signUpPW : " + signUpPW + " , " +
-				"signUpName : "+ signUpName + " , " +
-				"signUpEmail : " + signUpEmail + " ," +
-				"signUpNum : " + signUpNum);
+		System.out.println("member_id : " + member_id + " , " +
+				"member_pw : " + member_pw + " , " +
+				"member_name : "+ member_name + " , " +
+				"member_email : " + member_email + " ," +
+				"member_phone : " + member_phone);
 
 	
 	
-		if(signUpID != null && signUpPW != null && signUpName != null && signUpEmail != null && signUpNum != null &&
-				signUpID.trim().length() > 0 && signUpPW.trim().length() > 0 && signUpName.trim().length() > 0
-				 && signUpEmail.trim().length() > 0 && signUpNum.trim().length() > 0) {
+		if(member_id != null && member_pw != null && member_name != null && member_email != null && member_phone != null &&
+				member_id.trim().length() > 0 && member_pw.trim().length() > 0 && member_name.trim().length() > 0
+				 && member_email.trim().length() > 0 && member_phone.trim().length() > 0) {
 			try {
-				cnt = dao.signUp(signUpID, signUpPW, signUpName, signUpEmail, signUpNum);
+				cnt = dao.signUp(member_id, member_pw, member_name, member_email, member_phone);
 			} catch (SQLException e) {
 				cnt = 0;
 			}

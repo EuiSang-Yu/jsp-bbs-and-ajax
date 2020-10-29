@@ -67,7 +67,7 @@ public class DAO {
 	// ------------------------------------------------------------------------------------------------------------------------//
 
 	// 새글 작성 <-- 제목, 내용, 조회수, 해당챔피언, 작성자
-	public int insert(String board_title, String board_content, int board_viewCnt, int champion_no, String board_memberId) throws SQLException {
+	public int insert(String board_title, String board_content, int board_viewCnt, int champion_no) throws SQLException {
 		int cnt = 0;
 
 		try {
@@ -78,7 +78,7 @@ public class DAO {
 			pstmt.setString(2, board_content);
 			pstmt.setInt(3, board_viewCnt);
 			pstmt.setInt(4, champion_no);
-			pstmt.setString(5, board_memberId);
+
 
 			cnt = pstmt.executeUpdate();// 여기서에러
 		} catch (Exception e) {
@@ -100,10 +100,9 @@ public class DAO {
 			String board_title = dto.getBoard_title();
 			String board_content = dto.getBoard_content();
 			int board_viewCnt = dto.getBoard_viewCnt();
-			int champion_no = rs.getInt("champion_no");
-			String board_memberId = rs.getString("board_memberId");
+			int champion_no = dto.getChampion_no();
 
-			cnt = this.insert(board_title, board_content, board_viewCnt, champion_no, board_memberId);
+			cnt = this.insert(board_title, board_content, board_viewCnt, champion_no);
 
 		} catch (Exception e) {
 			System.out.println("새글작성 DTO 에러");
@@ -149,12 +148,13 @@ public class DAO {
 	
 	
 	// 전체 SELECT ListComm
-	public BoardDTO[] select() throws SQLException {
+	public BoardDTO[] select(int champion_no) throws SQLException {
 		BoardDTO[] arr = null;
 
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT);
+			pstmt.setInt(1, champion_no);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} catch (Exception e) {
@@ -170,13 +170,14 @@ public class DAO {
 	
 	// 특정 uid 의 글만 SELECT
 
-	public BoardDTO[] selectByBoard_no(int board_no) throws SQLException {
+	public BoardDTO[] selectByBoard_no(int board_no, int champion_no) throws SQLException {
 		BoardDTO[] arr = null;
 
 
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
 			pstmt.setInt(1, board_no);
+			pstmt.setInt(2, champion_no);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} finally {
@@ -190,7 +191,7 @@ public class DAO {
 	// 특정 uid 글 내용 읽기, 조회수 증가
 	// viewcnt 도 +1 증가해야 하고, 읽어와야 한다 --> 트랜잭션 처리
 
-	public BoardDTO[] readByBoard_no(int board_no) throws SQLException {
+	public BoardDTO[] readByBoard_no(int board_no, int champion_no) throws SQLException {
 
 		int cnt = 0;
 		BoardDTO[] arr = null;
@@ -200,11 +201,13 @@ public class DAO {
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
 			pstmt.setInt(1, board_no);
+			pstmt.setInt(2, champion_no);
 			cnt = pstmt.executeUpdate();
 
 			pstmt.close();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
 			pstmt.setInt(1, board_no);
+			pstmt.setInt(2, champion_no);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 			
@@ -282,7 +285,7 @@ public class DAO {
 
 	// 특정 board_no 의 글 수정(제목, 내용)
 
-	public int update(String board_title, String board_content, int board_no) throws SQLException{
+	public int update(String board_title, String board_content, int board_no, int champion_no) throws SQLException{
 		int cnt = 0;
 		
 		try {
@@ -290,6 +293,7 @@ public class DAO {
 			pstmt.setString(1, board_title);
 			pstmt.setString(2, board_content);
 			pstmt.setInt(3, board_no);
+			pstmt.setInt(4, champion_no);
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -299,13 +303,14 @@ public class DAO {
 
 
 	//게시글 삭제
-	public int delete(int board_no) throws SQLException{
+	public int delete(int board_no, int champion_no) throws SQLException{
 		int cnt = 0;
 		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_DELETE);
 			pstmt.setInt(1, board_no);
+			pstmt.setInt(2, champion_no);
 			cnt=pstmt.executeUpdate();
 			
 		} catch (Exception e) {

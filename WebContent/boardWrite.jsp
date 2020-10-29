@@ -40,8 +40,10 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <h2 class="text-center">게시글 쓰기</h2>
-
+		
+		
         <form action="boardWriteOk.do" method="GET">
+		<input type="hidden" name="champion_no" value="${champion_no }">
           <table class="table table-striped">
             <tr>
                 <td>제목</td>
@@ -50,13 +52,13 @@
              
             <tr>
                 <td>글내용</td>
-                <td><textarea rows="10" cols="50" name="board_content" class="form-control"></textarea></td>
+                <td><textarea rows="10" cols="50" class="form-control" name="board_content"></textarea></td>
             </tr>
             <tr>
                  
                 <td colspan="2"  class="text-center">
                     <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
-                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit" onclick="alert('작성완료')">
+                    <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit">
                 </td>
             </tr>
              

@@ -17,13 +17,14 @@ public class BoardUpdateOkCommand implements Command {
 		DAO dao = new DAO();
 		
 		//parameter
-		int no = Integer.parseInt(request.getParameter("board_no"));
-		String title = request.getParameter("board_title");
-		String content = request.getParameter("board_content");
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+		String board_title = request.getParameter("board_title");
+		String board_content = request.getParameter("board_content");
 		
-		if(title != null && title.trim().length() > 0) {
+		if(board_title != null && board_title.trim().length() > 0) {
 			try {
-				cnt = dao.update(title, content, no);
+				cnt = dao.update(board_title,board_content,board_no,champion_no);
 			} catch(SQLException e) {
 				e.printStackTrace();
 			}

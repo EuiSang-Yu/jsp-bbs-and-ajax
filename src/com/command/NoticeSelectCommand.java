@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 import dto.BoardDTO;
-import dto.WriteDTO;
 
 
 public class NoticeSelectCommand implements Command {
@@ -21,10 +20,11 @@ public class NoticeSelectCommand implements Command {
 		DAO dao = new DAO();
 		BoardDTO[] arr = null;
 		
-		int uid = Integer.parseInt(request.getParameter("uid"));
+		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
 		
 		try {
-			arr = dao.selectByBoard_no(uid);  // 읽어오기
+			arr = dao.selectByBoard_no(board_no,champion_no);  // 읽어오기
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();

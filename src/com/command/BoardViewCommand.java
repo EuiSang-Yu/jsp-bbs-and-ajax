@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 import dto.BoardDTO;
-import dto.WriteDTO;
+
 
 
 public class BoardViewCommand implements Command {
@@ -22,15 +22,15 @@ public class BoardViewCommand implements Command {
 		
 
 
-		int uid = Integer.parseInt(request.getParameter("no")); //여기가에런데 넘버포맷엥러..
-
-
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
+		int champion_no = Integer.parseInt(request.getParameter("champion_no"));
+
+
 		System.out.println("board_no : " + board_no);
 
 		
 		try {
-			arr = dao.readByBoard_no(board_no);   // 읽기 + 조회수 증가	
+			arr = dao.readByBoard_no(board_no, champion_no);
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();

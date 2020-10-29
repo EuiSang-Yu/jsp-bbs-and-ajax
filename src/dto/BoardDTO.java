@@ -7,7 +7,6 @@ public class BoardDTO {
 	private int board_viewCnt; // 조회수
 	private String board_regDate; //게시글 등록일
 	private int champion_no; // 게시판 해당챔피언
-	private String board_memberId; // 게시글 작성자
 
 	// 기본생성자
 	public BoardDTO() {
@@ -23,7 +22,6 @@ public class BoardDTO {
 		this.board_content = board_content;
 		this.board_viewCnt = viewCnt;
 		this.champion_no = champion_no; // 게시판 해당챔피언
-		this.board_memberId = board_memberId; // 게시글 작성자
 
 		System.out.printf("WriteDTO(%d, %s, %s, %d, %d, %s) 객체 생성", board_no, board_title, board_content, viewCnt, champion_no, board_memberId);
 	}
@@ -80,13 +78,6 @@ public class BoardDTO {
 		this.champion_no = champion_no;
 	}
 
-	public String getBoard_memberId() {
-		return board_memberId;
-	}
-
-	public void setBoard_memberId(String board_memberId) {
-		this.board_memberId = board_memberId;
-	}
 
 	
 	

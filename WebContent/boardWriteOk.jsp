@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="dao.*" %>
-<%@ page import="dto.*" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <%  // Controller 로부터 결과 데이터 받음.
@@ -17,6 +17,6 @@
 <% } else { %>
 	<script>
 		alert("등록 성공, 리스트를 출력합니다");
-		location.href = "boardListTable.do";
+		location.href = "boardListTable.do?champion_no=${champion_no }";
 	</script>
 <% } %>
