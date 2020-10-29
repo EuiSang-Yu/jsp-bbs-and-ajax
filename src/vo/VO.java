@@ -30,7 +30,7 @@ public class VO {
 			"INSERT INTO TB_USER"
 			+ "(user_uid, user_id, user_pw, user_name, user_email, user_phone) " 
 			+ "VALUES"
-			+ "(SEQ_tb_user_user_id.NEXTVAL, ?, ?, ?, ?, ?)";
+			+ "(SEQ_tb_user_user_uid.NEXTVAL, ?, ?, ?, ?, ?)";
 
 
 
