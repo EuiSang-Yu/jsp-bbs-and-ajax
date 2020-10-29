@@ -14,7 +14,7 @@
 <% } else { %>
 	<script>
 		alert("삭제 성공");
-		location.href = "boardListChamp.do?board_champion=${board_champion }";
+		location.href = "boardListTable.do?board_champion=${board_champion }";
 	</script>
 <% } %>
 

@@ -104,8 +104,6 @@ CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1;
 
 
 
-<<<<<<< HEAD
-=======
 /* Create Tables */
 
 CREATE TABLE tb_user
@@ -206,8 +204,6 @@ ALTER TABLE tb_reply
 ;
 
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
-
 /* Create Triggers */
 
 CREATE OR REPLACE TRIGGER TRI_tb_board_board_id BEFORE INSERT ON tb_board
@@ -258,7 +254,11 @@ END;
 
 /
 
-<<<<<<< HEAD
+CREATE SEQUENCE SEQ_tb_board_board_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_reply_reply_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_user_user_uid INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_like_like_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1 NOCACHE;
 
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
@@ -266,21 +266,14 @@ select * from tab;
 select * from tb_user;
 
 SELECT * FROM TB_BOARD ;
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
-<<<<<<< HEAD
-=======
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* 해당 계정 시퀀스 목록 확인*/
 SELECT * FROM USER_SEQUENCES;
-<<<<<<< HEAD
-=======
+
 
 /* 해당 tb_attach 칼럼 확인 */
 SELECT * FROM TB_ATTACH;
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git

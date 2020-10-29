@@ -199,6 +199,7 @@ public class DAO {
 
 		try {
 			// 트랜잭션 처리
+			conn = getConnection();
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
 			pstmt.setInt(1, board_id);
@@ -212,12 +213,14 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 			
-			System.out.println("arr : " + arr.toString());
 			
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
 			throw e; // 예외를 다시 throw
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
 			close();
 		} // end try

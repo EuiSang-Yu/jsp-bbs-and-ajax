@@ -57,7 +57,7 @@
             <tr>
                  
                 <td colspan="2"  class="text-center">
-                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
+                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTable.do?board_champion=${board_champion }'">전체 게시글보기</button>
                     <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit">
                 </td>
             </tr>
