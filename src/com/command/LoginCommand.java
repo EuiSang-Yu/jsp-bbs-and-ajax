@@ -4,6 +4,8 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+
 import java.util.*;
 import dao.DAO;
 
@@ -18,7 +20,6 @@ public class LoginCommand implements Command{
 		String user_pw = request.getParameter("user_pw");
 		
 
-		
 		//빈칸일때 cnt =0임
 		if(user_id != null && user_pw != null &&
 				user_id.trim().length() > 0 && user_pw.trim().length() > 0) {
