@@ -87,19 +87,10 @@ textarea:-ms-input-placeholder {
 }
 
 
-/*로그인 버튼*/
-.login100-form-btn {
-	outline: none !important;
-	border: none;
-	background: transparent;
-}
-
-.login100-form-btn:hover {
-	cursor: pointer;
-}
 
 
-/*아이디찾기 전체 div*/
+
+/*비밀번호찾기 전체 div*/
 .limiter {
 	width: 100%;
 	margin: 0 auto;
@@ -125,10 +116,10 @@ textarea:-ms-input-placeholder {
 	background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
 	background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
-/*아이디찾기폼 네모박스*/
+/*비번찾기폼 네모박스*/
 .wrap-login100 {
 	width: 960px;
-	height: 500px;
+	height: 600px;
 	background: #fff;
 	border-radius: 10px;
 	overflow: hidden;
@@ -143,13 +134,13 @@ textarea:-ms-input-placeholder {
 }
 
 
-/*아이디 찾기 폼*/
+/*비번 찾기 폼*/
 .login100-form {
 	width: 290px;
 	margin-top: -10%;
 	margin-left: 30%;
 }
-/*아이디찾기 제목 부분( 'OP.IT 로그인')*/
+/*비번찾기 제목 부분( 'OP.IT 로그인')*/
 .loginfont {
 	font-family: 'Black Han Sans', sans-serif;
 	color: #333333;
@@ -226,7 +217,7 @@ textarea:-ms-input-placeholder {
 	padding-left: 28px;
 }
 
-/*아이디찾기 버튼 div*/
+/*비번찾기 버튼 div*/
 .container-login100-form-btn {
 	width: 100%;
 	display: -webkit-box;
@@ -238,7 +229,7 @@ textarea:-ms-input-placeholder {
 	justify-content: center;
 	padding-top: 20px;
 }
-/*아이디 찾기 버튼*/
+/*비번 찾기 버튼*/
 .login100-form-btn {
 	font-family: Montserrat-Bold;
 	font-size: 15px;

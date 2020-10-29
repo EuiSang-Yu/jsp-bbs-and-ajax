@@ -17,6 +17,7 @@
 		history.back();
 	</script>
 <% } else { %>
+ 	
 	<script>
 		alert("로그인 성공 !!!");
 		location.href = "index.jsp";

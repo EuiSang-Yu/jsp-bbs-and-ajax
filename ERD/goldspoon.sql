@@ -96,13 +96,14 @@ CREATE TABLE tb_attach
 
 /* Create Sequences */
 
-CREATE SEQUENCE SEQ_tb_board_board_id INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_tb_reply_reply_id INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_tb_user_user_uid INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_tb_like_like_id INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1;
+CREATE SEQUENCE SEQ_tb_board_board_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_reply_reply_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_user_user_uid INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_like_like_id INCREMENT BY 1 START WITH 1 NOCACHE;
+CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1 NOCACHE;
 
 
+<<<<<<< HEAD
 
 /* Create Tables */
 
@@ -203,6 +204,9 @@ ALTER TABLE tb_reply
    REFERENCES tb_user (user_id)
 ;
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 /* Create Triggers */
 
@@ -254,15 +258,19 @@ END;
 
 /
 
+<<<<<<< HEAD
 CREATE SEQUENCE SEQ_tb_board_board_id INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_reply_reply_id INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_user_user_uid INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_like_like_id INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1 NOCACHE;
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
+<<<<<<< HEAD
 select * from tb_user;
 
 SELECT * FROM TB_BOARD ;
@@ -270,10 +278,23 @@ SELECT * FROM TB_BOARD ;
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 /* 해당 계정 시퀀스 목록 확인*/
 SELECT * FROM USER_SEQUENCES;
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 
 /* 해당 tb_attach 칼럼 확인 */
 SELECT * FROM TB_ATTACH;
+<<<<<<< HEAD
 
+=======
+
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git

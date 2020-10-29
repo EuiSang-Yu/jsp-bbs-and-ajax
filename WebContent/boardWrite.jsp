@@ -57,7 +57,11 @@
             <tr>
                  
                 <td colspan="2"  class="text-center">
+<<<<<<< HEAD
                     <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTable.do?board_champion=${board_champion }'">전체 게시글보기</button>
+=======
+                    <button type="button"  class="btn btn-primary" id="listBtn" onclick="location.href='boardListTable.do?board_champion=${board_champion}'">전체 게시글보기</button>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
                     <input type="submit" value="글쓰기" class="btn btn-success" id="writeSubmit">
                 </td>
             </tr>
