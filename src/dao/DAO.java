@@ -303,14 +303,14 @@ public class DAO {
 
 
 	//게시글 삭제
-	public int delete(int board_no, int champion_no) throws SQLException{
+	public int delete(int board_id, int board_champion) throws SQLException{
 		int cnt = 0;
 		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_DELETE);
-			pstmt.setInt(1, board_no);
-			pstmt.setInt(2, champion_no);
+			pstmt.setInt(1, board_id);
+			pstmt.setInt(2, board_champion);
 			cnt=pstmt.executeUpdate();
 			
 		} catch (Exception e) {
