@@ -1,42 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="dao.*"%>
-<%@ page import="dto.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<%
-	BoardDTO[] arr = (BoardDTO[]) request.getAttribute("list");
-%>
 
-<%
-	if (arr == null || arr.length == 0) {
-%>
+<c:choose>
+	<c:when test="${empty list || fn:length(list) == 0 }">
+		<script>
+			alert("해당 저보가 삭제되거나 없습니다");
+			history.back();
+		</script>
+	</c:when>
+</c:choose>
 
-<script>
-	alert(
-<%=arr%>
-	);
-	alert("해당 정보가 삭제되거나 없습니다.");
-	history.back();
-</script>
 
-<%
-	return;
-} // end if
-%>
-<%
-int id = arr[0].getBoard_id();
-String title = arr[0].getBoard_title();
-String content = arr[0].getBoard_content();
-int viewCnt = arr[0].getBoard_viewCnt();
-String regdate = arr[0].getBoard_regDate();
-%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>게시글 수정하기</title>
+<title>게시글 수정하기-${list[0].subject }</title>
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -78,9 +63,9 @@ String regdate = arr[0].getBoard_regDate();
 				<tr>
 					<td colspan="2" class="text-center">
 						<button type="button" class="btn btn-primary" id="listBtn"
-							onclick="location.href='boardListTables.jsp'">전체 게시글보기</button> <input
-						type="submit" value="수정하기" class="btn btn-success"
-						id="updateSubmit" onclick="alert('작성완료')">
+							onclick="location.href='boardListTables.jsp'">전체 게시글보기</button>
+						<input type="submit" value="수정하기" class="btn btn-success"
+							id="updateSubmit" onclick="alert('작성완료')">
 					</td>
 				</tr>
 			</table>
