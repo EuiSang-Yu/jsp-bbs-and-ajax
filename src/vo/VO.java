@@ -24,9 +24,8 @@ public class VO {
 			"SELECT * FROM tb_board WHERE board_id=? and board_champion=?";	//챔피언 넘버 추가
 
 	public static final String SQL_WRITE_INC_VIEWCNT = 
-
 			"UPDATE tb_board SET board_viewCnt = board_viewCnt + 1 WHERE board_id = ? and board_champion=?";	//챔피언 넘버 추가
-
+	
 	
 	public static final String SQL_USER_SIGNUP = 
 			"INSERT INTO TB_USER"
