@@ -1,5 +1,4 @@
-
-/* Drop Triggers */
+/* Drop Trigger */
 
 DROP TRIGGER TRI_tb_board_board_id;
 DROP TRIGGER TRI_tb_like_like_id;
@@ -182,14 +181,14 @@ END;
 
 
 
-
 /* Comments */
 
 COMMENT ON COLUMN tb_attach.fullName IS '전체경로';
 
-
+/* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
+/* 해당 계정 시퀀스 목록 확인*/
 SELECT * FROM USER_SEQUENCES;
 
 

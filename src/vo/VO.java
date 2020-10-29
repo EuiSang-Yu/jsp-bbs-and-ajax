@@ -43,7 +43,6 @@ public class VO {
 			"SELECT user_pw FROM TB_USER WHERE user_id=?";  //로그인 id를 입력했을때 pw select
 
 
-
 	public static final String SQL_WRITE_DELETE =
 
 			"DELECT FROM TB_BOARD WHERE board_id=?";	//챔피언 넘버 추가
