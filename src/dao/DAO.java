@@ -232,7 +232,6 @@ public class DAO {
 
 			System.out.println("arr : " + arr.toString());
 
-
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
