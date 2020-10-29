@@ -8,7 +8,6 @@ public class VO {
    public static final String USERPW = "1234";
 
 
-   
    public static final String SQL_WRITE_INSERT = 
          "INSERT INTO tb_board"
          + "(board_id, board_title, board_content, board_regDate, board_viewCnt, board_likeCnt, board_replyCnt, board_champion) " 
@@ -34,8 +33,6 @@ public class VO {
          + "VALUES"
          + "(SEQ_tb_user_user_uid.NEXTVAL, ?, ?, ?, ?, ?)";
 
-
-
    public static final String SQL_WRITE_UPDATE = 
          "UPDATE TB_BOARD SET board_title = ?, board_content = ? WHERE board_id = ? and board_champion=?";   //챔피언 넘버 추가
 
@@ -51,6 +48,6 @@ public class VO {
 
 
 
-
 }
+
 

@@ -82,7 +82,7 @@
 				<br>
 				<div align="center">
 					<button type="button" class="btn btn-outline-secondary" onclick="location.href='index.jsp'">메인으로</button>
-					<button type="button" class="btn btn-secondary" onclick="location.href='login.jsp'">로그인</button>
+					<button type="button" class="btn btn-secondary" onclick="location.href='login.do'">로그인</button>
 				</div>
 			</div>
 		</div>
