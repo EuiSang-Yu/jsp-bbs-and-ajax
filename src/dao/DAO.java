@@ -230,7 +230,8 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 
-			System.out.println("arr : " + arr.toString()+"확인할거야2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
+			System.out.println("arr : " + arr.toString());
 
 
 			conn.commit();
