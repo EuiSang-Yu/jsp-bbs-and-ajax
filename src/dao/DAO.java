@@ -229,15 +229,10 @@ public class DAO {
 			pstmt.setInt(2, board_champion);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
-
-<<<<<<< HEAD
+			
 			System.out.println("arr : " + arr.toString()+"확인할거야2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-=======
-			System.out.println("arr : " + arr.toString());
 
-			
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
