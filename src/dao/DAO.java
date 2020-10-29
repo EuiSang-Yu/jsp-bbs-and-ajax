@@ -215,6 +215,7 @@ public class DAO {
 		try {
 			System.out.println("들어왔니 리드보드");
 			// 트랜잭션 처리
+			conn = getConnection();
 			conn.setAutoCommit(false);
 			System.out.println("쿼리들어오기 직전");
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
@@ -229,12 +230,18 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 			
+<<<<<<< HEAD
+=======
 			System.out.println("arr : " + arr.toString()+"확인할거야2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback
 			throw e; // 예외를 다시 throw
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
 			close();
 		} // end try

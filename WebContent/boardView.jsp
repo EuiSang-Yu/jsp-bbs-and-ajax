@@ -49,18 +49,18 @@ thead tr th {
 		<tr class="row">
 
 			<th class="col-sm-2">챔피언 공략</th>
-			<th class="col-sm-2">${list[0].board_id }</th>
-			<th class="col-sm-5">${list[0].board_title }</th>
-			<th class="col-sm-1">${list[0].board_regDate }</th>
-			<th class="col-sm-1">댓글</th>
-			<th class="col-sm-1">${list[0].board_viewCnt }</th>
+			<th class="col-sm-2">글 번호 ${list[0].board_id }</th>
+			<th class="col-sm-3">제목 ${list[0].board_title }</th>
+			<th class="col-sm-3">작성시간 ${list[0].board_regDate }</th>
+			<th class="col-sm-1">댓글 ${list[0].board_replyCnt }</th>
+			<th class="col-sm-1">조회수 ${list[0].board_viewCnt }</th>
 
 		</tr>
 	</thead>
 	
 	<tbody>
 		<tr class="row">
-			<td colspan="6">${dto.board_content }</td>
+			<td colspan="6">${list[0].board_content }</td>
 
 		</tr>
 	</tbody>
