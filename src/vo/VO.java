@@ -7,6 +7,7 @@ public class VO {
    public static final String USERID = "goldspoon";
    public static final String USERPW = "1234";
 
+
 	
 	public static final String SQL_WRITE_INSERT = 
 			"INSERT INTO tb_board"

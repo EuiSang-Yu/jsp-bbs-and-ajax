@@ -230,9 +230,9 @@ public class DAO {
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 
+			System.out.println("arr : " + arr.toString());
 
-			System.out.println("arr : " + arr.toString()+"확인할거야2!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-			
+
 			conn.commit();
 		} catch (SQLException e) {
 			conn.rollback(); // 예외 발생하면 rollback

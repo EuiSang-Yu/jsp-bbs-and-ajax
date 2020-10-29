@@ -124,6 +124,12 @@ public class Controller extends HttpServlet {
 			break;
 			
 			
+		case "/logout.do":
+			command = new LoginCommand();
+			command.execute(request, response);
+			viewPage = "logout.jsp";
+			break;
+				
 
 		}
 		
