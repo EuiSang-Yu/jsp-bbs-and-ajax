@@ -61,10 +61,10 @@
 		<!-- 전적검색창 -->
 		<div class="container h-100">
 			<div class="d-flex justify-content-center h-100 align-items-center">
-				<form id="searchFrm" action="historyMain.jsp" method="GET">
+				<form id="searchFrm" action="historyMain.do" method="GET">
 					<div class="search">
 
-						<input class="search_input" type="text" name="user_id"
+						<input class="search_input" type="text" name="search_id"
 							placeholder="소환사명을 입력해주세요 ..">
 						<button type="submit" class="search_icon">
 							<i class="fa fa-search"></i>

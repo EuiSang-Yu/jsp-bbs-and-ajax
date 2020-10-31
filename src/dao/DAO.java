@@ -1,6 +1,5 @@
 package dao;
 
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,14 +14,19 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import javax.xml.ws.Response;
 
+<<<<<<< HEAD
 import dto.BoardDTO;
 
 import dto.ReplyDTO;
 
 import dto.MemberDTO;
 
+=======
+import dto.BoardDTO;
+import dto.ReplyDTO;
+import dto.UserDTO;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import vo.VO;
 
 public class DAO {
@@ -86,7 +90,7 @@ public class DAO {
 
 			cnt = pstmt.executeUpdate();// 여기서에러
 		} catch (Exception e) {
-			System.out.println("pstmt.set~~ error");
+			
 			e.printStackTrace();
 		} finally {
 			close();
@@ -108,7 +112,7 @@ public class DAO {
 			cnt = this.insert(board_title, board_content, board_champion);
 
 		} catch (Exception e) {
-			System.out.println("새글작성 DTO 에러");
+			
 			e.printStackTrace();
 		}
 
@@ -147,14 +151,14 @@ public class DAO {
 
 		arr = new BoardDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
 		list.toArray(arr); // 리스트 -> 배열
-		System.out.println(arr);
+		
 		return arr;
 	} // end createArray()
 
-	public MemberDTO[] createUserArray(ResultSet rs) throws SQLException {
-		MemberDTO[] arr = null;
+	public UserDTO[] createUserArray(ResultSet rs) throws SQLException {
+		UserDTO[] arr = null;
 		
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		ArrayList<UserDTO> list = new ArrayList<UserDTO>();
 		while (rs.next()) {
 			int user_uid = rs.getInt("user_uid");
 			String user_id = rs.getString("user_id");
@@ -164,13 +168,13 @@ public class DAO {
 			String user_phone = rs.getString("user_phone");
 			String user_profileImage = rs.getString("user_profileImage");
 			
-			MemberDTO dto = new MemberDTO(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage);
+			UserDTO dto = new UserDTO(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage);
 			list.add(dto);
 		}
 		
-		arr = new MemberDTO[list.size()];
+		arr = new UserDTO[list.size()];
 		list.toArray(arr);
-		System.out.println(arr);
+		
 		return arr;
 	}
 	
@@ -237,11 +241,11 @@ public class DAO {
 		
 		
 		try {
-			System.out.println("들어왔니 리드보드");
+			
 			// 트랜잭션 처리
 			conn = getConnection();
 			conn.setAutoCommit(false);
-			System.out.println("쿼리들어오기 직전");
+			
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
 			pstmt.setInt(1, board_id);
 			pstmt.setInt(2, board_champion);
@@ -377,8 +381,8 @@ public class DAO {
 		
 	}
 	
-	public MemberDTO[] selectByuser_uid(int user_uid) throws SQLException {
-		MemberDTO[] arr = null;
+	public UserDTO[] selectByuser_id(String user_id) throws SQLException {
+		UserDTO[] arr = null;
 		try {
 			conn = getConnection();
 		} catch (Exception e) {
@@ -388,19 +392,19 @@ public class DAO {
 
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_MYPAGE_SELECT);
-			pstmt.setInt(1, user_uid);
+			pstmt.setString(1, user_id);
 			rs = pstmt.executeQuery();
 			arr = createUserArray(rs);
 			
-			System.out.println("------------------------------------------arr : " + arr);
 		} finally {
 			close();
 		} // end try
 
 		return arr;
 	} // end selectByuser_Uid()
+	
 
-	public int mypageUpdate(int user_uid, String user_pw, String user_email, String user_phone) throws SQLException{
+	public int mypageUpdate(String user_id, String user_pw, String user_email, String user_phone) throws SQLException{
 		int cnt = 0;
 		
 		try {
@@ -414,7 +418,8 @@ public class DAO {
 			pstmt.setString(1, user_pw);
 			pstmt.setString(2, user_email);
 			pstmt.setString(3, user_phone);
-			pstmt.setInt(4, user_uid);
+			pstmt.setString(4, user_id);
+			
 			cnt = pstmt.executeUpdate();
 		} finally {
 			close();
@@ -473,7 +478,7 @@ public class DAO {
 
 		arr = new ReplyDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
 		list.toArray(arr); // 리스트 -> 배열
-		System.out.println(arr);
+		
 		return arr;
 	} // end createArray()
 	

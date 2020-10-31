@@ -47,9 +47,13 @@ public class VO {
    public static final String SQL_WRITE_DELETE =
 
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
+<<<<<<< HEAD
 
 
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    //--------------------------댓글 쿼리
    
    public static final String SQL_REPLY_INSERT = 
@@ -59,11 +63,15 @@ public class VO {
 	         + "(SEQ_tb_reply_reply_id.NEXTVAL, ?, ?, SYSDATE, ?)";
 
    public static final String SQL_MYPAGE_SELECT = 
-		   "SELECT * FROM TB_USER WHERE USER_UID=?";	// 마이페이지 열었을때 회원가입정보 가져오기
+		   "SELECT * FROM TB_USER WHERE USER_ID=?";	// 마이페이지 열었을때 회원가입정보 가져오기
    
    public static final String SQL_MYPAGE_UPDATE = 
+<<<<<<< HEAD
 	         "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_UID = ?";   //챔피언 넘버 추가
 
+=======
+	         "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_ID = ?";   //챔피언 넘버 추가
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
    public static final String SQL_REPLY_SELECT = 
 	         "SELECT * FROM tb_reply WHERE board_id = ? ORDER BY reply_regDate DESC";
