@@ -94,8 +94,8 @@
 						</div>
 						<br>
 						<div class="text-center p-t-12">
-							<a class="txt1" href="idSearch.jsp"> 아이디찾기 </a> <a class="txt2"
-								href="pwSearch.jsp"> 비밀번호 찾기 </a>
+							<a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
+								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
 
 						<div class="text-center p-t-136">

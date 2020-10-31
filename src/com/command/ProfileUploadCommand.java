@@ -61,25 +61,17 @@ public class ProfileUploadCommand implements Command {
 		while(names.hasMoreElements()){
 			// <input type="file"> 의 name 가져오기
 			String name = (String)names.nextElement();  
-			
-			// 위 name 에는 폼요소의 name 이 담겨있다.
-			// 그 name 을 가지고 원래 파일 (업로드 할 파일) 을 가져온다
-			String originalFileName = multi.getOriginalFileName(name);
-			
-			// 만약 업로드할 폴더에 동일 이름의 파일이 있으면 현재 올리는 파일 이름은 바뀐다 
-			// (FileRenamePolicy 중복정책)
-			// 그리고 나서 시스템 에 실제 업로딩 된 이름을 알려준다
 			fileSystemName = multi.getFilesystemName(name);
-			
-			// 업로딩된 파일의 타입 : MIME 타입 ( ex: image/png ...)
-			String fileType = multi.getContentType(name);
-			
-			System.out.println("사진이름----------------------------------------------"+fileSystemName);
 			request.setAttribute("user_profileImage", fileSystemName);
 		} // end while
 		
 		try {
-			cnt = dao.profileImage_upload(fileSystemName);
+			if(fileSystemName == "" || fileSystemName == null || fileSystemName.equals("") || fileSystemName.equals(null)) {
+				fileSystemName = "defaultProfile2.png";
+				cnt = dao.profileImage_upload(fileSystemName,user_id);
+			}else {
+				cnt = dao.profileImage_upload(fileSystemName,user_id);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
