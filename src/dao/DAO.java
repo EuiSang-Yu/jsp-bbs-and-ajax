@@ -1,6 +1,5 @@
 package dao;
 
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,14 +14,10 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import javax.xml.ws.Response;
 
 import dto.BoardDTO;
-<<<<<<< HEAD
 import dto.ReplyDTO;
-=======
 import dto.MemberDTO;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import vo.VO;
 
 public class DAO {
@@ -377,7 +372,7 @@ public class DAO {
 		
 	}
 	
-	public MemberDTO[] selectByuser_uid(int user_uid) throws SQLException {
+	public MemberDTO[] selectByuser_id(String user_id) throws SQLException {
 		MemberDTO[] arr = null;
 		try {
 			conn = getConnection();
@@ -388,7 +383,7 @@ public class DAO {
 
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_MYPAGE_SELECT);
-			pstmt.setInt(1, user_uid);
+			pstmt.setString(1, user_id);
 			rs = pstmt.executeQuery();
 			arr = createUserArray(rs);
 			
@@ -399,6 +394,7 @@ public class DAO {
 
 		return arr;
 	} // end selectByuser_Uid()
+	
 
 	public int mypageUpdate(int user_uid, String user_pw, String user_email, String user_phone) throws SQLException{
 		int cnt = 0;
