@@ -8,50 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-<<<<<<< HEAD
 import com.command.Command;
-=======
-import com.command.Command;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.LoginCommand;
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.HistoryMainCommand;
-<<<<<<< HEAD
-import com.command.LoginCommand;
 import com.command.ReplyDeleteCommand;
-=======
 import com.command.IdSearchCommand;
-import com.command.ReplyDeleteCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.ReplyListCommand;
-
 import com.command.ReplyWriteCommand;
-<<<<<<< HEAD
-
 import com.command.MyPageUpdateOkCommand;
-=======
-import com.command.MyPageUpdateOkCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.MypageCommand;
-<<<<<<< HEAD
 import com.command.PwSearchCommand;
-=======
 import com.command.ProfileUploadCommand;
-
 import com.command.MypageCommand;
-
-<<<<<<< HEAD
-=======
-=======
-import com.command.MypageCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
@@ -207,7 +175,6 @@ public class Controller extends HttpServlet {
 			viewPage = "idSearch.jsp";
 			break;
 
-<<<<<<< HEAD
 		case "/idSearchOk.do":
 			command = new IdSearchCommand();
 			command.execute(request, response);
@@ -222,12 +189,11 @@ public class Controller extends HttpServlet {
 			command = new PwSearchCommand();
 			command.execute(request, response);
 			viewPage = "pwSearchOk.jsp";
-=======
+			
 		case "/profileUpload.do":
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
 			viewPage = "profileUpload.jsp";
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			break;
 			
 		case "/withdrawalOk.do":
