@@ -70,4 +70,7 @@ public class VO {
    public static final String SQL_REPLY_DELETE =
 
          "DELETE FROM tb_reply WHERE reply_id=?";
+   
+   public static final String SQL_PROFILEIMAGE_UPLOAD = 
+		   "UPDATE TB_USER SET USER_PROFILEIMAGE=?";
 }

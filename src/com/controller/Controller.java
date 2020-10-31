@@ -15,6 +15,7 @@ import com.command.ReplyDeleteCommand;
 import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
 import com.command.MypageCommand;
+import com.command.ProfileUploadCommand;
 import com.command.UserSignUpCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
@@ -158,6 +159,11 @@ public class Controller extends HttpServlet {
 			viewPage = "replyDeleteOk.jsp";
 			break;
 
+		case "/profileUpload.do":
+			command = new ProfileUploadCommand();
+			command.execute(request, response);
+			viewPage = "profileUpload.jsp";
+			break;
 		}
 		
 		

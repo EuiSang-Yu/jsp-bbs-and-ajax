@@ -515,4 +515,26 @@ public class DAO {
 		
 	}
 	
+	public int profileImage_upload(String user_profileImage) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
+			pstmt.setString(1, user_profileImage);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+		
+	}
+	
 }
