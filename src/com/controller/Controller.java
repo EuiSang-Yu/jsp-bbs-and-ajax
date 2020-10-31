@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
+import com.command.HistoryMainCommand;
 import com.command.LoginCommand;
 import com.command.ReplyDeleteCommand;
 import com.command.ReplyWriteCommand;
@@ -66,6 +67,12 @@ public class Controller extends HttpServlet {
 		// 컨트롤러는 커맨드에 따라 로직 수행
 		// 결과를 보낼 view 를 결정
 		switch(com) {
+		
+		case "/historyMain.do":
+			command = new HistoryMainCommand();
+			command.execute(request, response);
+			viewPage = "historyMain.jsp";
+			break;
 		
 		case "/boardListTable.do":
 			command = new BoardListCommand();
@@ -157,6 +164,7 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "replyDeleteOk.jsp";
 			break;
+			
 
 		}
 		
