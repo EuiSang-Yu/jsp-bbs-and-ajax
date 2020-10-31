@@ -72,6 +72,7 @@ public class VO {
 
          "DELETE FROM tb_reply WHERE reply_id=?";
    
+<<<<<<< HEAD
    //아이디 찾기
    public static final String SQL_ID_SEARCH = 
 		   "SELECT USER_ID FROM TB_USER WHERE USER_NAME =? AND USER_PHONE=?";
@@ -99,3 +100,8 @@ public class VO {
    
    
 }
+=======
+   public static final String SQL_PROFILEIMAGE_UPLOAD = 
+		   "UPDATE TB_USER SET USER_PROFILEIMAGE=?";
+}
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git

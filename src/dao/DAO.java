@@ -516,6 +516,7 @@ public class DAO {
 		
 	}
 	
+<<<<<<< HEAD
 	//id찾기
 	public String idSearch(String user_name, String user_phone)throws SQLException{
 		
@@ -569,6 +570,27 @@ public class DAO {
 		
 		return user_pw;
 		
+=======
+	public int profileImage_upload(String user_profileImage) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
+			pstmt.setString(1, user_profileImage);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		
 	}
 	

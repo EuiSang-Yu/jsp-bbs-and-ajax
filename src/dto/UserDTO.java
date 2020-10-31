@@ -8,7 +8,7 @@ public class UserDTO {
 	String user_name;	//회원 이름
 	String user_email;	//회원 이메일
 	String user_phone; 	//회원 전화번호
-	String user_photo;	//회원 프로필이미지
+	String user_profileImage;	//회원 프로필이미지
 	
 	public UserDTO() {
 		super();
@@ -23,7 +23,7 @@ public class UserDTO {
 		this.user_name = name;
 		this.user_email = email;
 		this.user_phone = phone;
-		this.user_photo = photo;
+		this.user_profileImage = photo;
 		
 		System.out.printf("WriteDTO(%d, %s, %s, %s, %s, %s, %s) 객체 생성", 
 				uid, id, pw, name, email, phone, photo);
@@ -77,12 +77,12 @@ public class UserDTO {
 		this.user_phone = user_phone;
 	}
 
-	public String getuser_photo() {
-		return user_photo;
+	public String getuser_profileImage() {
+		return user_profileImage;
 	}
 
-	public void setuser_photo(String user_photo) {
-		this.user_photo = user_photo;
+	public void setuser_profileImage(String user_profileImage) {
+		this.user_profileImage = user_profileImage;
 	}
 
 	

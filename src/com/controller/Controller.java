@@ -19,7 +19,19 @@ import com.command.ReplyListCommand;
 import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
 import com.command.MypageCommand;
+<<<<<<< HEAD
 import com.command.PwSearchCommand;
+=======
+import com.command.ProfileUploadCommand;
+=======
+<<<<<<< HEAD
+import com.command.MypageCommand;
+
+=======
+import com.command.MypageCommand;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.UserSignUpCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
@@ -174,6 +186,7 @@ public class Controller extends HttpServlet {
 			viewPage = "idSearch.jsp";
 			break;
 
+<<<<<<< HEAD
 		case "/idSearchOk.do":
 			command = new IdSearchCommand();
 			command.execute(request, response);
@@ -188,6 +201,12 @@ public class Controller extends HttpServlet {
 			command = new PwSearchCommand();
 			command.execute(request, response);
 			viewPage = "pwSearchOk.jsp";
+=======
+		case "/profileUpload.do":
+			command = new ProfileUploadCommand();
+			command.execute(request, response);
+			viewPage = "profileUpload.jsp";
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			break;
 		}
          
