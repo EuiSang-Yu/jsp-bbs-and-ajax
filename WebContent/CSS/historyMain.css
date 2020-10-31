@@ -5,14 +5,17 @@
 	border: 1px solid #333;
 	height: 15vh;
 	display: flex;
-	flex-direction: row;
+	justify-content: space-between;
 }
-#summoner img{
-	max-width: 50px;
-	max-height: 50px;
+#summoner_img{
+	width: 30%;
+	height: 100%;
+}
+#summoner_img>img{
+	height: 50px;
 }
 #summoner_info{
-	
+	border: 1px solid #333;
 }
 .league{
 	display: flex;

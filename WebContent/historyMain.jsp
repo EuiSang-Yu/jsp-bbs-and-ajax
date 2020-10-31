@@ -14,60 +14,6 @@
 	<%
 		String search_id = (String) request.getAttribute("search_id");
 	%>
-	<script>
-		$(document).ready(function(){
-			
-			// 전적 검색창에 입력한 아이디
-			search_id = "<%=search_id%>";
-			// 라이엇 공식 API발급키
-			api_key = "RGAPI-8f48b1b1-8ddd-46ba-8abd-cfc81e6a7075";
-			
-			
-			// 조회시 필요한 값 들!
-			// id(계정고유식별 id임 닉네임X)
-			var id = "daDN79dDKrmdpoR6Wjpjoc8MdBs2pW8cmP29sp6WC50fsg";
-			// account id
-			var accountId = "C7vJUpfPyQBE1sqD736IPmoEt0ML_47rn5RGXGrvOFdH";
-			// puuid
-			var puuid = "wPS4L35QG35c9KjFcah4cDRhRAMek8JJKEtHIR4A5avscLAjUfq_Nls8a6SYqIEStMqEq7bpUfPXTA";
-			// profileIconId
-			var profileIconId = 4780;
-			// summonerLevel
-			var summonerLevel = 207;
-
-			//소환사 기본정보 json url
-			var summonerUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"	+ search_id + "?api_key=" + api_key;
-			//해당 소환사 최근 게임 url
-			var matchListUrl = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/" + accountId + "?endIndex=10&beginIndex=0&api_key=" + api_key;
-			//해당 소환사의 랭크(솔로,자유) 정보 url
-			var leagueUrl = "https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/" + id + "?api_key=" + api_key;
-			
-			
-			
-			$.ajax({
-				url : summonerUrl,
-				dataType : "json",
-				success : function(data) {
-					// this로 출력
-					$.each(data, function() {
-						$("#summoner_info").append(this.id, this.accountId, this.puuid,	this.profileIconId, this.summonerLevel); //여기수정
-					});
-					// 매개변수로 출력
-					/* $.each(data, function (index, entry) {
-					    $("#lstDivisions").append(
-					        "<tr><td>" + entry.DivisionId + "</td><td>" +
-					            this.DivisionName + "</td><td>" + entry["DivisionNameEng"] + "</td></tr>");
-					}); 
-					 */
-				},
-				error : function() {
-					alert("에러 발생");
-				}
-			});
-			
-			
-		});
-	</script>
 
 
 	<jsp:include page="thema.jsp" />
@@ -79,9 +25,8 @@
 			<%-- 
 			소환사의 기본정보 : 닉네임, 레벨, 랭크(?승?패) -> 이번시즌 
 			--%>
-			<div>
-				<img alt=""
-					src="https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/4780.jpg" />
+			<div id="summoner_img">
+				
 			</div>
 			<div id="summoner_info">
 				
@@ -135,6 +80,174 @@
 
 	</div>
 
+
+	<script>
+		
+		// 전적 검색창에 입력한 아이디
+		search_id = "<%=search_id%>";
+		// 라이엇 공식 API발급키
+		api_key = "RGAPI-8f48b1b1-8ddd-46ba-8abd-cfc81e6a7075";
+		
+		// summoner info
+		id = "";
+		accountId = "";
+		puuid = "";
+		profileIconId = "";
+		IconPath = "";
+		summonerLevel = "";
+		cnt = 0;
+		
+		// league info
+		soloLeagueId = "";
+		soloQueueType= "";
+		soloTier= "";
+		soloRank= "";
+		soloSummonerName= "";
+		soloLeaguePoints= "";
+		soloWins= "";
+		soloLosses= "";
+		
+		flexLeagueId= "";
+		flexQueueType= "";
+		flexTier= "";
+		flexRank= "";
+		flexSummonerName= "";
+		flexLeaguePoints= "";
+		flexWins= "";
+		flexLosses= "";
+
+		
+		//소환사 기본정보 json url
+		summonerUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"	+ search_id + "?api_key=" + api_key;
+		
+		//해당 소환사의 랭크(솔로,자유) 정보 url
+		leagueUrl = "";
+		//해당 소환사 최근 게임 url
+		matchListUrl = "";
+		
+		ajaxDefault();
+		if(cnt == 2){
+			ajax(matchListUrl);
+		}
+		
+		function ajaxDefault(){
+			$.ajax({
+				type : "GET",
+				url : summonerUrl,
+				cache : false,
+				dataType : "JSON",
+				success : function(data, status) {
+					if (status == "success")
+						parseJSON(data);
+					cnt = cnt + 1;
+					ajax(leagueUrl);
+				},
+				error : function(xhr, status, error) {
+					alert("에러 발생");
+				}
+			});
+		}
+		
+
+		function parseJSON(jsonObj) {
+			// 기본정보 셋팅
+			// summoner info
+			if (id == "")
+				id = jsonObj.id;
+			if (accountId == "")
+				accountId = jsonObj.accountId;
+			if (puuid == "")
+				puuid = jsonObj.puuid;
+			if (profileIconId == "")
+				profileIconId = jsonObj.profileIconId;
+			if (summonerLevel == "")
+				summonerLevel = jsonObj.summonerLevel;
+			if (IconPath == null || IconPath == "") {
+				IconPath = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons/"
+						+ profileIconId + ".jpg";
+				$("#summoner_img").append("<img src='" + IconPath + "'>");
+			}
+
+			if (cnt != 0) {
+				// league info
+				// solo(개인랭크)
+				if (soloLeagueId == "")	soloLeagueId = jsonObj[1].leagueId;
+				if (soloQueueType == "") soloQueueType = jsonObj[1].queueType;
+				if (soloTier == "")	soloTier = jsonObj[1].tier;
+				if (soloRank == "")	soloRank = jsonObj[1].rank;
+				if (soloSummonerName == "")	soloSummonerName = jsonObj[1].summonerName;
+				if (soloLeaguePoints == "")	soloLeaguePoints = jsonObj[1].leaguePoints;
+				if (soloWins == "")	soloWins = jsonObj[1].wins;
+				if (soloLosses == "") soloLosses = jsonObj[1].losses;
+
+				// flex(자유랭크)
+				if (flexLeagueId == "")
+					flexLeagueId = jsonObj[0].leagueId;
+				if (flexQueueType == "")
+					flexQueueType = jsonObj[0].queueType;
+				if (flexTier == "")
+					flexTier = jsonObj[0].tier;
+				if (flexRank == "")
+					flexRank = jsonObj[0].rank;
+				if (flexSummonerName == "")
+					flexSummonerName = jsonObj[0].summonerName;
+				if (flexLeaguePoints == "")
+					flexLeaguePoints = jsonObj[0].leaguePoints;
+				if (flexWins == "")
+					flexWins = jsonObj[0].wins;
+				if (flexLosses == "")
+					flexLosses = jsonObj[0].losses;
+			}
+
+			// URL 요소 셋팅
+			if (leagueUrl == "")
+				leagueUrl = "https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/"
+						+ id + "?api_key=" + api_key;
+			if (matchListUrl == "")
+				matchListUrl = "https://kr.api.riotgames.com/lol/match/v4/matchlists/by-account/"
+						+ accountId
+						+ "?season=13&endIndex=10&beginIndex=0&api_key="
+						+ api_key; // 시즌수정요망
+
+			if (cnt == 0) {
+				alert("해당유저 고유ID값 : " + id);
+				alert("해당유저 고유accountID값 : " + accountId);
+				alert("해당유저 puuid값 : " + puuid);
+				alert("해당유저 profileIconId값 : " + profileIconId);
+			}
+
+			if (cnt == 1) {
+				alert("sololeagueId : " + soloLeagueId);
+				alert("soloqueueType : " + soloQueueType);
+				alert("solotier : " + soloTier);
+				alert("solorank : " + soloRank);
+				alert("solosummonerName : " + soloSummonerName);
+				alert("sololeaguePoints : " + soloLeaguePoints);
+				alert("solowins : " + soloWins);
+				alert("sololosses : " + soloLosses);
+			}
+			
+			//$("#summoner_info").append(obj);
+		}
+
+		function ajax(info_url) {
+			$.ajax({
+				type : "GET",
+				url : info_url,
+				cache : false,
+				dataType : "JSON",
+				success : function(data, status) {
+					if (status == "success"){
+						parseJSON(data);
+						cnt = cnt + 1;
+					}
+				},
+				error : function(xhr, status, error) {
+					alert("에러 발생");
+				}
+			});
+		}
+	</script>
 
 </body>
 </html>
