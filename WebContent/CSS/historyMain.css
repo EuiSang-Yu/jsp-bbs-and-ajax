@@ -4,6 +4,15 @@
 	margin-top: 30px;
 	border: 1px solid #333;
 	height: 15vh;
+	display: flex;
+	flex-direction: row;
+}
+#summoner img{
+	max-width: 50px;
+	max-height: 50px;
+}
+#summoner_info{
+	
 }
 .league{
 	display: flex;
