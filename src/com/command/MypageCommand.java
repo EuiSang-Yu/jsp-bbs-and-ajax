@@ -7,12 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.DAO;
-<<<<<<< HEAD
-import dto.MemberDTO;
-=======
+
 import dto.BoardDTO;
 import dto.UserDTO;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 public class MypageCommand implements Command {
 
