@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 import dto.BoardDTO;
 import dto.ReplyDTO;
-import dto.MemberDTO;
+import dto.UserDTO;
 import vo.VO;
 
 public class DAO {
@@ -372,8 +372,8 @@ public class DAO {
 		
 	}
 	
-	public MemberDTO[] selectByuser_id(String user_id) throws SQLException {
-		MemberDTO[] arr = null;
+	public UserDTO[] selectByuser_id(String user_id) throws SQLException {
+		UserDTO[] arr = null;
 		try {
 			conn = getConnection();
 		} catch (Exception e) {

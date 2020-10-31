@@ -7,7 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.DAO;
+<<<<<<< HEAD
 import dto.MemberDTO;
+=======
+import dto.BoardDTO;
+import dto.UserDTO;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 public class MypageCommand implements Command {
 
@@ -17,7 +22,7 @@ public class MypageCommand implements Command {
 		HttpSession session= request.getSession();
 		System.out.println("마이페이지커멘드 진입");
 		DAO dao = new DAO();
-		MemberDTO[] arr = null;
+		UserDTO[] arr = null;
 		
 		String user_id = (String) session.getAttribute("user_id");
 		System.out.println(user_id);

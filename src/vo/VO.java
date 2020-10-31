@@ -48,8 +48,11 @@ public class VO {
 
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    //--------------------------댓글 쿼리
    
    public static final String SQL_REPLY_INSERT = 
