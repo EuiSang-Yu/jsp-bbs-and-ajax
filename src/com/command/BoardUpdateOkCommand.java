@@ -35,4 +35,6 @@ public class BoardUpdateOkCommand implements Command {
 		request.setAttribute("result", cnt);
 	}
 
+
+
 }

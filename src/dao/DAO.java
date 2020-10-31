@@ -18,8 +18,7 @@ import javax.sql.DataSource;
 import javax.xml.ws.Response;
 
 import dto.BoardDTO;
-
-
+import dto.ReplyDTO;
 import vo.VO;
 
 public class DAO {
@@ -344,6 +343,8 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println("게시글 삭제 실패");
 			e.printStackTrace();
+		} finally {
+			close();
 		}
 		
 		return cnt;  
@@ -351,4 +352,101 @@ public class DAO {
 	}
 
 
+	public int reply_insert(String reply_writer, String reply_content, int board_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_REPLY_INSERT);
+			pstmt.setString(1, reply_writer);
+			pstmt.setString(2, reply_content);
+			pstmt.setInt(3, board_id);
+			
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return cnt;  
+		
+	}
+	
+	// Write --> ResultSet --> DTO 배열로 리턴
+	public ReplyDTO[] reply_createArray(ResultSet rs) throws SQLException {
+		ReplyDTO[] arr = null; // DTO 배열로 리턴
+
+		ArrayList<ReplyDTO> list = new ArrayList<ReplyDTO>();
+		while (rs.next()) {
+			int reply_id = rs.getInt("reply_id");
+			String reply_writer = rs.getString("reply_writer");
+			String reply_content = rs.getString("reply_content");
+			if (reply_content == null)
+				reply_content = "";
+			// String name = rs.getString("wr_name");
+			Date d = rs.getDate("reply_regDate");
+			Time t = rs.getTime("reply_regDate");
+			String reply_regDate = "";
+			if (d != null) {
+				reply_regDate = new SimpleDateFormat("yyyy-MM-dd").format(d) + " "
+						+ new SimpleDateFormat("hh:mm:ss").format(t);
+			}
+			int board_id = rs.getInt("board_id");
+
+			ReplyDTO dto = new ReplyDTO(reply_id, reply_writer, reply_content, reply_regDate, board_id);
+			dto.setReply_regDate(reply_regDate);
+			list.add(dto);
+		} // end while
+
+		arr = new ReplyDTO[list.size()]; // 리스트에 담긴 DTO 의 개수만큼의 배열 생성
+		list.toArray(arr); // 리스트 -> 배열
+		System.out.println(arr);
+		return arr;
+	} // end createArray()
+	
+	
+	// 전체 SELECT ListComm
+	public ReplyDTO[] reply_list(int board_id) throws SQLException {
+		ReplyDTO[] arr = null;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_REPLY_SELECT);
+			pstmt.setInt(1, board_id);
+			rs = pstmt.executeQuery();
+			arr = reply_createArray(rs);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+	} // end select();
+	
+	
+	//게시글 삭제
+	public int reply_delete(int reply_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_REPLY_DELETE);
+			pstmt.setInt(1, reply_id);
+			cnt=pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("댓글 삭제 실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return cnt;  
+		
+	}
+	
 }

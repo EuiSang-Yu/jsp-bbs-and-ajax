@@ -53,6 +53,17 @@
 	height: 1px;
 }
 
+#commentTextArea{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+#replySubmitBt {
+	float: right;
+	margin-bottom: 50px;
+}
+
 </style>
 
 </head>
@@ -63,10 +74,22 @@
 		<p class="commentTxt1">댓글</p>
 		<p class="commentTxt2">총 0개</p>
 	</div>
-	
+	<form action="replyWriteOk.do" method="get">
+		<input type="hidden" name="reply_writer" value="hyuk"/>
+		<textarea rows="5" cols="30" class="form-control" name="reply_content" id="commentTextArea"></textarea>
+		<input type="hidden" name="board_id" value="${param.board_id }"/>
+		<input type="hidden" name="board_champion" value="${param.board_champion }"/>
+		<input id="replySubmitBt" type="submit" value="댓글 작성"/>
+	</form>
 	<h3>최신순</h3>
 	<hr id="commentHr">
-	<div class="comment"></div>
+	<div class="comment">
+		<ul>
+			<li>작성자 : ${list[0].reply_writer }</li>
+			<li>내용 : ${list[0].reply_content }</li>
+			<li>작성시간 : ${list[0].reply_regDate }</li>
+		</ul>
+	</div>
 
 </body>
 </html>

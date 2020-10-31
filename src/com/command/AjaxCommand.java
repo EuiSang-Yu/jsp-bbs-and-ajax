@@ -26,4 +26,7 @@ public class AjaxCommand implements Command {
 
 		request.setAttribute("result", null);
 	}
+
+
+
 }

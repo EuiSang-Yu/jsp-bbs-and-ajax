@@ -48,9 +48,7 @@
 	float: left;
 }
 
-#champInfoDiv{
-	margin-bottom: 100px;
-}
+
 
 </style>
 

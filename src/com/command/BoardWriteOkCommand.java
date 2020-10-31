@@ -34,4 +34,6 @@ public class BoardWriteOkCommand implements Command {
 		request.setAttribute("result", cnt);
 		request.setAttribute("board_champion", board_champion);
 	}
+
+
 }

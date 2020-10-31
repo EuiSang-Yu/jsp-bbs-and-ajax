@@ -25,6 +25,47 @@
 
 <style>
 
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.commentCntDiv{
+	background-color: lightgray;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 50px;
+	margin-top: 100px;
+}
+.commentTxt1 {
+	float: left;
+	font-size: 30px;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+.commentTxt2 {
+	float: left;
+	font-size: 20px; 
+	margin-top: 35px;
+	margin-left: 20px;
+}
+
+.commentHr{
+	background-color: gray;
+	height: 1px;
+}
+
+#commentTextArea{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+#replySubmitBt {
+	float: right;
+	margin-bottom: 50px;
+}
+
 thead tr th {
 	color: #686868;
 }
@@ -32,6 +73,11 @@ thead tr th {
 #listBtn {
 	float: right;
 }
+
+#commentBt {
+	float: right;
+}
+
 </style>
 
 </head>
@@ -41,6 +87,7 @@ thead tr th {
 <jsp:include page="thema.jsp"/>
 
 <div class="container">
+<br><br><br><br>
 <h1>${list[0].board_title }</h1>
 <br><br><br><br>
 
@@ -49,11 +96,9 @@ thead tr th {
 		<tr class="row">
 
 			<th class="col-sm-2">챔피언 공략</th>
-			<th class="col-sm-2">글 번호 ${list[0].board_id }</th>
-			<th class="col-sm-3">제목 ${list[0].board_title }</th>
+			<th class="col-sm-2">조회수 ${list[0].board_viewCnt }</th>
+			<th class="col-sm-5">댓글 ${list[0].board_replyCnt }</th>
 			<th class="col-sm-3">작성시간 ${list[0].board_regDate }</th>
-			<th class="col-sm-1">댓글 ${list[0].board_replyCnt }</th>
-			<th class="col-sm-1">조회수 ${list[0].board_viewCnt }</th>
 
 		</tr>
 	</thead>
@@ -65,12 +110,54 @@ thead tr th {
 		</tr>
 	</tbody>
 </table>
-<hr>
+<hr class="commentHr">
 
-<jsp:include page="comment.jsp"/>
-<button onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
-<button onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
+	<div class="commentCntDiv">
+		<p class="commentTxt1">댓글</p>
+		<p class="commentTxt2">총 0개</p>
+	</div>
+	<form action="replyWriteOk.do" method="get">
+		<input type="hidden" name="reply_writer" value="hyuk"/>
+		<textarea rows="5" cols="30" class="form-control" name="reply_content" id="commentTextArea"></textarea>
+		<input type="hidden" name="board_id" value="${param.board_id }"/>
+		<input type="hidden" name="board_champion" value="${param.board_champion }"/>
+		<input id="replySubmitBt" type="submit" value="댓글 작성"/>
+	</form>
+	
+	<h3>최신순</h3>
+	
+	
+	
+	<hr class="commentHr">
+	<div class="comment">
+			<c:choose>
+			<c:when test="${empty list2 || fn:length(list2) == 0 }">
+			</c:when>
+			<c:otherwise>
+				<c:forEach var="dto" items="${list2 }">  <%-- request.getAttribute("list") --%>
+					<div id="commentDiv" class="col-sm-12">
+						<div id="commentWriter">작성자 : ${dto.reply_writer }</div>
+						<div id="commentDate">작성시간 : ${dto.reply_regDate }</div>				
+						내용<br>
+						${dto.reply_content }
+						<div id="commentBt">
+							<button>수정</button>
+							<button onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
+						</div>
+					</div>
+					<br><hr>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>
+		</div>
+		<hr class="commentHr">
+
+<button class="btn btn-outline-dark" onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
+<button class="btn btn-outline-dark"  onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
 <a href="boardListTable.do?board_champion=${list[0].board_champion }" class="btn btn-outline-dark" id="listBtn">목록</a>
 </div>
+
+<jsp:include page="footer.jsp" />
+
 </body>
 </html>

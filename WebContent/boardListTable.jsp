@@ -34,6 +34,10 @@
 	border: none;
 }
 
+#noticeListTable {
+	margin-top: 100px;
+}
+
 </style>
 </head>
 
@@ -41,6 +45,9 @@
 
 
 <jsp:include page="boardListChamp.jsp"/>
+
+
+
     <div class="container">
     	
 		<table class="table table-bordered table-hover" id="noticeListTable">

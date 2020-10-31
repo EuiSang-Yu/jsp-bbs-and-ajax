@@ -38,6 +38,8 @@ public class LoginCommand implements Command{
 		request.setAttribute("result", cnt);
 		request.setAttribute("user_id", user_id);
 	}
+
+
 	
 	
 

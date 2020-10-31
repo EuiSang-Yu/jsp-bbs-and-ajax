@@ -270,6 +270,9 @@ select * from tb_user;
 
 SELECT * FROM TB_BOARD ;
 
+SELECT * FROM TB_REPLY ;
+
+SELECT * FROM tb_reply WHERE board_id = 16 ORDER BY reply_regDate;
 
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;

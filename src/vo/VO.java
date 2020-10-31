@@ -50,6 +50,20 @@ public class VO {
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
 
 
+   //--------------------------댓글 쿼리
+   
+   public static final String SQL_REPLY_INSERT = 
+	         "INSERT INTO tb_reply"
+	         + "(reply_id, reply_writer, reply_content, reply_regDate, board_id) " 
+	         + "VALUES"
+	         + "(SEQ_tb_reply_reply_id.NEXTVAL, ?, ?, SYSDATE, ?)";
 
+   public static final String SQL_REPLY_SELECT = 
+	         "SELECT * FROM tb_reply WHERE board_id = ? ORDER BY reply_regDate DESC";
 
+   
+
+   public static final String SQL_REPLY_DELETE =
+
+         "DELETE FROM tb_reply WHERE reply_id=?";
 }

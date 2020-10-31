@@ -18,4 +18,6 @@ public class BoardWriteCommand implements Command{
 		
 	}
 
+
+
 }

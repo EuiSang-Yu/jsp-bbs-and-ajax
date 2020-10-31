@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 import dto.BoardDTO;
+import dto.ReplyDTO;
 
 
 
@@ -17,8 +18,9 @@ public class BoardViewCommand implements Command {
 		
 		
 		DAO dao = new DAO();
-		
 		BoardDTO [] arr = null;
+		ReplyDTO [] arr2 = null;
+		
 		
 
 
@@ -31,11 +33,14 @@ public class BoardViewCommand implements Command {
 		
 		try {
 			arr = dao.readByboard_id(board_id, board_champion);
+			arr2 = dao.reply_list(board_id);
 			request.setAttribute("list", arr);
+			request.setAttribute("list2", arr2);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}		
 
 	}
+	
 
 }
