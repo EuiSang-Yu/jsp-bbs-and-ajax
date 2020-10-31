@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 import dto.BoardDTO;
-import dto.MemberDTO;
+import dto.UserDTO;
 
 public class MypageCommand implements Command {
 
@@ -16,7 +16,7 @@ public class MypageCommand implements Command {
 		
 		System.out.println("마이페이지커멘드 진입");
 		DAO dao = new DAO();
-		MemberDTO[] arr = null;
+		UserDTO[] arr = null;
 		
 		int user_uid = session.getAttribute("user_uid");
 		

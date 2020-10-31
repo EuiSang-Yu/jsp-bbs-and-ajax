@@ -18,11 +18,8 @@ import javax.sql.DataSource;
 import javax.xml.ws.Response;
 
 import dto.BoardDTO;
-<<<<<<< HEAD
 import dto.ReplyDTO;
-=======
-import dto.MemberDTO;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+import dto.UserDTO;
 import vo.VO;
 
 public class DAO {
@@ -151,10 +148,10 @@ public class DAO {
 		return arr;
 	} // end createArray()
 
-	public MemberDTO[] createUserArray(ResultSet rs) throws SQLException {
-		MemberDTO[] arr = null;
+	public UserDTO[] createUserArray(ResultSet rs) throws SQLException {
+		UserDTO[] arr = null;
 		
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		ArrayList<UserDTO> list = new ArrayList<UserDTO>();
 		while (rs.next()) {
 			int user_uid = rs.getInt("user_uid");
 			String user_id = rs.getString("user_id");
@@ -164,11 +161,11 @@ public class DAO {
 			String user_phone = rs.getString("user_phone");
 			String user_profileImage = rs.getString("user_profileImage");
 			
-			MemberDTO dto = new MemberDTO(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage);
+			UserDTO dto = new UserDTO(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage);
 			list.add(dto);
 		}
 		
-		arr = new MemberDTO[list.size()];
+		arr = new UserDTO[list.size()];
 		list.toArray(arr);
 		System.out.println(arr);
 		return arr;
@@ -377,8 +374,8 @@ public class DAO {
 		
 	}
 	
-	public MemberDTO[] selectByuser_uid(int user_uid) throws SQLException {
-		MemberDTO[] arr = null;
+	public UserDTO[] selectByuser_uid(int user_uid) throws SQLException {
+		UserDTO[] arr = null;
 		try {
 			conn = getConnection();
 		} catch (Exception e) {
