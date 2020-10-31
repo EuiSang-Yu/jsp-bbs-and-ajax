@@ -7,8 +7,26 @@
 <meta charset="UTF-8">
 <title>전적 검색 페이지</title>
 <link rel="stylesheet" href="CSS/historyMain.css"/>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+	<%-- search_id : name값 --%>
+	<% 
+		String search_id = (String)request.getAttribute("search_id");
+	%>
+	<script>
+		$(document).ready(function(){
+			var search_id = "<%= search_id %>";
+			var api_key = "RGAPI-90b3893a-6d00-410f-8ee2-6c6382a9dfa1";
+			var summoner = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+search_id;
+			
+			/// 10/31 11:58 진행중
+		});
+		
+		
+	</script>
+		
+	
 	<jsp:include page="thema.jsp"/>
 	
 	<div class="container">

@@ -47,7 +47,6 @@
 <jsp:include page="boardListChamp.jsp"/>
 
 
-
     <div class="container">
     	
 		<table class="table table-bordered table-hover" id="noticeListTable">
