@@ -48,7 +48,11 @@ public class VO {
 
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
 
-
+   public static final String SQL_MYPAGE_SELECT = 
+		   "SELECT * FROM TB_USER WHERE USER_UID=?";	// 마이페이지 열었을때 회원가입정보 가져오기
+   
+   public static final String SQL_MYPAGE_UPDATE = 
+	         "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_UID = ?";   //챔피언 넘버 추가
 
 
 }

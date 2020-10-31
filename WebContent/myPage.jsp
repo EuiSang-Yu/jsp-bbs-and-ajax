@@ -51,34 +51,30 @@
      	<div class="col-sm-1 text-center" id="emptyspace"><br></div>
     			<div class="col-sm-10 text-center" id="joinform">
     				<h2>개인정보관리</h2>
-               		<form  method="post">
+               		<form  name="frm" action="myPageUpdateOk.do" method="GET">
                   		<table class="table table-boardered">
                      		<tr>
-                        		<th>User ID</th>
-                        		<td><input type="text" class="form-control" name="user_id"
-                           		placeholder="id를 넣으세요"></td>
-                     		</tr>
-                     		<tr>
-                        		<th>User PassWord</th>
+                        		<th>Change Password</th>
                         		<td><input type="password" class="form-control"
                            		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요"></td>
                      		</tr>
 		                     <tr>
-		                        <th>User Name</th>
+		                        <th>Confirm Password</th>
 	                        	<td><input type="password" class="form-control"
-	                           	name="user_name"></td>
+	                           	name="user_pw_chk"></td>
 		                     </tr>
 		                     <tr>
 		                        <th>User Email</th>
-		                        <td><input type="email" class="form-control" name="user_email"></td>
+		                        <td><input type="email" class="form-control" name="user_email" value="${list[0].user_email }"></td>
 		                     </tr>
 		                     <tr>
 		                        <th>User PhoneNumber</th>
-		                        <td><input type="tel" class="form-control" name="user_phone"></td>
+		                        <td><input type="tel" class="form-control" name="user_phone" value="${list[0].user_phone }"></td>
 		                     </tr>
 		                     <tr>
 		                        <td colspan="2">
-		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
+		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기"
+		                        onclick="alert('회원정보 변경완료')">
 		                        <input type="button" id="memberDelete" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>

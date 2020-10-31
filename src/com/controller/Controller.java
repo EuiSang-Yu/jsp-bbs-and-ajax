@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
 import com.command.LoginCommand;
+import com.command.MyPageUpdateOkCommand;
+import com.command.MypageCommand;
 import com.command.UserSignUpCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
@@ -126,6 +128,18 @@ public class Controller extends HttpServlet {
 			
 		case "/logout.do":
 			viewPage = "logout.jsp";
+			break;
+			
+		case "/myPage.do":
+			command = new MypageCommand();
+			command.execute(request, response);
+			viewPage = "myPage.jsp";
+			break;
+			
+		case "/myPageUpdateOk.do":
+			command = new MyPageUpdateOkCommand();
+			command.execute(request, response);
+			viewPage = "myPageUpdateOk.jsp";
 			break;
 				
 
