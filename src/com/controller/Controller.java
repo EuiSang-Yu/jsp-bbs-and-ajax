@@ -10,34 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
-<<<<<<< HEAD
 import com.command.LoginCommand;
 
-=======
 import com.command.HistoryMainCommand;
 import com.command.LoginCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.ReplyDeleteCommand;
-<<<<<<< HEAD
 import com.command.ReplyListCommand;
 import com.command.ReplyWriteCommand;
 
-=======
-import com.command.ReplyWriteCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.MyPageUpdateOkCommand;
-<<<<<<< HEAD
 import com.command.MypageCommand;
 import com.command.ProfileUploadCommand;
-=======
-<<<<<<< HEAD
+
 import com.command.MypageCommand;
 
-=======
-import com.command.MypageCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.UserSignUpCommand;
+import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
 import com.command.BoardUpdateCommand;
@@ -191,6 +179,12 @@ public class Controller extends HttpServlet {
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
 			viewPage = "profileUpload.jsp";
+			break;
+			
+		case "/withdrawalOk.do":
+			command = new WithdrawalOkCommand();
+			command.execute(request, response);
+			viewPage = "withdrawalOk.jsp";
 			break;
 		}
 		

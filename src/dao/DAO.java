@@ -15,18 +15,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-<<<<<<< HEAD
-import dto.BoardDTO;
-
-import dto.ReplyDTO;
-
-import dto.MemberDTO;
-
-=======
 import dto.BoardDTO;
 import dto.ReplyDTO;
 import dto.UserDTO;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import vo.VO;
 
 public class DAO {
@@ -524,7 +515,7 @@ public class DAO {
 		
 	}
 	
-	public int profileImage_upload(String user_profileImage) throws SQLException{
+	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
 		int cnt = 0;
 		
 		try {
@@ -537,6 +528,29 @@ public class DAO {
 		try {
 			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
 			pstmt.setString(1, user_profileImage);
+			pstmt.setString(2, user_id);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+		
+	}
+	
+	public int user_delete(String user_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_USER_DELETE);
+			pstmt.setString(1, user_id);
 			cnt=pstmt.executeUpdate();
 		} finally {
 			close();

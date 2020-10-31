@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	$("#withdrawalYesBtn").click(function(){
-		location.href="withdrawalOk.jsp";
+		location.href="withdrawalOk.do";
 	});
 	
 	$("#withdrawalNoBtn").click(function(){
-		location.href="myPage.jsp";
+		location.href="myPage.do";
 	});
 });
 
