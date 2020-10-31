@@ -18,11 +18,11 @@ import javax.sql.DataSource;
 import javax.xml.ws.Response;
 
 import dto.BoardDTO;
-<<<<<<< HEAD
+
 import dto.ReplyDTO;
-=======
+
 import dto.MemberDTO;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 import vo.VO;
 
 public class DAO {
