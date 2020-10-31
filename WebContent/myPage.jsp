@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta http-equiv="refresh" content="10">-->
 
 <link rel="stylesheet" href="CSS/myPage.css">
 
@@ -35,11 +36,16 @@
 <section class="container profile">
 	<!-- 프로필사진설정 박스 -->
 	<div class="card" style="width:500px">
-   		<img class="card-img-top" src="img/profilePhoto/defaultProfile2.png" alt="Card image" style="width:100%">
+   		<img class="card-img-top" src="profileImage/${list[0].user_profileImage }" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
-     		<p id="profileRoute" class="card-text">파일 경로가 떠야함(첨부한 파일경로)</p>
-     		<label id="profilePhotoChange" class="btn btn-primary btn-secondary btn-file">파일추가 <input type="file" style="display: none;"></label>
+     		<form action="profileUpload.do" method="post" enctype="Multipart/form-data">
+     		
+     		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-primary btn-secondary btn-file">
+     		
+     		<input type="submit" id="profilePhotoChange" class="btn btn-primary btn-secondary" value="저장">
+     		
+     		</form>
    		</div>
  	</div>
  	
