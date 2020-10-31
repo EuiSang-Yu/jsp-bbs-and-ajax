@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
 
@@ -17,7 +18,9 @@ public class MyPageUpdateOkCommand implements Command {
 			DAO dao = new DAO();
 			
 			//parameter
-			int user_uid = Integer.parseInt(request.getParameter("user_uid"));
+			HttpSession session= request.getSession();
+			
+			String user_id = (String) session.getAttribute("user_id");
 			
 			String user_pw = request.getParameter("user_pw");
 			String user_email = request.getParameter("user_email");
@@ -25,7 +28,7 @@ public class MyPageUpdateOkCommand implements Command {
 			
 			if(user_email != null && user_email.trim().length() > 0) {
 				try {
-					cnt = dao.mypageUpdate(user_uid, user_pw, user_email, user_phone);
+					cnt = dao.mypageUpdate(user_id, user_pw, user_email, user_phone);
 				} catch(SQLException e) {
 					e.printStackTrace();
 				}
