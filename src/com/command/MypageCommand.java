@@ -7,30 +7,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.DAO;
 import dto.BoardDTO;
+import dto.MemberDTO;
 
-
-public class BoardUpdateCommand implements Command {
+public class MypageCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		
-		// 의상
-		System.out.println("수정하기 커멘드 진입");
+		System.out.println("마이페이지커멘드 진입");
 		DAO dao = new DAO();
-		BoardDTO[] arr = null;
+		MemberDTO[] arr = null;
 		
-		int board_id = Integer.parseInt(request.getParameter("board_id"));
-		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
+		int user_uid = session.getAttribute("user_uid");
 		
 		try {
-			arr = dao.selectByboard_id(board_id, board_champion);  // 읽어오기
+			arr = dao.selectByuser_uid(user_uid);  // 읽어오기
+			System.out.println("+++++++++++++++++++++++++++++arr : " + arr);
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 
 	}
-
-
 
 }

@@ -7,7 +7,6 @@ public class VO {
    public static final String USERID = "goldspoon";
    public static final String USERPW = "1234";
 
-
    
    public static final String SQL_WRITE_INSERT = 
          "INSERT INTO tb_board"
@@ -49,6 +48,7 @@ public class VO {
 
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
 
+<<<<<<< HEAD
 
    //--------------------------댓글 쿼리
    
@@ -57,6 +57,13 @@ public class VO {
 	         + "(reply_id, reply_writer, reply_content, reply_regDate, board_id) " 
 	         + "VALUES"
 	         + "(SEQ_tb_reply_reply_id.NEXTVAL, ?, ?, SYSDATE, ?)";
+=======
+   public static final String SQL_MYPAGE_SELECT = 
+		   "SELECT * FROM TB_USER WHERE USER_UID=?";	// 마이페이지 열었을때 회원가입정보 가져오기
+   
+   public static final String SQL_MYPAGE_UPDATE = 
+	         "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_UID = ?";   //챔피언 넘버 추가
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
    public static final String SQL_REPLY_SELECT = 
 	         "SELECT * FROM tb_reply WHERE board_id = ? ORDER BY reply_regDate DESC";

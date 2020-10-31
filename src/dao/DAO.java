@@ -18,7 +18,11 @@ import javax.sql.DataSource;
 import javax.xml.ws.Response;
 
 import dto.BoardDTO;
+<<<<<<< HEAD
 import dto.ReplyDTO;
+=======
+import dto.MemberDTO;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import vo.VO;
 
 public class DAO {
@@ -147,7 +151,28 @@ public class DAO {
 		return arr;
 	} // end createArray()
 
-	
+	public MemberDTO[] createUserArray(ResultSet rs) throws SQLException {
+		MemberDTO[] arr = null;
+		
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		while (rs.next()) {
+			int user_uid = rs.getInt("user_uid");
+			String user_id = rs.getString("user_id");
+			String user_pw = rs.getString("user_pw");
+			String user_name = rs.getString("user_name");
+			String user_email = rs.getString("user_email");
+			String user_phone = rs.getString("user_phone");
+			String user_profileImage = rs.getString("user_profileImage");
+			
+			MemberDTO dto = new MemberDTO(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage);
+			list.add(dto);
+		}
+		
+		arr = new MemberDTO[list.size()];
+		list.toArray(arr);
+		System.out.println(arr);
+		return arr;
+	}
 	
 	// 전체 SELECT ListComm
 	public BoardDTO[] select(int board_champion) throws SQLException {
@@ -228,6 +253,7 @@ public class DAO {
 			pstmt.setInt(2, board_champion);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
+
 
 			System.out.println("arr : " + arr.toString());
 
@@ -350,7 +376,51 @@ public class DAO {
 		return cnt;  
 		
 	}
+	
+	public MemberDTO[] selectByuser_uid(int user_uid) throws SQLException {
+		MemberDTO[] arr = null;
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("DB 커넥션 오류");
+			e.printStackTrace();
+		}
 
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_MYPAGE_SELECT);
+			pstmt.setInt(1, user_uid);
+			rs = pstmt.executeQuery();
+			arr = createUserArray(rs);
+			
+			System.out.println("------------------------------------------arr : " + arr);
+		} finally {
+			close();
+		} // end try
+
+		return arr;
+	} // end selectByuser_Uid()
+
+	public int mypageUpdate(int user_uid, String user_pw, String user_email, String user_phone) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("DB 커넥션 오류");
+			e.printStackTrace();
+		}
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_MYPAGE_UPDATE);
+			pstmt.setString(1, user_pw);
+			pstmt.setString(2, user_email);
+			pstmt.setString(3, user_phone);
+			pstmt.setInt(4, user_uid);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}	//end try
+		return cnt;
+	}	//end update()
 
 	public int reply_insert(String reply_writer, String reply_content, int board_id) throws SQLException{
 		int cnt = 0;

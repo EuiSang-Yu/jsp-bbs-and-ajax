@@ -53,7 +53,7 @@
 		<script>
 			$(document).ready(function() {
 				$('#phone-number').mask('000-0000-0000');
-			})
+			});
 		</script>
 		<!-- 전체 div -->
 

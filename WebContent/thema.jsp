@@ -91,7 +91,7 @@
 								공략</a></li>
 					</div>
 					<div class="menu">
-						<li class="nav-item"><a class="nav-link" href="myPage.jsp">My
+						<li class="nav-item"><a class="nav-link" href="myPage.do">My
 								page</a></li>
 					</div>
 					<div class="menu">
