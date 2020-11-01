@@ -5,6 +5,8 @@
 
 <%
 	String user_id = (String)session.getAttribute("user_id");
+	
+	System.out.println(user_id);
 %>
 <c:choose>
 	<c:when test="${empty list || fn:length(list) == 0 }">
