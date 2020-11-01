@@ -516,7 +516,7 @@ public class DAO {
 		
 	}
 	
-<<<<<<< HEAD
+
 	//id찾기
 	public String idSearch(String user_name, String user_phone)throws SQLException{
 		
@@ -569,8 +569,9 @@ public class DAO {
 		}
 		
 		return user_pw;
-		
-=======
+	}
+	
+	
 	public int profileImage_upload(String user_profileImage) throws SQLException{
 		int cnt = 0;
 		
@@ -590,7 +591,7 @@ public class DAO {
 		}
 		
 		return cnt;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 		
 	}
 	
