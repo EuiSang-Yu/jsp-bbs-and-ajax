@@ -10,11 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
+
 import com.command.HistoryMainCommand;
+
 import com.command.LoginCommand;
+
 import com.command.ReplyDeleteCommand;
+import com.command.ReplyListCommand;
+import com.command.ReplyUpdateCommand;
+
 import com.command.IdSearchCommand;
+
 import com.command.ReplyWriteCommand;
+
 import com.command.MyPageUpdateOkCommand;
 
 import com.command.MypageCommand;
@@ -22,13 +30,6 @@ import com.command.MypageCommand;
 import com.command.PwSearchCommand;
 
 import com.command.ProfileUploadCommand;
-
-import com.command.MypageCommand;
-
-
-import com.command.ProfileUploadCommand;
-import com.command.MypageCommand;
-import com.command.PwSearchCommand;
 
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
@@ -176,7 +177,12 @@ public class Controller extends HttpServlet {
 			viewPage = "replyDeleteOk.jsp";
 			break;
 
-			
+		case "/replyUpdateOk.do":
+			command = new ReplyUpdateCommand();
+			command.execute(request, response);
+			viewPage = "replyUpdateOk.jsp";
+			break;
+
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
 			break;
@@ -204,13 +210,14 @@ public class Controller extends HttpServlet {
 
 			viewPage = "profileUpload.jsp";
 			break;
-			
+
 		case "/withdrawalOk.do":
 			command = new WithdrawalOkCommand();
 			command.execute(request, response);
 			viewPage = "withdrawalOk.jsp";
 
 			break;
+
 		}
 
 		if (viewPage != null) {
