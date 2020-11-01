@@ -30,7 +30,7 @@ public class IdSearchCommand implements Command{
 			}
 		}
 		
-		request.setAttribute("user_id", user_id);
+		request.setAttribute("result", user_id);
 		System.out.println("리퀘스트 완료 아이디 찾기");
 	}
 

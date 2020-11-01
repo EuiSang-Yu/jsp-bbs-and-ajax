@@ -85,5 +85,17 @@ public class VO {
    public static final String SQL_USER_DELETE = 
 		   "DELETE FROM TB_USER WHERE USER_ID = ?";
    
+<<<<<<< HEAD
+   public static final String SQL_PROFILEIMAGE_UPLOAD = 
+		   "UPDATE TB_USER SET USER_PROFILEIMAGE=?";
+ 
+=======
    
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 }
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git

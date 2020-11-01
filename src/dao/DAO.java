@@ -516,6 +516,8 @@ public class DAO {
 	}
 	
 
+<<<<<<< HEAD
+=======
 	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
 		int cnt = 0;
 		
@@ -537,6 +539,7 @@ public class DAO {
 		
 		return cnt;
 	}
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 	//id찾기
 	public String idSearch(String user_name, String user_phone)throws SQLException{
 		
@@ -589,10 +592,17 @@ public class DAO {
 		}
 		
 		return user_pw;
+<<<<<<< HEAD
+	}
+	
+	
+	public int profileImage_upload(String user_profileImage) throws SQLException{
+=======
 		
 	}
 	
 	public int user_delete(String user_id) throws SQLException{
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		int cnt = 0;
 		
 		try {
@@ -610,7 +620,12 @@ public class DAO {
 			close();
 		}
 		
+<<<<<<< HEAD
 		return cnt;
+
+=======
+		return cnt;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		
 	}
 	
