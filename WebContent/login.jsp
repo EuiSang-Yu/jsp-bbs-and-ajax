@@ -97,6 +97,8 @@
 							<a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
 								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
+						<!-- 카카오 로그인 -->
+						<img height="38px" src="img/kakao_loginBT.png" />
 
 						<div class="text-center p-t-136">
 							<a class="txt3" href="signUp.jsp"> 계정생성 <i

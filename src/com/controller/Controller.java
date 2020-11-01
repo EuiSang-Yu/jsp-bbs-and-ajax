@@ -16,7 +16,7 @@ import com.command.ReplyDeleteCommand;
 import com.command.IdSearchCommand;
 import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
-<<<<<<< HEAD
+
 import com.command.MypageCommand;
 
 import com.command.PwSearchCommand;
@@ -25,11 +25,11 @@ import com.command.ProfileUploadCommand;
 
 import com.command.MypageCommand;
 
-=======
+
 import com.command.ProfileUploadCommand;
 import com.command.MypageCommand;
 import com.command.PwSearchCommand;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
@@ -176,14 +176,11 @@ public class Controller extends HttpServlet {
 			viewPage = "replyDeleteOk.jsp";
 			break;
 
+			
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
 			break;
-<<<<<<< HEAD
 
-=======
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/idSearchOk.do":
 			command = new IdSearchCommand();
 			command.execute(request, response);
@@ -198,18 +195,13 @@ public class Controller extends HttpServlet {
 			command = new PwSearchCommand();
 			command.execute(request, response);
 			viewPage = "pwSearchOk.jsp";
-<<<<<<< HEAD
+
 			break;
 
-=======
-			
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/profileUpload.do":
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
-<<<<<<< HEAD
-			viewPage = "profileUpload.jsp";
-=======
+
 			viewPage = "profileUpload.jsp";
 			break;
 			
@@ -217,7 +209,7 @@ public class Controller extends HttpServlet {
 			command = new WithdrawalOkCommand();
 			command.execute(request, response);
 			viewPage = "withdrawalOk.jsp";
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 			break;
 		}
 
