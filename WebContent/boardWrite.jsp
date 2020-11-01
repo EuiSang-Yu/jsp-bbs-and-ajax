@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="dao.*" %>
-<%@ page import="dto.*" %> 
-<%@ page import="com.command.*" %> 
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="dao.*"%>
+<%@ page import="dto.*"%>
+<%@ page import="com.command.*"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,23 +11,26 @@
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="ckeditor/ckeditor.js"></script>
 <title>OP.IT</title>
-
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
- 
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
 <!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- 
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
 <style>
 #writeSubmit {
 	float: right;
 }
-
 </style>
 
 </head>
@@ -35,7 +38,63 @@
 
 
 
-<jsp:include page="thema.jsp"/>
+	<jsp:include page="thema.jsp" />
+
+
+
+
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h2 class="text-center">게시글 쓰기</h2>
+			<form action="boardWriteOk.do" method="GET">
+				<input type="hidden" name="board_champion"
+					value="${board_champion }">
+				<div class="table table-responsive">
+					<table class="table table-striped">
+						<tr>
+							<td class="danger">작성자</td>
+							<td></td>
+							<td class="danger">작성일</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="danger">제목</td>
+							<td colspan="3"><input type="text" class="form-control"
+								name="board_title" value=""></td>
+						</tr>
+
+
+						<tr>
+							<td class="danger">글내용</td>
+							<td colspan="3"><textarea name="board_content"
+									class="form-control" id="editor1"></textarea> <script>
+										//CKEDITOR 적용
+									CKEDITOR
+									.replace(
+													'editor1',
+												{
+												allowedContent : true, // HTML 태그 자동삭제 방지 설정
+												width : '1000px', // 최초 너비, 높이 지정 가능
+												height : '400px',
+												filebrowserUploadUrl : '${pageContext.request.contextPath}/BoardFileUpload.do'
+														});
+									</script></td>
+						</tr>
+
+						<tr>
+							<td colspan="4" class="text-center"><input type="submit"
+								value="글쓰기" class="btn btn-success" id="writeSubmit">
+								<button type="button" class="btn btn-primary" id="listBtn"
+									onclick="location.href='boardListTable.do?board_champion=${board_champion }'">
+									전체 게시물 보기</button></td>
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- 
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -69,12 +128,9 @@
         </form>
     </div>
 </div>
- 
- 
-<script>
-//CKEDITOR 적용 
 
- 
-</script>
+ -->
+
+
 </body>
 </html>

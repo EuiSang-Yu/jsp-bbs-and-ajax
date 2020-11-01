@@ -34,6 +34,7 @@ import com.command.ProfileUploadCommand;
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
+import com.command.BoardFileUploadCommand;
 import com.command.BoardListCommand;
 import com.command.BoardUpdateCommand;
 import com.command.BoardUpdateOkCommand;
@@ -218,6 +219,10 @@ public class Controller extends HttpServlet {
 
 			break;
 
+			// 웹에디터 파일 업로드
+			case "/BoardFileUpload.do":
+				new BoardFileUploadCommand().execute(request, response);
+				break;	
 		}
 
 		if (viewPage != null) {

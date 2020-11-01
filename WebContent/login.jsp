@@ -10,17 +10,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!-- css파일 불러오기-->
-<link rel="stylesheet" href="CSS/login.css">
+<!--구글폰트-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
 
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
@@ -31,8 +38,10 @@
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
 
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-
+<!-- css파일 불러오기-->
+<link rel="stylesheet" href="CSS/login.css">
 <!-- 
 
 1) login.jsp : 로그인을 할때 보여지는 폼 화면
@@ -98,7 +107,50 @@
 								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
 						<!-- 카카오 로그인 -->
-						<img height="38px" src="img/kakao_loginBT.png" />
+						<a id="kakao-login-btn"></a> <a
+							href="http://developers.kakao.com/logout"></a>
+						<script type='text/javascript'>
+							// 사용할 앱의 JavaScript 키를 설정해 주세요.
+							Kakao.init('50e0127f513ee387d3b10a3312f2fb89'); //카카오개발자홈페이지에서 발급받은 자바스크립트 키를 입력함
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+								container : '#kakao-login-btn',
+								success : function(authObj) {
+									alert(JSON.stringify(authObj));
+							         Kakao.API.request({
+							        	 
+							               url: '/v1/user/me',
+							 
+							               success: function(res) { //res가 참일때, 자료를 성공적으로 보냈을때 출력되는 부분
+							 
+							                     console.log(res.id);//<---- 콘솔 로그에 id 정보 출력(id는 res안에 있기 때문에  res.id 로 불러온다)
+							 
+							                     console.log(res.kaccount_email);//<---- 콘솔 로그에 email 정보 출력 (어딨는지 알겠죠?)
+							 
+							                     console.log(res.properties['nickname']);//<---- 콘솔 로그에 닉네임 출력(properties에 있는 nickname 접근 
+							                             
+							                     // res.properties.nickname으로도 접근 가능 )
+							                     console.log(authObj.access_token);//<---- 콘솔 로그에 토큰값 출력
+							          
+							         
+							          var kakaonickname = res.properties.nickname;    //카카오톡 닉네임을 변수에 저장
+							          var kakaoe_mail = res.properties.kaccount_email;    //카카오톡 이메일을 변수에 저장함
+							         
+							          
+							 
+							          //카카오톡의 닉네임과,mail을 url에 담아 같이 페이지를 이동한다.
+							          window.location.replace("http://" + window.location.hostname + ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/hansub_project/home?kakaonickname="+kakaonickname+"&kakaoe_mail="+kakaoe_mail);
+							      
+							                   }
+							                 })
+							               },
+								},
+								fail : function(err) {
+									alert(JSON.stringify(err));
+								}
+							});
+							//]]>
+						</script>
 
 						<div class="text-center p-t-136">
 							<a class="txt3" href="signUp.jsp"> 계정생성 <i
