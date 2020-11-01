@@ -20,8 +20,10 @@ public class MypageCommand implements Command {
 		HttpSession session= request.getSession();
 		DAO dao = new DAO();
 		UserDTO[] arr = null;
-		
-		String user_id = (String) session.getAttribute("user_id");
+		String user_id = null;
+		if(session.getAttribute("user_id") != null){
+			user_id = (String)session.getAttribute("user_id");
+		}
 		System.out.println(user_id);
 		try {
 			arr = dao.selectByuser_id(user_id);  // 읽어오기

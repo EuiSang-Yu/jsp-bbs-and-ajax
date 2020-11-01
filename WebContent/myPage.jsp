@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
+<%
+	String user_id = (String)session.getAttribute("user_id");
+%>
+
+<c:choose>
+	<c:when test="${empty user_id }">
+		<script>
+			location.href="myPageNoLogin.jsp";
+		</script>
+	</c:when>
+	<c:otherwise>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -62,13 +74,9 @@
                      		<tr>
                         		<th>Change Password</th>
                         		<td><input type="password" class="form-control"
-                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요"></td>
+                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요" value="${list[0].user_pw }"></td>
                      		</tr>
-		                     <tr>
-		                        <th>Confirm Password</th>
-	                        	<td><input type="password" class="form-control"
-	                           	name="user_pw_chk"></td>
-		                     </tr>
+		                    
 		                     <tr>
 		                        <th>User Email</th>
 		                        <td><input type="email" class="form-control" name="user_email" value="${list[0].user_email }"></td>
@@ -96,3 +104,5 @@
    
 </body>
 </html>
+	</c:otherwise>
+</c:choose>   

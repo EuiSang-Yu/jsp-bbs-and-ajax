@@ -18,7 +18,6 @@ import javax.sql.DataSource;
 import dto.BoardDTO;
 import dto.ReplyDTO;
 import dto.UserDTO;
-
 import vo.VO;
 
 public class DAO {
@@ -517,6 +516,30 @@ public class DAO {
 	}
 	
 
+<<<<<<< HEAD
+=======
+	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
+			pstmt.setString(1, user_profileImage);
+			pstmt.setString(2, user_id);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	}
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 	//id찾기
 	public String idSearch(String user_name, String user_phone)throws SQLException{
 		
@@ -569,10 +592,17 @@ public class DAO {
 		}
 		
 		return user_pw;
+<<<<<<< HEAD
 	}
 	
 	
 	public int profileImage_upload(String user_profileImage) throws SQLException{
+=======
+		
+	}
+	
+	public int user_delete(String user_id) throws SQLException{
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		int cnt = 0;
 		
 		try {
@@ -583,15 +613,19 @@ public class DAO {
 		}
 		
 		try {
-			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
-			pstmt.setString(1, user_profileImage);
+			pstmt = conn.prepareStatement(VO.SQL_USER_DELETE);
+			pstmt.setString(1, user_id);
 			cnt=pstmt.executeUpdate();
 		} finally {
 			close();
 		}
 		
+<<<<<<< HEAD
 		return cnt;
 
+=======
+		return cnt;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		
 	}
 	

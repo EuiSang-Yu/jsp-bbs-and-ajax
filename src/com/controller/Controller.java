@@ -10,14 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.command.Command;
-import com.command.LoginCommand;
 import com.command.HistoryMainCommand;
-import com.command.IdSearchCommand;
+import com.command.LoginCommand;
 import com.command.ReplyDeleteCommand;
-import com.command.ReplyListCommand;
-
+import com.command.IdSearchCommand;
 import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
+<<<<<<< HEAD
 import com.command.MypageCommand;
 
 import com.command.PwSearchCommand;
@@ -26,7 +25,13 @@ import com.command.ProfileUploadCommand;
 
 import com.command.MypageCommand;
 
+=======
+import com.command.ProfileUploadCommand;
+import com.command.MypageCommand;
+import com.command.PwSearchCommand;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.UserSignUpCommand;
+import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardListCommand;
 import com.command.BoardUpdateCommand;
@@ -174,7 +179,11 @@ public class Controller extends HttpServlet {
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
 			break;
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/idSearchOk.do":
 			command = new IdSearchCommand();
 			command.execute(request, response);
@@ -189,12 +198,26 @@ public class Controller extends HttpServlet {
 			command = new PwSearchCommand();
 			command.execute(request, response);
 			viewPage = "pwSearchOk.jsp";
+<<<<<<< HEAD
 			break;
 
+=======
+			
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/profileUpload.do":
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
+<<<<<<< HEAD
 			viewPage = "profileUpload.jsp";
+=======
+			viewPage = "profileUpload.jsp";
+			break;
+			
+		case "/withdrawalOk.do":
+			command = new WithdrawalOkCommand();
+			command.execute(request, response);
+			viewPage = "withdrawalOk.jsp";
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			break;
 		}
 
