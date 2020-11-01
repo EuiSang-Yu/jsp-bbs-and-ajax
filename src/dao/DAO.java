@@ -14,14 +14,25 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+<<<<<<< HEAD
 
 
 import dto.BoardDTO;
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
+<<<<<<< HEAD
 import dto.ReplyDTO;
 
+=======
+import dto.BoardDTO;
+import dto.ReplyDTO;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import dto.UserDTO;
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import vo.VO;
 
 public class DAO {
@@ -518,6 +529,7 @@ public class DAO {
 		
 	}
 	
+<<<<<<< HEAD
 	public int reply_update(String reply_content, int reply_id) throws SQLException{
 		int cnt = 0;
 		
@@ -539,5 +551,120 @@ public class DAO {
 	}	//end update()
 	
 	
+=======
+
+<<<<<<< HEAD
+=======
+	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
+			pstmt.setString(1, user_profileImage);
+			pstmt.setString(2, user_id);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+		return cnt;
+	}
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+	//id찾기
+	public String idSearch(String user_name, String user_phone)throws SQLException{
+		
+		String user_id = "";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_ID_SEARCH);
+			pstmt.setString(1, user_name);
+			pstmt.setString(2, user_phone);
+
+			rs = pstmt.executeQuery(); 
+			while(rs.next()) {
+				user_id = rs.getString("user_id");
+			}
+			System.out.println("user_id : "+ user_id);
+			
+		} catch (Exception e) {
+			System.out.println("id찾기 실패");
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return user_id;
+		
+		
+	}
+	//pw찾기
+	public String pwSearch(String user_id,String user_name, String user_email)throws SQLException{
+		String user_pw = "";
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_PW_SEARCH);
+			pstmt.setString(1, user_id);
+			pstmt.setString(2, user_name);
+			pstmt.setString(3, user_email);
+			rs = pstmt.executeQuery(); 
+			
+			while(rs.next()) {
+				user_pw = rs.getString("user_pw");
+			}
+			System.out.println("user_pw : "+ user_pw);
+		} catch (Exception e) {
+			System.out.println("pw찾기 실패");
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		
+		return user_pw;
+<<<<<<< HEAD
+	}
+	
+	
+	public int profileImage_upload(String user_profileImage) throws SQLException{
+=======
+		
+	}
+	
+	public int user_delete(String user_id) throws SQLException{
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_USER_DELETE);
+			pstmt.setString(1, user_id);
+			cnt=pstmt.executeUpdate();
+		} finally {
+			close();
+		}
+		
+<<<<<<< HEAD
+		return cnt;
+
+=======
+		return cnt;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+		
+	}
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 	
 }

@@ -22,13 +22,12 @@
 			<h4>회원탈퇴를 신청하였습니다.<br>회원탈퇴 하시겠습니까?</h4>
 			</div>
 			<div class="inner">
-				<button type="button" id="withdrawalNoBtn" class="btn btn-secondary">Cancel</button>
-				<button type="button" id="withdrawalYesBtn" class="btn btn-primary">OK</button>			
+				<button type="button" id="withdrawalNoBtn" class="btn btn-secondary" onclick="location.href='myPage.do'">Cancel</button>
+				<button type="button" id="withdrawalYesBtn" class="btn btn-primary" onclick="location.href='withdrawalOk.do'">OK</button>			
 			</div>
 		</div>
 	</div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>
-<script type="text/javascript" src="JS/withdrawal.js"></script>
 </body>
 </html>

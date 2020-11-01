@@ -3,7 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-
+<%
+	String user_id = (String)session.getAttribute("user_id");
+	
+	System.out.println(user_id);
+%>
 <c:choose>
 	<c:when test="${empty list || fn:length(list) == 0 }">
 		<script>
@@ -11,7 +15,20 @@
 			history.back();
 		</script>
 	</c:when>
-
+	
+	<c:when test="${list[0].board_writer != user_id }">
+		<script>
+			alert("본인이 작성한 글이 아닙니다.")
+			history.back();
+		</script>
+	</c:when>
+	
+	<c:when test="${empty user_id }">
+		<script>
+			alert("로그인이 필요합니다.")
+			location.href="login.do";
+		</script>
+	</c:when>
 	<c:otherwise>
 
 

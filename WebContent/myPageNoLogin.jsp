@@ -18,8 +18,8 @@
 			<h4>로그인이 필요한 기능입니다.<br>로그인 하시겠습니까?</h4>
 			</div>
 			<div class="inner">
-				<button type="button" id="loginYesOrNoBtn" class="btn btn-secondary">Cancel</button>
-				<button type="button" id="loginYesOrNoBtn" class="btn btn-primary">OK</button>			
+				<button type="button" id="loginYesOrNoBtn" class="btn btn-secondary" onclick="location.href='index.jsp'">Cancel</button>
+				<button type="button" id="loginYesOrNoBtn" class="btn btn-primary" onclick="location.href='login.do'">OK</button>			
 			</div>
 		</div>
 	</div>

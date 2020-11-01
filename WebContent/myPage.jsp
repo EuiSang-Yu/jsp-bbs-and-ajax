@@ -1,12 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
+<%
+	String user_id = (String)session.getAttribute("user_id");
+%>
+
+<c:choose>
+	<c:when test="${empty user_id }">
+		<script>
+			location.href="myPageNoLogin.jsp";
+		</script>
+	</c:when>
+	<c:otherwise>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta http-equiv="refresh" content="10">-->
 
 <link rel="stylesheet" href="CSS/myPage.css">
 
@@ -35,11 +48,16 @@
 <section class="container profile">
 	<!-- 프로필사진설정 박스 -->
 	<div class="card" style="width:500px">
-   		<img class="card-img-top" src="img/profilePhoto/defaultProfile2.png" alt="Card image" style="width:100%">
+   		<img class="card-img-top" src="profileImage/${list[0].user_profileImage }" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
-     		<p id="profileRoute" class="card-text">파일 경로가 떠야함(첨부한 파일경로)</p>
-     		<label id="profilePhotoChange" class="btn btn-primary btn-secondary btn-file">파일추가 <input type="file" style="display: none;"></label>
+     		<form action="profileUpload.do" method="post" enctype="Multipart/form-data">
+     		
+     		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-primary btn-secondary btn-file">
+     		
+     		<input type="submit" id="profilePhotoChange" class="btn btn-primary btn-secondary" value="저장">
+     		
+     		</form>
    		</div>
  	</div>
  	
@@ -56,13 +74,9 @@
                      		<tr>
                         		<th>Change Password</th>
                         		<td><input type="password" class="form-control"
-                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요"></td>
+                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요" value="${list[0].user_pw }"></td>
                      		</tr>
-		                     <tr>
-		                        <th>Confirm Password</th>
-	                        	<td><input type="password" class="form-control"
-	                           	name="user_pw_chk"></td>
-		                     </tr>
+		                    
 		                     <tr>
 		                        <th>User Email</th>
 		                        <td><input type="email" class="form-control" name="user_email" value="${list[0].user_email }"></td>
@@ -90,3 +104,5 @@
    
 </body>
 </html>
+	</c:otherwise>
+</c:choose>   
