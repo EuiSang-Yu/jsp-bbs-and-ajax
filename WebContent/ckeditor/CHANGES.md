@@ -1357,7 +1357,10 @@ Fixed Issues:
 * [#12000](https://dev.ckeditor.com/ticket/12000): Fixed: Nested widgets should be initialized on [`editor.setData()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_editor.html#method-setData) and [`nestedEditable.setData()`](https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_plugins_widget_nestedEditable.html#method-setData).
 * [#12022](https://dev.ckeditor.com/ticket/12022): Fixed: Outer widget's drag handler is not created at all if it has any nested widgets inside.
 * [#11960](https://dev.ckeditor.com/ticket/11960): [Blink/WebKit] Fixed: The caret should be scrolled into view on *Backspace* and *Delete* (covers only the merging blocks case).
+<<<<<<< HEAD
+=======
 
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 >>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 * [#11957](https://dev.ckeditor.com/ticket/11957): Fixed: Alignment labels in the [Enhanced Image](https://ckeditor.com/cke4/addon/image2) dialog window are not translated.
 * [#11980](https://dev.ckeditor.com/ticket/11980): [Blink/WebKit] Fixed: `<span>` elements created when joining adjacent elements (non-collapsed selection).
