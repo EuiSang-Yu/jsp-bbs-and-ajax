@@ -28,10 +28,10 @@ public class VO {
    
    
    public static final String SQL_USER_SIGNUP = 
-         "INSERT INTO TB_USER"
-         + "(user_uid, user_id, user_pw, user_name, user_email, user_phone) " 
-         + "VALUES"
-         + "(SEQ_tb_user_user_uid.NEXTVAL, ?, ?, ?, ?, ?)";
+	         "INSERT INTO TB_USER"
+	         + "(user_uid, user_id, user_pw, user_name, user_email, user_phone, user_profileImage) " 
+	         + "VALUES"
+	         + "(SEQ_tb_user_user_uid.NEXTVAL, ?, ?, ?, ?, ?, 'defaultProfile2.png')";
 
 
 
