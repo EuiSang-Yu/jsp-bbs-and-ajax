@@ -10,12 +10,12 @@
 
 <% if(cnt == 0){ %>
 	<script>
-		alert("수정 실패 !!!");
+		alert("글쓰기 실패 !!!");
 		history.back();
 	</script>
 <% } else { %>
 	<script>
-		alert("수정 성공 !!!");
-		location.href = "boardView.do?board_id=${param.board_id}&board_champion=${param.board_champion }";
+		alert("글쓰기 성공 !!!");
+		location.href = "boardListTable.do?board_champion=${param.board_champion }";
 	</script>
 <% } %>

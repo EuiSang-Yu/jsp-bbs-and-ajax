@@ -2,7 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
+<%
+	String user_id = (String)session.getAttribute("user_id");
+	int cnt = (Integer)request.getAttribute("likeResult");
+	int user_uid = (Integer)session.getAttribute("user_uid");
+%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -146,20 +150,33 @@ thead tr th {
 			</tbody>
 		</table>
 		<hr class="commentHr">
+	<c:choose>
+		<c:when test="${likeViewResult == 0 }">
+			<form id="likeForm" method="get" action="likeOk.do">
+		</c:when>
+		<c:when test="${likeViewResult == 1 }">
+			<form id="likeForm" method="get" action="likeCancle.do">
+		</c:when>
+	</c:choose>
 		
-		
-		<button id="likeBt">
-			<i class="material-icons">favorite_border</i>
-		</button>
-		
+		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
+	<c:choose>
+		<c:when test="${likeViewResult == 0 }">
+			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+		</c:when>
+		<c:when test="${likeViewResult == 1 }">
+			<input id="likeBt" type="submit" class="material-icons" value="favorite">
+		</c:when>
+	</c:choose>
+		</form>
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
 			<p class="commentTxt2">총 0개</p>
 		</div>
 		<form action="replyWriteOk.do" method="get">
-			<input type="hidden" name="reply_writer" value="hyuk" />
-			<input type="hidden" name="reply_writer" value="hyuk" />
+			<input type="hidden" name="reply_writer" value="<%= user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
 				name="reply_content" id="commentTextArea" style="resize: none;"></textarea>
 			<input type="hidden" name="board_id" value="${param.board_id }" /> <input
@@ -201,7 +218,7 @@ thead tr th {
 										<button type="button" class="close" data-dismiss="modal">&times;</button>
 									</div>
 								
-								<input type="hidden" name="reply_writer" value="hyuk" />
+								<input type="hidden" name="reply_writer" value="<%= user_id%>" />
 											<input type="hidden" name="board_id" value="${param.board_id }" />
 											<input type="hidden" name="board_champion" value="${param.board_champion }" />
 									<!-- Modal body -->
@@ -241,19 +258,6 @@ thead tr th {
 
 <script>
 
-var likeBtChk = 0;
-<% int likeChk = 0; %>
-$(document).ready(function(){
-	$("#likeBt").click(function(){
-		likeBtChk += 1;
-		<% likeChk += 1; %>
-		if(likeBtChk %2 == 1){
-			$(".material-icons").html("favorite");
-		}else {
-			$(".material-icons").html("favorite_border");
-		}
-	});
-});
 
 </script>
 

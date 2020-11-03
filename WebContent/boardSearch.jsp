@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Insert title here</title>
+<title></title>
 
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
@@ -37,6 +37,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="~/Content/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css"  />
 <script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script>
+
 
 
 <style>
@@ -71,7 +72,7 @@
 
 
 	<jsp:include page="boardListChamp.jsp" />
-
+	
 
 	<div class="container">
 		
@@ -97,12 +98,12 @@
 			</tr>
 
 			<c:choose>
-				<c:when test="${empty list || fn:length(list) == 0 }">
+				<c:when test="${empty searchList || fn:length(searchList) == 0 }">
 				</c:when>
 
 				<c:otherwise>
-					<c:forEach var="dto" items="${list }">
-						<%-- request.getAttribute("list") --%>
+					<c:forEach var="dto" items="${searchList }">
+						
 						<tr>
 							<td><a class="board_menu"
 								href="boardView.do?board_id=${dto.board_likeCnt}&board_champion=${dto.board_champion }">${dto.board_likeCnt }</a></td>
@@ -127,6 +128,7 @@
 
 
 </body>
+
 
 
 </html>

@@ -171,6 +171,8 @@ SELECT * FROM TB_REPLY ;
 
 SELECT * FROM tb_reply WHERE board_id = 16 ORDER BY reply_regDate;
 
+SELECT * FROM TB_LIKE ;
+
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
@@ -181,4 +183,5 @@ SELECT * FROM USER_SEQUENCES;
 
 /* 해당 tb_attach 칼럼 확인 */
 SELECT * FROM TB_ATTACH;
+
 
