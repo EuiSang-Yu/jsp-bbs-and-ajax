@@ -14,7 +14,7 @@
 		<script>
 			
 			alert("프로필 사진 업로드에 성공하였습니다.\n잠시만 기다려주세요~!");
-			setTimeout(() => {
+			setTimeout() => {
 	            location.href = "myPage.do";            
 	         }, 4000);
 		</script>
