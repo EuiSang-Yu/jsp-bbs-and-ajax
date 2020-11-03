@@ -28,7 +28,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- <link rel="stylesheet" type="text/css" href="CSS/boardListTable.css"/> -->
 
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -36,30 +35,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- <script src="https://kit.fontawesome.com/bb29575d31.js"></script> -->
 
-	
 <style>
-#writeBtn{
+#writeBtn {
 	float: right;
 }
-.board_menu{
+
+.board_menu {
 	border: none;
 }
 
 #noticeListTable {
 	margin-top: 100px;
 }
-
 </style>
 </head>
 
 <body>
 
 
-<jsp:include page="boardListChamp.jsp"/>
+	<jsp:include page="boardListChamp.jsp" />
 
 
-    <div class="container">
-    	
+	<div class="container">
+
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
                     <th>번호</th>
@@ -82,9 +80,10 @@
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_regDate }</a></td>
 							</tr>
+
 					</c:forEach>
-			</c:otherwise>
-		</c:choose>
+				</c:otherwise>
+			</c:choose>
 		</table>
 		<%--페이징 --%>
 		<jsp:include page="pagination.jsp">
@@ -96,9 +95,9 @@
 		
 
 	             <a href="boardWrite.do?board_champion=${board_champion }" class="btn btn-outline-dark" id="writeBtn">작성하기</a>
-            
+
 	</div>
-            
+
 
 </body>
 

@@ -11,19 +11,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<!-- css파일 불러오기-->
-<link rel="stylesheet" href="CSS/login.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<!--구글폰트-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
 
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
@@ -34,9 +43,12 @@
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
+  
 
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
-
+<!-- css파일 불러오기-->
+<link rel="stylesheet" href="CSS/login.css">
 <!-- 
 
 1) login.jsp : 로그인을 할때 보여지는 폼 화면
@@ -103,8 +115,81 @@
 							<a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
 								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
+
 						<div id="naverIdLogin"></div>
-				
+
+						<!-- 카카오 로그인 -->
+						 <a id="kakao-login-btn"></a>
+						<a href="http://developers.kakao.com/logout"></a>
+						<script type='text/javascript'>
+					
+							// 사용할 앱의 JavaScript 키를 설정
+							Kakao.init('50e0127f513ee387d3b10a3312f2fb89');
+
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+										container : '#kakao-login-btn',
+										success : function(authObj) {
+
+											// 로그인 성공시, API를 호출합니다.
+											Kakao.API.request({
+														url : '/v2/user/me',
+														success : function(res) {
+															console.log(res);
+
+															var userID = res.id; //유저의 카카오톡 고유 id
+															var userEmail = res.kakao_account.email; //유저의 이메일
+															var userNickName = res.properties.nickname; //유저가 등록한 별명
+
+															console.log(userID);
+															console.log(userEmail);
+															console.log(userNickName);
+														},
+														fail : function(error) {
+															alert(JSON.stringify(error));
+														}
+													});
+										},
+										fail : function(err) {
+											alert(JSON.stringify(err));
+										}
+									});
+							//]]>
+
+							/*
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+								container : '#kakao-login-btn',
+								success : function(authObj) {
+									KaKao.API.request({
+										url:'/v2/user/me',
+										success:function(res){
+											console.log(res);
+											var email = res.kakao_account.email;
+											var name = res.properties.nickname;
+											var image = res.properties.profile_image;
+											var html = '<BR>'+email + '<BR>'+name; 
+											
+											html+= '<BR><img src = "'+image+'">';  
+											
+											// location.href='kakaoRedirectForm.jsp?email='+email+ '&name='+name;
+											$('body').append(html);
+										}
+									})
+								console.log(authObj);
+								
+								var token = authObj.access_token;	
+								alert(html);
+								},
+								fail : function(err) {
+									alert(JSON.stringify(err));
+								}
+
+							});
+							//]]>
+							 */
+						</script>
+
 						<div class="text-center p-t-136">
 							<a class="txt3" href="signUp.jsp"> 계정생성 <i
 								class="fas fa-arrow-right aria-hidden="true"></i>

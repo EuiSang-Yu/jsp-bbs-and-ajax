@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import com.command.Command;
 import com.command.HistoryMainCommand;
 import com.command.LoginCommand;
@@ -16,12 +17,16 @@ import com.command.ReplyDeleteCommand;
 import com.command.IdSearchCommand;
 import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
+import com.command.ReplyListCommand;
+import com.command.ReplyUpdateCommand;
+
 import com.command.MypageCommand;
 import com.command.PwSearchCommand;
 import com.command.ProfileUploadCommand;
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
 import com.command.BoardDeleteCommand;
+import com.command.BoardFileUploadCommand;
 import com.command.BoardListCommand;
 import com.command.BoardUpdateCommand;
 import com.command.BoardUpdateOkCommand;
@@ -165,6 +170,12 @@ public class Controller extends HttpServlet {
 			viewPage = "replyDeleteOk.jsp";
 			break;
 
+		case "/replyUpdateOk.do":
+			command = new ReplyUpdateCommand();
+			command.execute(request, response);
+			viewPage = "replyUpdateOk.jsp";
+			break;
+
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
 			break;
@@ -190,12 +201,17 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "profileUpload.jsp";
 			break;
-			
+
 		case "/withdrawalOk.do":
 			command = new WithdrawalOkCommand();
 			command.execute(request, response);
 			viewPage = "withdrawalOk.jsp";
 			break;
+
+			// 웹에디터 파일 업로드
+			case "/BoardFileUpload.do":
+				new BoardFileUploadCommand().execute(request, response);
+				break;	
 		}
 
 		if (viewPage != null) {

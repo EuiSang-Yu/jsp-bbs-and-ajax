@@ -15,9 +15,18 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+
+
+import dto.BoardDTO;
+
+import dto.ReplyDTO;
+
+
 import dto.BoardDTO;
 import dto.ReplyDTO;
+
 import dto.UserDTO;
+
 import vo.VO;
 
 public class DAO {
@@ -539,7 +548,6 @@ public class DAO {
 	} // end select();
 	
 	
-	//게시글 삭제
 	public int reply_delete(int reply_id) throws SQLException{
 		int cnt = 0;
 		
@@ -557,8 +565,27 @@ public class DAO {
 		}
 		
 		return cnt;  
-		
 	}
+
+	public int reply_update(String reply_content, int reply_id) throws SQLException{
+		int cnt = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_REPLY_UPDATE);
+			pstmt.setString(1, reply_content);
+			pstmt.setInt(2, reply_id);
+			cnt = pstmt.executeUpdate();
+		} finally {
+			close();
+		}	//end try
+		return cnt;
+	}	//end update()
 
 	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
 		int cnt = 0;
@@ -637,8 +664,6 @@ public class DAO {
 
 	}
 	
-
-	
 	public int user_delete(String user_id) throws SQLException{
 		int cnt = 0;
 		
@@ -658,8 +683,8 @@ public class DAO {
 		}
 
 		return cnt;
-
 		
 	}
+
 	
 }
