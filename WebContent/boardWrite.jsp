@@ -34,6 +34,21 @@
 </style>
 
 </head>
+
+<script>
+	function chkSubmit() {
+		frm = document.forms["frm"];
+
+		var board_title = frm["board_title"].value.trim();
+
+		if (board_title == "") {
+			alert("제목을 반드시 작성해야 합니다");
+			frm["board_title"].focus();
+			return false;
+		}
+		return true;
+	} // end chkSubmit()
+</script>
 <body>
 
 
@@ -47,7 +62,7 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<h2 class="text-center">게시글 쓰기</h2>
-			<form action="boardWriteOk.do" method="GET">
+			<form name="frm" action="boardWriteOk.do" method="GET">
 				<input type="hidden" name="board_champion"
 					value="${board_champion }">
 				<div class="table table-responsive">
