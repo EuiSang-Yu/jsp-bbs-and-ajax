@@ -6,9 +6,9 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import com.command.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.command.Command;
 import com.command.HistoryMainCommand;
 import com.command.LoginCommand;
 import com.command.ReplyDeleteCommand;
@@ -175,14 +175,12 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "replyDeleteOk.jsp";
 			break;
-
 			
 		case "/replyUpdateOk.do":
 			command = new ReplyUpdateCommand();
 			command.execute(request, response);
 			viewPage = "replyUpdateOk.jsp";
 			break;
-
 
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
@@ -216,7 +214,6 @@ public class Controller extends HttpServlet {
 			viewPage = "withdrawalOk.jsp";
 			break;
 			
-		
 		case "/likeOk.do":
 			command = new LikeCommand();
 			command.execute(request, response);
