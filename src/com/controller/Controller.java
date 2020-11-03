@@ -12,29 +12,52 @@ import javax.servlet.http.HttpServletResponse;
 import com.command.Command;
 
 import com.command.HistoryMainCommand;
+<<<<<<< HEAD
 import com.command.LoginCommand;
 import com.command.HistoryMainCommand;
+=======
+
+import com.command.LoginCommand;
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.ReplyDeleteCommand;
 import com.command.ReplyListCommand;
 import com.command.ReplyUpdateCommand;
+<<<<<<< HEAD
 import com.command.ReplyDeleteCommand;
 import com.command.IdSearchCommand;
 import com.command.LikeCancleCommand;
 import com.command.LikeCommand;
 import com.command.ReplyWriteCommand;
+=======
+
+import com.command.IdSearchCommand;
+
+import com.command.ReplyWriteCommand;
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.MyPageUpdateOkCommand;
+<<<<<<< HEAD
 import com.command.MyPageUpdateOkCommand;
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.MypageCommand;
 import com.command.PwSearchCommand;
 import com.command.ProfileUploadCommand;
+<<<<<<< HEAD
 import com.command.MypageCommand;
 import com.command.ProfileUploadCommand;
 import com.command.MypageCommand;
 import com.command.PwSearchCommand;
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
 import com.command.BoardSearchCommand;
 import com.command.BoardDeleteCommand;
+import com.command.BoardFileUploadCommand;
 import com.command.BoardListCommand;
 import com.command.BoardUpdateCommand;
 import com.command.BoardUpdateOkCommand;
@@ -183,20 +206,30 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "replyDeleteOk.jsp";
 			break;
+<<<<<<< HEAD
 			
 			
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/replyUpdateOk.do":
 			command = new ReplyUpdateCommand();
 			command.execute(request, response);
 			viewPage = "replyUpdateOk.jsp";
 			break;
+<<<<<<< HEAD
 		
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 		case "/idSearch.do":
 			viewPage = "idSearch.jsp";
 			break;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		case "/idSearchOk.do":
 			command = new IdSearchCommand();
 			command.execute(request, response);
@@ -211,19 +244,32 @@ public class Controller extends HttpServlet {
 			command = new PwSearchCommand();
 			command.execute(request, response);
 			viewPage = "pwSearchOk.jsp";
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			break;
 
 		case "/profileUpload.do":
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			viewPage = "profileUpload.jsp";
 			break;
-			
+
 		case "/withdrawalOk.do":
 			command = new WithdrawalOkCommand();
 			command.execute(request, response);
 			viewPage = "withdrawalOk.jsp";
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			break;
+<<<<<<< HEAD
 			
 		
 		case "/likeOk.do":
@@ -237,6 +283,13 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "boardView.do";
 			break;
+=======
+
+			// 웹에디터 파일 업로드
+			case "/BoardFileUpload.do":
+				new BoardFileUploadCommand().execute(request, response);
+				break;	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		}
 
 		if (viewPage != null) {

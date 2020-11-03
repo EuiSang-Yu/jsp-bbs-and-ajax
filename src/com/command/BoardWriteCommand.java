@@ -13,6 +13,7 @@ public class BoardWriteCommand implements Command{
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
 		
 		System.out.println("라이트board_champion : " + board_champion);
+
 		
 		request.setAttribute("board_champion", board_champion);
 		

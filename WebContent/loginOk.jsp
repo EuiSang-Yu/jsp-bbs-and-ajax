@@ -8,7 +8,11 @@
 <%  
 	int cnt = (Integer)request.getAttribute("result");
 	String user_id = request.getAttribute("user_id")+"";
+<<<<<<< HEAD
 	int user_uid = (Integer)request.getAttribute("user_uid");
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 %>
 
 

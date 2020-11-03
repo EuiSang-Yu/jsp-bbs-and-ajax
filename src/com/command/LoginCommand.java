@@ -38,6 +38,7 @@ public class LoginCommand implements Command{
 		
 		
 		System.out.println("cnt : "+cnt);
+
 		request.setAttribute("result", cnt);
 		request.setAttribute("user_id", user_id);
 		request.setAttribute("user_uid", user_uid);
