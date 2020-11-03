@@ -102,7 +102,7 @@ public class VO {
 
    public static final String SQL_USER_GET_UID = 
 
-		   "DELETE FROM TB_USER WHERE USER_ID = ?";
+		   "SELECT USER_UID FROM TB_USER WHERE USER_ID = ?";
    
    public static final String SQL_WRITE_SELECT_FROM_ROW = 
 		   "SELECT * FROM " + 
