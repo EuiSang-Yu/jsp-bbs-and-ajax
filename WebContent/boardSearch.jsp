@@ -8,6 +8,11 @@
 	String user_id = (String)session.getAttribute("user_id");
 %>
 
+
+<%
+	int writePages = 10;
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -120,6 +125,13 @@
 				</c:otherwise>
 			</c:choose>
 		</table>
+		
+		<%--페이징 --%>
+		<jsp:include page="pagination_search.jsp">
+			<jsp:param value="<%= writePages %>" name="writePages"/>
+			<jsp:param value="${totalPage }" name="totalPage"/>
+			<jsp:param value="${curPage }" name="curPage"/>
+		</jsp:include>
 
 		<a href="boardWrite.do?board_champion=${board_champion }"
 			class="btn btn-outline-dark" id="writeBtn">작성하기</a>

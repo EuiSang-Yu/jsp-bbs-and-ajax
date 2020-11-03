@@ -102,13 +102,11 @@ public class VO {
    
    public static final String SQL_WRITE_SELECT_FROM_ROW = 
          "SELECT * FROM " + 
-         "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = ? ORDER BY board_id DESC) T) " + 
+         "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = ? ORDER BY board_likeCnt DESC, board_id DESC) T) " + 
          "WHERE RNUM >= ? AND RNUM < ?";
    
    public static final String SQL_WRITE_COUNT_ALL =
          "SELECT COUNT(*) FROM TB_BOARD WHERE BOARD_CHAMPION = ?";
-
- 
    
    public static final String SQL_LIKE_INSERT = 
             "INSERT INTO tb_like"

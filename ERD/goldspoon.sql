@@ -195,7 +195,11 @@ SELECT * FROM
 )
 WHERE RNUM >= 6 AND RNUM < 6 + 5;
 
-SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 1 ORDER BY board_id DESC) T) 
+SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 86 ORDER BY board_id DESC) T) 
 WHERE RNUM >= 6 AND RNUM < 6+5;
+
+SELECT * FROM 
+(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 86 ORDER BY board_likeCnt DESC, board_id DESC) T) 
+WHERE RNUM >= 1 AND RNUM < 20;
 
 
