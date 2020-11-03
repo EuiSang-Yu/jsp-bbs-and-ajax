@@ -103,7 +103,7 @@
                 <tr>
                     <th>추천수</th>
                     <th>제목</th>
-                    <th>내용</th>
+                    <th>작성자</th>
                     <th>조회수</th>
                     <th>작성날짜</th>
                 </tr>
@@ -117,7 +117,7 @@
 							<tr>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_likeCnt }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_title }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_content }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_writer }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_regDate }</a></td>
 							</tr>
