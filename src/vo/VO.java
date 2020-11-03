@@ -84,8 +84,6 @@ public class VO {
    public static final String SQL_ID_SEARCH = 
 		   "SELECT USER_ID FROM TB_USER WHERE USER_NAME =? AND USER_PHONE=?";
 
-
-
    //비번찾기
    public static final String SQL_PW_SEARCH = 
 		   "SELECT USER_PW FROM TB_USER WHERE USER_ID =? AND USER_NAME=? AND USER_EMAIL=?";
