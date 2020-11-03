@@ -208,7 +208,7 @@ public class Controller extends HttpServlet {
 			command = new ProfileUploadCommand();
 			command.execute(request, response);
 			viewPage = "profileUpload.jsp";
-
+			break;
 
 		case "/withdrawalOk.do":
 			command = new WithdrawalOkCommand();
