@@ -10,7 +10,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <!--구글폰트-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
@@ -37,6 +39,7 @@
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
+  
 
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
@@ -107,50 +110,77 @@
 								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
 						<!-- 카카오 로그인 -->
-						<a id="kakao-login-btn"></a> <a
-							href="http://developers.kakao.com/logout"></a>
+						 <a id="kakao-login-btn"></a>
+						<a href="http://developers.kakao.com/logout"></a>
 						<script type='text/javascript'>
-							// 사용할 앱의 JavaScript 키를 설정해 주세요.
-							Kakao.init('50e0127f513ee387d3b10a3312f2fb89'); //카카오개발자홈페이지에서 발급받은 자바스크립트 키를 입력함
+					
+							// 사용할 앱의 JavaScript 키를 설정
+							Kakao.init('50e0127f513ee387d3b10a3312f2fb89');
+
+							// 카카오 로그인 버튼을 생성합니다.
+							Kakao.Auth.createLoginButton({
+										container : '#kakao-login-btn',
+										success : function(authObj) {
+
+											// 로그인 성공시, API를 호출합니다.
+											Kakao.API.request({
+														url : '/v2/user/me',
+														success : function(res) {
+															console.log(res);
+
+															var userID = res.id; //유저의 카카오톡 고유 id
+															var userEmail = res.kakao_account.email; //유저의 이메일
+															var userNickName = res.properties.nickname; //유저가 등록한 별명
+
+															console.log(userID);
+															console.log(userEmail);
+															console.log(userNickName);
+														},
+														fail : function(error) {
+															alert(JSON.stringify(error));
+														}
+													});
+										},
+										fail : function(err) {
+											alert(JSON.stringify(err));
+										}
+									});
+							//]]>
+
+							/*
 							// 카카오 로그인 버튼을 생성합니다.
 							Kakao.Auth.createLoginButton({
 								container : '#kakao-login-btn',
 								success : function(authObj) {
-									alert(JSON.stringify(authObj));
-							         Kakao.API.request({
-							        	 
-							               url: '/v1/user/me',
-							 
-							               success: function(res) { //res가 참일때, 자료를 성공적으로 보냈을때 출력되는 부분
-							 
-							                     console.log(res.id);//<---- 콘솔 로그에 id 정보 출력(id는 res안에 있기 때문에  res.id 로 불러온다)
-							 
-							                     console.log(res.kaccount_email);//<---- 콘솔 로그에 email 정보 출력 (어딨는지 알겠죠?)
-							 
-							                     console.log(res.properties['nickname']);//<---- 콘솔 로그에 닉네임 출력(properties에 있는 nickname 접근 
-							                             
-							                     // res.properties.nickname으로도 접근 가능 )
-							                     console.log(authObj.access_token);//<---- 콘솔 로그에 토큰값 출력
-							          
-							         
-							          var kakaonickname = res.properties.nickname;    //카카오톡 닉네임을 변수에 저장
-							          var kakaoe_mail = res.properties.kaccount_email;    //카카오톡 이메일을 변수에 저장함
-							         
-							          
-							 
-							          //카카오톡의 닉네임과,mail을 url에 담아 같이 페이지를 이동한다.
-							          window.location.replace("http://" + window.location.hostname + ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/hansub_project/home?kakaonickname="+kakaonickname+"&kakaoe_mail="+kakaoe_mail);
-							      
-							                   }
-							                 })
-							               },
+									KaKao.API.request({
+										url:'/v2/user/me',
+										success:function(res){
+											console.log(res);
+											var email = res.kakao_account.email;
+											var name = res.properties.nickname;
+											var image = res.properties.profile_image;
+											var html = '<BR>'+email + '<BR>'+name; 
+											
+											html+= '<BR><img src = "'+image+'">';  
+											
+											// location.href='kakaoRedirectForm.jsp?email='+email+ '&name='+name;
+											$('body').append(html);
+										}
+									})
+								console.log(authObj);
+								
+								var token = authObj.access_token;	
+								alert(html);
 								},
 								fail : function(err) {
 									alert(JSON.stringify(err));
 								}
+
 							});
 							//]]>
+							 */
 						</script>
+
 
 						<div class="text-center p-t-136">
 							<a class="txt3" href="signUp.jsp"> 계정생성 <i

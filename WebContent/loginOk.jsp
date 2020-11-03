@@ -8,6 +8,7 @@
 <%  
 	int cnt = (Integer)request.getAttribute("result");
 	String user_id = request.getAttribute("user_id")+"";
+
 %>
 
 
