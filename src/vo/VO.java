@@ -45,26 +45,12 @@ public class VO {
 
 
    public static final String SQL_WRITE_DELETE =
-<<<<<<< HEAD
-=======
 
 
          "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";   //챔피언 넘버 추가
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
-
-<<<<<<< HEAD
-         "DELETE FROM TB_BOARD WHERE board_id=? and board_champion = ?";
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
    //--------------------------댓글 쿼리
-<<<<<<< HEAD
-
-   
-=======
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    public static final String SQL_REPLY_INSERT = 
             "INSERT INTO tb_reply"
             + "(reply_id, reply_writer, reply_content, reply_regDate, board_id) " 
@@ -72,22 +58,15 @@ public class VO {
             + "(SEQ_tb_reply_reply_id.NEXTVAL, ?, ?, SYSDATE, ?)";
 
    public static final String SQL_MYPAGE_SELECT = 
-<<<<<<< HEAD
+
 		   "SELECT * FROM TB_USER WHERE USER_ID=?";	// 마이페이지 열었을때 회원가입정보 가져오기
 
 
    
    public static final String SQL_MYPAGE_UPDATE = 
 	         "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_ID = ?";
-
-=======
-
-         "SELECT * FROM TB_USER WHERE USER_ID=?";   // 마이페이지 열었을때 회원가입정보 가져오기
    
-   public static final String SQL_MYPAGE_UPDATE = 
 
-            "UPDATE TB_USER SET USER_PW = ?, USER_EMAIL = ?, USER_PHONE = ? WHERE USER_UID = ?";   //챔피언 넘버 추가
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
    public static final String SQL_REPLY_SELECT = 
             "SELECT * FROM tb_reply WHERE board_id = ? ORDER BY reply_regDate DESC";
@@ -97,12 +76,7 @@ public class VO {
 
          "DELETE FROM tb_reply WHERE reply_id=?";
    
-<<<<<<< HEAD
 
-   
-=======
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    public static final String SQL_REPLY_UPDATE = 
 	         "UPDATE tb_reply SET  reply_content = ? WHERE reply_id = ?";
 
@@ -122,22 +96,22 @@ public class VO {
 		   "UPDATE TB_USER SET USER_PROFILEIMAGE=? WHERE USER_ID = ?";
    
    public static final String SQL_USER_DELETE = 
+
 		   "DELETE FROM TB_USER WHERE USER_ID = ?";
-<<<<<<< HEAD
-   
-=======
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
- 
-<<<<<<< HEAD
+
    public static final String SQL_USER_GET_UID = 
-=======
 
-}
+		   "DELETE FROM TB_USER WHERE USER_ID = ?";
+   
+   public static final String SQL_WRITE_SELECT_FROM_ROW = 
+		   "SELECT * FROM " + 
+			"(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = ? ORDER BY board_id DESC) T) " + 
+			"WHERE RNUM >= ? AND RNUM < ?";
+   
+   public static final String SQL_WRITE_COUNT_ALL =
+		   "SELECT COUNT(*) FROM TB_BOARD WHERE BOARD_CHAMPION = ?";
 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
-
-	         "SELECT user_uid FROM TB_USER WHERE user_id=?";
  
    
    public static final String SQL_LIKE_INSERT = 
@@ -164,8 +138,6 @@ public class VO {
 		   "UPDATE TB_BOARD SET board_likeCnt = ? WHERE BOARD_ID = ?";
    
 
-<<<<<<< HEAD
 }
 
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+

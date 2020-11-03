@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -29,9 +30,12 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!--아이콘-->
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
 
 <link rel="stylesheet" type="text/css"
 	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -105,10 +109,15 @@
 							<button type="submit" class="login100-form-btn">로그인</button>
 						</div>
 						<br>
+						
+						
 						<div class="text-center p-t-12">
 							<a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
 								href="pwSearch.do"> 비밀번호 찾기 </a>
 						</div>
+
+						<div id="naverIdLogin"></div>
+
 						<!-- 카카오 로그인 -->
 						 <a id="kakao-login-btn"></a>
 						<a href="http://developers.kakao.com/logout"></a>
@@ -181,7 +190,6 @@
 							 */
 						</script>
 
-
 						<div class="text-center p-t-136">
 							<a class="txt3" href="signUp.jsp"> 계정생성 <i
 								class="fas fa-arrow-right aria-hidden="true"></i>
@@ -195,11 +203,13 @@
 
 
 	<jsp:include page="footer.jsp" />
-
+	<script src="JS/social_login.js"></script>
+	
 
 
 
 </body>
 </html>
+
 
 
