@@ -9,12 +9,13 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import dto.BoardDTO;
+import dto.LikeDTO;
 import dto.ReplyDTO;
 import dto.UserDTO;
 import vo.VO;
@@ -66,7 +67,7 @@ public class DAO {
 	// ------------------------------------------------------------------------------------------------------------------------//
 
 	// 새글 작성 <-- 제목, 내용, 조회수, 해당챔피언, 작성자
-	public int insert(String board_title, String board_content, int board_champion) throws SQLException {
+	public int insert(String board_title, String board_content, int board_champion, String board_writer) throws SQLException {
 		int cnt = 0;
 
 		try {
@@ -76,7 +77,7 @@ public class DAO {
 			pstmt.setString(1, board_title);
 			pstmt.setString(2, board_content);
 			pstmt.setInt(3, board_champion);
-
+			pstmt.setString(4, board_writer);
 
 			cnt = pstmt.executeUpdate();// 여기서에러
 		} catch (Exception e) {
@@ -98,8 +99,10 @@ public class DAO {
 			String board_title = dto.getBoard_title();
 			String board_content = dto.getBoard_content();
 			int board_champion = dto.getBoard_champion();
+			String board_writer = dto.getBoard_writer();
 
-			cnt = this.insert(board_title, board_content, board_champion);
+
+			cnt = this.insert(board_title, board_content, board_champion, board_writer);
 
 		} catch (Exception e) {
 			
@@ -168,6 +171,29 @@ public class DAO {
 		return arr;
 	}
 	
+	
+	public LikeDTO[] createLikeArray(ResultSet rs) throws SQLException {
+		LikeDTO[] arr = null;
+		
+		ArrayList<LikeDTO> list = new ArrayList<LikeDTO>();
+		while (rs.next()) {
+			int like_id = rs.getInt("like_id");
+			System.out.println("like_id : " + like_id);
+			int user_uid = rs.getInt("user_uid");
+			System.out.println("user_uid : " + user_uid);
+			int board_id = rs.getInt("board_id");
+			
+			LikeDTO dto = new LikeDTO(like_id, user_uid, board_id);
+			list.add(dto);
+		}
+		
+		arr = new LikeDTO[list.size()];
+		list.toArray(arr);
+		
+		return arr;
+	}
+	
+	
 	// 전체 SELECT ListComm
 	public BoardDTO[] select(int board_champion) throws SQLException {
 		BoardDTO[] arr = null;
@@ -176,6 +202,51 @@ public class DAO {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT);
 			pstmt.setInt(1, board_champion);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} catch (Exception e) {
+			System.out.println("SELECT 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+	} // end select();
+	
+	// 페이징 관련해서 모든글목록 갯수 뽑아오기
+	public int count_all(int board_champion) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_COUNT_ALL);
+			pstmt.setInt(1, board_champion);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next())
+				cnt = rs.getInt(1);
+			
+		} catch (Exception e) {
+			System.out.println("count_all 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	} // end select();
+	
+	// 페이징 관련해서 글목록 뽑아오기
+	public BoardDTO[] select_from_row(int board_champion, int fromRow, int pageRows) throws SQLException {
+		BoardDTO[] arr = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_FROM_ROW);
+			pstmt.setInt(1, board_champion);
+			pstmt.setInt(2, fromRow);
+			pstmt.setInt(3, fromRow + pageRows);
 			rs = pstmt.executeQuery();
 			arr = createArray(rs);
 		} catch (Exception e) {
@@ -212,6 +283,29 @@ public class DAO {
 
 		return arr;
 	} // end selectByUid()
+	
+	
+	// 전체 SELECT ListComm
+	public BoardDTO[] searchSelect(int board_champion, String searchKind, String searchText) throws SQLException {
+		BoardDTO[] arr = null;
+		String sql = "select * from tb_board where board_champion = ? AND " + searchKind + "  = ? ORDER BY board_likeCnt DESC";
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, board_champion);
+			pstmt.setString(2, searchText);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} catch (Exception e) {
+			System.out.println("SELECT 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+	} // end select();
 
 	
 	// 특정 uid 글 내용 읽기, 조회수 증가
@@ -298,7 +392,7 @@ public class DAO {
 	public String login(String user_id) throws SQLException {
 		
 		//쿼리문 결과 password 받을 변수
-		String  user_pw = "";
+		String user_pw = "";
 		
 		try {
 			conn = getConnection();
@@ -510,8 +604,8 @@ public class DAO {
 		}
 		
 		return cnt;  
-		
 	}
+	
 	
 	public int reply_update(String reply_content, int reply_id) throws SQLException{
 		int cnt = 0;
@@ -531,6 +625,7 @@ public class DAO {
 			close();
 		}	//end try
 		return cnt;
+
 	}	//end update()
 	
 	
@@ -609,7 +704,9 @@ public class DAO {
 		}
 		
 		return user_pw;
+
 	}
+	
 
 	public int user_delete(String user_id) throws SQLException{
 		int cnt = 0;
@@ -628,9 +725,178 @@ public class DAO {
 		} finally {
 			close();
 		}
-		
+
 		return cnt;
+
 		
 	}
 	
+	
+	public int getUser_uid(String user_id) throws SQLException{
+
+		int user_uid = 0;
+		
+		try {
+			conn = getConnection();
+		} catch (Exception e) {
+			System.out.println("커넥션 오류");
+			e.printStackTrace();
+		}
+		
+		try {
+			pstmt = conn.prepareStatement(VO.SQL_USER_GET_UID);
+			pstmt.setString(1, user_id);
+			rs = pstmt.executeQuery(); 
+			
+			while(rs.next()) {
+				user_uid = rs.getInt("user_uid");
+			}
+		} finally {
+			close();
+		}
+		
+
+		return user_uid;
+	}
+
+	
+	public int like_insert(int user_uid, int board_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_LIKE_INSERT);
+			pstmt.setInt(1, user_uid);
+			pstmt.setInt(2, board_id);
+			
+			cnt = pstmt.executeUpdate();// 여기서에러
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} // end insert();
+	
+	
+	public int like_view(int user_uid, int board_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_LIKE_SELECT);
+			pstmt.setInt(1, user_uid);
+			pstmt.setInt(2, board_id);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} // end insert();
+	
+	
+	public int like_delete(int user_uid, int board_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_LIKE_DELETE);
+			pstmt.setInt(1, user_uid);
+			pstmt.setInt(2, board_id);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} // end insert();
+	
+	public int viewCnt_update(int board_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_UPDATE_VIEWCNT);
+			pstmt.setInt(1, board_id);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	} // end insert();
+	
+	
+	
+	public int likeCnt_select(int board_id) throws SQLException {
+		LikeDTO[] arr = null;
+		int likeCntChk = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_LIKECNT_SELECT);
+			System.out.println("1");
+			pstmt.setInt(1, board_id);
+			System.out.println("2");
+			rs = pstmt.executeQuery();
+			System.out.println("3");
+			arr = createLikeArray(rs);
+			System.out.println("4");
+			likeCntChk = arr.length;
+		} catch (Exception e) {
+			System.out.println("SELECT 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return likeCntChk;
+	}
+	
+	
+	public int likeCnt_update(int board_likeCnt, int board_id) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+
+			pstmt = conn.prepareStatement(VO.SQL_LIKECNT_UPDATE);
+			pstmt.setInt(1, board_likeCnt);
+			pstmt.setInt(2, board_id);
+			
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+
+	}
+
 }

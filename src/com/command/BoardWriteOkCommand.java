@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.DAO;
 
@@ -17,6 +18,10 @@ public class BoardWriteOkCommand implements Command {
 		String board_title = request.getParameter("board_title");
 		String board_content = request.getParameter("board_content");
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
+		HttpSession session = request.getSession();
+		
+
+		String board_writer = (String)session.getAttribute("user_id");
 		
 		System.out.println("board_title : "+board_title +" , board_content : " + board_content);
 		
@@ -24,7 +29,7 @@ public class BoardWriteOkCommand implements Command {
 		if(board_title != null && board_content != null &&
 				board_title.trim().length() > 0 && board_content.trim().length() > 0) {
 			try {
-				cnt = dao.insert(board_title, board_content, board_champion);
+				cnt = dao.insert(board_title, board_content, board_champion, board_writer);
 				
 			} catch (SQLException e) {
 				e.printStackTrace();
