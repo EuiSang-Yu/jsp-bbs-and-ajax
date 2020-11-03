@@ -189,6 +189,51 @@ public class DAO {
 		return arr;
 	} // end select();
 	
+	// 페이징 관련해서 모든글목록 갯수 뽑아오기
+	public int count_all(int board_champion) throws SQLException {
+		int cnt = 0;
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_COUNT_ALL);
+			pstmt.setInt(1, board_champion);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next())
+				cnt = rs.getInt(1);
+			
+		} catch (Exception e) {
+			System.out.println("count_all 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	} // end select();
+	
+	// 페이징 관련해서 글목록 뽑아오기
+	public BoardDTO[] select_from_row(int board_champion, int fromRow, int pageRows) throws SQLException {
+		BoardDTO[] arr = null;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_FROM_ROW);
+			pstmt.setInt(1, board_champion);
+			pstmt.setInt(2, fromRow);
+			pstmt.setInt(3, fromRow + pageRows);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
+		} catch (Exception e) {
+			System.out.println("SELECT 에러");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return arr;
+	} // end select();
+	
 	
 	// 특정 uid 의 글만 SELECT
 
@@ -514,10 +559,7 @@ public class DAO {
 		return cnt;  
 		
 	}
-	
 
-<<<<<<< HEAD
-=======
 	public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
 		int cnt = 0;
 		
@@ -539,7 +581,7 @@ public class DAO {
 		
 		return cnt;
 	}
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+	
 	//id찾기
 	public String idSearch(String user_name, String user_phone)throws SQLException{
 		
@@ -592,17 +634,12 @@ public class DAO {
 		}
 		
 		return user_pw;
-<<<<<<< HEAD
+
 	}
 	
-	
-	public int profileImage_upload(String user_profileImage) throws SQLException{
-=======
-		
-	}
+
 	
 	public int user_delete(String user_id) throws SQLException{
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		int cnt = 0;
 		
 		try {
@@ -619,13 +656,9 @@ public class DAO {
 		} finally {
 			close();
 		}
-		
-<<<<<<< HEAD
+
 		return cnt;
 
-=======
-		return cnt;
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		
 	}
 	
