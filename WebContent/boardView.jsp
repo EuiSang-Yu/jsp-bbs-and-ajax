@@ -148,7 +148,8 @@ thead tr th {
 
 					<th class="col-sm-2">챔피언 공략</th>
 					<th class="col-sm-2">조회수 ${list[0].board_viewCnt }</th>
-					<th class="col-sm-5">댓글 ${list[0].board_replyCnt }</th>
+					<th class="col-sm-3">작성자 ${list[0].board_writer }</th>
+					<th class="col-sm-2">댓글 ${list[0].board_replyCnt }</th>
 					<th class="col-sm-3">작성시간 ${list[0].board_regDate }</th>
 
 				</tr>
