@@ -8,6 +8,7 @@
 <%  
 	int cnt = (Integer)request.getAttribute("result");
 	String user_id = request.getAttribute("user_id")+"";
+	int user_uid = (Integer)request.getAttribute("user_uid");
 
 %>
 
@@ -20,6 +21,7 @@
 	</script>
 <% } else { 
 		session.setAttribute("user_id", user_id);
+		session.setAttribute("user_uid", user_uid);
 		System.out.print("유저 세션 생성");
 %>
 	<script>

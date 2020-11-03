@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -15,21 +15,21 @@
 <!--구글폰트-->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
+   href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
+   rel="stylesheet">
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -38,7 +38,7 @@
 
 
 <link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+   href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -69,147 +69,146 @@
 <title>OP.IT</title>
 </head>
 <body>
-	<jsp:include page="thema.jsp" />
+   <jsp:include page="thema.jsp" />
 
-	<!-- 로그인 부분 -->
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<div class="login100-pic js-tilt" data-tilt>
-					<!--  로그인 왼쪽 이미지 -->
-					<img src="img/1.png" alt="PNG">
-				</div>
-				<!-- 로그인 폼 -->
-				<div class="login">
-					<!-- method="post"는 POST 방식을 이용하여 URL 경로를 숨기는 기능 -->
-					<form class="login100-form validate-form" action="loginOk.do"
-						method="get">
-						<span class="login100-form-title"> <!-- 제목 -->
-							<p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
-						</span>
+   <!-- 로그인 부분 -->
+   <div class="limiter">
+      <div class="container-login100">
+         <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+               <!--  로그인 왼쪽 이미지 -->
+               <img src="img/1.png" alt="PNG">
+            </div>
+            <!-- 로그인 폼 -->
+            <div class="login">
+               <!-- method="post"는 POST 방식을 이용하여 URL 경로를 숨기는 기능 -->
+               <form class="login100-form validate-form" action="loginOk.do"
+                  method="get">
+                  <span class="login100-form-title"> <!-- 제목 -->
+                     <p class="loginfont" style="font-size: 40px;">OP.IT 로그인</p>
+                  </span>
 
-						<div class="wrap-input100 validate-input">
-							<input class="input100" type="text" name="user_id"
-								placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
-							<span class="symbol-input100"> <!-- 아이디 아이콘 --> <i
-								class="fa fa-envelope" aria-hidden="true"></i>
-							</span>
-						</div>
+                  <div class="wrap-input100 validate-input">
+                     <input class="input100" type="text" name="user_id"
+                        placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
+                     <span class="symbol-input100"> <!-- 아이디 아이콘 --> <i
+                        class="fa fa-envelope" aria-hidden="true"></i>
+                     </span>
+                  </div>
 
-						<div class="wrap-input100 validate-input"
-							data-validate="Password is required">
-							<input class="input100" type="password" name="user_pw"
-								placeholder="비밀번호를 입력해주세요."> <span
-								class="focus-input100"></span> <span class="symbol-input100">
-								<i class="fa fa-lock" aria-hidden="true"></i> <!-- 비밀번호 아이콘 -->
-							</span>
-						</div>
+                  <div class="wrap-input100 validate-input"
+                     data-validate="Password is required">
+                     <input class="input100" type="password" name="user_pw"
+                        placeholder="비밀번호를 입력해주세요."> <span
+                        class="focus-input100"></span> <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i> <!-- 비밀번호 아이콘 -->
+                     </span>
+                  </div>
 
-						<div class="container-login100-form-btn">
-							<button type="submit" class="login100-form-btn">로그인</button>
-						</div>
-						<br>
-						
-						
-						<div class="text-center p-t-12">
-							<a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
-								href="pwSearch.do"> 비밀번호 찾기 </a>
-						</div>
+                  <div class="container-login100-form-btn">
+                     <button type="submit" class="login100-form-btn">로그인</button>
+                  </div>
+                  <br>
+                  
+                  
+                  <div class="text-center p-t-12">
+                     <a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
+                        href="pwSearch.do"> 비밀번호 찾기 </a>
+                  </div>
 
-						<div id="naverIdLogin"></div>
+                  <div id="naverIdLogin"></div>
 
-						<!-- 카카오 로그인 -->
-						 <a id="kakao-login-btn"></a>
-						<a href="http://developers.kakao.com/logout"></a>
-						<script type='text/javascript'>
-					
-							// 사용할 앱의 JavaScript 키를 설정
-							Kakao.init('50e0127f513ee387d3b10a3312f2fb89');
+                  <!-- 카카오 로그인 -->
+                   <a id="kakao-login-btn"></a>
+                  <a href="http://developers.kakao.com/logout"></a>
+                  <script type='text/javascript'>
+               
+                     // 사용할 앱의 JavaScript 키를 설정
+                     Kakao.init('50e0127f513ee387d3b10a3312f2fb89');
 
-							// 카카오 로그인 버튼을 생성합니다.
-							Kakao.Auth.createLoginButton({
-										container : '#kakao-login-btn',
-										success : function(authObj) {
+                     // 카카오 로그인 버튼을 생성합니다.
+                     Kakao.Auth.createLoginButton({
+                              container : '#kakao-login-btn',
+                              success : function(authObj) {
 
-											// 로그인 성공시, API를 호출합니다.
-											Kakao.API.request({
-														url : '/v2/user/me',
-														success : function(res) {
-															console.log(res);
+                                 // 로그인 성공시, API를 호출합니다.
+                                 Kakao.API.request({
+                                          url : '/v2/user/me',
+                                          success : function(res) {
+                                             console.log(res);
 
-															var userID = res.id; //유저의 카카오톡 고유 id
-															var userEmail = res.kakao_account.email; //유저의 이메일
-															var userNickName = res.properties.nickname; //유저가 등록한 별명
+                                             var userID = res.id; //유저의 카카오톡 고유 id
+                                             var userEmail = res.kakao_account.email; //유저의 이메일
+                                             var userNickName = res.properties.nickname; //유저가 등록한 별명
 
-															console.log(userID);
-															console.log(userEmail);
-															console.log(userNickName);
-														},
-														fail : function(error) {
-															alert(JSON.stringify(error));
-														}
-													});
-										},
-										fail : function(err) {
-											alert(JSON.stringify(err));
-										}
-									});
-							//]]>
+                                             console.log(userID);
+                                             console.log(userEmail);
+                                             console.log(userNickName);
+                                          },
+                                          fail : function(error) {
+                                             alert(JSON.stringify(error));
+                                          }
+                                       });
+                              },
+                              fail : function(err) {
+                                 alert(JSON.stringify(err));
+                              }
+                           });
+                     //]]>
 
-							/*
-							// 카카오 로그인 버튼을 생성합니다.
-							Kakao.Auth.createLoginButton({
-								container : '#kakao-login-btn',
-								success : function(authObj) {
-									KaKao.API.request({
-										url:'/v2/user/me',
-										success:function(res){
-											console.log(res);
-											var email = res.kakao_account.email;
-											var name = res.properties.nickname;
-											var image = res.properties.profile_image;
-											var html = '<BR>'+email + '<BR>'+name; 
-											
-											html+= '<BR><img src = "'+image+'">';  
-											
-											// location.href='kakaoRedirectForm.jsp?email='+email+ '&name='+name;
-											$('body').append(html);
-										}
-									})
-								console.log(authObj);
-								
-								var token = authObj.access_token;	
-								alert(html);
-								},
-								fail : function(err) {
-									alert(JSON.stringify(err));
-								}
+                     /*
+                     // 카카오 로그인 버튼을 생성합니다.
+                     Kakao.Auth.createLoginButton({
+                        container : '#kakao-login-btn',
+                        success : function(authObj) {
+                           KaKao.API.request({
+                              url:'/v2/user/me',
+                              success:function(res){
+                                 console.log(res);
+                                 var email = res.kakao_account.email;
+                                 var name = res.properties.nickname;
+                                 var image = res.properties.profile_image;
+                                 var html = '<BR>'+email + '<BR>'+name; 
+                                 
+                                 html+= '<BR><img src = "'+image+'">';  
+                                 
+                                 // location.href='kakaoRedirectForm.jsp?email='+email+ '&name='+name;
+                                 $('body').append(html);
+                              }
+                           })
+                        console.log(authObj);
+                        
+                        var token = authObj.access_token;   
+                        alert(html);
+                        },
+                        fail : function(err) {
+                           alert(JSON.stringify(err));
+                        }
 
-							});
-							//]]>
-							 */
-						</script>
+                     });
+                     //]]>
+                      */
+                  </script>
 
-						<div class="text-center p-t-136">
-							<a class="txt3" href="signUp.jsp"> 계정생성 <i
-								class="fas fa-arrow-right aria-hidden="true"></i>
-							</a>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+                  <div class="text-center p-t-136">
+                     <a class="txt3" href="signUp.jsp"> 계정생성 <i
+                        class="fas fa-arrow-right aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
 
 
-	<jsp:include page="footer.jsp" />
-	<script src="JS/social_login.js"></script>
-	
+   <jsp:include page="footer.jsp" />
+   <script src="JS/social_login.js"></script>
+   
 
 
 
 </body>
 </html>
-
 
 

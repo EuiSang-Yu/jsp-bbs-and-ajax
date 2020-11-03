@@ -20,8 +20,12 @@ public class BoardListCommand implements Command {
 		BoardDTO[] arr = null;
 		BoardDTO[] arr2 = null;
 		int board_champion = 0;
+
+
+
 		int curPage = 1;   // 현재 페이지 (디폴트 1 page)
 		int cnt = 0;   // 글 목록 전체의 개수
+
 		
 		// 페이징 관련 세팅 값들
 		int writePages = 10;    // 한 [페이징] 에 몇개의 '페이지'를 표현할 것인가?
@@ -48,6 +52,7 @@ public class BoardListCommand implements Command {
 		
 			board_champion = Integer.parseInt(request.getParameter("board_champion"));
 			arr = dao.select(board_champion);  // 트랜잭션 수행
+
 			cnt = dao.count_all(board_champion);	//전체 글 갯수
 			
 			totalPage = (int)Math.ceil(cnt / (double)pageRows); //총 몇 페이지 분량인가?
@@ -55,6 +60,7 @@ public class BoardListCommand implements Command {
 			
 			arr2 = dao.select_from_row(board_champion, fromRow, pageRows);
 			
+
 			
 			System.out.println("리스트board_champion : " + board_champion);
 			System.out.println("리스트 전체 : " + cnt);
@@ -66,8 +72,10 @@ public class BoardListCommand implements Command {
 			request.setAttribute("list", arr);
 			request.setAttribute("list2", arr2);
 			request.setAttribute("board_champion", board_champion);
+
 			request.setAttribute("totalPage", totalPage);
 			request.setAttribute("curPage", curPage);
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -171,6 +171,8 @@ SELECT * FROM TB_REPLY ;
 
 SELECT * FROM tb_reply WHERE board_id = 16 ORDER BY reply_regDate;
 
+SELECT * FROM TB_LIKE ;
+
 /* 해당 계정 테이블 목록 확인*/
 select * from tab;
 
@@ -195,4 +197,5 @@ WHERE RNUM >= 6 AND RNUM < 6 + 5;
 
 SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 1 ORDER BY board_id DESC) T) 
 WHERE RNUM >= 6 AND RNUM < 6+5;
+
 

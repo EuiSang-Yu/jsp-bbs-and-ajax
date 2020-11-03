@@ -6,11 +6,9 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
+import com.command.Command;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-
-import com.command.Command;
 import com.command.HistoryMainCommand;
 import com.command.LoginCommand;
 import com.command.ReplyDeleteCommand;
@@ -19,12 +17,14 @@ import com.command.ReplyWriteCommand;
 import com.command.MyPageUpdateOkCommand;
 import com.command.ReplyListCommand;
 import com.command.ReplyUpdateCommand;
-
+import com.command.LikeCancleCommand;
+import com.command.LikeCommand;
 import com.command.MypageCommand;
 import com.command.PwSearchCommand;
 import com.command.ProfileUploadCommand;
 import com.command.UserSignUpCommand;
 import com.command.WithdrawalOkCommand;
+import com.command.BoardSearchCommand;
 import com.command.BoardDeleteCommand;
 import com.command.BoardFileUploadCommand;
 import com.command.BoardListCommand;
@@ -86,6 +86,12 @@ public class Controller extends HttpServlet {
 			command = new BoardListCommand();
 			command.execute(request, response);
 			viewPage = "boardListTable.jsp";
+			break;
+			
+		case "/boardSearch.do":
+			command = new BoardSearchCommand();
+			command.execute(request, response);
+			viewPage = "boardSearch.jsp";
 			break;
 
 		case "/boardWrite.do":
@@ -169,7 +175,7 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "replyDeleteOk.jsp";
 			break;
-
+			
 		case "/replyUpdateOk.do":
 			command = new ReplyUpdateCommand();
 			command.execute(request, response);
@@ -207,6 +213,19 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "withdrawalOk.jsp";
 			break;
+			
+		case "/likeOk.do":
+			command = new LikeCommand();
+			command.execute(request, response);
+			viewPage = "boardView.do";
+			break;
+			
+		case "/likeCancle.do":
+			command = new LikeCancleCommand();
+			command.execute(request, response);
+			viewPage = "boardView.do";
+			break;
+
 
 			// 웹에디터 파일 업로드
 			case "/BoardFileUpload.do":

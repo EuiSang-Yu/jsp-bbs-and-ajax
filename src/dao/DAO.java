@@ -9,15 +9,11 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
-
-
-
 import dto.BoardDTO;
 import dto.LikeDTO;
 import dto.ReplyDTO;
@@ -609,8 +605,8 @@ public class DAO {
       
       return cnt;  
    }
-
-
+   
+   
    public int reply_update(String reply_content, int reply_id) throws SQLException{
       int cnt = 0;
       
@@ -632,7 +628,7 @@ public class DAO {
 
    }   //end update()
    
-
+   
    public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
       int cnt = 0;
       
@@ -654,6 +650,7 @@ public class DAO {
       
       return cnt;
    }
+   
    
    //id찾기
    public String idSearch(String user_name, String user_phone)throws SQLException{
@@ -711,8 +708,6 @@ public class DAO {
    }
    
 
-      
-
    public int user_delete(String user_id) throws SQLException{
       int cnt = 0;
       
@@ -762,7 +757,6 @@ public class DAO {
       
 
       return user_uid;
-      
    }
 
    
@@ -905,5 +899,4 @@ public class DAO {
 
    }
 
-   
 }
