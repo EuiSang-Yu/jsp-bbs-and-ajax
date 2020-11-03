@@ -31,6 +31,7 @@
 <script
    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 <!--아이콘-->
@@ -45,7 +46,7 @@
 
   
 
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
 
 <!-- css파일 불러오기-->
 <link rel="stylesheet" href="CSS/login.css">
@@ -114,16 +115,16 @@
                   <div class="text-center p-t-12">
                      <a class="txt1" href="idSearch.do"> 아이디찾기 </a> <a class="txt2"
                         href="pwSearch.do"> 비밀번호 찾기 </a>
-                  </div>
-
-                  <div id="naverIdLogin"></div>
-
+                        <br>
+                        <br>
+                     <a class="txt3" href="signUp.jsp">계정생성</a>
+                     <!-- 네이버 로그인 -->
+                  <div id="naverIdLogin" class="btn btn-block .btn-social"></div>
                   <!-- 카카오 로그인 -->
-                   <a id="kakao-login-btn"></a>
+                   <a id="kakao-login-btn" class="btn btn-block .btn-social"></a>
                   <a href="http://developers.kakao.com/logout"></a>
                   <script type='text/javascript'>
-               
-                     // 사용할 앱의 JavaScript 키를 설정
+                                    // 사용할 앱의 JavaScript 키를 설정
                      Kakao.init('50e0127f513ee387d3b10a3312f2fb89');
 
                      // 카카오 로그인 버튼을 생성합니다.
@@ -154,47 +155,11 @@
                                  alert(JSON.stringify(err));
                               }
                            });
-                     //]]>
-
-                     /*
-                     // 카카오 로그인 버튼을 생성합니다.
-                     Kakao.Auth.createLoginButton({
-                        container : '#kakao-login-btn',
-                        success : function(authObj) {
-                           KaKao.API.request({
-                              url:'/v2/user/me',
-                              success:function(res){
-                                 console.log(res);
-                                 var email = res.kakao_account.email;
-                                 var name = res.properties.nickname;
-                                 var image = res.properties.profile_image;
-                                 var html = '<BR>'+email + '<BR>'+name; 
-                                 
-                                 html+= '<BR><img src = "'+image+'">';  
-                                 
-                                 // location.href='kakaoRedirectForm.jsp?email='+email+ '&name='+name;
-                                 $('body').append(html);
-                              }
-                           })
-                        console.log(authObj);
-                        
-                        var token = authObj.access_token;   
-                        alert(html);
-                        },
-                        fail : function(err) {
-                           alert(JSON.stringify(err));
-                        }
-
-                     });
-                     //]]>
-                      */
+ 
                   </script>
+                   </div>
+       
 
-                  <div class="text-center p-t-136">
-                     <a class="txt3" href="signUp.jsp"> 계정생성 <i
-                        class="fas fa-arrow-right aria-hidden="true"></i>
-                     </a>
-                  </div>
                </form>
             </div>
          </div>
