@@ -101,7 +101,7 @@
 
 		<table class="table table-bordered table-hover" id="noticeListTable">
                 <tr>
-                    <th>번호</th>
+                    <th>추천수</th>
                     <th>제목</th>
                     <th>내용</th>
                     <th>조회수</th>
@@ -115,7 +115,7 @@
 			<c:otherwise>
 					<c:forEach var="dto" items="${list2 }">  <%-- request.getAttribute("list") --%>
 							<tr>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_id }</a></td>
+								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_likeCnt }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_title }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_content }</a></td>
 								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
