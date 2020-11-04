@@ -128,9 +128,13 @@ public class VO {
    public static final String SQL_LIKECNT_SELECT = 
          "SELECT * FROM tb_like WHERE board_id = ?";
    
-   public static final String SQL_LIKECNT_UPDATE = 
+   public static final String SQL_LIKECNT_UPDATE =
          "UPDATE TB_BOARD SET board_likeCnt = ? WHERE BOARD_ID = ?";
    
+   public static final String SQL_UPDATE_REPLYCNT = 
+           "UPDATE tb_board SET board_replyCnt = ? WHERE board_id = ?";
    
+   public static final String SQL_REPLYCNT_SELECT =
+	         "SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = ?";
    
 }

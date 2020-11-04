@@ -186,7 +186,7 @@ thead tr th {
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
-			<p class="commentTxt2">총 0개</p>
+			<p class="commentTxt2">총  ${list[0].board_replyCnt }개</p>
 		</div>
 		<form action="replyWriteOk.do" method="get">
 			<input type="hidden" name="reply_writer" value="<%= user_id%>" />

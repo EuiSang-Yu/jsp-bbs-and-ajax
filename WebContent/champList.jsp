@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String user_id = (String)session.getAttribute("user_id");
-
 %>
 
 <c:set var="championKey" value="<%= new int [] {
@@ -154,13 +153,7 @@
 120
 } %>"/>
 
-<c:choose>
-	<c:when test="${empty user_id }">
-		<script>
-			location.href="myPageNoLogin.jsp";
-		</script>
-	</c:when>
-	<c:otherwise>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -220,5 +213,3 @@
 
 
 </html>
-	</c:otherwise>
-</c:choose>   

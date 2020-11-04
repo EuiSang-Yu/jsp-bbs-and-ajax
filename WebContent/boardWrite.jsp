@@ -4,6 +4,16 @@
 <%@ page import="dao.*"%>
 <%@ page import="dto.*"%>
 <%@ page import="com.command.*"%>
+<%
+	String user_id = (String)session.getAttribute("user_id");
+%>
+<c:choose>
+	<c:when test="${empty user_id }">
+		<script>
+			location.href="myPageNoLogin.jsp";
+		</script>
+	</c:when>
+	<c:otherwise>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -149,3 +159,6 @@
 
 </body>
 </html>
+
+	</c:otherwise>
+</c:choose>   

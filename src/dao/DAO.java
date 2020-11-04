@@ -636,6 +636,25 @@ public class DAO {
       return cnt;  
    }
    
+   public int replyCnt_update(int board_replyCnt, int board_id) throws SQLException{
+	      int cnt = 0;
+	      
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement(VO.SQL_UPDATE_REPLYCNT);
+	         pstmt.setInt(1, board_replyCnt);
+	         pstmt.setInt(2, board_id);
+	         cnt=pstmt.executeUpdate();
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+	      
+	      return cnt;  
+	   }
+   
    
    public int reply_update(String reply_content, int reply_id) throws SQLException{
       int cnt = 0;
@@ -928,5 +947,31 @@ public class DAO {
       return cnt;
 
    }
+   
+   public int replyCnt_select(int board_id) throws SQLException {
+	      int cnt = 0;
+
+	      try {
+	         conn = getConnection();
+
+	         pstmt = conn.prepareStatement(VO.SQL_REPLYCNT_SELECT);
+	         pstmt.setInt(1, board_id);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 cnt = rs.getInt("count(*)");
+	          }
+	         
+	      } catch (Exception e) {
+	         
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+
+	      return cnt;
+
+	   }
 
 }

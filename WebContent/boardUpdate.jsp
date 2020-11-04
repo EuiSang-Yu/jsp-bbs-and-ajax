@@ -11,7 +11,7 @@ System.out.println(user_id);
 <c:choose>
 	<c:when test="${empty list || fn:length(list) == 0 }">
 		<script>
-			alert("해당 저보가 삭제되거나 없습니다");
+			alert("해당 정보가 삭제되거나 없습니다");
 			history.back();
 		</script>
 	</c:when>
