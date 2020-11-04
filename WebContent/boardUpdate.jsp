@@ -88,7 +88,7 @@ System.out.println(user_id);
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<h2 class="text-center">게시글 수정하기</h2>
-			<form name="frm" action="boardUpdateOk.do" method="GET"
+			<form name="frm" action="boardUpdateOk.do" method="POST"
 				onsubmit="return chkSubmit()">
 				<input type="hidden" name="board_id" value="${list[0].board_id }">
 				<input type="hidden" name="board_champion"

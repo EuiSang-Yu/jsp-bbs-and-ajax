@@ -74,7 +74,7 @@
 		<p class="commentTxt1">댓글</p>
 		<p class="commentTxt2">총 0개</p>
 	</div>
-	<form action="replyWriteOk.do" method="get">
+	<form action="replyWriteOk.do" method="POST">
 		<input type="hidden" name="reply_writer" value="hyuk"/>
 		<textarea rows="5" cols="30" class="form-control" name="reply_content" id="commentTextArea"></textarea>
 		<input type="hidden" name="board_id" value="${param.board_id }"/>

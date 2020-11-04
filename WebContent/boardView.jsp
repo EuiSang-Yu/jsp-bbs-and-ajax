@@ -127,6 +127,15 @@ thead tr th {
 	color: black;
 }
 
+#textflow{
+	overflow:hidden;word-wrap:break-word;
+}
+
+#imgwidth img {
+	max-width: 100%;
+}
+
+
 </style>
 
 </head>
@@ -139,7 +148,7 @@ thead tr th {
 
 	<div class="container">
 		<br> <br> <br> <br>
-		<h1>${list[0].board_title }</h1>
+		<h1 id="textflow">${list[0].board_title.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "")}</h1>
 		<br> <br> <br> <br>
 
 		<table class="table">
@@ -157,7 +166,7 @@ thead tr th {
 
 			<tbody>
 				<tr class="row">
-					<td colspan="6">${list[0].board_content }</td>
+					<td id="imgwidth" colspan="5">${list[0].board_content }</td>
 
 				</tr>
 			</tbody>
@@ -165,10 +174,10 @@ thead tr th {
 		<hr class="commentHr">
 	<c:choose>
 		<c:when test="${likeViewResult == 0 }">
-			<form id="likeForm" method="get" action="likeOk.do">
+			<form id="likeForm" method="POST" action="likeOk.do">
 		</c:when>
 		<c:when test="${likeViewResult == 1 }">
-			<form id="likeForm" method="get" action="likeCancle.do">
+			<form id="likeForm" method="POST" action="likeCancle.do">
 		</c:when>
 	</c:choose>
 		
@@ -188,7 +197,7 @@ thead tr th {
 			<p class="commentTxt1">댓글</p>
 			<p class="commentTxt2">총 0개</p>
 		</div>
-		<form action="replyWriteOk.do" method="get">
+		<form action="replyWriteOk.do" method="POST">
 			<input type="hidden" name="reply_writer" value="<%= user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
 				name="reply_content" id="commentTextArea" style="resize: none;"></textarea>
@@ -220,7 +229,7 @@ thead tr th {
 									onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
 							</div>
 						</div>
-					<form action="replyUpdateOk.do" method="get">
+					<form action="replyUpdateOk.do" method="POST">
 						<div class="modal" id="updateModal${status.index}">
 							<div class="modal-dialog">
 								<div class="modal-content">

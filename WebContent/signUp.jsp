@@ -108,6 +108,7 @@
 		<div class="registration-form">
 
 			<form action="signupOk.do" class = "needs-validation" method="post" novalidate>
+
 				<div class="form-icon" style="background-color: #C8C7ED">
 					<span><i class="icon icon-user"></i></span>
 
