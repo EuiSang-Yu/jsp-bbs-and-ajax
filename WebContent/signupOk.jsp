@@ -42,20 +42,46 @@
 </head>
 <body>
 
-	<jsp:include page="thema.jsp" />
+	
 
 <%  // Controller 로부터 결과 데이터 받음.
 	int cnt = (Integer)request.getAttribute("result");
+	int idcnt = (Integer)request.getAttribute("idcnt");	//중복이라면 "0", 중복이 아니라면"1"
+	int emailcnt = (Integer)request.getAttribute("emailcnt");	// 중복이면....
+	int phonecnt = (Integer)request.getAttribute("phonecnt");	// 중복이면 ....
+	int bean = (Integer)request.getAttribute("bean");
+	
+	System.out.println("회원가입 확인------" + cnt);
+	System.out.println("아이디중복체크 됏냐고-----"+idcnt);
+	System.out.println("이메일은 됐냐고-------"+emailcnt);
+	System.out.println("폰은 됏냐고------------"+phonecnt);
 %>
 
 
-<% if(cnt == 0){ %>
+
+<% if(bean == 1){ %>
 	<script>
-		alert("회원정보를 입력해주세요.");
-		history.back();
+	alert("빈칸을 채워주세요.");
+	history.back();
 	</script>
-<% } else { %>
-	
+<% } else if(idcnt == 0){ %>
+		<script>
+		alert("이미 사용중인 아이디 입니다.");
+		history.back();
+		</script>
+<% }else if(emailcnt ==0){ %>
+		<script>
+		alert("이미 사용중인 이메일 입니다.");
+		history.back();
+		</script>		
+<% }else if(phonecnt ==0){ %>
+		<script>
+		alert("이미 사용중인 전화번호 입니다.");
+		history.back();
+		</script>	
+<% } else if(cnt == 1 && idcnt == 1 && emailcnt == 1 && phonecnt == 1 ){ %>	
+
+<jsp:include page="thema.jsp" />
 	<section>
 		<div id="signOk">
 			<div class="container">
@@ -88,10 +114,10 @@
 		</div>
 
 	</section>
+	<jsp:include page="footer.jsp" />
 <% } %>
 
 
-	<jsp:include page="footer.jsp" />
 
 </body>
 </html>
