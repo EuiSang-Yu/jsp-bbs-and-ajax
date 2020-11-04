@@ -42,7 +42,7 @@ public class BoardViewCommand implements Command {
 			arr2 = dao.reply_list(board_id);
 			likeViewResult = dao.like_view(user_uid, board_id);
 			board_likeCnt = dao.likeCnt_select(board_id);
-			likeCntResult = dao.likeCnt_update(board_likeCnt, board_id);
+			likeCntResult = dao.likeCnt_update(board_likeCnt, board_id); 
 			
 			System.out.println("뷰 user_uid"+ user_uid);
 			
