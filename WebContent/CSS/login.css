@@ -7,6 +7,8 @@
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
+
+
 /*로그인 회원가입 버튼*/
 #headerMain .btn {
 	float: right;
@@ -79,7 +81,9 @@
 	color: #999999;
 }
 
-
+.btn-social{
+margin-top: 200px;
+	}
 
 
 /*로그인 버튼*/
@@ -136,23 +140,28 @@
 	color: #57b846;
 }
 
+
+
+
 /*계정생성*/
 .txt3 {
 	font-family: 'Noto Sans KR', sans-serif;
-	margin-bottom: 100px;
+	text-align : center;
 	font-size: 15px;
 }
 
-.text-center {
-	margin-bottom: 100px;
+.btn-social{
+	
+	margin-top: 150px;
+
 }
+
 
 /*로그인 전체 div*/
 .limiter {
 	width: 100%;
 	margin: 0 auto;
 }
-
 
 /*배경화면*/
 .container-login100 {
@@ -176,7 +185,7 @@
 /*로그인폼 네모박스*/
 .wrap-login100 {
 	width: 960px;
-	height: 700px;
+	height: 800px;
 	background: #fff;
 	border-radius: 10px;
 	overflow: hidden;
@@ -207,6 +216,8 @@
 	margin-top: -10%;
 	margin-left: 18%;
 }
+
+
 /*로그인 제목 부분( 'OP.IT 로그인')*/
 .loginfont {
 	font-family: 'Black Han Sans', sans-serif;
@@ -215,8 +226,9 @@
 	text-align: center;
 	width: 100%;
 	display: block;
-	padding-bottom: 54px;
+
 }
+
 
 /*아이디를 입력해주세요  div*/
 .wrap-input100 {

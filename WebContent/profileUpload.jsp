@@ -13,10 +13,10 @@
 	<c:otherwise>
 		<script>
 			
-			alert("프로필 사진 업로드에 성공하였습니다.");
+			alert("프로필 사진 업로드에 성공하였습니다.\n잠시만 기다려주세요~!");
 			setTimeout(() => {
 	            location.href = "myPage.do";            
-	         }, 2000);
+	         }, 4000);
 		</script>
 	</c:otherwise>
 </c:choose>

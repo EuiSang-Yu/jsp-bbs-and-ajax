@@ -14,6 +14,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
 import dto.BoardDTO;
 import dto.LikeDTO;
 import dto.ReplyDTO;
@@ -237,6 +238,30 @@ public class DAO {
       return cnt;
    } // end select();
    
+// 페이징 관련해서 서치글목록 갯수 뽑아오기
+   public int search_count_all(int board_champion,String searchKind, String searchText) throws SQLException {
+      int cnt = 0;
+      String sql = "select COUNT(*) from tb_board where board_champion = ? AND " + searchKind + "  = ?";
+      try {
+         conn = getConnection();
+         pstmt = conn.prepareStatement(sql);
+         pstmt.setInt(1, board_champion);
+         pstmt.setString(2, searchText);
+         rs = pstmt.executeQuery();
+         
+         if(rs.next())
+            cnt = rs.getInt(1);
+         
+      } catch (Exception e) {
+         System.out.println("count_all 에러");
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+
+      return cnt;
+   } // end select();
+   
    // 페이징 관련해서 글목록 뽑아오기
    public BoardDTO[] select_from_row(int board_champion, int fromRow, int pageRows) throws SQLException {
       BoardDTO[] arr = null;
@@ -275,6 +300,7 @@ public class DAO {
          pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
          pstmt.setInt(1, board_id);
          pstmt.setInt(2, board_champion);
+         
          rs = pstmt.executeQuery();
          arr = createArray(rs);
       } finally {
@@ -286,15 +312,19 @@ public class DAO {
    
    
    // 전체 SELECT ListComm
-   public BoardDTO[] searchSelect(int board_champion, String searchKind, String searchText) throws SQLException {
+   public BoardDTO[] searchSelect(int board_champion, String searchKind, String searchText, int fromRow, int pageRows) throws SQLException {
       BoardDTO[] arr = null;
-      String sql = "select * from tb_board where board_champion = ? AND " + searchKind + "  = ? ORDER BY board_likeCnt DESC";
+      String sql = "SELECT * FROM " + 
+    	         "(SELECT ROWNUM AS RNUM, T.* FROM (select * from tb_board where board_champion = ? AND " + searchKind + "  = ? ORDER BY board_likeCnt DESC, board_id DESC) T) " + 
+    	         "WHERE RNUM >= ? AND RNUM < ?";
 
       try {
          conn = getConnection();
          pstmt = conn.prepareStatement(sql);
          pstmt.setInt(1, board_champion);
          pstmt.setString(2, searchText);
+         pstmt.setInt(3, fromRow);
+         pstmt.setInt(4, fromRow + pageRows);
          rs = pstmt.executeQuery();
          arr = createArray(rs);
       } catch (Exception e) {
