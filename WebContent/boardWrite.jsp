@@ -72,7 +72,7 @@
 		<div class="col-md-2"></div>
 		<div class="col-md-8">
 			<h2 class="text-center">게시글 쓰기</h2>
-			<form name="frm" action="boardWriteOk.do" method="GET">
+			<form name="frm" action="boardWriteOk.do" method="POST">
 				<input type="hidden" name="board_champion"
 					value="${board_champion }">
 				<div class="table table-responsive">

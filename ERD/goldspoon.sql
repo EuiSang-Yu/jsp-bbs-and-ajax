@@ -204,4 +204,5 @@ SELECT * FROM
 (SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 86 ORDER BY board_likeCnt DESC, board_id DESC) T) 
 WHERE RNUM >= 1 AND RNUM < 20;
 
+DELETE FROM TB_BOARD;
 

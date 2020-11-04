@@ -59,7 +59,7 @@
 
 		<div class="registration-form">
 
-			<form action="signupOk.do" method="get">
+			<form action="signupOk.do" method="POST">
 				<div class="form-icon" style="background-color: #C8C7ED">
 					<span><i class="icon icon-user"></i></span>
 

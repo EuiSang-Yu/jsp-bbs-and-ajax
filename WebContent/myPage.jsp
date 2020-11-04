@@ -51,7 +51,7 @@
    		<img class="card-img-top" src="profileImage/${list[0].user_profileImage }" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
-     		<form action="profileUpload.do" method="post" enctype="Multipart/form-data">
+     		<form action="profileUpload.do" method="POST" enctype="Multipart/form-data">
      		
      		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-primary btn-secondary btn-file">
      		
@@ -69,7 +69,7 @@
      	<div class="col-sm-1 text-center" id="emptyspace"><br></div>
     			<div class="col-sm-10 text-center" id="joinform">
     				<h2>개인정보관리</h2>
-               		<form  name="frm" action="myPageUpdateOk.do" method="GET">
+               		<form  name="frm" action="myPageUpdateOk.do" method="POST">
                   		<table class="table table-boardered">
                      		<tr>
                         		<th>Change Password</th>
@@ -87,8 +87,7 @@
 		                     </tr>
 		                     <tr>
 		                        <td colspan="2">
-		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기"
-		                        onclick="alert('회원정보 변경완료')">
+		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기">
 		                        <input type="button" id="memberDelete" class="btn btn-secondary" value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
