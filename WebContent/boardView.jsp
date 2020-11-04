@@ -16,19 +16,9 @@
 
 <title>OP.IT</title>
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+   href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!--구글폰트-->
 <link
@@ -47,6 +37,7 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -127,6 +118,15 @@ thead tr th {
 	color: black;
 }
 
+#textflow{
+	overflow:hidden;word-wrap:break-word;
+}
+
+#imgwidth img {
+	max-width: 100%;
+}
+
+
 </style>
 
 </head>
@@ -139,7 +139,7 @@ thead tr th {
 
 	<div class="container">
 		<br> <br> <br> <br>
-		<h1>${list[0].board_title }</h1>
+		<h1 id="textflow">${list[0].board_title.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "")}</h1>
 		<br> <br> <br> <br>
 
 		<table class="table">
@@ -157,7 +157,7 @@ thead tr th {
 
 			<tbody>
 				<tr class="row">
-					<td colspan="6">${list[0].board_content }</td>
+					<td id="imgwidth" colspan="5">${list[0].board_content }</td>
 
 				</tr>
 			</tbody>
@@ -165,30 +165,45 @@ thead tr th {
 		<hr class="commentHr">
 	<c:choose>
 		<c:when test="${likeViewResult == 0 }">
-			<form id="likeForm" method="get" action="likeOk.do">
+			<form id="likeForm" method="POST" action="likeOk.do">
 		</c:when>
 		<c:when test="${likeViewResult == 1 }">
-			<form id="likeForm" method="get" action="likeCancle.do">
+			<form id="likeForm" method="POST" action="likeCancle.do">
 		</c:when>
 	</c:choose>
 		
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
+<<<<<<< HEAD
+		<c:if test="${user_uid != -1 }">
+			<c:choose>
+				<c:when test="${likeViewResult == 0 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+				</c:when>
+				<c:when test="${likeViewResult == 1 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite">
+				</c:when>
+			</c:choose>
+		</c:if>
+	
+=======
 	<c:choose>
 		<c:when test="${likeViewResult == 0 }">
 			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+			
 		</c:when>
 		<c:when test="${likeViewResult == 1 }">
 			<input id="likeBt" type="submit" class="material-icons" value="favorite">
 		</c:when>
 	</c:choose>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		</form>
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
 			<p class="commentTxt2">총 0개</p>
 		</div>
-		<form action="replyWriteOk.do" method="get">
+		<form action="replyWriteOk.do" method="POST">
 			<input type="hidden" name="reply_writer" value="<%= user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
 				name="reply_content" id="commentTextArea" style="resize: none;"></textarea>
@@ -220,7 +235,7 @@ thead tr th {
 									onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
 							</div>
 						</div>
-					<form action="replyUpdateOk.do" method="get">
+					<form action="replyUpdateOk.do" method="POST">
 						<div class="modal" id="updateModal${status.index}">
 							<div class="modal-dialog">
 								<div class="modal-content">

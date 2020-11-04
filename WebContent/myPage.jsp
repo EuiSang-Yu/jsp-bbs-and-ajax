@@ -23,12 +23,20 @@
 
 <link rel="stylesheet" href="CSS/myPage.css">
 
+<!--구글폰트-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+	
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
@@ -41,21 +49,33 @@
 <title>OP.IT</title>
 </head>
 <body>
+
+<script>
+//휴대폰번호 입력제한 
+$(document).on("keyup", "#phone-number", function() {
+	$(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/,"$1-$2-$3")
+			.replace("--", "-") );
+	}
+
+);
+
+
+</script>
 <!-- 공통 header+nav -->
 <jsp:include page="thema.jsp"/>
 
-
+<div class = "container">
 <section class="container profile">
 	<!-- 프로필사진설정 박스 -->
 	<div class="card" style="width:500px">
    		<img class="card-img-top" src="profileImage/${list[0].user_profileImage }" alt="Card image" style="width:100%">
    		<div class="card-body">
      		<h4 class="card-title">프로필 사진 설정</h4>
-     		<form action="profileUpload.do" method="post" enctype="Multipart/form-data">
+     		<form action="profileUpload.do" method="POST" enctype="Multipart/form-data">
      		
      		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-primary btn-secondary btn-file">
      		
-     		<input type="submit" id="profilePhotoChange" class="btn btn-primary btn-secondary" value="저장">
+     		<input type="submit" id="profilePhotoChange" class="btn btn-outline-info" value="저장">
      		
      		</form>
    		</div>
@@ -69,27 +89,27 @@
      	<div class="col-sm-1 text-center" id="emptyspace"><br></div>
     			<div class="col-sm-10 text-center" id="joinform">
     				<h2>개인정보관리</h2>
-               		<form  name="frm" action="myPageUpdateOk.do" method="GET">
+               		<form  name="frm" action="myPageUpdateOk.do" method="POST" class="needs-validation" >
                   		<table class="table table-boardered">
                      		<tr>
                         		<th>Change Password</th>
                         		<td><input type="password" class="form-control"
-                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요" value="${list[0].user_pw }"></td>
+                           		name="user_pw" placeholder="비밀번호는 영문만 넣어주세요" value="${list[0].user_pw }"  minlength="5" maxlength="15" required>
+                           	</td>
                      		</tr>
 		                    
 		                     <tr>
 		                        <th>User Email</th>
-		                        <td><input type="email" class="form-control" name="user_email" value="${list[0].user_email }"></td>
+		                        <td><input type="email" class="form-control" name="user_email" value="${list[0].user_email }" required></td>
 		                     </tr>
 		                     <tr>
 		                        <th>User PhoneNumber</th>
-		                        <td><input type="tel" class="form-control" name="user_phone" value="${list[0].user_phone }"></td>
+		                        <td><input type="tel"  id = "phone-number" class="form-control" name="user_phone" value="${list[0].user_phone }" required></td>
 		                     </tr>
 		                     <tr>
 		                        <td colspan="2">
-		                        <input type="submit" class="btn btn-primary btn-secondary" value="변경하기"
-		                        onclick="alert('회원정보 변경완료')">
-		                        <input type="button" id="memberDelete" class="btn btn-secondary" value="탈퇴하기"></td>
+		                        <input type="submit" class="btn btn-outline-info" value="변경하기">
+		                        <input type="button" id="memberDelete" class="btn btn-outline-info"  value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>
@@ -98,7 +118,7 @@
    		 </div>
 	</div>
 </section>
-
+</div>
 <jsp:include page="footer.jsp"></jsp:include>
 <script type="text/javascript" src="JS/myPage.js"></script>
    

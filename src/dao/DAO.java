@@ -14,6 +14,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
+
 import dto.BoardDTO;
 import dto.LikeDTO;
 import dto.ReplyDTO;
@@ -54,6 +55,7 @@ public class DAO {
 
    // DB 자원 반납 메소드, 만들어 놓으면 편함.
    public void close() throws SQLException {
+	   conn.commit();
       if (rs != null)
          rs.close();
       if (pstmt != null)
@@ -237,6 +239,30 @@ public class DAO {
       return cnt;
    } // end select();
    
+// 페이징 관련해서 서치글목록 갯수 뽑아오기
+   public int search_count_all(int board_champion,String searchKind, String searchText) throws SQLException {
+      int cnt = 0;
+      String sql = "select COUNT(*) from tb_board where board_champion = ? AND " + searchKind + "  = ?";
+      try {
+         conn = getConnection();
+         pstmt = conn.prepareStatement(sql);
+         pstmt.setInt(1, board_champion);
+         pstmt.setString(2, searchText);
+         rs = pstmt.executeQuery();
+         
+         if(rs.next())
+            cnt = rs.getInt(1);
+         
+      } catch (Exception e) {
+         System.out.println("count_all 에러");
+         e.printStackTrace();
+      } finally {
+         close();
+      }
+
+      return cnt;
+   } // end select();
+   
    // 페이징 관련해서 글목록 뽑아오기
    public BoardDTO[] select_from_row(int board_champion, int fromRow, int pageRows) throws SQLException {
       BoardDTO[] arr = null;
@@ -275,6 +301,7 @@ public class DAO {
          pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
          pstmt.setInt(1, board_id);
          pstmt.setInt(2, board_champion);
+         
          rs = pstmt.executeQuery();
          arr = createArray(rs);
       } finally {
@@ -286,15 +313,19 @@ public class DAO {
    
    
    // 전체 SELECT ListComm
-   public BoardDTO[] searchSelect(int board_champion, String searchKind, String searchText) throws SQLException {
+   public BoardDTO[] searchSelect(int board_champion, String searchKind, String searchText, int fromRow, int pageRows) throws SQLException {
       BoardDTO[] arr = null;
-      String sql = "select * from tb_board where board_champion = ? AND " + searchKind + "  = ? ORDER BY board_likeCnt DESC";
+      String sql = "SELECT * FROM " + 
+    	         "(SELECT ROWNUM AS RNUM, T.* FROM (select * from tb_board where board_champion = ? AND " + searchKind + "  = ? ORDER BY board_likeCnt DESC, board_id DESC) T) " + 
+    	         "WHERE RNUM >= ? AND RNUM < ?";
 
       try {
          conn = getConnection();
          pstmt = conn.prepareStatement(sql);
          pstmt.setInt(1, board_champion);
          pstmt.setString(2, searchText);
+         pstmt.setInt(3, fromRow);
+         pstmt.setInt(4, fromRow + pageRows);
          rs = pstmt.executeQuery();
          arr = createArray(rs);
       } catch (Exception e) {
@@ -373,7 +404,6 @@ public class DAO {
          pstmt.setString(3, user_name);
          pstmt.setString(4, user_email);
          pstmt.setString(5, user_phone);
-
 
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
@@ -898,5 +928,128 @@ public class DAO {
       return cnt;
 
    }
+   //아이디 중복체크
+   public int joinIdChk(String user_id) throws SQLException {
+	   int user_idCnt = 0;
 
+	   String user_idChk = "";
+
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USERID);
+		   pstmt.setString(1, user_id);
+
+		   
+		   rs = pstmt.executeQuery();
+		   
+	         while(rs.next()) {
+	        	 user_idChk = rs.getString("user_id");
+	          }
+		   
+		   if(user_idChk.equals("")) {
+			   user_idCnt = 1;	// 가입가능
+		   }else {
+			   user_idCnt = 0;	// 중복
+		   }
+		   
+		   
+		   
+		   
+	   } catch (Exception e) {
+		   
+		   e.printStackTrace();
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_idCnt;
+	   
+   }
+   
+   //이메일 중복체크
+   public int joinEmailChk(String user_email) throws SQLException {
+
+	   int user_emailCnt = 0;
+
+	   String user_emailChk = "";
+
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USEREMAIL);
+
+		   pstmt.setString(1, user_email);
+
+		   rs = pstmt.executeQuery();
+		   
+
+		   
+	         while(rs.next()) {
+	        	 user_emailChk = rs.getString("user_email");
+	          }
+		   
+		   if(user_emailChk.equals("")) {
+			   user_emailCnt = 1;	// 가입가능
+		   }else {
+			   user_emailCnt = 0;	// 중복
+		   }
+		   
+		   
+		   
+		   
+	   } catch (Exception e) {
+		   e.printStackTrace();
+		   
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_emailCnt;
+	   
+   }
+   
+   //핸드폰 중복체크
+   public int joinPhoneChk(String user_phone) throws SQLException {
+	   
+	   int user_phoneCnt = 0;
+	   
+	   String user_phoneChk = "";
+	   
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USERPHONE);
+
+		   pstmt.setString(1, user_phone);
+		   
+		   rs = pstmt.executeQuery();
+		   
+		   
+		   
+	         while(rs.next()) {
+	        	 user_phoneChk = rs.getString("user_phone");
+	          }
+		   
+		   if(user_phoneChk.equals("")) {
+			   user_phoneCnt = 1;	// 가입가능
+		   }else {
+			   user_phoneCnt = 0;	// 중복
+		   }
+		   
+   
+		   
+	   } catch (Exception e) {
+		   e.printStackTrace();
+		   
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_phoneCnt;
+	   
+   }
 }

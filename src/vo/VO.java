@@ -102,13 +102,11 @@ public class VO {
    
    public static final String SQL_WRITE_SELECT_FROM_ROW = 
          "SELECT * FROM " + 
-         "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = ? ORDER BY board_id DESC) T) " + 
+         "(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = ? ORDER BY board_likeCnt DESC, board_id DESC) T) " + 
          "WHERE RNUM >= ? AND RNUM < ?";
    
    public static final String SQL_WRITE_COUNT_ALL =
          "SELECT COUNT(*) FROM TB_BOARD WHERE BOARD_CHAMPION = ?";
-
- 
    
    public static final String SQL_LIKE_INSERT = 
             "INSERT INTO tb_like"
@@ -133,6 +131,14 @@ public class VO {
    public static final String SQL_LIKECNT_UPDATE = 
          "UPDATE TB_BOARD SET board_likeCnt = ? WHERE BOARD_ID = ?";
    
+   //아이디 유효성 검사
+   public static final String SQL_JOIN_USERID = 
+		   "SELECT * FROM TB_USER WHERE user_id = ?";
    
+   public static final String SQL_JOIN_USEREMAIL = 
+		   "SELECT * FROM TB_USER WHERE user_email = ?";
+   
+   public static final String SQL_JOIN_USERPHONE = 
+		   "SELECT * FROM TB_USER WHERE user_phone = ?";
    
 }

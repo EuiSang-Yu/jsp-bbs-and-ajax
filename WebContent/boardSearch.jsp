@@ -8,6 +8,11 @@
 	String user_id = (String)session.getAttribute("user_id");
 %>
 
+
+<%
+	int writePages = 10;
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -16,25 +21,31 @@
 
 <title></title>
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<!--구글폰트-->
+<link
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
+	rel="stylesheet">
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+<!-- 파비콘 설정-->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="~/Content/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css"  />
 <script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script>
 
@@ -76,7 +87,7 @@
 
 	<div class="container">
 		
-		<form id="searchForm" action="boardSearch.do">
+		<form id="searchForm" action="boardSearch.do" method="POST">
 		<input type="hidden" name="board_champion" value="${board_champion }"/>
 		
 		<select id="searchKindId" class="selectpicker" name="searchKind">
@@ -97,8 +108,13 @@
 				<th>작성날짜</th>
 			</tr>
 
+			
 			<c:choose>
 				<c:when test="${empty searchList || fn:length(searchList) == 0 }">
+					<script>
+					alert("검색어가 없습니다.");
+					history.back();
+					</script>
 				</c:when>
 
 				<c:otherwise>
@@ -120,13 +136,20 @@
 				</c:otherwise>
 			</c:choose>
 		</table>
+		
+		<%--페이징 --%>
+		<jsp:include page="pagination_search.jsp">
+			<jsp:param value="<%= writePages %>" name="writePages"/>
+			<jsp:param value="${totalPage }" name="totalPage"/>
+			<jsp:param value="${curPage }" name="curPage"/>
+		</jsp:include>
 
 		<a href="boardWrite.do?board_champion=${board_champion }"
 			class="btn btn-outline-dark" id="writeBtn">작성하기</a>
 
 	</div>
 
-
+<jsp:include page="footer.jsp" />
 </body>
 
 
