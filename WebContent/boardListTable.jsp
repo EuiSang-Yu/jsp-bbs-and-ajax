@@ -74,6 +74,12 @@
 	margin-bottom: 60px;
 }
 
+#textflow{
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
+
 </style>
 </head>
 
@@ -86,7 +92,7 @@
 	<div class="container">
 
 		
-		<form id="searchForm" action="boardSearch.do">
+		<form id="searchForm" method="POST" action="boardSearch.do">
 		<input type="hidden" name="board_champion" value="${board_champion }"/>
 		
 		<select id="searchKindId" class="selectpicker" name="searchKind">
@@ -115,11 +121,11 @@
 			<c:otherwise>
 					<c:forEach var="dto" items="${list2 }">  <%-- request.getAttribute("list") --%>
 							<tr>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_likeCnt }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_title }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_writer }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
-								<td><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_regDate }</a></td>
+								<td id="textflow"><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_likeCnt }</a></td>
+								<td id="textflow"><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_title.replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "") }</a></td>
+								<td id="textflow"><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_writer }</a></td>
+								<td id="textflow"><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_viewCnt }</a></td>
+								<td id="textflow"><a class="board_menu" href="boardView.do?board_id=${dto.board_id}&board_champion=${dto.board_champion }">${dto.board_regDate }</a></td>
 							</tr>
 
 					</c:forEach>

@@ -17,7 +17,7 @@ public class BoardListCommand implements Command {
 		// 의상
 		
 		DAO dao = new DAO();  // DAO 객체 생성
-		BoardDTO[] arr = null;
+		//BoardDTO[] arr = null;
 		BoardDTO[] arr2 = null;
 		int board_champion = 0;
 
@@ -39,7 +39,6 @@ public class BoardListCommand implements Command {
 			
 			// 현재 몇 페이지인지 parameter 받아오기 + 검증
 			String pageParam = request.getParameter("page");
-			System.out.println("페이지파람------------ 처음엔 null이 정상"+pageParam);
 			if(pageParam != null && !pageParam.trim().equals("")){
 				try{ 
 					// 1이상의 자연수 이어야 한다
@@ -51,7 +50,7 @@ public class BoardListCommand implements Command {
 			} // end if
 		
 			board_champion = Integer.parseInt(request.getParameter("board_champion"));
-			arr = dao.select(board_champion);  // 트랜잭션 수행
+			//arr = dao.select(board_champion);  // 트랜잭션 수행
 
 			cnt = dao.count_all(board_champion);	//전체 글 갯수
 			
@@ -64,12 +63,12 @@ public class BoardListCommand implements Command {
 			
 			System.out.println("리스트board_champion : " + board_champion);
 			System.out.println("리스트 전체 : " + cnt);
-			System.out.println("리스트 arr : " + arr);
+			//System.out.println("리스트 arr : " + arr);
 			System.out.println("리스트 arr2 : " + arr2);
 			
 			// "list" 란  name 으로 request 에 arr 을 저장
 			// request 가 컨트롤러에 전달될것이다.
-			request.setAttribute("list", arr);
+			//request.setAttribute("list", arr);
 			request.setAttribute("list2", arr2);
 			request.setAttribute("board_champion", board_champion);
 

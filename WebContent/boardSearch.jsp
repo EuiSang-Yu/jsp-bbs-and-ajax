@@ -81,7 +81,7 @@
 
 	<div class="container">
 		
-		<form id="searchForm" action="boardSearch.do">
+		<form id="searchForm" action="boardSearch.do" method="POST">
 		<input type="hidden" name="board_champion" value="${board_champion }"/>
 		
 		<select id="searchKindId" class="selectpicker" name="searchKind">

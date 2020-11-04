@@ -54,7 +54,7 @@
 		<div class="container-login100"id="idSearchDiv">
 			<div class="wrap-login100" id="idSearch">
 				<!-- 로그인 폼 -->
-				<form class="login100-form validate-form" id="idSearchForm" action="pwSearchOk.do" method="get">
+				<form class="login100-form validate-form" id="idSearchForm" action="pwSearchOk.do" method="POST">
 					<span class="login100-form-title"> <!-- 제목 -->
 						<p class="loginfont"  style="font-size: 40px;">비밀번호 찾기</p>
 					</span>
