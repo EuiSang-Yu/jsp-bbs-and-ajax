@@ -16,19 +16,9 @@
 
 <title>OP.IT</title>
 
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+   href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <!--구글폰트-->
 <link
@@ -47,6 +37,7 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -186,6 +177,7 @@ thead tr th {
 	<c:choose>
 		<c:when test="${likeViewResult == 0 }">
 			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+			
 		</c:when>
 		<c:when test="${likeViewResult == 1 }">
 			<input id="likeBt" type="submit" class="material-icons" value="favorite">
