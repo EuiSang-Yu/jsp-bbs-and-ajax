@@ -102,8 +102,13 @@
 				<th>작성날짜</th>
 			</tr>
 
+			
 			<c:choose>
 				<c:when test="${empty searchList || fn:length(searchList) == 0 }">
+					<script>
+					alert("검색어가 없습니다.");
+					history.back();
+					</script>
 				</c:when>
 
 				<c:otherwise>

@@ -154,13 +154,7 @@
 120
 } %>"/>
 
-<c:choose>
-	<c:when test="${empty user_id }">
-		<script>
-			location.href="myPageNoLogin.jsp";
-		</script>
-	</c:when>
-	<c:otherwise>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -220,5 +214,4 @@
 
 
 </html>
-	</c:otherwise>
-</c:choose>   
+ 

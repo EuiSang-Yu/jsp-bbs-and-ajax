@@ -183,14 +183,17 @@ thead tr th {
 		
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
-	<c:choose>
-		<c:when test="${likeViewResult == 0 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
-		</c:when>
-		<c:when test="${likeViewResult == 1 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite">
-		</c:when>
-	</c:choose>
+		<c:if test="${user_uid != -1 }">
+			<c:choose>
+				<c:when test="${likeViewResult == 0 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+				</c:when>
+				<c:when test="${likeViewResult == 1 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite">
+				</c:when>
+			</c:choose>
+		</c:if>
+	
 		</form>
 
 		<div class="commentCntDiv">

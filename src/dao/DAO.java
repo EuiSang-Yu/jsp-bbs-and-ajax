@@ -55,6 +55,7 @@ public class DAO {
 
    // DB 자원 반납 메소드, 만들어 놓으면 편함.
    public void close() throws SQLException {
+	   conn.commit();
       if (rs != null)
          rs.close();
       if (pstmt != null)

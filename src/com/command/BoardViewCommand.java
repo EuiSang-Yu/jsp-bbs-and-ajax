@@ -27,11 +27,18 @@ public class BoardViewCommand implements Command {
 		int cnt = 0;
 		int board_likeCnt = 0;
 		int likeCntResult = 0;
+		int user_uid;
 
 		HttpSession session = request.getSession();
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
-		int user_uid = (Integer)session.getAttribute("user_uid");
+		
+		try {
+			user_uid = (Integer)session.getAttribute("user_uid");
+		} catch (Exception e) {
+			user_uid=-1;
+		}
+		
 
 
 		System.out.println("board_id : " + board_id);
@@ -56,6 +63,7 @@ public class BoardViewCommand implements Command {
 			request.setAttribute("list", arr);
 			request.setAttribute("list2", arr2);
 			request.setAttribute("likeViewResult", cnt);
+			request.setAttribute("user_uid", user_uid);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
