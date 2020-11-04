@@ -115,14 +115,14 @@
 					<br>
 				</div>
 				<div class="youtube">
-					<iframe width="500" height="325"
-						src="https://www.youtube.com/embed/OS7imLFzn0Y" frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen></iframe>
+					<iframe width="500" height="325" src="https://www.youtube.com/embed/YV5OzhMaZYk" 
+					frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen></iframe>
+					
 					<div class="youtubenote">
-						<p class="note">신규 챔피언</p>
-						<p class="note1">사미라: 사막의 장미</p>
-						<p class="youtubetag">챔피언 집중탐구 | 게임플레이 - 리그 오브 레전드</p>
+						<p class="note">LCK</p>
+						<p class="note1">OPENING CEREMONY (feat.머쉬베놈)</p>
+						<p class="youtubetag"> GEN.G, T1 두둥등장 | 2020 LCK 스프링</p>
 
 					</div>
 
