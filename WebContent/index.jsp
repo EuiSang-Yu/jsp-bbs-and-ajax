@@ -44,7 +44,6 @@
 
 
 <!--아이콘-->
-<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
