@@ -88,6 +88,8 @@ itemImgPath4 = "";
 itemImgPath5 = "";
 itemImgPath6 = "";
 
+result = "";
+
 
 //소환사 기본정보 json url
 if(search_id != null)
@@ -274,7 +276,7 @@ function ajaxDefault(){
 			cnt = cnt + 1;
 			ajax(leagueUrl);					
 		},
-		error : function(xhr, status, error) {
+		error : function(status, error) {
 			alert("처음에러발생 - " + status);
 			location.href="historyError.jsp";
 		}
@@ -296,7 +298,7 @@ function ajax(info_url) {
 				cnt = cnt + 1;
 			}
 		},
-		error : function(xhr, status, error) {
+		error : function(status, error) {
 			alert("에러 발생");
 			location.href="historyError.jsp";
 		}
@@ -488,7 +490,7 @@ function parseJSON(jsonObj) {
 	function gameDetail(gameCnt, jsonObjCopy){ //order : 10번동안 순번
 		matches_queueId[gameCnt] = jsonObjCopy.queueId; // 10판을 조회하기때문에 0~10
 		tempNumChamp = "";
-		result = "";
+		
 		
 		for(var user=0; user<10; user++){ // i : 10명의 플레이어
 			matches_participants[gameCnt][user][0] = jsonObjCopy.participants[user].championId; // matches_participants[gameCnt][i][0] : championId		
@@ -573,7 +575,7 @@ function parseJSON(jsonObj) {
 		var pickChampPath = "img/champImg_mini/"; // 챔피언 사진
 		// 1. 해야되는건 우선 queueId -> 칼바람, 솔랭 , 자유랭 등등 매핑시켜서 바꿔치기
 		$("#recentPlay").append(
-				"<div class='recentPlayOut'>" 
+				"<div class='recentPlayOut' id='recentPlayOut"+ gameCnt +"'>"
 					+ "<div class='recentPlay_info1'><h6>" + result + "</h6></div>"							
 					+ "<div class='recentPlay_info2'>" + "<img src='" + pickChampPath + tempNumChamp + ".png' >" + "</div>"
 					+ "<div class='recentPlay_info3'><h5>" + mapLabel + "</h5></div>"
@@ -610,11 +612,16 @@ function parseJSON(jsonObj) {
 						+"<img src='" + itemImgPath5 + ".png'>"
 						+"<img src='" + itemImgPath6 + ".png'>" 
 					+ "</div>"
-				+ "</div>");
+				+ "</div>"
+			);
 	
-		
+		if(result == "승"){
+			$("#recentPlayOut"+gameCnt+"").css("background-color","rgba(80, 188, 223, 0.2)");
+		}
+		else{
+			$("#recentPlayOut"+gameCnt+"").css("background-color","rgba(225, 0, 0, 0.2)");
+		}
 	}// end gameDetail()
-	
 	
 	
 } // end parseJSON()
