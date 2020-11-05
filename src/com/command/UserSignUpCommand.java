@@ -37,7 +37,6 @@ public class UserSignUpCommand implements Command {
 				user_id.trim().length() > 0 && user_pw.trim().length() > 0 && user_name.trim().length() > 0
 				 && user_email.trim().length() > 0 && user_phone.trim().length() > 0) {
 			try {
-				System.out.println("회원가입칸 비어있는지 혹인하는데 ㅔ너 들어오냐고 트라이 이프");
 				idcnt = dao.joinIdChk( user_id);
 				emailcnt = dao.joinEmailChk(user_email);
 				phonecnt = dao.joinPhoneChk(user_phone);
