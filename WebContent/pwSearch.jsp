@@ -57,25 +57,25 @@
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="user_id"
-							placeholder="아이디를 입력해주세요."> <span class="focus-input100"></span>
-						<span class="symbol-input100"> <i class="fas fa-portrait"></i>
+						<input class="input100" type="text" name="user_id" 
+							placeholder="아이디를 입력해주세요." required> <span class="focus-input100"></span>
+						<span class="symbol-input100"><i class="fas fa-id-card"></i>
 						</span>
 					</div>
 					
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="text" name="user_name"
-							placeholder="이름을 입력해주세요."> <span class="focus-input100"></span>
-						<span class="symbol-input100"> <i class="fas fa-portrait"></i>
+							placeholder="이름을 입력해주세요." required> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fas fa-user"></i>
 						</span>
 					</div>
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="user_email"
-							placeholder="E-mail을 입력해주세요."> <span class="focus-input100"></span>
-						<span class="symbol-input100"> <i class="fas fa-phone"></i>
+						<input class="input100" type="email" name="user_email"
+							placeholder="E-mail을 입력해주세요." required> <span class="focus-input100"></span>
+						<span class="symbol-input100"> <i class="fas fa-envelope"></i>
 						</span>
 					</div>
 					

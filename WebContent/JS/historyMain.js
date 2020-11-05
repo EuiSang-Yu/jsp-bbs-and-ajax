@@ -1,7 +1,7 @@
 
 
 // 라이엇 공식 API발급키
-api_key = "RGAPI-499afa6c-19c7-4719-a272-b70ca1b394dd";
+api_key = "RGAPI-6006a009-c20a-4be4-a3d3-aa7cbc775206";
 
 // summoner info //
 id = "";
@@ -261,7 +261,6 @@ champMap = {
 }
 
 
-
 // 처음 소환사 기본정보 및 다른정보 얻을 때 필요한 id값들 get
 function ajaxDefault(){
 	$.ajax({
@@ -276,9 +275,8 @@ function ajaxDefault(){
 			cnt = cnt + 1;
 			ajax(leagueUrl);					
 		},
-		error : function(status, error) {
-			alert("처음에러발생 - " + status);
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }
@@ -298,15 +296,15 @@ function ajax(info_url) {
 				cnt = cnt + 1;
 			}
 		},
-		error : function(status, error) {
-			alert("에러 발생");
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }
 
 
 function parseJSON(jsonObj) {
+
    // 기본정보 셋팅
    // summoner info
    if (id == "")
@@ -334,30 +332,56 @@ function parseJSON(jsonObj) {
    // 리그정보까지 확인되었을때 구현
    if (cnt == 1) {
       // league info
-      // solo(개인랭크)
-      if(jsonObj[0] != null && jsonObj[0] != ""){
-         if (soloLeagueId == "")   soloLeagueId = jsonObj[0].leagueId;
-         if (soloQueueType == "") soloQueueType = jsonObj[0].queueType;
-         if (soloTier == "")   soloTier = jsonObj[0].tier;
-         if (soloRank == "")   soloRank = jsonObj[0].rank;
-         if (soloSummonerId == "")   soloSummonerId = jsonObj[0].summonerId;
-         if (soloSummonerName == "")   soloSummonerName = jsonObj[0].summonerName;
-         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[0].leaguePoints;
-         if (soloWins == "")   soloWins = jsonObj[0].wins;
-         if (soloLosses == "") soloLosses = jsonObj[0].losses;
-      }
-      // flex(자유랭크)
-      if(jsonObj[1] != null && jsonObj[1] != ""){
-         if (flexLeagueId == "")   flexLeagueId = jsonObj[1].leagueId;
-         if (flexQueueType == "") flexQueueType = jsonObj[1].queueType;
-         if (flexTier == "") flexTier = jsonObj[1].tier;
-         if (flexRank == "")   flexRank = jsonObj[1].rank;
-         if (flexSummonerId == "")   flexSummonerId = jsonObj[1].summonerId;
-         if (flexSummonerName == "")   flexSummonerName = jsonObj[1].summonerName;
-         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[1].leaguePoints;
-         if (flexWins == "")   flexWins = jsonObj[1].wins;
-         if (flexLosses == "") flexLosses = jsonObj[1].losses;
-      }
+	/////// JSON Object 순서 뒤바뀌는 예외 처리 !!
+	  if(jsonObj[0].queueType == "RANKED_SOLO_5x5"){ 
+		  if(jsonObj[0] != null && jsonObj[0] != ""){
+		         if (soloLeagueId == "")   soloLeagueId = jsonObj[0].leagueId;
+		         if (soloQueueType == "") soloQueueType = jsonObj[0].queueType;
+		         if (soloTier == "")   soloTier = jsonObj[0].tier;
+		         if (soloRank == "")   soloRank = jsonObj[0].rank;
+		         if (soloSummonerId == "")   soloSummonerId = jsonObj[0].summonerId;
+		         if (soloSummonerName == "")   soloSummonerName = jsonObj[0].summonerName;
+		         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[0].leaguePoints;
+		         if (soloWins == "")   soloWins = jsonObj[0].wins;
+		         if (soloLosses == "") soloLosses = jsonObj[0].losses;
+	      }
+	      if(jsonObj[1] != null && jsonObj[1] != ""){
+		         if (flexLeagueId == "")   flexLeagueId = jsonObj[1].leagueId;
+		         if (flexQueueType == "") flexQueueType = jsonObj[1].queueType;
+		         if (flexTier == "") flexTier = jsonObj[1].tier;
+		         if (flexRank == "")   flexRank = jsonObj[1].rank;
+		         if (flexSummonerId == "")   flexSummonerId = jsonObj[1].summonerId;
+		         if (flexSummonerName == "")   flexSummonerName = jsonObj[1].summonerName;
+		         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[1].leaguePoints;
+		         if (flexWins == "")   flexWins = jsonObj[1].wins;
+		         if (flexLosses == "") flexLosses = jsonObj[1].losses;
+	      }
+	  }else{
+		  if(jsonObj[1] != null && jsonObj[1] != ""){
+		         if (soloLeagueId == "")   soloLeagueId = jsonObj[1].leagueId;
+		         if (soloQueueType == "") soloQueueType = jsonObj[1].queueType;
+		         if (soloTier == "")   soloTier = jsonObj[1].tier;
+		         if (soloRank == "")   soloRank = jsonObj[1].rank;
+		         if (soloSummonerId == "")   soloSummonerId = jsonObj[1].summonerId;
+		         if (soloSummonerName == "")   soloSummonerName = jsonObj[1].summonerName;
+		         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[1].leaguePoints;
+		         if (soloWins == "")   soloWins = jsonObj[1].wins;
+		         if (soloLosses == "") soloLosses = jsonObj[1].losses;
+		      }
+	      if(jsonObj[0] != null && jsonObj[0] != ""){
+		         if (flexLeagueId == "")   flexLeagueId = jsonObj[0].leagueId;
+		         if (flexQueueType == "") flexQueueType = jsonObj[0].queueType;
+		         if (flexTier == "") flexTier = jsonObj[0].tier;
+		         if (flexRank == "")   flexRank = jsonObj[0].rank;
+		         if (flexSummonerId == "")   flexSummonerId = jsonObj[0].summonerId;
+		         if (flexSummonerName == "")   flexSummonerName = jsonObj[0].summonerName;
+		         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[0].leaguePoints;
+		         if (flexWins == "")   flexWins = jsonObj[0].wins;
+		         if (flexLosses == "") flexLosses = jsonObj[0].losses;
+		      }
+		  
+	  }
+      
       
       
       
@@ -479,11 +503,14 @@ function parseJSON(jsonObj) {
 	if(cnt == 6){ gameDetail(2, jsonObj); ajax(matchesUrl[3]);}
 	if(cnt == 7){ gameDetail(3, jsonObj); ajax(matchesUrl[4]);}
 	if(cnt == 8){ gameDetail(4, jsonObj); ajax(matchesUrl[5]);}
+	
+	/*  // too many request --> 라이엇에서 최대 request 수 제한 둠
 	if(cnt == 9){ gameDetail(5, jsonObj); ajax(matchesUrl[6]);}
 	if(cnt == 10){ gameDetail(6, jsonObj); ajax(matchesUrl[7]);}
 	if(cnt == 11){ gameDetail(7, jsonObj); ajax(matchesUrl[8]);}
 	if(cnt == 12){ gameDetail(8, jsonObj); ajax(matchesUrl[9]);}
 	if(cnt == 13){ gameDetail(9, jsonObj); ajax(matchesUrl[10]);}
+	*/
 	
 	
 	// 한판한판 정보 10번 받아올 메소드

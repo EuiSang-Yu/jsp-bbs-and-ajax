@@ -24,19 +24,22 @@ public class BoardViewCommand implements Command {
 		BoardDTO [] arr = null;
 		ReplyDTO [] arr2 = null;
 		int likeViewResult = 0;
-		int cnt = 0;
 		int board_likeCnt = 0;
+
 		int likeCntResult = 0;
 
 
 
 
 
+
+		int user_uid;
+
+
 		HttpSession session = request.getSession();
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
-		int user_uid;
-		
+
 
 		
 		try {
@@ -45,6 +48,8 @@ public class BoardViewCommand implements Command {
 			user_uid=-1;
 		}
 		
+
+
 
 
 
@@ -60,14 +65,18 @@ public class BoardViewCommand implements Command {
 			likeCntResult = dao.likeCnt_update(board_likeCnt, board_id); 
 
 			System.out.println("뷰 user_uid"+ user_uid);
+			
+			
 
-			
-			
 			request.setAttribute("list", arr);
+
 			request.setAttribute("list2", arr2);
 			request.setAttribute("likeViewResult", likeViewResult);
+
 			request.setAttribute("user_uid", user_uid);
 			
+
+
 
 
 			

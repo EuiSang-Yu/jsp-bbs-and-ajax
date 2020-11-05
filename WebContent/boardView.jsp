@@ -17,6 +17,7 @@
 <title>OP.IT</title>
 
 
+
  <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
 <link rel="stylesheet" type="text/css"
@@ -37,6 +38,9 @@
 
 
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
 <!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
@@ -55,8 +59,9 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
@@ -106,6 +111,7 @@
 			</c:when>
 		</c:choose>
 
+
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
 
 		<input type="hidden" name="board_champion"
@@ -125,6 +131,23 @@
 			</c:if>
 
 	
+
+
+
+
+		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
+
+		<c:if test="${user_uid != -1 }">
+			<c:choose>
+				<c:when test="${likeViewResult == 0 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+				</c:when>
+				<c:when test="${likeViewResult == 1 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite">
+				</c:when>
+			</c:choose>
+		</c:if>
 
 
 		</form>
