@@ -128,17 +128,27 @@ public class VO {
    public static final String SQL_LIKECNT_SELECT = 
          "SELECT * FROM tb_like WHERE board_id = ?";
    
-   public static final String SQL_LIKECNT_UPDATE = 
+   public static final String SQL_LIKECNT_UPDATE =
          "UPDATE TB_BOARD SET board_likeCnt = ? WHERE BOARD_ID = ?";
    
+<<<<<<< HEAD
+   public static final String SQL_UPDATE_REPLYCNT = 
+           "UPDATE tb_board SET board_replyCnt = ? WHERE board_id = ?";
+=======
    //아이디 유효성 검사
    public static final String SQL_JOIN_USERID = 
 		   "SELECT * FROM TB_USER WHERE user_id = ?";
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    
+<<<<<<< HEAD
+   public static final String SQL_REPLYCNT_SELECT =
+	       "SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = ?";
+=======
    public static final String SQL_JOIN_USEREMAIL = 
 		   "SELECT * FROM TB_USER WHERE user_email = ?";
    
    public static final String SQL_JOIN_USERPHONE = 
 		   "SELECT * FROM TB_USER WHERE user_phone = ?";
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    
 }

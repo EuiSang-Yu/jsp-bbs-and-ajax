@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String user_id = (String)session.getAttribute("user_id");
-
 %>
 
 <c:set var="championKey" value="<%= new int [] {
@@ -235,4 +234,7 @@
 
 
 </html>
+<<<<<<< HEAD
+=======
  
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git

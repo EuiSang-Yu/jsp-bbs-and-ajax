@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
-	String user_id = (String)session.getAttribute("user_id");
-	int cnt = (Integer)request.getAttribute("likeResult");
-	int user_uid = (Integer)session.getAttribute("user_uid");
+	String user_id = (String) session.getAttribute("user_id");
+int cnt = (Integer) request.getAttribute("likeResult");
+int user_uid = (Integer) session.getAttribute("user_uid");
 %>
 
 <!DOCTYPE html>
@@ -16,20 +16,38 @@
 
 <title>OP.IT</title>
 
+<<<<<<< HEAD
+ <link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <link rel="stylesheet"
+<<<<<<< HEAD
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+=======
    href="https://fonts.googleapis.com/icon?family=Material+Icons">
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
+<!--합쳐지고 최소화된 최신 CSS-->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<!-- 부가적인 테마 -->
+<!--부가적인 테마-->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
@@ -37,10 +55,14 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<<<<<<< HEAD
+
+=======
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <!-- 파비콘 설정-->
-<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
 
 <style>
 * {
@@ -118,15 +140,14 @@ thead tr th {
 	color: black;
 }
 
-#textflow{
-	overflow:hidden;word-wrap:break-word;
+#textflow {
+	overflow: hidden;
+	word-wrap: break-word;
 }
 
 #imgwidth img {
 	max-width: 100%;
 }
-
-
 </style>
 
 </head>
@@ -146,9 +167,9 @@ thead tr th {
 			<thead>
 				<tr class="row">
 
-					<th class="col-sm-2">챔피언 공략</th>
-					<th class="col-sm-2">조회수 ${list[0].board_viewCnt }</th>
+					<th class="col-sm-2">추천수${list[0].board_likeCnt }</th>
 					<th class="col-sm-3">작성자 ${list[0].board_writer }</th>
+					<th class="col-sm-2">조회수 ${list[0].board_viewCnt }</th>
 					<th class="col-sm-2">댓글 ${list[0].board_replyCnt }</th>
 					<th class="col-sm-3">작성시간 ${list[0].board_regDate }</th>
 
@@ -163,16 +184,34 @@ thead tr th {
 			</tbody>
 		</table>
 		<hr class="commentHr">
-	<c:choose>
-		<c:when test="${likeViewResult == 0 }">
-			<form id="likeForm" method="POST" action="likeOk.do">
-		</c:when>
-		<c:when test="${likeViewResult == 1 }">
-			<form id="likeForm" method="POST" action="likeCancle.do">
-		</c:when>
-	</c:choose>
-		
+		<c:choose>
+			<c:when test="${likeViewResult % 2 == 0 }">
+				<form id="likeForm" method="POST" action="likeOk.do">
+			</c:when>
+			<c:when test="${likeViewResult == 1 }">
+				<form id="likeForm" method="POST" action="likeCancle.do">
+			</c:when>
+		</c:choose>
+
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+<<<<<<< HEAD
+		<input type="hidden" name="board_champion"
+			value="${list[0].board_champion }" />
+			<c:if test="${user_uid != -1 }">
+
+		<c:choose>
+				<c:when test="${likeViewResult == 0 }">
+					<input id="likeBt" type="submit" class="material-icons"
+						value="favorite_border">
+				</c:when>
+				<c:when test="${likeViewResult == 1 }">
+					<input id="likeBt" type="submit" class="material-icons"
+						value="favorite">
+				</c:when>
+		</c:choose>
+			</c:if>
+
+=======
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
 <<<<<<< HEAD
 		<c:if test="${user_uid != -1 }">
@@ -197,14 +236,15 @@ thead tr th {
 		</c:when>
 	</c:choose>
 >>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		</form>
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
-			<p class="commentTxt2">총 0개</p>
+			<p class="commentTxt2">총 ${list[0].board_replyCnt }개</p>
 		</div>
 		<form action="replyWriteOk.do" method="POST">
-			<input type="hidden" name="reply_writer" value="<%= user_id%>" />
+			<input type="hidden" name="reply_writer" value="<%=user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
 				name="reply_content" id="commentTextArea" style="resize: none;"></textarea>
 			<input type="hidden" name="board_id" value="${param.board_id }" /> <input
@@ -235,33 +275,35 @@ thead tr th {
 									onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
 							</div>
 						</div>
-					<form action="replyUpdateOk.do" method="POST">
-						<div class="modal" id="updateModal${status.index}">
-							<div class="modal-dialog">
-								<div class="modal-content">
+						<form action="replyUpdateOk.do" method="POST">
+							<div class="modal" id="updateModal${status.index}">
+								<div class="modal-dialog">
+									<div class="modal-content">
 
-									<!-- Modal Header -->
-									<div class="modal-header">
-										<h4 class="modal-title">댓글 수정</h4>
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-									</div>
-								
-								<input type="hidden" name="reply_writer" value="<%= user_id%>" />
-											<input type="hidden" name="board_id" value="${param.board_id }" />
-											<input type="hidden" name="board_champion" value="${param.board_champion }" />
-									<!-- Modal body -->
-									<div class="modal-body">
-										<textarea class="commentContent" style="resize: none;" name="reply_content">${dto.reply_content }</textarea>
-									</div>
-								<input type="hidden" name="reply_id" value="${dto.reply_id }" /> 
-									<!-- Modal footer -->
-									<div class="modal-footer">
-										<button type="submit" class="btn btn-primary">수정</button>
+										<!-- Modal Header -->
+										<div class="modal-header">
+											<h4 class="modal-title">댓글 수정</h4>
+											<button type="button" class="close" data-dismiss="modal">&times;</button>
+										</div>
+
+										<input type="hidden" name="reply_writer" value="<%=user_id%>" />
+										<input type="hidden" name="board_id"
+											value="${param.board_id }" /> <input type="hidden"
+											name="board_champion" value="${param.board_champion }" />
+										<!-- Modal body -->
+										<div class="modal-body">
+											<textarea class="commentContent" style="resize: none;"
+												name="reply_content">${dto.reply_content }</textarea>
+										</div>
+										<input type="hidden" name="reply_id" value="${dto.reply_id }" />
+										<!-- Modal footer -->
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-primary">수정</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</form>
+						</form>
 						<br>
 						<hr>
 					</c:forEach>
@@ -273,7 +315,7 @@ thead tr th {
 
 
 		<button class="btn btn-outline-dark"
-			onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
+			onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }&board_writer=${list[0].board_writer }'">삭제</button>
 		<button class="btn btn-outline-dark"
 			onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
 		<a href="boardListTable.do?board_champion=${list[0].board_champion }"
