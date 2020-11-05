@@ -7,8 +7,14 @@
 <%System.out.print("jsp 파일 user_id :"+ user_id); %>
 
 
+<% if(user_id == ""){ %>
+<script>
+	alert('찾으실 아이디가 없습니다.');
+	location.href = 'login.do';
+</script>
+<%}else{ %>
 <script>
 	alert("<%=user_id %>");
 	location.href = 'login.do';
 </script>
-
+<%} %>
