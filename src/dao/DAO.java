@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -102,11 +103,9 @@ public class DAO {
          int board_champion = dto.getBoard_champion();
          String board_writer = dto.getBoard_writer();
 
-
          cnt = this.insert(board_title, board_content, board_champion, board_writer);
 
       } catch (Exception e) {
-         
          e.printStackTrace();
       }
 
@@ -466,7 +465,6 @@ public class DAO {
          pstmt.setInt(1, board_id);
          pstmt.setInt(2, board_champion);
          cnt=pstmt.executeUpdate();
-         
       } catch (Exception e) {
          System.out.println("게시글 삭제 실패");
          e.printStackTrace();
@@ -474,14 +472,14 @@ public class DAO {
          close();
       }
       
+      
       return cnt;  
       
    }
    
    public UserDTO[] selectByuser_id(String user_id) throws Exception {
       UserDTO[] arr = null;
-
-
+      
       try {
     	  conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_MYPAGE_SELECT);
@@ -1025,7 +1023,6 @@ public class DAO {
    public int joinPhoneChk(String user_phone) throws SQLException {
 	   
 	   int user_phoneCnt = 0;
-	   
 	   String user_phoneChk = "";
 	   
 	   
@@ -1049,8 +1046,6 @@ public class DAO {
 		   }else {
 			   user_phoneCnt = 0;	// 중복
 		   }
-		   
-   
 		   
 	   } catch (Exception e) {
 		   e.printStackTrace();

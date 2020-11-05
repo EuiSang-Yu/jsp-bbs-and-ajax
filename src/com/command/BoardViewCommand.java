@@ -38,7 +38,6 @@ public class BoardViewCommand implements Command {
 			user_uid=-1;
 		}
 
-
 		System.out.println("board_id : " + board_id);
 
 		

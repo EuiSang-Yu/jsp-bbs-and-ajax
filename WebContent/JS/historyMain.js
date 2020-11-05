@@ -1,7 +1,7 @@
 
 
 // 라이엇 공식 API발급키
-api_key = "RGAPI-499afa6c-19c7-4719-a272-b70ca1b394dd";
+api_key = "RGAPI-6006a009-c20a-4be4-a3d3-aa7cbc775206";
 
 // summoner info //
 id = "";
@@ -261,7 +261,6 @@ champMap = {
 }
 
 
-
 // 처음 소환사 기본정보 및 다른정보 얻을 때 필요한 id값들 get
 function ajaxDefault(){
 	$.ajax({
@@ -276,8 +275,8 @@ function ajaxDefault(){
 			cnt = cnt + 1;
 			ajax(leagueUrl);					
 		},
-		error : function(status, error) {
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }
@@ -297,8 +296,8 @@ function ajax(info_url) {
 				cnt = cnt + 1;
 			}
 		},
-		error : function(status, error) {
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }
@@ -333,7 +332,8 @@ function parseJSON(jsonObj) {
    // 리그정보까지 확인되었을때 구현
    if (cnt == 1) {
       // league info
-	  if(jsonObj[0].queueType == "RANKED_SOLO_5X5"){
+	/////// JSON Object 순서 뒤바뀌는 예외 처리 !!
+	  if(jsonObj[0].queueType == "RANKED_SOLO_5x5"){ 
 		  if(jsonObj[0] != null && jsonObj[0] != ""){
 		         if (soloLeagueId == "")   soloLeagueId = jsonObj[0].leagueId;
 		         if (soloQueueType == "") soloQueueType = jsonObj[0].queueType;
@@ -368,7 +368,7 @@ function parseJSON(jsonObj) {
 		         if (soloWins == "")   soloWins = jsonObj[1].wins;
 		         if (soloLosses == "") soloLosses = jsonObj[1].losses;
 		      }
-		      if(jsonObj[0] != null && jsonObj[0] != ""){
+	      if(jsonObj[0] != null && jsonObj[0] != ""){
 		         if (flexLeagueId == "")   flexLeagueId = jsonObj[0].leagueId;
 		         if (flexQueueType == "") flexQueueType = jsonObj[0].queueType;
 		         if (flexTier == "") flexTier = jsonObj[0].tier;
