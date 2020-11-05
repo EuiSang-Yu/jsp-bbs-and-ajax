@@ -16,12 +16,16 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 
 <title>OP.IT</title>
 
+<<<<<<< HEAD
  <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
 <link rel="stylesheet" type="text/css"
 	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+=======
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <link rel="stylesheet"
+<<<<<<< HEAD
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet"
@@ -30,6 +34,9 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+=======
+   href="https://fonts.googleapis.com/icon?family=Material+Icons">
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <!--구글폰트-->
 <link
@@ -48,7 +55,12 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<<<<<<< HEAD
 
+=======
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
 
@@ -182,6 +194,7 @@ thead tr th {
 		</c:choose>
 
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+<<<<<<< HEAD
 		<input type="hidden" name="board_champion"
 			value="${list[0].board_champion }" />
 			<c:if test="${user_uid != -1 }">
@@ -198,6 +211,32 @@ thead tr th {
 		</c:choose>
 			</c:if>
 
+=======
+		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
+<<<<<<< HEAD
+		<c:if test="${user_uid != -1 }">
+			<c:choose>
+				<c:when test="${likeViewResult == 0 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+				</c:when>
+				<c:when test="${likeViewResult == 1 }">
+					<input id="likeBt" type="submit" class="material-icons" value="favorite">
+				</c:when>
+			</c:choose>
+		</c:if>
+	
+=======
+	<c:choose>
+		<c:when test="${likeViewResult == 0 }">
+			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+			
+		</c:when>
+		<c:when test="${likeViewResult == 1 }">
+			<input id="likeBt" type="submit" class="material-icons" value="favorite">
+		</c:when>
+	</c:choose>
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		</form>
 
 		<div class="commentCntDiv">

@@ -55,6 +55,7 @@ public class DAO {
 
    // DB 자원 반납 메소드, 만들어 놓으면 편함.
    public void close() throws SQLException {
+	   conn.commit();
       if (rs != null)
          rs.close();
       if (pstmt != null)
@@ -395,7 +396,6 @@ public class DAO {
          pstmt.setString(3, user_name);
          pstmt.setString(4, user_email);
          pstmt.setString(5, user_phone);
-
 
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
@@ -929,6 +929,7 @@ public class DAO {
       return cnt;
 
    }
+<<<<<<< HEAD
    
    public int replyCnt_select(int board_id) throws SQLException {
 	      int cnt = 0;
@@ -956,5 +957,130 @@ public class DAO {
 	      return cnt;
 
 	   }
+=======
+   //아이디 중복체크
+   public int joinIdChk(String user_id) throws SQLException {
+	   int user_idCnt = 0;
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
+	   String user_idChk = "";
+
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USERID);
+		   pstmt.setString(1, user_id);
+
+		   
+		   rs = pstmt.executeQuery();
+		   
+	         while(rs.next()) {
+	        	 user_idChk = rs.getString("user_id");
+	          }
+		   
+		   if(user_idChk.equals("")) {
+			   user_idCnt = 1;	// 가입가능
+		   }else {
+			   user_idCnt = 0;	// 중복
+		   }
+		   
+		   
+		   
+		   
+	   } catch (Exception e) {
+		   
+		   e.printStackTrace();
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_idCnt;
+	   
+   }
+   
+   //이메일 중복체크
+   public int joinEmailChk(String user_email) throws SQLException {
+
+	   int user_emailCnt = 0;
+
+	   String user_emailChk = "";
+
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USEREMAIL);
+
+		   pstmt.setString(1, user_email);
+
+		   rs = pstmt.executeQuery();
+		   
+
+		   
+	         while(rs.next()) {
+	        	 user_emailChk = rs.getString("user_email");
+	          }
+		   
+		   if(user_emailChk.equals("")) {
+			   user_emailCnt = 1;	// 가입가능
+		   }else {
+			   user_emailCnt = 0;	// 중복
+		   }
+		   
+		   
+		   
+		   
+	   } catch (Exception e) {
+		   e.printStackTrace();
+		   
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_emailCnt;
+	   
+   }
+   
+   //핸드폰 중복체크
+   public int joinPhoneChk(String user_phone) throws SQLException {
+	   
+	   int user_phoneCnt = 0;
+	   
+	   String user_phoneChk = "";
+	   
+	   
+	   try {
+		   conn = getConnection();
+		   
+		   pstmt = conn.prepareStatement(VO.SQL_JOIN_USERPHONE);
+
+		   pstmt.setString(1, user_phone);
+		   
+		   rs = pstmt.executeQuery();
+		   
+		   
+		   
+	         while(rs.next()) {
+	        	 user_phoneChk = rs.getString("user_phone");
+	          }
+		   
+		   if(user_phoneChk.equals("")) {
+			   user_phoneCnt = 1;	// 가입가능
+		   }else {
+			   user_phoneCnt = 0;	// 중복
+		   }
+		   
+   
+		   
+	   } catch (Exception e) {
+		   e.printStackTrace();
+		   
+	   } finally {
+		   close();
+	   }
+	   
+	   return user_phoneCnt;
+	   
+   }
 }

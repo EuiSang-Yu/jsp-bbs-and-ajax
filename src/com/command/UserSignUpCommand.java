@@ -12,6 +12,10 @@ public class UserSignUpCommand implements Command {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int cnt = 0;
+		int idcnt = 0;
+		int emailcnt = 0;
+		int phonecnt = 0;
+		int bean = 0;
 		DAO dao = new DAO();
 
 		//회원정보 값 받아오기
@@ -33,16 +37,45 @@ public class UserSignUpCommand implements Command {
 				user_id.trim().length() > 0 && user_pw.trim().length() > 0 && user_name.trim().length() > 0
 				 && user_email.trim().length() > 0 && user_phone.trim().length() > 0) {
 			try {
-				cnt = dao.signUp(user_id, user_pw, user_name, user_email, user_phone);
+				System.out.println("회원가입칸 비어있는지 혹인하는데 ㅔ너 들어오냐고 트라이 이프");
+				idcnt = dao.joinIdChk( user_id);
+				emailcnt = dao.joinEmailChk(user_email);
+				phonecnt = dao.joinPhoneChk(user_phone);
+				
+				System.out.println(idcnt);
+				System.out.println(emailcnt);
+				System.out.println(phonecnt);
+				
+				if(idcnt == 0) {
+					
+				}else if(emailcnt == 0) {
+					
+				}else if(phonecnt == 0) {
+					
+				}else {
+					cnt = dao.signUp(user_id, user_pw, user_name, user_email, user_phone);
+				}
+				
+//				if(idcnt == 1 && emailcnt == 1 && phonecnt ==1) {
+//					cnt = dao.signUp(user_id, user_pw, user_name, user_email, user_phone);
+//				}
+				
 			} catch (SQLException e) {
-				cnt = 0;
+				e.printStackTrace();
 			}
+		}else { 
+			bean = 1;
+			idcnt = 1;
+			emailcnt = 1;
+			phonecnt = 1;
 		}
 
 		request.setAttribute("result", cnt); //signupOK 결과값 request
+		request.setAttribute("idcnt", idcnt); 
+		request.setAttribute("emailcnt", emailcnt);
+		request.setAttribute("phonecnt", phonecnt); 
+		request.setAttribute("bean", bean); 
 
 	}
-
-
 
 }

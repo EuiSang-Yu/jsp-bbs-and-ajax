@@ -68,6 +68,7 @@ public class BoardSearchCommand implements Command {
 		request.setAttribute("board_champion", board_champion);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("curPage", curPage);
+		request.setAttribute("searchText", searchText);
 	}
 
 }
