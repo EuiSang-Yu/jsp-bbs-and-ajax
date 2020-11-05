@@ -21,12 +21,21 @@
 
 <title></title>
 
+<<<<<<< HEAD
+<!-- <link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
+<link rel="stylesheet" type="text/css"
+	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+=======
 <!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
 	rel="stylesheet">
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
@@ -47,7 +56,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="~/Content/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css"  />
-<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script>
+<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script> -->
 
 
 
