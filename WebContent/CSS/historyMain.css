@@ -107,12 +107,12 @@
 
 #recentPlay{
 	margin-top: 40px;
-	height: 100vh;
+	height: 50vh;
 	border: 1px solid gray;
 }
 .recentPlayOut{
 	width:1105px;
-	height:10%;
+	height:20%;
 	border: 1px solid gray;
 	display:flex;
 	align-items: center;

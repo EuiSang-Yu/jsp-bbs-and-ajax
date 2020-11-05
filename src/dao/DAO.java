@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -83,7 +84,6 @@ public class DAO {
 
          cnt = pstmt.executeUpdate();// 여기서에러
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -103,11 +103,9 @@ public class DAO {
          int board_champion = dto.getBoard_champion();
          String board_writer = dto.getBoard_writer();
 
-
          cnt = this.insert(board_title, board_content, board_champion, board_writer);
 
       } catch (Exception e) {
-         
          e.printStackTrace();
       }
 
@@ -290,21 +288,19 @@ public class DAO {
 
    public BoardDTO[] selectByboard_id(int board_id, int board_champion) throws SQLException {
       BoardDTO[] arr = null;
-      try {
-         conn = getConnection();
-      } catch (Exception e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-      }
 
       try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
          pstmt.setInt(1, board_id);
          pstmt.setInt(2, board_champion);
          
          rs = pstmt.executeQuery();
          arr = createArray(rs);
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       } // end try
 
@@ -348,14 +344,6 @@ public class DAO {
       BoardDTO[] arr = null;
       
       try {
-         conn = getConnection();
-      } catch (Exception e1) {
-         
-         e1.printStackTrace();
-      }
-      
-      
-      try {
          
          // 트랜잭션 처리
          conn = getConnection();
@@ -373,10 +361,6 @@ public class DAO {
          rs = pstmt.executeQuery();
          arr = createArray(rs);
 
-
-         System.out.println("arr : " + arr.toString());
-
-         conn.commit();
       } catch (SQLException e) {
          conn.rollback(); // 예외 발생하면 rollback
          throw e; // 예외를 다시 throw
@@ -450,22 +434,19 @@ public class DAO {
 
    // 특정 board_id 의 글 수정(제목, 내용)
 
-   public int update(String board_title, String board_content, int board_id, int board_champion) throws SQLException{
+   public int update(String board_title, String board_content, int board_id, int board_champion) throws Exception{
       int cnt = 0;
       
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-      }
-      try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_WRITE_UPDATE);
          pstmt.setString(1, board_title);
          pstmt.setString(2, board_content);
          pstmt.setInt(3, board_id);
          pstmt.setInt(4, board_champion);
          cnt = pstmt.executeUpdate();
+      } catch (Exception e) {
+    		e.printStackTrace();
       } finally {
          close();
       }   //end try
@@ -483,7 +464,6 @@ public class DAO {
          pstmt.setInt(1, board_id);
          pstmt.setInt(2, board_champion);
          cnt=pstmt.executeUpdate();
-         
       } catch (Exception e) {
          System.out.println("게시글 삭제 실패");
          e.printStackTrace();
@@ -491,26 +471,24 @@ public class DAO {
          close();
       }
       
+      
       return cnt;  
       
    }
    
-   public UserDTO[] selectByuser_id(String user_id) throws SQLException {
+   public UserDTO[] selectByuser_id(String user_id) throws Exception {
       UserDTO[] arr = null;
+      
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         System.out.println("DB 커넥션 오류");
-         e.printStackTrace();
-      }
-
-      try {
+    	  conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_MYPAGE_SELECT);
          pstmt.setString(1, user_id);
          rs = pstmt.executeQuery();
          arr = createUserArray(rs);
          
-      } finally {
+      } catch (Exception e) {
+  		e.printStackTrace();
+  	} finally {
          close();
       } // end try
 
@@ -521,13 +499,9 @@ public class DAO {
    public int mypageUpdate(String user_id, String user_pw, String user_email, String user_phone) throws SQLException{
       int cnt = 0;
       
+
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         System.out.println("DB 커넥션 오류");
-         e.printStackTrace();
-      }
-      try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_MYPAGE_UPDATE);
          pstmt.setString(1, user_pw);
          pstmt.setString(2, user_email);
@@ -535,7 +509,10 @@ public class DAO {
          pstmt.setString(4, user_id);
          
          cnt = pstmt.executeUpdate();
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       }   //end try
       return cnt;
@@ -636,22 +613,40 @@ public class DAO {
       return cnt;  
    }
    
+   public int replyCnt_update(int board_replyCnt, int board_id) throws SQLException{
+	      int cnt = 0;
+	      
+	      try {
+	         conn = getConnection();
+	         pstmt = conn.prepareStatement(VO.SQL_UPDATE_REPLYCNT);
+	         pstmt.setInt(1, board_replyCnt);
+	         pstmt.setInt(2, board_id);
+	         cnt=pstmt.executeUpdate();
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+	      
+	      return cnt;  
+	   }
+   
    
    public int reply_update(String reply_content, int reply_id) throws SQLException{
       int cnt = 0;
       
+
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-      }
-      try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_REPLY_UPDATE);
          pstmt.setString(1, reply_content);
          pstmt.setInt(2, reply_id);
          cnt = pstmt.executeUpdate();
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       }   //end try
       return cnt;
@@ -662,19 +657,17 @@ public class DAO {
    public int profileImage_upload(String user_profileImage, String user_id) throws SQLException{
       int cnt = 0;
       
-      try {
-         conn = getConnection();
-      } catch (Exception e) {
-         System.out.println("커넥션 오류");
-         e.printStackTrace();
-      }
       
       try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_PROFILEIMAGE_UPLOAD);
          pstmt.setString(1, user_profileImage);
          pstmt.setString(2, user_id);
          cnt=pstmt.executeUpdate();
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       }
       
@@ -742,17 +735,14 @@ public class DAO {
       int cnt = 0;
       
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         System.out.println("커넥션 오류");
-         e.printStackTrace();
-      }
-      
-      try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_USER_DELETE);
          pstmt.setString(1, user_id);
          cnt=pstmt.executeUpdate();
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       }
 
@@ -767,13 +757,7 @@ public class DAO {
       int user_uid = 0;
       
       try {
-         conn = getConnection();
-      } catch (Exception e) {
-         System.out.println("커넥션 오류");
-         e.printStackTrace();
-      }
-      
-      try {
+    	 conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_USER_GET_UID);
          pstmt.setString(1, user_id);
          rs = pstmt.executeQuery(); 
@@ -781,7 +765,10 @@ public class DAO {
          while(rs.next()) {
             user_uid = rs.getInt("user_uid");
          }
-      } finally {
+      } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} finally {
          close();
       }
       
@@ -801,8 +788,8 @@ public class DAO {
          pstmt.setInt(2, board_id);
          
          cnt = pstmt.executeUpdate();// 여기서에러
-      } catch (Exception e) {
          
+      } catch (Exception e) {
          e.printStackTrace();
       } finally {
          close();
@@ -822,10 +809,8 @@ public class DAO {
          pstmt = conn.prepareStatement(VO.SQL_LIKE_SELECT);
          pstmt.setInt(1, user_uid);
          pstmt.setInt(2, board_id);
-         
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -848,7 +833,6 @@ public class DAO {
          
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -869,7 +853,6 @@ public class DAO {
          
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -919,7 +902,6 @@ public class DAO {
          
          cnt = pstmt.executeUpdate();
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -928,6 +910,32 @@ public class DAO {
       return cnt;
 
    }
+   
+   public int replyCnt_select(int board_id) throws SQLException {
+	      int cnt = 0;
+
+	      try {
+	         conn = getConnection();
+
+	         pstmt = conn.prepareStatement(VO.SQL_REPLYCNT_SELECT);
+	         pstmt.setInt(1, board_id);
+	         
+	         rs = pstmt.executeQuery();
+	         
+	         while(rs.next()) {
+	        	 cnt = rs.getInt("count(*)");
+	          }
+	         
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      } finally {
+	         close();
+	      }
+
+	      return cnt;
+
+	   }
+
    //아이디 중복체크
    public int joinIdChk(String user_id) throws SQLException {
 	   int user_idCnt = 0;
@@ -1015,7 +1023,6 @@ public class DAO {
    public int joinPhoneChk(String user_phone) throws SQLException {
 	   
 	   int user_phoneCnt = 0;
-	   
 	   String user_phoneChk = "";
 	   
 	   
@@ -1039,8 +1046,6 @@ public class DAO {
 		   }else {
 			   user_phoneCnt = 0;	// 중복
 		   }
-		   
-   
 		   
 	   } catch (Exception e) {
 		   e.printStackTrace();

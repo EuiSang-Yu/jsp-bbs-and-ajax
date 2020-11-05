@@ -13,6 +13,11 @@
 		alert("등록실패 !!!");
 		history.back();
 	</script>
+<% }else if (cnt == 2){%>
+	<script>
+		alert("로그인이 필요합니다.");
+		history.back();
+	</script>
 <% } else { %>
 	<script>
 		alert("등록 성공 !!!");

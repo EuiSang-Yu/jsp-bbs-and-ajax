@@ -4,6 +4,17 @@
 <%@ page import="dao.*"%>
 <%@ page import="dto.*"%>
 <%@ page import="com.command.*"%>
+<%
+	String user_id = (String)session.getAttribute("user_id");
+%>
+<c:choose>
+	<c:when test="${empty user_id }">
+		<script>
+			alert("로그인이 필요합니다.")
+			location.href = "login.do";
+		</script>
+	</c:when>
+	<c:otherwise>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -19,14 +30,14 @@
 	rel="stylesheet">
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
@@ -159,3 +170,6 @@
 
 </body>
 </html>
+
+	</c:otherwise>
+</c:choose>   
