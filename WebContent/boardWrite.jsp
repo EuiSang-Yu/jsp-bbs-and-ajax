@@ -33,21 +33,13 @@
 <!-- <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<<<<<<< HEAD
 
-부가적인 테마
-=======
 <!-- 부가적인 테마 -->
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-합쳐지고 최소화된 최신 자바스크립트
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script> -->
-=======
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -55,7 +47,6 @@
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 
 <style>
 #writeSubmit {

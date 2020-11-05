@@ -170,26 +170,8 @@ thead tr th {
 		</c:choose>
 
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
-<<<<<<< HEAD
-		<input type="hidden" name="board_champion"
-			value="${list[0].board_champion }" />
-			<c:if test="${user_uid != -1 }">
-
-		<c:choose>
-				<c:when test="${likeViewResult == 0 }">
-					<input id="likeBt" type="submit" class="material-icons"
-						value="favorite_border">
-				</c:when>
-				<c:when test="${likeViewResult == 1 }">
-					<input id="likeBt" type="submit" class="material-icons"
-						value="favorite">
-				</c:when>
-		</c:choose>
-			</c:if>
-
-=======
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
-<<<<<<< HEAD
+
 		<c:if test="${user_uid != -1 }">
 			<c:choose>
 				<c:when test="${likeViewResult == 0 }">
@@ -200,19 +182,7 @@ thead tr th {
 				</c:when>
 			</c:choose>
 		</c:if>
-	
-=======
-	<c:choose>
-		<c:when test="${likeViewResult == 0 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
-			
-		</c:when>
-		<c:when test="${likeViewResult == 1 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite">
-		</c:when>
-	</c:choose>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 		</form>
 
 		<div class="commentCntDiv">

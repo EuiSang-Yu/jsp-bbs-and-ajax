@@ -25,7 +25,7 @@ public class BoardUpdateOkCommand implements Command {
 		if(board_title != null && board_title.trim().length() > 0) {
 			try {
 				cnt = dao.update(board_title,board_content,board_id,board_champion);
-			} catch(SQLException e) {
+			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}

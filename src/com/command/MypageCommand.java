@@ -28,7 +28,7 @@ public class MypageCommand implements Command {
 		try {
 			arr = dao.selectByuser_id(user_id);  // 읽어오기
 			request.setAttribute("list", arr);
-		} catch(SQLException e) {
+		} catch(Exception e) {
 			e.printStackTrace();
 		}
 
