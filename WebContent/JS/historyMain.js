@@ -1,7 +1,7 @@
 
 
 // 라이엇 공식 API발급키
-api_key = "RGAPI-499afa6c-19c7-4719-a272-b70ca1b394dd";
+api_key = "RGAPI-6006a009-c20a-4be4-a3d3-aa7cbc775206";
 
 // summoner info //
 id = "";
@@ -261,7 +261,6 @@ champMap = {
 }
 
 
-
 // 처음 소환사 기본정보 및 다른정보 얻을 때 필요한 id값들 get
 function ajaxDefault(){
 	$.ajax({
@@ -276,8 +275,8 @@ function ajaxDefault(){
 			cnt = cnt + 1;
 			ajax(leagueUrl);					
 		},
-		error : function(status, error) {
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }
@@ -297,8 +296,8 @@ function ajax(info_url) {
 				cnt = cnt + 1;
 			}
 		},
-		error : function(status, error) {
-			location.href="historyError.jsp";
+		error : function(request,status,error) {
+			alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 		}
 	});
 }

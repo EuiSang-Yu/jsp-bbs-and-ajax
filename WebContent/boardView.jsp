@@ -169,6 +169,7 @@ thead tr th {
 			</c:when>
 		</c:choose>
 
+
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
 
@@ -182,6 +183,7 @@ thead tr th {
 				</c:when>
 			</c:choose>
 		</c:if>
+
 		</form>
 
 		<div class="commentCntDiv">

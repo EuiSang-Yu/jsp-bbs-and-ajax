@@ -29,7 +29,8 @@
 	<div class="container">
 
 		<div class="message">
-			<h2>소환사의 이름을 찾을 수 없습니다. 확인 후 다시 검색 해 주세요!</h2>	
+			<h2>서비스 사용에 불편을 끼쳐드려서 대단히 죄송합니다.<br/><br/>
+			빠른 시간내에 문제를 처리하겠습니다.</h2>	
 		</div>
 		<div id="errorView">	
 			<img src="" alt="여기에 이미지 추가" />	
@@ -37,3 +38,10 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+  

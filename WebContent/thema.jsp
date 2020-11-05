@@ -106,9 +106,9 @@
 
 					</div>
 				</ul>
-				<form class="form-inline my-2 my-lg-0" method="POST">
+				<form class="form-inline my-2 my-lg-0" action="historyMain.do" method="POST">
 					<input class="form-control mr-sm-2" type="search"
-						placeholder="소환사를 검색해보세요." aria-label="Search">
+						placeholder="소환사명을 입력해주세요.." aria-label="Search" name="search_id">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
 				</form>
 			</div>
