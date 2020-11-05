@@ -73,7 +73,7 @@ public class DAO {
       int cnt = 0;
 
       try {
-         conn = getConnection();
+    	 conn = getConnection();
 
          pstmt = conn.prepareStatement(VO.SQL_WRITE_INSERT);
          pstmt.setString(1, board_title);
@@ -83,7 +83,6 @@ public class DAO {
 
          cnt = pstmt.executeUpdate();// 여기서에러
       } catch (Exception e) {
-         
          e.printStackTrace();
       } finally {
          close();
@@ -152,8 +151,8 @@ public class DAO {
 
    public UserDTO[] createUserArray(ResultSet rs) throws SQLException {
       UserDTO[] arr = null;
-      
       ArrayList<UserDTO> list = new ArrayList<UserDTO>();
+      
       while (rs.next()) {
          int user_uid = rs.getInt("user_uid");
          String user_id = rs.getString("user_id");
@@ -200,6 +199,7 @@ public class DAO {
    public BoardDTO[] select(int board_champion) throws SQLException {
       BoardDTO[] arr = null;
 
+      
       try {
          conn = getConnection();
          pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT);
@@ -913,10 +913,6 @@ public class DAO {
       return cnt;
 
    }
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    
    public int replyCnt_select(int board_id) throws SQLException {
 	      int cnt = 0;
@@ -940,13 +936,8 @@ public class DAO {
 	      }
 
 	      return cnt;
-
-<<<<<<< HEAD
 	   }
-=======
-	   }
-
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+   
    //아이디 중복체크
    public int joinIdChk(String user_id) throws SQLException {
 	   int user_idCnt = 0;
