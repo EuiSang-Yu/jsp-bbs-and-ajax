@@ -31,15 +31,6 @@ public class BoardViewCommand implements Command {
 		HttpSession session = request.getSession();
 		int board_id = Integer.parseInt(request.getParameter("board_id"));
 		int board_champion = Integer.parseInt(request.getParameter("board_champion"));
-<<<<<<< HEAD
-		
-		try {
-			user_uid = (Integer)session.getAttribute("user_uid");
-		} catch (Exception e) {
-			user_uid=-1;
-		}
-		
-=======
 
 		
 		try {
@@ -48,8 +39,6 @@ public class BoardViewCommand implements Command {
 		} catch (Exception e) {
 			user_uid=-1;
 		}
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
-
 
 		System.out.println("board_id : " + board_id);
 
@@ -67,16 +56,10 @@ public class BoardViewCommand implements Command {
 			
 			
 			request.setAttribute("list", arr);
-<<<<<<< HEAD
-			request.setAttribute("list2", arr2);
-			request.setAttribute("likeViewResult", cnt);
-			request.setAttribute("user_uid", user_uid);
-=======
 			request.setAttribute("list2", arr2);
 			
 			request.setAttribute("likeViewResult", likeViewResult);
 			request.setAttribute("user_uid", user_uid);
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 			
 		} catch(Exception e) {
 			e.printStackTrace();
