@@ -26,12 +26,12 @@
 
 <title>목록</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
 <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="CSS/boardListTable.css"/> -->
+<link rel="stylesheet" type="text/css" href="CSS/boardListTable.css"/>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -43,7 +43,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="~/Content/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css"  />
-<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script>
+<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script> -->
 
 
 <!-- <script src="https://kit.fontawesome.com/bb29575d31.js"></script> -->

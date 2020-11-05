@@ -21,7 +21,7 @@
 
 <title></title>
 
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
 <link rel="stylesheet" type="text/css"
 	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -41,7 +41,7 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link href="~/Content/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css"  />
-<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script>
+<script src="/Content/bootstrap-select/bootstrap-select.min.js" ></script> -->
 
 
 

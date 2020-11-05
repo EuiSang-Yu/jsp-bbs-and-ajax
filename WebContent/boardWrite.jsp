@@ -10,7 +10,8 @@
 <c:choose>
 	<c:when test="${empty user_id }">
 		<script>
-			location.href="myPageNoLogin.jsp";
+			alert("로그인이 필요합니다.")
+			location.href = "login.do";
 		</script>
 	</c:when>
 	<c:otherwise>
@@ -24,18 +25,18 @@
 <script src="ckeditor/ckeditor.js"></script>
 <title>OP.IT</title>
 <!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 
-<!-- 부가적인 테마 -->
+부가적인 테마
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+합쳐지고 최소화된 최신 자바스크립트
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script> -->
 
 <style>
 #writeSubmit {

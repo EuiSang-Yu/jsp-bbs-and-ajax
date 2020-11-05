@@ -11,6 +11,11 @@
 		alert("삭제실패 !!!");
 		history.back();
 	</script>
+<% }else if(cnt == 2){ %>
+	<script>
+		alert("본인이 작성한 글이 아닙니다.")
+		history.back();
+	</script>
 <% } else { %>
 	<script>
 		alert("삭제 성공");

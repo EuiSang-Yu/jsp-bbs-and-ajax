@@ -135,6 +135,6 @@ public class VO {
            "UPDATE tb_board SET board_replyCnt = ? WHERE board_id = ?";
    
    public static final String SQL_REPLYCNT_SELECT =
-	         "SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = ?";
+	       "SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = ?";
    
 }
