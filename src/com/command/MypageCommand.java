@@ -30,6 +30,9 @@ public class MypageCommand implements Command {
 			request.setAttribute("list", arr);
 		} catch(SQLException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}

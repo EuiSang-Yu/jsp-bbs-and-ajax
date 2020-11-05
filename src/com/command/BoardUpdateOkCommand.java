@@ -27,6 +27,9 @@ public class BoardUpdateOkCommand implements Command {
 				cnt = dao.update(board_title,board_content,board_id,board_champion);
 			} catch(SQLException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 		

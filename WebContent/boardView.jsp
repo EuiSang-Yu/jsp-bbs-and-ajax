@@ -4,8 +4,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%
 	String user_id = (String) session.getAttribute("user_id");
-int cnt = (Integer) request.getAttribute("likeResult");
-int user_uid = (Integer) session.getAttribute("user_uid");
+	int cnt = (Integer) request.getAttribute("likeResult");
+	int user_uid = (Integer) session.getAttribute("user_uid");
 %>
 
 <!DOCTYPE html>
@@ -16,16 +16,15 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 
 <title>OP.IT</title>
 
-<<<<<<< HEAD
+
  <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
 <link rel="stylesheet" type="text/css"
 	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-=======
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 
 <link rel="stylesheet"
-<<<<<<< HEAD
+
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet"
@@ -34,9 +33,9 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-=======
-   href="https://fonts.googleapis.com/icon?family=Material+Icons">
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
+
+
 
 <!--구글폰트-->
 <link
@@ -55,100 +54,14 @@ int user_uid = (Integer) session.getAttribute("user_uid");
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<<<<<<< HEAD
 
-=======
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="CSS/boardView.css">
 
-<style>
-* {
-	margin: 0;
-	padding: 0;
-}
-
-.commentCntDiv {
-	background-color: lightgray;
-	width: 100%;
-	height: 100px;
-	margin-bottom: 50px;
-	margin-top: 100px;
-}
-
-.commentTxt1 {
-	float: left;
-	font-size: 30px;
-	margin-top: 30px;
-	margin-left: 20px;
-}
-
-.commentTxt2 {
-	float: left;
-	font-size: 20px;
-	margin-top: 35px;
-	margin-left: 20px;
-}
-
-.commentHr {
-	background-color: gray;
-	height: 1px;
-}
-
-#commentTextArea {
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-#replySubmitBt {
-	float: right;
-	margin-bottom: 50px;
-}
-
-thead tr th {
-	color: #686868;
-}
-
-#listBtn {
-	float: right;
-}
-
-#commentBt {
-	float: right;
-}
-
-.commentContent {
-	width: 100%;
-	height: 100px;
-	color: black;
-}
-
-#likeBt {
-	background-color: white;
-	border: none;
-	float: right;
-}
-
-#likeBt:focus {
-	outline: none;
-}
-
-.material-icons {
-	font-size: 50px;
-	color: black;
-}
-
-#textflow {
-	overflow: hidden;
-	word-wrap: break-word;
-}
-
-#imgwidth img {
-	max-width: 100%;
-}
-</style>
 
 </head>
 
@@ -194,7 +107,7 @@ thead tr th {
 		</c:choose>
 
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
-<<<<<<< HEAD
+
 		<input type="hidden" name="board_champion"
 			value="${list[0].board_champion }" />
 			<c:if test="${user_uid != -1 }">
@@ -211,38 +124,16 @@ thead tr th {
 		</c:choose>
 			</c:if>
 
-=======
-		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
-<<<<<<< HEAD
-		<c:if test="${user_uid != -1 }">
-			<c:choose>
-				<c:when test="${likeViewResult == 0 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
-				</c:when>
-				<c:when test="${likeViewResult == 1 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite">
-				</c:when>
-			</c:choose>
-		</c:if>
 	
-=======
-	<c:choose>
-		<c:when test="${likeViewResult == 0 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
-			
-		</c:when>
-		<c:when test="${likeViewResult == 1 }">
-			<input id="likeBt" type="submit" class="material-icons" value="favorite">
-		</c:when>
-	</c:choose>
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+
+
 		</form>
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
 			<p class="commentTxt2">총 ${list[0].board_replyCnt }개</p>
 		</div>
+		<c:if test="${user_uid != -1 }">
 		<form action="replyWriteOk.do" method="POST">
 			<input type="hidden" name="reply_writer" value="<%=user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
@@ -252,7 +143,8 @@ thead tr th {
 			<input class="btn btn-outline-dark" id="replySubmitBt" type="submit"
 				value="댓글 작성" />
 		</form>
-
+		<div class="clear"></div>
+		</c:if>
 		<h3>최신순</h3>
 
 
@@ -268,12 +160,14 @@ thead tr th {
 							<div class="commentWriter">작성자 : ${dto.reply_writer }</div>
 							<div class="commentDate">작성시간 : ${dto.reply_regDate }</div>
 							<textarea class="commentContent" style="resize: none;" disabled>${dto.reply_content }</textarea>
+										<c:if test="${user_id == dto.reply_writer }">
 							<div id="commentBt">
 								<button class="commentUpdateBt btn btn-outline-dark"
 									data-toggle="modal" data-target="#updateModal${status.index}">수정</button>
 								<button class="btn btn-outline-dark"
 									onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
 							</div>
+							</c:if>
 						</div>
 						<form action="replyUpdateOk.do" method="POST">
 							<div class="modal" id="updateModal${status.index}">
@@ -326,9 +220,6 @@ thead tr th {
 
 </body>
 
-<script>
 
-
-</script>
 
 </html>
