@@ -169,7 +169,12 @@ thead tr th {
 			</c:when>
 		</c:choose>
 
+<<<<<<< HEAD
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+=======
+		<input type="hidden" name="board_id" value="${list[0].board_id }" />
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
 
 		<c:if test="${user_uid != -1 }">
@@ -182,7 +187,11 @@ thead tr th {
 				</c:when>
 			</c:choose>
 		</c:if>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
 		</form>
 
 		<div class="commentCntDiv">

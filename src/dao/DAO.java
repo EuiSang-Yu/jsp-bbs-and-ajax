@@ -913,6 +913,10 @@ public class DAO {
       return cnt;
 
    }
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    
    public int replyCnt_select(int board_id) throws SQLException {
 	      int cnt = 0;
@@ -937,7 +941,12 @@ public class DAO {
 
 	      return cnt;
 
+<<<<<<< HEAD
 	   }
+=======
+	   }
+
+>>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
    //아이디 중복체크
    public int joinIdChk(String user_id) throws SQLException {
 	   int user_idCnt = 0;
