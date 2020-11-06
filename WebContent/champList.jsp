@@ -181,33 +181,11 @@
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CSS/champList.css">
+
+
 <title>OP.IT</title>
-<style>
-.championList {
-	float: left;
-	margin: 10px;
-}
 
-.championList:hover img {
-	opacity: 0.7;
-}
-
-#champTitle {
-	text-align: center;
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-#champSubTitle {
-	margin: 20px;
-	text-align: center;
-}
-
-.clear{
-	clear: both;
-}
-
-</style>
 </head>
 <body>
 	<jsp:include page="thema.jsp" />
@@ -234,7 +212,4 @@
 
 
 </html>
-<<<<<<< HEAD
-=======
- 
->>>>>>> branch 'master' of https://github.com/devYoooo/OP_IT.git
+

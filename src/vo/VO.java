@@ -130,21 +130,26 @@ public class VO {
    
    public static final String SQL_LIKECNT_UPDATE =
          "UPDATE TB_BOARD SET board_likeCnt = ? WHERE BOARD_ID = ?";
+
    
    public static final String SQL_UPDATE_REPLYCNT = 
            "UPDATE tb_board SET board_replyCnt = ? WHERE board_id = ?";
-   
+
    //아이디 유효성 검사
    public static final String SQL_JOIN_USERID = 
 		   "SELECT * FROM TB_USER WHERE user_id = ?";
+
+
    
    public static final String SQL_REPLYCNT_SELECT =
 	       "SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = ?";
-   
+
    public static final String SQL_JOIN_USEREMAIL = 
 		   "SELECT * FROM TB_USER WHERE user_email = ?";
    
    public static final String SQL_JOIN_USERPHONE = 
+
 		   "SELECT * FROM TB_USER WHERE user_phone = ?";
+
    
 }

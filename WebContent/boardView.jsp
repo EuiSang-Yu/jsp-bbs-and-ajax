@@ -5,7 +5,7 @@
 <%
 	String user_id = (String) session.getAttribute("user_id");
 	int cnt = (Integer) request.getAttribute("likeResult");
-	int user_uid = (Integer) session.getAttribute("user_uid"); 
+	int user_uid = (Integer) session.getAttribute("user_uid");
 %>
 
 <!DOCTYPE html>
@@ -34,98 +34,14 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 	
+
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
+<link rel="stylesheet" href="CSS/boardView.css">
 
-<style>
-* {
-	margin: 0;
-	padding: 0;
-}
-
-.commentCntDiv {
-	background-color: lightgray;
-	width: 100%;
-	height: 100px;
-	margin-bottom: 50px;
-	margin-top: 100px;
-}
-
-.commentTxt1 {
-	float: left;
-	font-size: 30px;
-	margin-top: 30px;
-	margin-left: 20px;
-}
-
-.commentTxt2 {
-	float: left;
-	font-size: 20px;
-	margin-top: 35px;
-	margin-left: 20px;
-}
-
-.commentHr {
-	background-color: gray;
-	height: 1px;
-}
-
-#commentTextArea {
-	margin-top: 50px;
-	margin-bottom: 50px;
-}
-
-#replySubmitBt {
-	float: right;
-	margin-bottom: 50px;
-}
-
-thead tr th {
-	color: #686868;
-}
-
-#listBtn {
-	float: right;
-}
-
-#commentBt {
-	float: right;
-}
-
-.commentContent {
-	width: 100%;
-	height: 100px;
-	color: black;
-}
-
-#likeBt {
-	background-color: white;
-	border: none;
-	float: right;
-}
-
-#likeBt:focus {
-	outline: none;
-}
-
-.material-icons {
-	font-size: 50px;
-	color: black;
-}
-
-#textflow {
-	overflow: hidden;
-	word-wrap: break-word;
-}
-
-#imgwidth img {
-	max-width: 100%;
-}
-</style>
 
 </head>
 
@@ -172,18 +88,25 @@ thead tr th {
 
 
 		<input type="hidden" name="board_id" value="${list[0].board_id }" />
-		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
 
-		<c:if test="${user_uid != -1 }">
-			<c:choose>
+		<input type="hidden" name="board_champion"
+			value="${list[0].board_champion }" />
+			<c:if test="${user_uid != -1 }">
+
+		<c:choose>
 				<c:when test="${likeViewResult == 0 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
+					<input id="likeBt" type="submit" class="material-icons"
+						value="favorite_border">
 				</c:when>
 				<c:when test="${likeViewResult == 1 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite">
+					<input id="likeBt" type="submit" class="material-icons"
+						value="favorite">
 				</c:when>
-			</c:choose>
-		</c:if>
+		</c:choose>
+			</c:if>
+
+
+
 
 		</form>
 
@@ -191,6 +114,7 @@ thead tr th {
 			<p class="commentTxt1">댓글</p>
 			<p class="commentTxt2">총 ${list[0].board_replyCnt }개</p>
 		</div>
+		<c:if test="${user_uid != -1 }">
 		<form action="replyWriteOk.do" method="POST">
 			<input type="hidden" name="reply_writer" value="<%=user_id%>" />
 			<textarea rows="5" cols="30" class="form-control"
@@ -200,7 +124,8 @@ thead tr th {
 			<input class="btn btn-outline-dark" id="replySubmitBt" type="submit"
 				value="댓글 작성" />
 		</form>
-
+		<div class="clear"></div>
+		</c:if>
 		<h3>최신순</h3>
 
 
@@ -216,12 +141,14 @@ thead tr th {
 							<div class="commentWriter">작성자 : ${dto.reply_writer }</div>
 							<div class="commentDate">작성시간 : ${dto.reply_regDate }</div>
 							<textarea class="commentContent" style="resize: none;" disabled>${dto.reply_content }</textarea>
+										<c:if test="${user_id == dto.reply_writer }">
 							<div id="commentBt">
 								<button class="commentUpdateBt btn btn-outline-dark"
 									data-toggle="modal" data-target="#updateModal${status.index}">수정</button>
 								<button class="btn btn-outline-dark"
 									onclick="location.href='replyDeleteOk.do?reply_id=${dto.reply_id }&board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">삭제</button>
 							</div>
+							</c:if>
 						</div>
 						<form action="replyUpdateOk.do" method="POST">
 							<div class="modal" id="updateModal${status.index}">
@@ -261,22 +188,21 @@ thead tr th {
 		<hr class="commentHr">
 
 
-
+		<c:if test="${user_id == list[0].board_writer }">
 		<button class="btn btn-outline-dark"
 			onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }&board_writer=${list[0].board_writer }'">삭제</button>
 		<button class="btn btn-outline-dark"
 			onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
+			</c:if>
 		<a href="boardListTable.do?board_champion=${list[0].board_champion }"
 			class="btn btn-outline-dark" id="listBtn">목록</a>
+			<div class="clear"></div>
 	</div>
 
 	<jsp:include page="footer.jsp" />
 
 </body>
 
-<script>
 
-
-</script>
 
 </html>

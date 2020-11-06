@@ -55,12 +55,8 @@ System.out.println(user_id);
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<link rel="stylesheet" href="CSS/boardUpdate.css">
 
-<style>
-#updateSubmit {
-	float: right;
-}
-</style>
 
 </head>
 

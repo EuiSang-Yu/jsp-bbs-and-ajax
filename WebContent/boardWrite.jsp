@@ -42,17 +42,18 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+
 
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
-<style>
-#writeSubmit {
-	float: right;
-}
-</style>
+<script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+<link rel="stylesheet" href="CSS/boardWrite.css">
+
+
+
 
 </head>
 

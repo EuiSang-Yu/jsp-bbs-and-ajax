@@ -11,28 +11,38 @@
 
 <title>OP.IT</title>
 
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<!--구글폰트-->
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap" rel="stylesheet">-->
+
+
+
+
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="CSS/boardListChamp.css">
+
+
 
 
 		<% 
@@ -40,40 +50,7 @@
 		%>
 
 
-<style>
 
-#champInfoDiv {
-	display: flex;
-}
-
-#champImg {
-	width:50%;
-	height:350px;
-	background-color: red;
-	margin-top: 100px;
-	margin-bottom: 50px;
-	float: left;
-}
-
-#champImg img {
-	width: 100%;
-	height: 100%;
-}
-
-#champInfo {
-	width: 100%;
-	height: 500px;
-	margin-top: 100px;
-	font-size: 30px;
-	font-family: 'Noto Sans KR', sans-serif;
-	float: right;
-	padding: 0px 30px;
-}
-
-
-
-
-</style>
 
 </head>
 <body>
@@ -83,8 +60,8 @@
 	<div id="champImg"><img class="championListImg" src="img/championImg/RiotX_ChampionList${board_champion }.jpg" alt=""></div>
 	<div id="champInfo"></div>
 
-</div>
 
+</div>
 
 </body>
 
