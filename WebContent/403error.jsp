@@ -20,7 +20,10 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>전적 검색 페이지 에러</title>
+<!--전적 검색 페이지 에러  -->
+<title>OP.IT</title>
+<!-- 파비콘 설정-->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="CSS/error.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
