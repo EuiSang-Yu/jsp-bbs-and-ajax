@@ -339,20 +339,17 @@ public class DAO {
          // 트랜잭션 처리
          conn = getConnection();
          conn.setAutoCommit(false);
-
-         pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
-         pstmt.setInt(1, board_id);
-         pstmt.setInt(2, board_champion);
-         
-         pstmt.executeUpdate();
-         
-         
-         pstmt.close();
-         pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
-         pstmt.setInt(1, board_id);
-         pstmt.setInt(2, board_champion);
-         rs = pstmt.executeQuery();
-         arr = createArray(rs);
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
+			pstmt.setInt(1, board_id);
+			pstmt.setInt(2, board_champion);
+			pstmt.executeUpdate();
+			pstmt.close();
+			
+			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
+			pstmt.setInt(1, board_id);
+			pstmt.setInt(2, board_champion);
+			rs = pstmt.executeQuery();
+			arr = createArray(rs);
 
       } catch (SQLException e) {
          conn.rollback(); // 예외 발생하면 rollback

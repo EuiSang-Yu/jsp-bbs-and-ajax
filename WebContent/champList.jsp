@@ -157,6 +157,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!--구글폰트-->
 <link
 	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
@@ -174,7 +175,6 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 <!-- 파비콘 설정-->

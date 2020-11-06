@@ -21,7 +21,9 @@
 <head>
 
 <!-- 초기화면 배율 설정-->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!--구글폰트-->
 <link
@@ -33,28 +35,26 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <!-- css파일 불러오기-->
 <link rel="stylesheet" href="CSS/index.css">
-<script src="JS/index.js"></script>
 
-<!-- 돋보기 아이콘 -->
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+
 
 
 <meta charset="UTF-8">
 <title>OP.IT</title>
+
 
 </head>
 <body>
@@ -75,11 +75,18 @@
 			<div class="d-flex justify-content-center h-100 align-items-center">
 				<form id="searchFrm" action="historyMain.do" method="POST">
 					<div class="search">
-
-						<input class="search_input" type="text" name="search_id"
-							placeholder="소환사명을 입력해주세요 ..">
+						<script>
+						function checkSpacebar() {
+							var kcode = event.keyCode;
+							if (kcode == 32)
+								event.returnValue = false;
+						}
+						</script>
+						
+						<input class="search_input" type="text" name="search_id" onkeydown="checkSpacebar();"
+							placeholder="소환사명을 입력해주세요 .."/>
 						<button type="submit" class="search_icon">
-							<i class="fa fa-search"></i>
+							<i class="fa fa-search" ></i>
 						</button>
 					</div>
 				</form>
@@ -131,8 +138,12 @@
 
 	</section>
 
+
+
 	<jsp:include page="footer.jsp" />
 
 
+
 </body>
+
 </html>

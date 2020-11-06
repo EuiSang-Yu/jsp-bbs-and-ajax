@@ -22,6 +22,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="ckeditor/ckeditor.js"></script>
 <title>OP.IT</title>
 <!--구글폰트-->
@@ -33,14 +34,8 @@
 <!-- <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-부가적인 테마
-=======
 <!-- 부가적인 테마 -->
-
-
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
@@ -49,11 +44,6 @@
 
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 <!-- 파비콘 설정-->

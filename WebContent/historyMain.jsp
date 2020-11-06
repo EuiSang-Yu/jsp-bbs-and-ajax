@@ -18,6 +18,18 @@
 -->
 
 
+
+<%-- search_id : name값 --%>
+   <%
+      String search_id = (String) request.getAttribute("search_id");
+   
+      if(search_id != search_id.replaceAll("\\p{Punct}", "") || search_id == null || search_id == ""){ %>
+   		  <script>
+   		 	location.href="noneIderror.jsp"
+   		 </script> 
+   	<% }%>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -27,14 +39,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-   <%-- search_id : name값 --%>
-   <%
-      String search_id = (String) request.getAttribute("search_id");
-   %>
-
-
+   
    <jsp:include page="thema.jsp" />
-
+   
    <div class="container">
 
       <!-- 소환사 기본정보 -->
@@ -93,11 +100,12 @@
 
    <script>
       // 전적 검색창에 입력한 아이디
-      search_id = "<%=search_id%>";
+      search_id = "${search_id }";
+      
    </script>
 
    <script type="text/javascript" src="JS/historyMain.js"></script>
 
-
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

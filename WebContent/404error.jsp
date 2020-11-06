@@ -21,7 +21,8 @@
 <head>
 <meta charset="UTF-8">
 <title>전적 검색 페이지 에러</title>
-<link rel="stylesheet" href="CSS/historyError.css" />
+<link rel="stylesheet" href="CSS/error.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<jsp:include page="thema.jsp"/>
@@ -32,8 +33,10 @@
 			<h2>요청한 페이지(아이디)는 존재 하지않습니다.</h2>	
 		</div>
 		<div id="errorView">	
-			<img src="" alt="여기에 이미지 추가" />	
+			<img src="img/profilePhoto/notfound.png" alt="여기에 이미지 추가" />		
 	</div>
 </div>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>
