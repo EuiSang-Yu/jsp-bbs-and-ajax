@@ -130,24 +130,7 @@
 		</c:choose>
 			</c:if>
 
-	
 
-
-
-
-		<input type="hidden" name="board_id" value="${list[0].board_id }" />
-		<input type="hidden" name="board_champion" value="${list[0].board_champion }" />
-
-		<c:if test="${user_uid != -1 }">
-			<c:choose>
-				<c:when test="${likeViewResult == 0 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite_border">
-				</c:when>
-				<c:when test="${likeViewResult == 1 }">
-					<input id="likeBt" type="submit" class="material-icons" value="favorite">
-				</c:when>
-			</c:choose>
-		</c:if>
 
 
 		</form>
@@ -230,13 +213,15 @@
 		<hr class="commentHr">
 
 
-
+		<c:if test="${user_id == list[0].board_writer }">
 		<button class="btn btn-outline-dark"
 			onclick="location.href='boardDeleteOk.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }&board_writer=${list[0].board_writer }'">삭제</button>
 		<button class="btn btn-outline-dark"
 			onclick="location.href='boardUpdate.do?board_id=${list[0].board_id }&board_champion=${list[0].board_champion }'">수정</button>
+			</c:if>
 		<a href="boardListTable.do?board_champion=${list[0].board_champion }"
 			class="btn btn-outline-dark" id="listBtn">목록</a>
+			<div class="clear"></div>
 	</div>
 
 	<jsp:include page="footer.jsp" />
