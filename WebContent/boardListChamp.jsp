@@ -11,6 +11,7 @@
 
 <title>OP.IT</title>
 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!--구글폰트-->
 <link
@@ -29,7 +30,6 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">

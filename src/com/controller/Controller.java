@@ -81,7 +81,7 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "historyMain.jsp";
 			break;
-
+			
 		case "/boardListTable.do":
 			command = new BoardListCommand();
 			command.execute(request, response);

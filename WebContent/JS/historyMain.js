@@ -1,5 +1,3 @@
-
-
 // 라이엇 공식 API발급키
 api_key = "RGAPI-6006a009-c20a-4be4-a3d3-aa7cbc775206";
 
@@ -92,6 +90,7 @@ result = "";
 
 
 //소환사 기본정보 json url
+
 if(search_id != null)
    summonerUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/"   + search_id + "?api_key=" + api_key;
 //해당 소환사의 랭크(솔로,자유) 정보 url
@@ -276,7 +275,16 @@ function ajaxDefault(){
 			ajax(leagueUrl);					
 		},
 		error : function(request,status,error) {
-			alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			//alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			if(request.status == 429){
+				location.href="429error.jsp"
+			}else if(request.status == 403){
+				location.href="403error.jsp"
+					
+			}
+			else {
+				location.href="429error.jsp"
+			}
 		}
 	});
 }
@@ -297,7 +305,16 @@ function ajax(info_url) {
 			}
 		},
 		error : function(request,status,error) {
-			alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			//alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			if(request.status == 429){
+				location.href="429error.jsp"
+			}else if(request.status == 403){
+				location.href="403error.jsp"
+					
+			}
+			else {
+				location.href="429error.jsp"
+			}
 		}
 	});
 }
@@ -333,54 +350,60 @@ function parseJSON(jsonObj) {
    if (cnt == 1) {
       // league info
 	/////// JSON Object 순서 뒤바뀌는 예외 처리 !!
-	  if(jsonObj[0].queueType == "RANKED_SOLO_5x5"){ 
-		  if(jsonObj[0] != null && jsonObj[0] != ""){
-		         if (soloLeagueId == "")   soloLeagueId = jsonObj[0].leagueId;
-		         if (soloQueueType == "") soloQueueType = jsonObj[0].queueType;
-		         if (soloTier == "")   soloTier = jsonObj[0].tier;
-		         if (soloRank == "")   soloRank = jsonObj[0].rank;
-		         if (soloSummonerId == "")   soloSummonerId = jsonObj[0].summonerId;
-		         if (soloSummonerName == "")   soloSummonerName = jsonObj[0].summonerName;
-		         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[0].leaguePoints;
-		         if (soloWins == "")   soloWins = jsonObj[0].wins;
-		         if (soloLosses == "") soloLosses = jsonObj[0].losses;
-	      }
-	      if(jsonObj[1] != null && jsonObj[1] != ""){
-		         if (flexLeagueId == "")   flexLeagueId = jsonObj[1].leagueId;
-		         if (flexQueueType == "") flexQueueType = jsonObj[1].queueType;
-		         if (flexTier == "") flexTier = jsonObj[1].tier;
-		         if (flexRank == "")   flexRank = jsonObj[1].rank;
-		         if (flexSummonerId == "")   flexSummonerId = jsonObj[1].summonerId;
-		         if (flexSummonerName == "")   flexSummonerName = jsonObj[1].summonerName;
-		         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[1].leaguePoints;
-		         if (flexWins == "")   flexWins = jsonObj[1].wins;
-		         if (flexLosses == "") flexLosses = jsonObj[1].losses;
-	      }
-	  }else{
-		  if(jsonObj[1] != null && jsonObj[1] != ""){
-		         if (soloLeagueId == "")   soloLeagueId = jsonObj[1].leagueId;
-		         if (soloQueueType == "") soloQueueType = jsonObj[1].queueType;
-		         if (soloTier == "")   soloTier = jsonObj[1].tier;
-		         if (soloRank == "")   soloRank = jsonObj[1].rank;
-		         if (soloSummonerId == "")   soloSummonerId = jsonObj[1].summonerId;
-		         if (soloSummonerName == "")   soloSummonerName = jsonObj[1].summonerName;
-		         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[1].leaguePoints;
-		         if (soloWins == "")   soloWins = jsonObj[1].wins;
-		         if (soloLosses == "") soloLosses = jsonObj[1].losses;
-		      }
-	      if(jsonObj[0] != null && jsonObj[0] != ""){
-		         if (flexLeagueId == "")   flexLeagueId = jsonObj[0].leagueId;
-		         if (flexQueueType == "") flexQueueType = jsonObj[0].queueType;
-		         if (flexTier == "") flexTier = jsonObj[0].tier;
-		         if (flexRank == "")   flexRank = jsonObj[0].rank;
-		         if (flexSummonerId == "")   flexSummonerId = jsonObj[0].summonerId;
-		         if (flexSummonerName == "")   flexSummonerName = jsonObj[0].summonerName;
-		         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[0].leaguePoints;
-		         if (flexWins == "")   flexWins = jsonObj[0].wins;
-		         if (flexLosses == "") flexLosses = jsonObj[0].losses;
-		      }
-		  
-	  }
+	   if(jsonObj.length > 0){
+		   if(jsonObj[0].queueType == "RANKED_SOLO_5x5"){ 
+				  if(jsonObj[0] != null && jsonObj[0] != ""){
+				         if (soloLeagueId == "")   soloLeagueId = jsonObj[0].leagueId;
+				         if (soloQueueType == "") soloQueueType = jsonObj[0].queueType;
+				         if (soloTier == "")   soloTier = jsonObj[0].tier;
+				         if (soloRank == "")   soloRank = jsonObj[0].rank;
+				         if (soloSummonerId == "")   soloSummonerId = jsonObj[0].summonerId;
+				         if (soloSummonerName == "")   soloSummonerName = jsonObj[0].summonerName;
+				         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[0].leaguePoints;
+				         if (soloWins == "")   soloWins = jsonObj[0].wins;
+				         if (soloLosses == "") soloLosses = jsonObj[0].losses;
+			      }
+			      if(jsonObj[1] != null && jsonObj[1] != ""){
+				         if (flexLeagueId == "")   flexLeagueId = jsonObj[1].leagueId;
+				         if (flexQueueType == "") flexQueueType = jsonObj[1].queueType;
+				         if (flexTier == "") flexTier = jsonObj[1].tier;
+				         if (flexRank == "")   flexRank = jsonObj[1].rank;
+				         if (flexSummonerId == "")   flexSummonerId = jsonObj[1].summonerId;
+				         if (flexSummonerName == "")   flexSummonerName = jsonObj[1].summonerName;
+				         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[1].leaguePoints;
+				         if (flexWins == "")   flexWins = jsonObj[1].wins;
+				         if (flexLosses == "") flexLosses = jsonObj[1].losses;
+			      }
+			  }else {
+				  if(jsonObj[1] != null && jsonObj[1] != ""){
+				         if (soloLeagueId == "")   soloLeagueId = jsonObj[1].leagueId;
+				         if (soloQueueType == "") soloQueueType = jsonObj[1].queueType;
+				         if (soloTier == "")   soloTier = jsonObj[1].tier;
+				         if (soloRank == "")   soloRank = jsonObj[1].rank;
+				         if (soloSummonerId == "")   soloSummonerId = jsonObj[1].summonerId;
+				         if (soloSummonerName == "")   soloSummonerName = jsonObj[1].summonerName;
+				         if (soloLeaguePoints == "")   soloLeaguePoints = jsonObj[1].leaguePoints;
+				         if (soloWins == "")   soloWins = jsonObj[1].wins;
+				         if (soloLosses == "") soloLosses = jsonObj[1].losses;
+				      }
+			      if(jsonObj[0] != null && jsonObj[0] != ""){
+				         if (flexLeagueId == "")   flexLeagueId = jsonObj[0].leagueId;
+				         if (flexQueueType == "") flexQueueType = jsonObj[0].queueType;
+				         if (flexTier == "") flexTier = jsonObj[0].tier;
+				         if (flexRank == "")   flexRank = jsonObj[0].rank;
+				         if (flexSummonerId == "")   flexSummonerId = jsonObj[0].summonerId;
+				         if (flexSummonerName == "")   flexSummonerName = jsonObj[0].summonerName;
+				         if (flexLeaguePoints == "")   flexLeaguePoints = jsonObj[0].leaguePoints;
+				         if (flexWins == "")   flexWins = jsonObj[0].wins;
+				         if (flexLosses == "") flexLosses = jsonObj[0].losses;
+				      }
+				  
+			  }
+	   } else {
+		   location.href="seasonError.jsp";	
+	   }  
+	   
+	  
       
       
       

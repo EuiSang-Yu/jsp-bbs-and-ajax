@@ -33,7 +33,6 @@
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
@@ -107,8 +106,15 @@
 					</div>
 				</ul>
 				<form class="form-inline my-2 my-lg-0" action="historyMain.do" method="POST">
+					<script>
+						function checkSpacebar() {
+							var kcode = event.keyCode;
+							if (kcode == 32)
+								event.returnValue = false;
+						}
+					</script>
 					<input class="form-control mr-sm-2" type="search"
-						placeholder="소환사명을 입력해주세요.." aria-label="Search" name="search_id">
+						placeholder="소환사명을 입력해주세요.." aria-label="Search" name="search_id" onkeydown="checkSpacebar();">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
 				</form>
 			</div>

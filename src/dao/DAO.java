@@ -329,7 +329,6 @@ public class DAO {
 
 	// 특정 uid 글 내용 읽기, 조회수 증가
 	// viewcnt 도 +1 증가해야 하고, 읽어와야 한다 --> 트랜잭션 처리
-
 	public BoardDTO[] readByboard_id(int board_id, int board_champion) throws SQLException {
 
 		BoardDTO[] arr = null;
@@ -343,11 +342,9 @@ public class DAO {
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_INC_VIEWCNT);
 			pstmt.setInt(1, board_id);
 			pstmt.setInt(2, board_champion);
-			
 			pstmt.executeUpdate();
-			
-			
 			pstmt.close();
+			
 			pstmt = conn.prepareStatement(VO.SQL_WRITE_SELECT_BY_NO);
 			pstmt.setInt(1, board_id);
 			pstmt.setInt(2, board_champion);

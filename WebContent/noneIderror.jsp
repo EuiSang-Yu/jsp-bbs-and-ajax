@@ -22,7 +22,6 @@
 <meta charset="UTF-8">
 <title>전적 검색 페이지 에러</title>
 <link rel="stylesheet" href="CSS/error.css" />
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<jsp:include page="thema.jsp"/>
@@ -30,13 +29,13 @@
 	<div class="container">
 
 		<div class="message">
-			<h2>라이엇 API 키가 만료되었습니다.</h2>	
+			<h2>검색창에 정확한 소환사명을 입력해주세요.</h2>	
 		</div>
 		<div id="errorView">	
-			<img src="img/profilePhoto/notfound.png" alt="여기에 이미지 추가" />	
-		</div>
+			<img src="img/profilePhoto/notfound.png" alt="여기에 이미지 추가" />		
 	</div>
-	
-	<jsp:include page="footer.jsp"/>
+</div>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

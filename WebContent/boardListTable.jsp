@@ -25,6 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>OP.IT</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!--구글폰트-->
 <link
@@ -44,7 +45,6 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 
 <!-- 파비콘 설정-->

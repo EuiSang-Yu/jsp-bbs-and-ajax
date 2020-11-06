@@ -38,8 +38,8 @@
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 
 
-<link rel="stylesheet" type="text/css"
-   href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" type="text/css"
+   href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
 
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
