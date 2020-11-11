@@ -31,8 +31,7 @@ public class BoardListCommand implements Command {
 		int writePages = 10;    // 한 [페이징] 에 몇개의 '페이지'를 표현할 것인가?
 		int pageRows = 8;   // 한 '페이지'에 몇개의 글을 리스트 할것인가? 
 		int totalPage = 0; //총 몇 '페이지' 분량인가? 
-
-		
+		int board_likeCnt = 0;
 		
 
 		try {

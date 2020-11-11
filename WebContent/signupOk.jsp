@@ -6,11 +6,6 @@
 <head>
 <!-- 초기화면 배율 설정-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--구글폰트-->
-
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
 
 
 <!-- css파일 불러오기-->
@@ -52,9 +47,9 @@
 	int bean = (Integer)request.getAttribute("bean");
 	
 	System.out.println("회원가입 확인------" + cnt);
-	System.out.println("아이디중복체크 됏냐고-----"+idcnt);
-	System.out.println("이메일은 됐냐고-------"+emailcnt);
-	System.out.println("폰은 됏냐고------------"+phonecnt);
+	System.out.println("아이디중복체크-----"+idcnt);
+	System.out.println("이메일-------"+emailcnt);
+	System.out.println("폰------------"+phonecnt);
 %>
 
 

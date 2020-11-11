@@ -52,9 +52,9 @@ $(document).on("keyup", "#phone-number", function() {
      		<h4 class="card-title">프로필 사진 설정</h4>
      		<form action="profileUpload.do" method="POST" enctype="Multipart/form-data">
      		
-     		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-primary btn-secondary btn-file">
+     		<input type="file" name="user_profileImage" id="profilePhotoChange" class="btn-secondary btn-secondary btn-file col-sm-12">
      		
-     		<input type="submit" id="profilePhotoChange" class="btn btn-outline-info" value="저장">
+     		<input type="submit" id="profilePhotoChange" class="btn btn-outline-dark" value="저장">
      		
      		</form>
    		</div>
@@ -87,8 +87,8 @@ $(document).on("keyup", "#phone-number", function() {
 		                     </tr>
 		                     <tr>
 		                        <td colspan="2">
-		                        <input type="submit" class="btn btn-outline-info" value="변경하기">
-		                        <input type="button" id="memberDelete" class="btn btn-outline-info"  value="탈퇴하기"></td>
+		                        <input type="submit" class="btn btn-outline-dark" value="변경하기">
+		                        <input type="button" id="memberDelete" class="btn btn-outline-dark"  value="탈퇴하기"></td>
 		                     </tr>
                   		</table>
                		</form>

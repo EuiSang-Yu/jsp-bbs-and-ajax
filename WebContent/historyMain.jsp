@@ -4,14 +4,14 @@
 
 
 <!--
-     ,ad8888ba,   88888888ba        8888888888        888888888888888
-    d8"'    `"8b  88      "8b           88               888
-   d8'        `8b 88      ,8P          d8                888
-   88          88 88aaaaaa8P'          88                888
-   88          88 88""""""'            88                888
-   Y8,        ,8P 88                   Y8                888
-    Y8a.    .a8P  88                    Y8                888
-     `"Y8888Y"'   88              8888888888            888
+     ,ad8888ba,   88888888ba       8888888888     888888888888888
+    d8"'    `"8b  88      "8b          88               888
+   d8'        `8b 88      ,8P          d8               888
+   88          88 88aaaaaa8P'          88               888
+   88          88 88""""""'            88               888
+   Y8,        ,8P 88                   Y8               888
+    Y8a.    .a8P  88                   Y8               888
+     `"Y8888Y"'   88               8888888888           888
 
    
    dev@op.it
@@ -22,7 +22,9 @@
 <%-- search_id : name값 --%>
    <%
       String search_id = (String) request.getAttribute("search_id");
-   
+   	%>
+   	
+   	<%
       if(search_id != search_id.replaceAll("\\p{Punct}", "") || search_id == null || search_id == ""){ %>
    		  <script>
    		 	location.href="noneIderror.jsp"
@@ -37,6 +39,7 @@
 <title>전적 검색 페이지</title>
 <link rel="stylesheet" href="CSS/historyMain.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  
 </head>
 <body>
    
@@ -104,8 +107,8 @@
       
    </script>
 
-   <script type="text/javascript" src="JS/historyMain.js"></script>
-
+	 <script type="text/javascript" src="JS/historyMain.js"></script>
 	<jsp:include page="footer.jsp" />
 </body>
+
 </html>

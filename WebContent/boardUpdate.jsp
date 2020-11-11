@@ -6,7 +6,6 @@
 <%
 	String user_id = (String) session.getAttribute("user_id");
 
-System.out.println(user_id);
 %>
 <c:choose>
 	<c:when test="${empty list || fn:length(list) == 0 }">
@@ -33,8 +32,8 @@ System.out.println(user_id);
 
 
 
-		<!DOCTYPE html>
-		<html lang="ko">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,18 +41,7 @@ System.out.println(user_id);
 
 <title>게시글 수정하기-${list[0].board_title }</title>
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="//cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 <link rel="stylesheet" href="CSS/boardUpdate.css">
 

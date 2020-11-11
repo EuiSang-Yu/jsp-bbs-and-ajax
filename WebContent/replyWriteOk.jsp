@@ -10,7 +10,6 @@
 
 <% if(cnt == 0){ %>
 	<script>
-		alert("등록실패 !!!");
 		history.back();
 	</script>
 <% }else if (cnt == 2){%>
@@ -20,7 +19,6 @@
 	</script>
 <% } else { %>
 	<script>
-		alert("등록 성공 !!!");
 		location.href = "boardView.do?board_id=${param.board_id}&board_champion=${param.board_champion }";
 	</script>
 <% } %>

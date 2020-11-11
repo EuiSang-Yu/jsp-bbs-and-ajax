@@ -25,13 +25,9 @@ public class LikeCommand implements Command{
 		
 			try {
 				cnt = dao.like_insert(user_uid, board_id);
-				System.out.println("1");
 				viewCntRs = dao.viewCnt_update(board_id);
-				System.out.println("2");
 				board_likeCnt = dao.likeCnt_select(board_id);
-				System.out.println("3");
 				likeCntResult = dao.likeCnt_update(board_likeCnt, board_id);
-				System.out.println("4");
 				System.out.println("user_uid : " + user_uid);
 			} catch (SQLException e) {
 				e.printStackTrace();

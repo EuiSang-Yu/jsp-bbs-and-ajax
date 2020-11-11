@@ -81,7 +81,7 @@ public class Controller extends HttpServlet {
 			command.execute(request, response);
 			viewPage = "historyMain.jsp";
 			break;
-			
+
 		case "/boardListTable.do":
 			command = new BoardListCommand();
 			command.execute(request, response);
@@ -214,16 +214,16 @@ public class Controller extends HttpServlet {
 			viewPage = "withdrawalOk.jsp";
 			break;
 			
-		case "/likeOk.do":
+		case "/like.do":
 			command = new LikeCommand();
 			command.execute(request, response);
-			viewPage = "boardView.do";
+			viewPage = "like.jsp";
 			break;
 			
 		case "/likeCancle.do":
 			command = new LikeCancleCommand();
 			command.execute(request, response);
-			viewPage = "boardView.do";
+			viewPage = "likeCancle.jsp";
 			break;
 
 

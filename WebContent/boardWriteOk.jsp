@@ -10,12 +10,10 @@
 
 <% if(cnt == 0){ %>
 	<script>
-		alert("글쓰기 실패 !!!");
 		history.back();
 	</script>
 <% } else { %>
 	<script>
-		alert("글쓰기 성공 !!!");
 		location.href = "boardListTable.do?board_champion=${param.board_champion }";
 	</script>
 <% } %>

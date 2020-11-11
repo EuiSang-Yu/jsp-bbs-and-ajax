@@ -15,6 +15,8 @@ public class LikeCancleCommand implements Command{
 		
 		int cnt = 0;
 		int viewCntRs = 0;
+		int board_likeCnt = 0;
+		int likeCntResult = 0;
 		DAO dao = new DAO();
 		HttpSession session = request.getSession();
 		
@@ -26,6 +28,12 @@ public class LikeCancleCommand implements Command{
 			try {
 				cnt = dao.like_delete(user_uid, board_id);
 				viewCntRs = dao.viewCnt_update(board_id);
+				System.out.println("2");
+				board_likeCnt = dao.likeCnt_select(board_id);
+				System.out.println("3");
+				likeCntResult = dao.likeCnt_update(board_likeCnt, board_id);
+				System.out.println("4");
+				System.out.println("user_uid : " + user_uid);
 				
 			} catch (SQLException e) {
 				e.printStackTrace();

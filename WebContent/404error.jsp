@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<% response.setStatus(HttpServletResponse.SC_OK); %> 
 <!--
 	  ,ad8888ba,   88888888ba        8888888888    	 888888888888888
 	 d8"'    `"8b  88      "8b       	 88   			   888
@@ -23,9 +23,9 @@
 <!--전적 검색 페이지 에러  -->
 <title>OP.IT</title>
 <!-- 파비콘 설정-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="CSS/error.css" />
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<jsp:include page="thema.jsp"/>

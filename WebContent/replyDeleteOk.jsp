@@ -10,12 +10,10 @@
 
 <% if(cnt == 0){ %>
 	<script>
-		alert("삭제 실패 !!!");
 		history.back();
 	</script>
 <% } else { %>
 	<script>
-		alert("삭제 성공 !!!");
 		location.href = "boardView.do?board_id=${board_id}&board_champion=${board_champion }";
 	</script>
 <% } %>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<% response.setStatus(HttpServletResponse.SC_OK); %> 
 <!--
 	  ,ad8888ba,   88888888ba        8888888888    	 888888888888888
 	 d8"'    `"8b  88      "8b       	 88   			   888

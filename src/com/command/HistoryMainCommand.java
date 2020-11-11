@@ -10,7 +10,8 @@ public class HistoryMainCommand implements Command {
 	
 		//input에서 입력한 값
 		String search_id = request.getParameter("search_id");
-			
+		
+		if(search_id != null)
 			request.setAttribute("search_id", search_id);
 			
 		

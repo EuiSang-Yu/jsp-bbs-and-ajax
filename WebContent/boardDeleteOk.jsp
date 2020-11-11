@@ -8,7 +8,6 @@
 
 <% if(cnt == 0){ %>
 	<script>
-		alert("삭제실패 !!!");
 		history.back();
 	</script>
 <% }else if(cnt == 2){ %>
@@ -18,7 +17,6 @@
 	</script>
 <% } else { %>
 	<script>
-		alert("삭제 성공");
 		location.href = "boardListTable.do?board_champion=${board_champion }";
 	</script>
 <% } %>

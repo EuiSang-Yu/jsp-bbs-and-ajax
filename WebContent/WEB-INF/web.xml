@@ -2,10 +2,10 @@
 
 <web-app>
 
-	<!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-	id="WebApp_ID" version="4.0" -->
+	id="WebApp_ID" version="4.0"
 	
 	
 	<display-name>OP_IT</display-name>
@@ -32,16 +32,7 @@
 		<error-code>500</error-code>
 		<location>/500error.jsp</location>
 	</error-page>
-	
-	<!-- <error-page>
-		<error-code>429</error-code>
-		<location>/429error.jsp</location>
-	</error-page> -->
-	
-	<!-- <error-page>
-		<error-code>403</error-code>
-		<location>/403error.jsp</location>
-	</error-page> -->
+
 
 	
 

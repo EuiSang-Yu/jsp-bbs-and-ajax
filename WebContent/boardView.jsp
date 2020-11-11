@@ -20,24 +20,6 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<!--구글폰트-->
-<link
-	href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap"
-	rel="stylesheet">
-
-<!--합쳐지고 최소화된 최신 CSS-->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-<!--부가적인 테마-->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-	
-
 <!-- 파비콘 설정-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> 
 <link rel="stylesheet" href="CSS/boardView.css">
@@ -60,10 +42,10 @@
 			<thead>
 				<tr class="row">
 
-					<th class="col-sm-2">추천수${list[0].board_likeCnt }</th>
+					<th class="col-sm-2">추천수${board_likeCnt }</th>
 					<th class="col-sm-3">작성자 ${list[0].board_writer }</th>
 					<th class="col-sm-2">조회수 ${list[0].board_viewCnt }</th>
-					<th class="col-sm-2">댓글 ${list[0].board_replyCnt }</th>
+					<th class="col-sm-2">댓글 ${replyCnt }</th>
 					<th class="col-sm-3">작성시간 ${list[0].board_regDate }</th>
 
 				</tr>
@@ -78,11 +60,14 @@
 		</table>
 		<hr class="commentHr">
 		<c:choose>
-			<c:when test="${likeViewResult % 2 == 0 }">
-				<form id="likeForm" method="POST" action="likeOk.do">
+			<c:when test="${likeViewResult == 0 }">
+				<form id="likeForm" method="POST" action="like.do">
 			</c:when>
 			<c:when test="${likeViewResult == 1 }">
 				<form id="likeForm" method="POST" action="likeCancle.do">
+			</c:when>
+				<c:when test="${likeViewResult > 1 }">
+				${likeViewResult = 0 }
 			</c:when>
 		</c:choose>
 
@@ -94,11 +79,11 @@
 			<c:if test="${user_uid != -1 }">
 
 		<c:choose>
-				<c:when test="${likeViewResult == 0 }">
+				<c:when test="${likeViewResult % 2 == 0 }">
 					<input id="likeBt" type="submit" class="material-icons"
 						value="favorite_border">
 				</c:when>
-				<c:when test="${likeViewResult == 1 }">
+				<c:when test="${likeViewResult % 2 == 1 }">
 					<input id="likeBt" type="submit" class="material-icons"
 						value="favorite">
 				</c:when>
@@ -112,7 +97,7 @@
 
 		<div class="commentCntDiv">
 			<p class="commentTxt1">댓글</p>
-			<p class="commentTxt2">총 ${list[0].board_replyCnt }개</p>
+			<p class="commentTxt2">총 ${replyCnt }개</p>
 		</div>
 		<c:if test="${user_uid != -1 }">
 		<form action="replyWriteOk.do" method="POST">

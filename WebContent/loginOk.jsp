@@ -6,29 +6,28 @@
 
 
 <%  
-	int cnt = (Integer)request.getAttribute("result");
-	String user_id = request.getAttribute("user_id")+"";
-	int user_uid = (Integer)request.getAttribute("user_uid");
+   int cnt = (Integer)request.getAttribute("result");
+   String user_id = request.getAttribute("user_id")+"";
+   int user_uid = (Integer)request.getAttribute("user_uid");
 
 %>
 
 
 
 <% if(cnt == 0){ %>
-	<script>
-		alert("로그인 실패 !!!");
-		history.back();
-	</script>
+   <script>
+      alert("아이디와 비밀번호를 확인해 주세요.");
+      history.back();
+   </script>
 <% } else { 
-		session.setAttribute("user_id", user_id);
-		session.setAttribute("user_uid", user_uid);
-		System.out.print("유저 세션 생성");
+      session.setAttribute("user_id", user_id);
+      session.setAttribute("user_uid", user_uid);
+      System.out.print("유저 세션 생성");
 %>
-	<script>
-		alert("로그인 성공 !!!");
-		location.href = "index.jsp";
-	</script>
-		
+   <script>
+      location.href = "index.jsp";
+   </script>
+      
 <%
 
 } %>

@@ -1,5 +1,6 @@
+
 // 라이엇 공식 API발급키
-api_key = "RGAPI-6006a009-c20a-4be4-a3d3-aa7cbc775206";
+api_key = "RGAPI-c5a6f2b6-7929-44c2-b23e-87d0af28b235";
 
 // summoner info //
 id = "";
@@ -275,19 +276,20 @@ function ajaxDefault(){
 			ajax(leagueUrl);					
 		},
 		error : function(request,status,error) {
-			//alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			if(request.status == 429){
-				location.href="429error.jsp"
-			}else if(request.status == 403){
-				location.href="403error.jsp"
-					
-			}
-			else {
-				location.href="429error.jsp"
+			/*alert("1==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);*/
+			if(request.status == 403){
+				location.href="403error.jsp";		
+			}else if(request.status == 429){
+				location.href="429error.jsp";
+			}else if(request.status == 404){
+				location.href = "404error.jsp"
+			}else {
+				location.href = "500error.jsp"
 			}
 		}
 	});
 }
+
 
 // 나머지 모든 정보 get
 function ajax(info_url) {
@@ -298,22 +300,21 @@ function ajax(info_url) {
 		cache : false,
 		dataType : "JSON",
 		success : function(data, status) {
-			//alert("cnt: "+cnt+"     info_url: "+info_url);
 			if (status == "success"){
 				parseJSON(data);
 				cnt = cnt + 1;
 			}
 		},
 		error : function(request,status,error) {
-			//alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			if(request.status == 429){
-				location.href="429error.jsp"
-			}else if(request.status == 403){
-				location.href="403error.jsp"
-					
-			}
-			else {
-				location.href="429error.jsp"
+			/*alert("2==> code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);*/
+			if(request.status == 403){
+				location.href="403error.jsp";		
+			}else if(request.status == 429){
+				location.href="429error.jsp";
+			}else if(request.status == 404){
+				location.href = "404error.jsp"
+			}else {
+				location.href = "500error.jsp"
 			}
 		}
 	});
@@ -733,5 +734,8 @@ function getQueueTypeInfo(type){
    
    return;
 }
+
+
+
 
 ajaxDefault(); // 첫 ajax(소환사 기본정도 고유id값들, 레벨 가져오고 시작해야됨!!)

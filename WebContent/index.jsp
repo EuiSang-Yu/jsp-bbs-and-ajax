@@ -23,6 +23,7 @@
 <!-- 초기화면 배율 설정-->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <!--구글폰트-->
@@ -83,7 +84,7 @@
 						}
 						</script>
 						
-						<input class="search_input" type="text" name="search_id" onkeydown="checkSpacebar();"
+						<input class="search_input" type="text" name="search_id" onkeydown="checkSpacebar();" 
 							placeholder="소환사명을 입력해주세요 .."/>
 						<button type="submit" class="search_icon">
 							<i class="fa fa-search" ></i>

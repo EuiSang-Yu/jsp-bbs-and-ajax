@@ -1,14 +1,5 @@
-/* Drop Trigger */
-
-DROP TRIGGER TRI_tb_board_board_id;
-DROP TRIGGER TRI_tb_like_like_id;
-DROP TRIGGER TRI_tb_reply_reply_id;
-DROP TRIGGER TRI_tb_user_user_uid;
-
-
 /* Drop Tables */
 
-DROP TABLE tb_attach CASCADE CONSTRAINTS;
 DROP TABLE tb_like CASCADE CONSTRAINTS;
 DROP TABLE tb_reply CASCADE CONSTRAINTS;
 DROP TABLE tb_board CASCADE CONSTRAINTS;
@@ -21,9 +12,6 @@ DROP SEQUENCE SEQ_tb_board_board_id;
 DROP SEQUENCE SEQ_tb_like_like_id;
 DROP SEQUENCE SEQ_tb_reply_reply_id;
 DROP SEQUENCE SEQ_tb_user_user_uid;
-DROP SEQUENCE SEQ_tb_attach_attach_id;
-
-
 
 
 /* Create Tables */
@@ -82,131 +70,24 @@ CREATE TABLE tb_reply
 );
 
 
-CREATE TABLE tb_attach
-(
-   attach_id NUMBER DEFAULT 0 ,
-   attach_source varchar2(400),
-   board_id number DEFAULT 0 NOT NULL,
-   CONSTRAINT pk_attach_attach_id PRIMARY KEY(attach_id),
-   CONSTRAINT fk_attach_board_id FOREIGN KEY(board_id) REFERENCES tb_board(board_id) ON DELETE CASCADE
-);
-
-
-
-
 /* Create Sequences */
 
 CREATE SEQUENCE SEQ_tb_board_board_id INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_reply_reply_id INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_user_user_uid INCREMENT BY 1 START WITH 1 NOCACHE;
 CREATE SEQUENCE SEQ_tb_like_like_id INCREMENT BY 1 START WITH 1 NOCACHE;
-CREATE SEQUENCE SEQ_tb_attach_attach_id INCREMENT BY 1 START WITH 1 NOCACHE;
-
-
-
-
-/* Create Triggers */
-
-CREATE OR REPLACE TRIGGER TRI_tb_board_board_id BEFORE INSERT ON tb_board
-FOR EACH ROW
-BEGIN
-   SELECT SEQ_tb_board_board_id.nextval
-   INTO :new.board_id
-   FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_reply_reply_id BEFORE INSERT ON tb_reply
-FOR EACH ROW
-BEGIN
-   SELECT SEQ_tb_reply_reply_id.nextval
-   INTO :new.reply_id
-   FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_like_like_id BEFORE INSERT ON tb_like
-FOR EACH ROW
-BEGIN
-   SELECT SEQ_tb_like_like_id.nextval
-   INTO :new.like_id
-   FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_tb_user_user_uid BEFORE INSERT ON tb_user
-FOR EACH ROW
-BEGIN
-   SELECT SEQ_tb_user_user_uid.nextval
-   INTO :new.user_uid
-   FROM dual;
-END;
-
-/
-
-
-CREATE OR REPLACE TRIGGER TRI_tb_attach_attach_id BEFORE INSERT ON tb_attach
-FOR EACH ROW
-BEGIN
-   SELECT SEQ_tb_attach_attach_id.nextval
-   INTO :new.attach_id
-   FROM dual;
-END;
-
-/
 
 
 
 /* 해당 계정 테이블 목록 확인*/
-select * from tab;
+SELECT * FROM TAB;
 
-select * from tb_user;
+SELECT * FROM TB_USER;
 
-SELECT * FROM TB_BOARD ;
+SELECT * FROM TB_BOARD;
 
-SELECT * FROM TB_REPLY ;
+SELECT * FROM TB_REPLY;
 
-SELECT * FROM tb_reply WHERE board_id = 16 ORDER BY reply_regDate;
-
-SELECT * FROM TB_LIKE ;
-
-/* 해당 계정 테이블 목록 확인*/
-select * from tab;
-
-/* 해당 계정 시퀀스 목록 확인*/
-SELECT * FROM USER_SEQUENCES;
-
-
-
-/* 해당 tb_attach 칼럼 확인 */
-SELECT * FROM TB_ATTACH;
-
-SELECT ROWNUM, BOARD_WRITER FROM TB_BOARD;
-
-SELECT ROWNUM, BOARD_WRITER FROM TB_BOARD WHERE ROWNUM >= 1 AND ROWNUM < 1+5;
-
-SELECT COUNT(*) FROM tb_reply WHERE BOARD_ID = 46;
-
-SELECT * FROM  
-( 
-      SELECT ROWNUM AS RNUM, T.* 
-      FROM (SELECT * FROM TB_BOARD ORDER BY BOARD_ID DESC) T 
-)
-WHERE RNUM >= 6 AND RNUM < 6 + 5;
-
-SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 86 ORDER BY board_id DESC) T) 
-WHERE RNUM >= 6 AND RNUM < 6+5;
-
-SELECT * FROM 
-(SELECT ROWNUM AS RNUM, T.* FROM (SELECT * FROM tb_board WHERE board_champion = 86 ORDER BY board_likeCnt DESC, board_id DESC) T) 
-WHERE RNUM >= 1 AND RNUM < 20;
-
-DELETE FROM TB_BOARD;
-DELETE FROM tb_user;
-DELETE FROM TB_REPLY;
-DELETE FROM TB_LIKE;
+SELECT * FROM TB_LIKE;
 
 SELECT * FROM USER_SEQUENCES;

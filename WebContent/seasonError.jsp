@@ -30,7 +30,7 @@
 	<div class="container">
 
 		<div class="message">
-			<h2>이번 시즌 게임을 플레이 하지 않은 <br>소환사는 검색이 불가능합니다.</h2>	
+			<h2>라이엇의 초당 Request 수 제한 정책으로 인해 <br>이번 시즌 게임을 플레이 하지 않은 소환사는 검색이 불가능합니다.</h2>	
 		</div>
 		<div id="errorView">	
 			<img src="img/profilePhoto/notfound.png" alt="여기에 이미지 추가" />	
