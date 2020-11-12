@@ -36,6 +36,6 @@ October/2020 - November/2020
 
 ## To-do Project List
 * ~Jumtalk~
-* OP_IT
+* ~OP_IT~
 * pension reservation
 
