@@ -1,6 +1,6 @@
 <h2 align="center">OP_IT</h2>
 <p align="center">
-  🙍‍♂️Korea IT Academy Project Developers in 2020🙍‍♀️
+  🙍‍♂️Korea IT Academy Project in 2020🙍‍♀️
 </p>
 
 * * *
