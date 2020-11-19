@@ -21,8 +21,6 @@
 * [안신혁 (hyuk0912)](https://github.com/hyuk0912)
 * [이슬아 (seulAh0729)](https://github.com/seulAh0729)
 
-***
-
 ## Period
 * October/2020 - November/2020
 
