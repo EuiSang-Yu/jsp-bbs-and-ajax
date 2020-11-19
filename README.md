@@ -3,7 +3,7 @@
   🙍‍♂️Korea IT Academy Project in 2020🙍‍♀️
 </p>
 <br><br>
-* * *
+
 
 ## Description
 라이엇의 리그오브레전드 게임의 전적 검색 및 공략을 공유할 수 있는 게시판이 있는 JSP기반 웹 사이트입니다.
