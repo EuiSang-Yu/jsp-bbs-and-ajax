@@ -22,7 +22,7 @@
 * 이슬아 (seulAh0729)
 
 ## Period
-* October/2020 - November/2020
+* October/2020 - October/2020
 
 ## Stack
 * Language : JAVA, JSP, HTML, CSS, Javascript
