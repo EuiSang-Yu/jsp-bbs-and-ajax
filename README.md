@@ -32,6 +32,8 @@
 ***
 
 ### GIF
+* 풀영상은 밑에 URL에 있습니다
+
 * 프로젝트 전체 기획_1<br>
 ![OP_IT_기획발표_1](https://user-images.githubusercontent.com/58925978/101854304-9b3be080-3ba4-11eb-94d0-e00d44b56395.gif)
 * 프로젝트 전체 기획_2<br>
