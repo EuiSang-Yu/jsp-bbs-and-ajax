@@ -48,6 +48,11 @@
 
 ***
 
+### Video URL
+* https://www.youtube.com/watch?v=I8lGndO-Z8Q&feature=youtu.be
+
+***
+
 ### To-do Project List
 * ~Jumtalk~
 * ~OP_IT~
