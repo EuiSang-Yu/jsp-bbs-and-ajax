@@ -32,7 +32,17 @@
 ***
 
 ### GIF
+![OP_IT_기획발표_1](https://user-images.githubusercontent.com/58925978/101854304-9b3be080-3ba4-11eb-94d0-e00d44b56395.gif)
 
+![OP_IT_기획발표_2](https://user-images.githubusercontent.com/58925978/101854321-a55ddf00-3ba4-11eb-9cb5-2b9c00f8bed5.gif)
+
+![OP_IT_기획발표_3](https://user-images.githubusercontent.com/58925978/101854328-abec5680-3ba4-11eb-882e-31444ed274b1.gif)
+
+![OP_IT발표_1](https://user-images.githubusercontent.com/58925978/101854354-b73f8200-3ba4-11eb-8313-a0641a16e3cf.gif)
+
+![OP_IT발표_2](https://user-images.githubusercontent.com/58925978/101854371-beff2680-3ba4-11eb-9dbf-305cab2f55db.gif)
+
+![OP_IT발표_3](https://user-images.githubusercontent.com/58925978/101854383-c7576180-3ba4-11eb-839f-8a6740d2ea71.gif)
 
 ***
 
