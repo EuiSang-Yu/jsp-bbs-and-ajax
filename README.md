@@ -32,18 +32,18 @@
 ***
 
 ### GIF
-* 프로젝트 전체 기획<br>
+* 프로젝트 전체 기획_1<br>
 ![OP_IT_기획발표_1](https://user-images.githubusercontent.com/58925978/101854304-9b3be080-3ba4-11eb-94d0-e00d44b56395.gif)
-
+* 프로젝트 전체 기획_2<br>
 ![OP_IT_기획발표_2](https://user-images.githubusercontent.com/58925978/101854321-a55ddf00-3ba4-11eb-9cb5-2b9c00f8bed5.gif)
-
+* 프로젝트 전체 기획_3<br>
 ![OP_IT_기획발표_3](https://user-images.githubusercontent.com/58925978/101854328-abec5680-3ba4-11eb-882e-31444ed274b1.gif)
 <br>
-* 프로젝트 공헌한 파트<br>
+* 프로젝트 공헌한 파트_1<br>
 ![OP_IT발표_1](https://user-images.githubusercontent.com/58925978/101854354-b73f8200-3ba4-11eb-8313-a0641a16e3cf.gif)
-
+* 프로젝트 공헌한 파트_2<br>
 ![OP_IT발표_2](https://user-images.githubusercontent.com/58925978/101854371-beff2680-3ba4-11eb-9dbf-305cab2f55db.gif)
-
+* 프로젝트 공헌한 파트_3<br>
 ![OP_IT발표_3](https://user-images.githubusercontent.com/58925978/101854383-c7576180-3ba4-11eb-839f-8a6740d2ea71.gif)
 
 ***
