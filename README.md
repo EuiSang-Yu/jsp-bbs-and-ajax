@@ -38,7 +38,7 @@
 ![OP_IT_기획발표_2](https://user-images.githubusercontent.com/58925978/101854321-a55ddf00-3ba4-11eb-9cb5-2b9c00f8bed5.gif)
 * 프로젝트 전체 기획_3<br>
 ![OP_IT_기획발표_3](https://user-images.githubusercontent.com/58925978/101854328-abec5680-3ba4-11eb-882e-31444ed274b1.gif)
-<br>
+<br><br>
 * 프로젝트 공헌한 파트_1<br>
 ![OP_IT발표_1](https://user-images.githubusercontent.com/58925978/101854354-b73f8200-3ba4-11eb-8313-a0641a16e3cf.gif)
 * 프로젝트 공헌한 파트_2<br>
