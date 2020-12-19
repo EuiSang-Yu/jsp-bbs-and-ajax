@@ -26,7 +26,7 @@
 
 ### Stack
 * Language : JAVA, JSP, HTML, CSS, Javascript
-* Library : json, cos, JQuery
+* Library : cos, JQuery, jstl, el
 * Database : oracle
 
 ***
