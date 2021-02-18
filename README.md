@@ -50,7 +50,7 @@
 <br>
 
 * 프로젝트 공헌한 파트_2<br>
-![OP_IT발표_2](https://user-images.githubusercontent.com/58925978/101854371-beff2680-3ba4-11eb-9dbf-305cab2f55dba.gif)
+![OP_IT발표_2](https://user-images.githubusercontent.com/58925978/101854371-beff2680-3ba4-11eb-9dbf-305cab2f55db.gif)
 <br>
 
 * 프로젝트 공헌한 파트_3<br>
